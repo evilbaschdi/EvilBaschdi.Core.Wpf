@@ -1,5 +1,5 @@
 ﻿using System;
-using EvilBaschdi.CoreExtended.Application;
+using EvilBaschdi.CoreExtended.AppHelpers;
 
 namespace EvilBaschdi.CoreExtended.Metro
 {
@@ -9,31 +9,31 @@ namespace EvilBaschdi.CoreExtended.Metro
     /// </summary>
     public class ApplicationStyleSettings : IApplicationStyleSettings
     {
-        private readonly IApplicationSettingsBase _applicationSettingsBase;
+        private readonly IAppSettingsBase _appSettingsBase;
 
         /// <summary>
         ///     Constructor of the class.
         /// </summary>
-        /// <param name="applicationSettingsBase"></param>
+        /// <param name="appSettingsBase"></param>
         /// <exception cref="ArgumentNullException"></exception>
-        public ApplicationStyleSettings(IApplicationSettingsBase applicationSettingsBase)
+        public ApplicationStyleSettings(IAppSettingsBase appSettingsBase)
         {
-            _applicationSettingsBase = applicationSettingsBase ?? throw new ArgumentNullException(nameof(applicationSettingsBase));
+            _appSettingsBase = appSettingsBase ?? throw new ArgumentNullException(nameof(appSettingsBase));
         }
 
         /// <inheritdoc />
 
         public string Accent
         {
-            get => _applicationSettingsBase.Get("Accent", "");
-            set => _applicationSettingsBase.Set("Accent", value);
+            get => _appSettingsBase.Get("Accent", "");
+            set => _appSettingsBase.Set("Accent", value);
         }
 
         /// <inheritdoc />
         public string Theme
         {
-            get => _applicationSettingsBase.Get("Theme", "");
-            set => _applicationSettingsBase.Set("Theme", value);
+            get => _appSettingsBase.Get("Theme", "");
+            set => _appSettingsBase.Set("Theme", value);
         }
     }
 }

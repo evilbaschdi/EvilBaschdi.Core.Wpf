@@ -2,7 +2,7 @@
 using System.Reflection;
 using Microsoft.Win32;
 
-namespace EvilBaschdi.CoreExtended.Application
+namespace EvilBaschdi.CoreExtended.AppHelpers
 {
     /// <inheritdoc />
     public class AutoStart : IAutoStart

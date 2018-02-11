@@ -44,10 +44,10 @@
       <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net462\ControlzEx.dll</HintPath>
     </Reference>
     <Reference Include="EvilBaschdi.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EvilBaschdi.Core.2.0.0-CI-20180129-092959\lib\netstandard2.0\EvilBaschdi.Core.dll</HintPath>
+      <HintPath>..\packages\EvilBaschdi.Core.2.0.0-CI-20180201-070130\lib\netstandard2.0\EvilBaschdi.Core.dll</HintPath>
     </Reference>
-    <Reference Include="MahApps.Metro, Version=1.5.0.23, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\MahApps.Metro.dll</HintPath>
+    <Reference Include="MahApps.Metro, Version=1.6.0.184, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.6.0-alpha0184\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro.IconPacks, Version=2.0.0.31, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\MahApps.Metro.IconPacks.2.0.0\lib\net46\MahApps.Metro.IconPacks.dll</HintPath>
@@ -61,9 +61,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Xml" />
@@ -73,47 +70,47 @@
     <Compile Include="Mvvm\AboutWindowContent.cs">
       <DependentUpon>IAboutWindowContent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\ApplicationSettingsBase.cs">
-      <DependentUpon>IApplicationSettingsBase.cs</DependentUpon>
+    <Compile Include="AppHelpers\AppSettingsBase.cs">
+      <DependentUpon>IAppSettingsBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\AutoStart.cs">
+    <Compile Include="AppHelpers\AutoStart.cs">
       <DependentUpon>IAutoStart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\AutoStartByConfiguration.cs">
+    <Compile Include="AppHelpers\AutoStartByConfiguration.cs">
       <DependentUpon>IAutoStartByConfiguration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\AppSettingFromConfigurationManager.cs">
+    <Compile Include="AppHelpers\AppSettingFromConfigurationManager.cs">
       <DependentUpon>IAppSettingFromConfigurationManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\IAppSettingFromConfigurationManager.cs" />
+    <Compile Include="AppHelpers\IAppSettingFromConfigurationManager.cs" />
     <Compile Include="Metro\ApplicationStyleSettings.cs">
       <DependentUpon>IApplicationStyleSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\CurrentScreen.cs">
+    <Compile Include="AppHelpers\CurrentScreen.cs">
       <DependentUpon>ICurrentScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Mvvm\IAboutWindowContent.cs" />
-    <Compile Include="Application\IApplicationSettingsBase.cs" />
-    <Compile Include="Application\IAutoStart.cs" />
-    <Compile Include="Application\IAutoStartByConfiguration.cs" />
-    <Compile Include="Application\ICurrentScreen.cs" />
-    <Compile Include="Application\IMoveToScreen.cs" />
-    <Compile Include="Application\IScreenCapture.cs" />
-    <Compile Include="Application\IScreenCount.cs" />
+    <Compile Include="AppHelpers\IAppSettingsBase.cs" />
+    <Compile Include="AppHelpers\IAutoStart.cs" />
+    <Compile Include="AppHelpers\IAutoStartByConfiguration.cs" />
+    <Compile Include="AppHelpers\ICurrentScreen.cs" />
+    <Compile Include="AppHelpers\IMoveToScreen.cs" />
+    <Compile Include="AppHelpers\IScreenCapture.cs" />
+    <Compile Include="AppHelpers\IScreenCount.cs" />
     <Compile Include="Metro\IApplicationStyleSettings.cs" />
-    <Compile Include="Application\MoveToScreen.cs">
+    <Compile Include="AppHelpers\MoveToScreen.cs">
       <DependentUpon>IMoveToScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\ScreenCapture.cs">
+    <Compile Include="AppHelpers\ScreenCapture.cs">
       <DependentUpon>IScreenCapture.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\ScreenCapture.Gdi32.cs">
+    <Compile Include="AppHelpers\ScreenCapture.Gdi32.cs">
       <DependentUpon>IScreenCapture.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\ScreenCapture.User32.cs">
+    <Compile Include="AppHelpers\ScreenCapture.User32.cs">
       <DependentUpon>IScreenCapture.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\ScreenCount.cs">
+    <Compile Include="AppHelpers\ScreenCount.cs">
       <DependentUpon>IScreenCount.cs</DependentUpon>
     </Compile>
     <Compile Include="Browsers\ExplorerFolderBrower.cs">

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EvilBaschdi.CoreExtended.Application
+namespace EvilBaschdi.CoreExtended.AppHelpers
 {
     /// <inheritdoc />
     public class AutoStartByConfiguration : IAutoStartByConfiguration

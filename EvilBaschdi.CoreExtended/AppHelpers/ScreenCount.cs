@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace EvilBaschdi.CoreExtended.Application
+namespace EvilBaschdi.CoreExtended.AppHelpers
 {
     /// <inheritdoc />
     /// <summary>

@@ -9,7 +9,7 @@ using System.Windows.Media;
 using EvilBaschdi.Core.Internal;
 using EvilBaschdi.Core.Security;
 using EvilBaschdi.CoreExtended;
-using EvilBaschdi.CoreExtended.Application;
+using EvilBaschdi.CoreExtended.AppHelpers;
 using EvilBaschdi.CoreExtended.Browsers;
 using EvilBaschdi.CoreExtended.Extensions;
 using EvilBaschdi.CoreExtended.Metro;
@@ -32,7 +32,7 @@ namespace EvilBaschdi.TestUi
         private readonly IEncryption _encryption;
 
         // ReSharper disable once NotAccessedField.Local
-        private readonly IFilePath _filePath;
+        private readonly IFileListFromPath _filePath;
 
         private readonly int _overrideProtection;
         private readonly IApplicationStyle _applicationStyle;
@@ -43,12 +43,12 @@ namespace EvilBaschdi.TestUi
             InitializeComponent();
             IMultiThreading multiThreading = new MultiThreading();
             _encryption = new Encryption();
-            _filePath = new FilePath(multiThreading);
+            _filePath = new FileListFromPath(multiThreading);
             //LoadNetworkBrowserToArrayList();
             //MessageBox.Show(VersionHelper.GetWindowsClientVersion());
 
-            IApplicationSettingsBase applicationSettingsBase = new ApplicationSettingsBase(Settings.Default);
-            _applicationStyleSettings = new ApplicationStyleSettings(applicationSettingsBase);
+            IAppSettingsBase appSettingsBase = new AppSettingsBase(Settings.Default);
+            _applicationStyleSettings = new ApplicationStyleSettings(appSettingsBase);
             IThemeManagerHelper themeManagerHelper = new ThemeManagerHelper();
             _applicationStyle = new ApplicationStyle(this, Accent, ThemeSwitch, _applicationStyleSettings, themeManagerHelper);
             // ReSharper disable once UnusedVariable

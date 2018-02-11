@@ -3,20 +3,20 @@ using System.Collections.Specialized;
 using System.Configuration;
 using System.Linq;
 
-namespace EvilBaschdi.CoreExtended.Application
+namespace EvilBaschdi.CoreExtended.AppHelpers
 {
     /// <inheritdoc />
     /// <summary>
-    ///     Classes to get values from or set values in ApplicationSettingsBase
+    ///     Classes to get values from or set values in AppSettingsBase
     /// </summary>
-    public class ApplicationSettingsBase : IApplicationSettingsBase
+    public class AppSettingsBase : IAppSettingsBase
     {
         private readonly SettingsBase _settingsBase;
 
         /// <summary>
         /// </summary>
         /// <param name="settingsBase"></param>
-        public ApplicationSettingsBase(SettingsBase settingsBase)
+        public AppSettingsBase(SettingsBase settingsBase)
         {
             _settingsBase = settingsBase ?? throw new ArgumentNullException(nameof(settingsBase));
         }

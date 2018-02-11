@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 
-namespace EvilBaschdi.CoreExtended.Application
+namespace EvilBaschdi.CoreExtended.AppHelpers
 {
     /// <inheritdoc />
     public class AppSettingFromConfigurationManager : IAppSettingFromConfigurationManager

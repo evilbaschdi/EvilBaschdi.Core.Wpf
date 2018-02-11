@@ -1,4 +1,4 @@
-﻿namespace EvilBaschdi.CoreExtended.Application
+﻿namespace EvilBaschdi.CoreExtended.AppHelpers
 {
     /// <summary>
     ///     Manage AutoStart

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.Windows.Interop;
 using MahApps.Metro.Controls;
 
-namespace EvilBaschdi.CoreExtended.Application
+namespace EvilBaschdi.CoreExtended.AppHelpers
 {
     /// <inheritdoc />
     public class CurrentScreen : ICurrentScreen

@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using MahApps.Metro.Controls;
 
-namespace EvilBaschdi.CoreExtended.Application
+namespace EvilBaschdi.CoreExtended.AppHelpers
 {
     /// <inheritdoc />
     public class MoveToScreen : IMoveToScreen

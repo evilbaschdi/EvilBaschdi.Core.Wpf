@@ -49,7 +49,8 @@
     <controls:MetroWindow.Flyouts>
         <controls:FlyoutsControl>
             <!--  Settings Fly-out  -->
-            <controls:Flyout Name="SettingsFlyout" Width="250" AnimateOnPositionChange="True" AnimateOpacity="True" Header="applicationStyleSettings" Position="Right" Theme="Accent">
+            <controls:Flyout Name="SettingsFlyout" Width="250" AnimateOnPositionChange="True" AnimateOpacity="True" Header="applicationStyleSettings" Position="Right"
+                             Theme="Accent">
                 <StackPanel>
                     <!-- Theme -->
                     <StackPanel Margin="10,5,0,0" Orientation="Horizontal">

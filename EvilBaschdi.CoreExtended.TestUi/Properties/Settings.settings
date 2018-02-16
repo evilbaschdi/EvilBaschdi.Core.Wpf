@@ -1,7 +1,8 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
 
-<ApplicationApplicationStyleSettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/applicationStyleSettings" CurrentProfile="(Default)" GeneratedClassNamespace="EvilBaschdi.TestUI.Properties"
-              GeneratedClassName="ApplicationApplicationStyleSettings">
+<ApplicationApplicationStyleSettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/applicationStyleSettings" CurrentProfile="(Default)"
+                                         GeneratedClassNamespace="EvilBaschdi.TestUI.Properties"
+                                         GeneratedClassName="ApplicationApplicationStyleSettings">
   <Profiles />
   <ApplicationApplicationStyleSettings>
     <Setting Name="Accent" Type="System.String" Scope="User">

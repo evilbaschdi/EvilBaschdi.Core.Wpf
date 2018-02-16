@@ -22,12 +22,12 @@ namespace EvilBaschdi.CoreExtended.Metro
         /// <summary>
         ///     Accent of Application ApplicationStyle.
         /// </summary>
-        private Accent _styleAccent = ThemeManager.DetectAppStyle(System.Windows.Application.Current).Item2;
+        private Accent _styleAccent = ThemeManager.DetectAppStyle(Application.Current).Item2;
 
         /// <summary>
         ///     Theme of Application ApplicationStyle.
         /// </summary>
-        private AppTheme _styleTheme = ThemeManager.DetectAppStyle(System.Windows.Application.Current).Item1;
+        private AppTheme _styleTheme = ThemeManager.DetectAppStyle(Application.Current).Item1;
 
         /// <summary>
         ///     Handle metro style by ToggleSwitch.
@@ -175,7 +175,7 @@ namespace EvilBaschdi.CoreExtended.Metro
             }
 
             // get the theme from the current application
-            var style = ThemeManager.DetectAppStyle(System.Windows.Application.Current);
+            var style = ThemeManager.DetectAppStyle(Application.Current);
 
             var radiobutton = sender as RadioButton;
             var toggleSwitch = sender as ToggleSwitch;
@@ -247,7 +247,7 @@ namespace EvilBaschdi.CoreExtended.Metro
         /// </summary>
         private void SetStyle()
         {
-            ThemeManager.ChangeAppStyle(System.Windows.Application.Current, _styleAccent, _styleTheme);
+            ThemeManager.ChangeAppStyle(Application.Current, _styleAccent, _styleTheme);
         }
 
         private void EnableDisableThemeControl()

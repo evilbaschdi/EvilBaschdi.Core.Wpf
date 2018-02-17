@@ -194,6 +194,12 @@ namespace EvilBaschdi.TestUi
             ToggleFlyout(0);
         }
 
+        private void ThumbButtonInfoBrowseClick(object sender, EventArgs e)
+        {
+            // ReSharper disable once AsyncConverter.AsyncAwaitMayBeElidedHighlighting
+            ToggleFlyout(0);
+        }
+
         private void ToggleFlyout(int index, bool stayOpen = false)
         {
             var activeFlyout = (Flyout) Flyouts.Items[index];

@@ -4,6 +4,7 @@
                       xmlns:tb="http://www.hardcodet.net/taskbar" AllowsTransparency="True"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:converter="clr-namespace:EvilBaschdi.CoreExtended.Converter;assembly=EvilBaschdi.CoreExtended"
                       Height="350" Width="525"
                       SaveWindowPosition="True"
                       GlowBrush="{DynamicResource AccentColorBrush}"
@@ -16,11 +17,23 @@
             <Button Click="ToggleSettingsFlyoutClick" Name="ToggleSettingsFlyout">
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconMaterial Kind="Settings" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Text="applicationStyleSettings" />
+                    <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Text="settings" />
                 </StackPanel>
             </Button>
         </controls:WindowCommands>
     </controls:MetroWindow.RightWindowCommands>
+    <!-- TaskbarItemInfo -->
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo>
+            <TaskbarItemInfo.ThumbButtonInfos>
+                <ThumbButtonInfoCollection>
+                    <ThumbButtonInfo
+                        ImageSource="{Binding Source={x:Static iconPacks:PackIconMaterialKind.Settings}, Converter={converter:PackIconMaterialImageSourceConverter}, ConverterParameter={StaticResource TextBrush}}"
+                        Click="ThumbButtonInfoBrowseClick" />
+                </ThumbButtonInfoCollection>
+            </TaskbarItemInfo.ThumbButtonInfos>
+        </TaskbarItemInfo>
+    </Window.TaskbarItemInfo>
     <Grid>
         <!-- Taskbar Icon -->
         <tb:TaskbarIcon Name="TestTaskbarIcon" ToolTip="Test" ToolTipText="Test" Visibility="Hidden" />

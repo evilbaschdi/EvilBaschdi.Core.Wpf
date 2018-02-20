@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2026
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvilBaschdi.CoreExtended", "EvilBaschdi.CoreExtended\EvilBaschdi.CoreExtended.csproj", "{8A06A423-244F-404F-AAD8-53DE2EE2AED7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvilBaschdi.TestUi", "EvilBaschdi.CoreExtended.TestUi\EvilBaschdi.TestUi.csproj", "{B4487BC3-80C2-43C3-800F-F686F14A8BE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ABDFDFCB-5272-4C4F-A0B5-20C699A118A6}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		NuGet.config = NuGet.config
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

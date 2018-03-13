@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("EvilBaschdi.CoreExtended")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("extended core assembly")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("evil.baschdi")]
 [assembly: AssemblyProduct("EvilBaschdi.CoreExtended")]

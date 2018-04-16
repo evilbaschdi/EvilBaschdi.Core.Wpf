@@ -1,15 +1,12 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-
-<ApplicationApplicationStyleSettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/applicationStyleSettings" CurrentProfile="(Default)"
-                                         GeneratedClassNamespace="EvilBaschdi.TestUI.Properties"
-                                         GeneratedClassName="ApplicationApplicationStyleSettings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TestUi.Properties" GeneratedClassName="Settings">
   <Profiles />
-  <ApplicationApplicationStyleSettings>
+  <Settings>
     <Setting Name="Accent" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Cyan</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Theme" Type="System.String" Scope="User">
-      <Value Profile="(Default)">BaseDark</Value>
+      <Value Profile="(Default)" />
     </Setting>
-  </ApplicationApplicationStyleSettings>
-</ApplicationApplicationStyleSettingsFile>
+  </Settings>
+</SettingsFile>

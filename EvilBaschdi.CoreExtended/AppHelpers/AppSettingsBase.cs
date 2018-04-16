@@ -78,17 +78,16 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
                 return true;
             }
 
-            if (value is string)
+            if (value is string s)
             {
-                if (string.IsNullOrWhiteSpace(value as string))
+                if (string.IsNullOrWhiteSpace(s))
                 {
                     return true;
                 }
             }
 
-            if (value is StringCollection)
+            if (value is StringCollection collection)
             {
-                var collection = value as StringCollection;
                 if (collection.Count == 0)
                 {
                     return true;

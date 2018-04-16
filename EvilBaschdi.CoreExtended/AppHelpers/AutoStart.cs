@@ -8,23 +8,25 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
     public class AutoStart : IAutoStart
     {
         private readonly string _appName;
+        private readonly string _location;
         private const string SubKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
 
         /// <summary>
         ///     Constructor
         /// </summary>
         /// <param name="appName"></param>
-        public AutoStart(string appName)
+        /// <param name="location">Assembly.GetExecutingAssembly().Location</param>
+        public AutoStart(string appName, string location)
         {
             _appName = appName ?? throw new ArgumentNullException(nameof(appName));
+            _location = location ?? throw new ArgumentNullException(nameof(location));
         }
 
         /// <inheritdoc />
         public void Enable()
         {
             var registryKey = Registry.CurrentUser.OpenSubKey(SubKey, true);
-            var location = Assembly.GetExecutingAssembly().Location;
-            registryKey?.SetValue(_appName, location);
+            registryKey?.SetValue(_appName, _location);
         }
 
         /// <inheritdoc />

@@ -264,35 +264,35 @@ namespace EvilBaschdi.CoreExtended.Metro
         {
             var accent = Accent.SelectedValue.ToString();
             var isWindows10AndSystemStyle = VersionHelper.IsWindows10 && accent == "Accent from windows";
-            if (isWindows10AndSystemStyle)
+            if (!isWindows10AndSystemStyle)
             {
-                var personalize = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize");
-                if (personalize != null)
+                return;
+            }
+
+            var personalize = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize");
+            if (personalize == null)
+            {
+                return;
+            }
+
+            var appsTheme = personalize.GetValue("AppsUseLightTheme") != null && personalize.GetValue("AppsUseLightTheme").ToString().Equals("0")
+                ? "BaseDark"
+                : "BaseLight";
+            if (Theme != null)
+            {
+                switch (appsTheme)
                 {
-                    var appsTheme = personalize.GetValue("AppsUseLightTheme") != null && personalize.GetValue("AppsUseLightTheme").ToString().Equals("0")
-                        ? "BaseDark"
-                        : "BaseLight";
-                    if (Theme != null)
-                    {
-                        switch (appsTheme)
-                        {
-                            case "BaseDark":
+                    case "BaseDark":
+                        Theme.IsChecked = true;
+                        break;
 
-                                Theme.IsChecked = true;
-
-                                break;
-
-                            case "BaseLight":
-
-                                Theme.IsChecked = false;
-
-                                break;
-                        }
-                    }
-
-                    _styleTheme = ThemeManager.GetAppTheme(appsTheme);
+                    case "BaseLight":
+                        Theme.IsChecked = false;
+                        break;
                 }
             }
+
+            _styleTheme = ThemeManager.GetAppTheme(appsTheme);
         }
     }
 }

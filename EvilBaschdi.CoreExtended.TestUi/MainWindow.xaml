@@ -1,4 +1,4 @@
-﻿<controls:MetroWindow x:Class="EvilBaschdi.TestUi.MainWindow"
+﻿<controls:MetroWindow x:Class="TestUi.MainWindow"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:tb="http://www.hardcodet.net/taskbar" AllowsTransparency="True"
@@ -13,8 +13,8 @@
     <!--  RightWindowCommands  -->
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
-            <TextBox Name="CustomColor" LostFocus="CustomColorOnLostFocus" Width="100" />
-            <Button Click="ToggleSettingsFlyoutClick" Name="ToggleSettingsFlyout">
+            <TextBox Name="CustomColor" Text="{Binding CustomColorText, UpdateSourceTrigger=LostFocus}" Width="100" />
+            <Button Command="{Binding ToggleFlyout.Command}" Name="ToggleSettingsFlyout">
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconMaterial Kind="Settings" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Text="settings" />
@@ -29,7 +29,7 @@
                 <ThumbButtonInfoCollection>
                     <ThumbButtonInfo
                         ImageSource="{Binding Source={x:Static iconPacks:PackIconMaterialKind.Settings}, Converter={converter:PackIconMaterialImageSourceConverter}, ConverterParameter={StaticResource TextBrush}}"
-                        Click="ThumbButtonInfoBrowseClick" />
+                        Command="{Binding ThumbButtonInfoBrowseClick.Command}" />
                 </ThumbButtonInfoCollection>
             </TaskbarItemInfo.ThumbButtonInfos>
         </TaskbarItemInfo>
@@ -38,21 +38,20 @@
         <!-- Taskbar Icon -->
         <tb:TaskbarIcon Name="TestTaskbarIcon" ToolTip="Test" ToolTipText="Test" Visibility="Hidden" />
         <Label Content="Input:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
-        <TextBox Height="23" Margin="100,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txtInput" />
+        <TextBox Height="23" Margin="100,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txtInput" Text="{Binding InputText}" Background="{Binding InputBackground}" />
 
         <Label Content="Output:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" />
-        <TextBox Height="23" Margin="100,41,10,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True"
-                 Name="txtOutput" />
+        <TextBox Height="23" Margin="100,41,10,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" Text="{Binding OutputText}" Background="{Binding OutputBackground}" />
 
-        <Button Content="Encrypt" HorizontalAlignment="Left" Margin="100,72,0,0" VerticalAlignment="Top" Width="80"
-                Name="btnEncrypt" Click="BtnEncrypt_Click" />
-        <Button Content="Decrypt" HorizontalAlignment="Left" Margin="185,72,0,0" VerticalAlignment="Top" Width="80"
-                Name="btnDecrypt" Click="BtnDecrypt_Click" />
-        <Button Content="Compare" HorizontalAlignment="Left" Margin="270,72,0,0" VerticalAlignment="Top" Width="80"
-                Name="btnCompare" Click="BtnCompare_Click" />
+        <Button Content="{Binding EncryptClick.Text}" HorizontalAlignment="Left" Margin="100,72,0,0" VerticalAlignment="Top" Width="80"
+                Name="btnEncrypt" Command="{Binding EncryptClick.Command}" />
+        <Button Content="{Binding DecryptClick.Text}" HorizontalAlignment="Left" Margin="185,72,0,0" VerticalAlignment="Top" Width="80"
+                Name="btnDecrypt" Command="{Binding DecryptClick.Command}" />
+        <Button Content="{Binding CompareClick.Text}" HorizontalAlignment="Left" Margin="270,72,0,0" VerticalAlignment="Top" Width="80"
+                Name="btnCompare" Command="{Binding CompareClick.Command}" />
 
         <Label Content="Encrypted:" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top" />
-        <TextBox Height="140" Margin="100,106,10,0" TextWrapping="Wrap" IsReadOnly="True" Name="txtEncrypted"
+        <TextBox Height="140" Margin="100,106,10,0" TextWrapping="Wrap" IsReadOnly="True" Name="txtEncrypted" Text="{Binding EncryptedText}"
                  VerticalAlignment="Top" />
 
         <Label Content="Network:" HorizontalAlignment="Left" Margin="10,251,0,0" VerticalAlignment="Top" />
@@ -62,25 +61,27 @@
     <controls:MetroWindow.Flyouts>
         <controls:FlyoutsControl>
             <!--  Settings Fly-out  -->
-            <controls:Flyout Name="SettingsFlyout" Width="250" AnimateOnPositionChange="True" AnimateOpacity="True" Header="applicationStyleSettings" Position="Right"
-                             Theme="Accent">
+            <controls:Flyout Width="250" AnimateOnPositionChange="True" AnimateOpacity="True" Header="Settings" Position="Right" Theme="Accent"
+                             IsOpen="{Binding SettingsFlyoutIsOpen}">
                 <StackPanel>
                     <!-- Theme -->
                     <StackPanel Margin="10,5,0,0" Orientation="Horizontal">
                         <Label Width="50" Margin="0,5,0,0" HorizontalAlignment="Left"
                                VerticalAlignment="Top" Content="Theme" />
-                        <controls:ToggleSwitch Name="ThemeSwitch" Margin="10,1,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" IsCheckedChanged="Theme"
+                        <controls:ToggleSwitch Name="ThemeSwitch" Margin="10,1,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"
+                                               IsChecked="{Binding AppUsesDarkTheme}"
                                                OnSwitchBrush="{DynamicResource AccentColorBrush}" OnLabel="Dark"
                                                OffSwitchBrush="{DynamicResource AccentColorBrush}" OffLabel="Light" />
                     </StackPanel>
                     <!-- Accent -->
                     <StackPanel Margin="10,5,0,0" Orientation="Horizontal">
                         <Label Width="50" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Accent:" />
-                        <ComboBox Name="Accent" Width="165" Margin="10,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="AccentOnSelectionChanged" />
+                        <ComboBox Name="Accent" Width="165" Margin="10,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" SelectedItem="{Binding StyleAccent}"
+                                  ItemsSource="{Binding StyleAccents}" />
                     </StackPanel>
                     <!-- Save Style -->
                     <StackPanel Margin="10,5,0,0" Orientation="Horizontal">
-                        <Button Name="SaveStyle" Width="165" Margin="60,5,0,0" Click="SaveStyleClick">
+                        <Button Name="SaveStyle" Width="165" Margin="60,5,0,0" Command="{Binding SaveStyleSettings.Command}">
                             <StackPanel Orientation="Horizontal">
                                 <iconPacks:PackIconMaterial Kind="ContentSaveSettings" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" Text="save style" />

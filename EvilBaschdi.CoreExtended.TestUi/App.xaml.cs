@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace EvilBaschdi.TestUi
+namespace TestUi
 {
     /// <summary>
     ///     Interaction logic for App.xaml

@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("EvilBaschdi.CoreExtended")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("extended core assembly")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("evil.baschdi")]
+[assembly: AssemblyCompany("evilbaschdi")]
 [assembly: AssemblyProduct("EvilBaschdi.CoreExtended")]
-[assembly: AssemblyCopyright("Copyright © evilbaschdi 2015 - 2018")]
+[assembly: AssemblyCopyright("Copyright © evilbaschdi 2017 - 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

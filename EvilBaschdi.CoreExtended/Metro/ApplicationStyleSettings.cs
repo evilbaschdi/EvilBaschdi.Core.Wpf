@@ -25,14 +25,14 @@ namespace EvilBaschdi.CoreExtended.Metro
 
         public string Accent
         {
-            get => _appSettingsBase.Get("Accent", "");
+            get => _appSettingsBase.Get("Accent", "Steel");
             set => _appSettingsBase.Set("Accent", value);
         }
 
         /// <inheritdoc />
         public string Theme
         {
-            get => _appSettingsBase.Get("Theme", "");
+            get => _appSettingsBase.Get("Theme", "BaseLight");
             set => _appSettingsBase.Set("Theme", value);
         }
     }

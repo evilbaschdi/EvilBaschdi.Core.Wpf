@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -40,18 +40,12 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net462\ControlzEx.dll</HintPath>
-    </Reference>
-    <Reference Include="EvilBaschdi.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EvilBaschdi.Core.2018.2.12.1\lib\netstandard2.0\EvilBaschdi.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MahApps.Metro, Version=1.6.0.362, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.1.6.0\lib\net45\MahApps.Metro.dll</HintPath>
-    </Reference>
-    <Reference Include="MahApps.Metro.IconPacks, Version=2.0.0.31, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.IconPacks.2.0.0\lib\net46\MahApps.Metro.IconPacks.dll</HintPath>
-    </Reference>
+    <PackageReference Include="ControlzEx" Version="3.0.2.4" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2018.416.22.11" />
+    <PackageReference Include="MahApps.Metro" Version="1.6.1" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -60,15 +54,30 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net462\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\PackIconEntypoImageSourceConverter.cs">
+      <DependentUpon>PackIconImageSourceConverterBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\PackIconFontAwesomeImageSourceConverter.cs">
+      <DependentUpon>PackIconImageSourceConverterBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\PackIconMaterialImageSourceConverter.cs">
+      <DependentUpon>PackIconImageSourceConverterBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\PackIconMaterialLightImageSourceConverter.cs">
+      <DependentUpon>PackIconImageSourceConverterBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\PackIconModernImageSourceConverter.cs">
+      <DependentUpon>PackIconImageSourceConverterBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\PackIconOcticonsImageSourceConverter.cs">
+      <DependentUpon>PackIconImageSourceConverterBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mvvm\AboutWindowContent.cs">
       <DependentUpon>IAboutWindowContent.cs</DependentUpon>
     </Compile>
@@ -132,6 +141,11 @@
     <Compile Include="Extensions\ColorExtensions.cs" />
     <Compile Include="Model\AboutWindowConfiguration.cs" />
     <Compile Include="Converter\PackIconImageSourceConverterBase.cs" />
+    <Compile Include="Mvvm\ViewModel\ApplicationStyleViewModelCodeBehind.cs" />
+    <Compile Include="Mvvm\ViewModel\ApplicationStyleViewModel.cs" />
+    <Compile Include="Mvvm\ViewModel\Command\DefaultCommand.cs" />
+    <Compile Include="Mvvm\ViewModel\Command\ICommandViewModel.cs" />
+    <Compile Include="Mvvm\ViewModel\Command\RelayCommand.cs" />
     <Compile Include="Mvvm\ViewModel\ControlContent.cs" />
     <Compile Include="DialogService.cs">
       <DependentUpon>IDialogService.cs</DependentUpon>
@@ -142,6 +156,7 @@
     <Compile Include="Metro\ApplicationStyle.cs">
       <DependentUpon>IApplicationStyle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Metro\IApplicationStyle.cs" />
     <Compile Include="Extensions\RemoveChildExtension.cs" />
@@ -155,7 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.manifest" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Mvvm\View\AboutWindow.xaml">

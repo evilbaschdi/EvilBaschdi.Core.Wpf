@@ -141,11 +141,9 @@ namespace EvilBaschdi.CoreExtended.Browsers
         {
             if (!string.IsNullOrEmpty(SelectedPath))
             {
-                IntPtr idl;
                 uint atts = 0;
-                IShellItem item;
-                if (NativeMethods.SHILCreateFromPath(SelectedPath, out idl, ref atts) == 0
-                    && NativeMethods.SHCreateShellItem(IntPtr.Zero, IntPtr.Zero, idl, out item) == 0)
+                if (NativeMethods.SHILCreateFromPath(SelectedPath, out var idl, ref atts) == 0
+                    && NativeMethods.SHCreateShellItem(IntPtr.Zero, IntPtr.Zero, idl, out var item) == 0)
                 {
                     dialog.SetFolder(item);
                 }
@@ -179,8 +177,7 @@ namespace EvilBaschdi.CoreExtended.Browsers
             try
             {
                 dialog.GetResult(out item);
-                string value;
-                GetPathAndElementName(item, out var path, out value);
+                GetPathAndElementName(item, out var path, out var value);
                 SelectedPath = path;
                 SelectedPaths = new[] { path };
                 SelectedElementName = value;
@@ -188,11 +185,9 @@ namespace EvilBaschdi.CoreExtended.Browsers
             }
             catch (COMException ex) when (ex.HResult == -2147418113)
             {
-                IShellItemArray items;
-                dialog.GetResults(out items);
+                dialog.GetResults(out var items);
 
-                uint count;
-                items.GetCount(out count);
+                items.GetCount(out var count);
 
                 SelectedPaths = new string[count];
                 SelectedElementNames = new string[count];
@@ -200,8 +195,7 @@ namespace EvilBaschdi.CoreExtended.Browsers
                 for (uint i = 0; i < count; ++i)
                 {
                     items.GetItemAt(i, out item);
-                    string path;
-                    GetPathAndElementName(item, out path, out var value);
+                    GetPathAndElementName(item, out var path, out var value);
                     SelectedPaths[i] = path;
                     SelectedElementNames[i] = value;
                 }

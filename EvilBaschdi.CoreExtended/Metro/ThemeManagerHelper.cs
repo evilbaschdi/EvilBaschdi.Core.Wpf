@@ -20,7 +20,7 @@ namespace EvilBaschdi.CoreExtended.Metro
         /// </summary>
         /// <param name="color">Color to create app style for.</param>
         /// <param name="accentName">Name of the new app style.</param>
-        public void CreateAppStyleBy(Color color, string accentName)
+        public void CreateAppStyleFor(Color color, string accentName)
         {
             if (string.IsNullOrWhiteSpace(accentName))
             {
@@ -131,7 +131,7 @@ namespace EvilBaschdi.CoreExtended.Metro
                 accentColor = "#FFCCCCCC".ToColor();
             }
 
-            CreateAppStyleBy(accentColor, "Accent from windows");
+            CreateAppStyleFor(accentColor, "Accent from windows");
         }
     }
 }

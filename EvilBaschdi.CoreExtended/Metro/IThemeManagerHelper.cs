@@ -12,7 +12,7 @@ namespace EvilBaschdi.CoreExtended.Metro
         /// </summary>
         /// <param name="color">Color to create app style for.</param>
         /// <param name="accentName">Name of the new app style.</param>
-        void CreateAppStyleBy(Color color, string accentName);
+        void CreateAppStyleFor(Color color, string accentName);
 
         /// <summary>
         ///     Gets Color of current (applied) system applicationStyleSettings, generates an app style and adds it to available

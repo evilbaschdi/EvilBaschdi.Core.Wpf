@@ -133,5 +133,17 @@ namespace EvilBaschdi.CoreExtended.Metro
 
             CreateAppStyleFor(accentColor, "Accent from windows");
         }
+
+        /// <inheritdoc />
+        public bool? AppUsesLightTheme
+        {
+            get
+            {
+                var personalize = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize");
+                return personalize == null
+                    ? (bool?) null
+                    : !(personalize.GetValue("AppsUseLightTheme") != null && personalize.GetValue("AppsUseLightTheme").ToString().Equals("0"));
+            }
+        }
     }
 }

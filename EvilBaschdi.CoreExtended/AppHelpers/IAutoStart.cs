@@ -6,14 +6,14 @@
     public interface IAutoStart
     {
         /// <summary>
-        ///     Enable AutoStart
-        /// </summary>
-        void Enable();
-
-        /// <summary>
         ///     Is AutoStart enabled
         /// </summary>
         bool IsEnabled { get; }
+
+        /// <summary>
+        ///     Enable AutoStart
+        /// </summary>
+        void Enable();
 
         /// <summary>
         ///     Disable AutoStart

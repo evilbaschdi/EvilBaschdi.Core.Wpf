@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Reflection;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using EvilBaschdi.Core.Internal;
 using EvilBaschdi.Core.Security;
@@ -10,7 +9,6 @@ using EvilBaschdi.CoreExtended;
 using EvilBaschdi.CoreExtended.AppHelpers;
 using EvilBaschdi.CoreExtended.Browsers;
 using EvilBaschdi.CoreExtended.Metro;
-using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 using MahApps.Metro.Controls;
 using TestUi.Properties;
 using TestUi.ViewModel;
@@ -44,9 +42,8 @@ namespace TestUi
             IApplicationStyleSettings applicationStyleSettings = new ApplicationStyleSettings(appSettingsBase);
             IThemeManagerHelper themeManagerHelper = new ThemeManagerHelper();
             IEncryption encryption = new Encryption();
-            ApplicationStyleViewModelCodeBehind applicationStyleViewModelCodeBehind = new ApplicationStyleViewModelCodeBehind(applicationStyleSettings, themeManagerHelper);
 
-            _mainWindowViewModel = new MainWindowViewModel(applicationStyleViewModelCodeBehind, applicationStyleSettings, themeManagerHelper, encryption);
+            _mainWindowViewModel = new MainWindowViewModel(applicationStyleSettings, themeManagerHelper, encryption);
             Loaded += MainWindowLoaded;
 
             _dialogService = new DialogService(this);
@@ -59,7 +56,6 @@ namespace TestUi
 
             //var contextMenu = new ContextMenu();
 
-            
 
             //foreach (string accentItem in applicationStyleViewModelCodeBehind.StyleAccents)
             //{

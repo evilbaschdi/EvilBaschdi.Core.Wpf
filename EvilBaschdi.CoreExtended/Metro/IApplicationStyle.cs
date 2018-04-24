@@ -10,6 +10,16 @@ namespace EvilBaschdi.CoreExtended.Metro
     public interface IApplicationStyle
     {
         /// <summary>
+        ///     ComboBox for choosing an accent.
+        /// </summary>
+        ComboBox Accent { get; set; }
+
+        /// <summary>
+        ///     ToggleSwitch for choosing a theme.
+        /// </summary>
+        ToggleSwitch Theme { get; set; }
+
+        /// <summary>
         ///     Load.
         /// </summary>
         /// <param name="center"></param>
@@ -40,15 +50,5 @@ namespace EvilBaschdi.CoreExtended.Metro
         ///     Save ApplicationStyle.
         /// </summary>
         void SaveStyle();
-
-        /// <summary>
-        ///     ComboBox for choosing an accent.
-        /// </summary>
-        ComboBox Accent { get; set; }
-
-        /// <summary>
-        ///     ToggleSwitch for choosing a theme.
-        /// </summary>
-        ToggleSwitch Theme { get; set; }
     }
 }

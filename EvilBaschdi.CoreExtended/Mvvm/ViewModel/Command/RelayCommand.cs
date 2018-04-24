@@ -12,10 +12,6 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
 
         /// <summary>
         /// </summary>
-        public event EventHandler CanExecuteChanged;
-
-        /// <summary>
-        /// </summary>
         /// <param name="execute"></param>
         public RelayCommand(Action<object> execute)
             : this(execute, null)
@@ -32,6 +28,10 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
             _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute;
         }
+
+        /// <summary>
+        /// </summary>
+        public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {

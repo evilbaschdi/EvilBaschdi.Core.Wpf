@@ -17,7 +17,7 @@ namespace TestUi.ViewModel
     /// </summary>
     public class MainWindowViewModel : ApplicationStyleViewModel
     {
-        public ICommandViewModel ThumbButtonInfoBrowseClick { get; set; }
+      
         public ICommandViewModel EncryptClick { get; set; }
         public ICommandViewModel DecryptClick { get; set; }
         public ICommandViewModel CompareClick { get; set; }
@@ -32,18 +32,15 @@ namespace TestUi.ViewModel
         private Brush _outputBackground;
 
 
-        public MainWindowViewModel(ApplicationStyleViewModelCodeBehind applicationStyleViewModelCodeBehind, IApplicationStyleSettings applicationStyleSettings,
-                                   IThemeManagerHelper themeManagerHelper, IEncryption encryption)
-            : base(applicationStyleViewModelCodeBehind)
+        protected internal MainWindowViewModel(IApplicationStyleSettings applicationStyleSettings,
+                                               IThemeManagerHelper themeManagerHelper, IEncryption encryption)
+            : base(applicationStyleSettings, themeManagerHelper)
         {
             _applicationStyleSettings = applicationStyleSettings ?? throw new ArgumentNullException(nameof(applicationStyleSettings));
             _themeManagerHelper = themeManagerHelper ?? throw new ArgumentNullException(nameof(themeManagerHelper));
             _encryption = encryption ?? throw new ArgumentNullException(nameof(encryption));
 
-            ThumbButtonInfoBrowseClick = new DefaultCommand
-                                         {
-                                             Command = new RelayCommand(rc => ExecuteToggleFlyout())
-                                         };
+           
 
             EncryptClick = new DefaultCommand
                            {

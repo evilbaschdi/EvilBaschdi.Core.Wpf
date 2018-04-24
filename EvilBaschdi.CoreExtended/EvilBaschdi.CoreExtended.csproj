@@ -141,7 +141,6 @@
     <Compile Include="Extensions\ColorExtensions.cs" />
     <Compile Include="Model\AboutWindowConfiguration.cs" />
     <Compile Include="Converter\PackIconImageSourceConverterBase.cs" />
-    <Compile Include="Mvvm\ViewModel\ApplicationStyleViewModelCodeBehind.cs" />
     <Compile Include="Mvvm\ViewModel\ApplicationStyleViewModel.cs" />
     <Compile Include="Mvvm\ViewModel\Command\DefaultCommand.cs" />
     <Compile Include="Mvvm\ViewModel\Command\ICommandViewModel.cs" />

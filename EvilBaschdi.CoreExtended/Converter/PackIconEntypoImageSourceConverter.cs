@@ -17,7 +17,7 @@ namespace EvilBaschdi.CoreExtended.Converter
         {
             var packIcon = new PackIconEntypo
                            {
-                               Kind = (PackIconEntypoKind)value
+                               Kind = (PackIconEntypoKind) value
                            };
 
             var geometryDrawing = new GeometryDrawing

@@ -17,7 +17,7 @@ namespace EvilBaschdi.CoreExtended.Converter
         {
             var packIcon = new PackIconFontAwesome
                            {
-                               Kind = (PackIconFontAwesomeKind)value
+                               Kind = (PackIconFontAwesomeKind) value
                            };
 
             var geometryDrawing = new GeometryDrawing

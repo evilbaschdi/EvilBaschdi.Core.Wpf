@@ -6,13 +6,13 @@
     public interface IFolderBrowser
     {
         /// <summary>
-        ///     Shows FolderBrowser.
-        /// </summary>
-        void ShowDialog();
-
-        /// <summary>
         ///     Get or Set selected path.
         /// </summary>
         string SelectedPath { get; set; }
+
+        /// <summary>
+        ///     Shows FolderBrowser.
+        /// </summary>
+        void ShowDialog();
     }
 }

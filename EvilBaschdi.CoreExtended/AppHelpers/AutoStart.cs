@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using Microsoft.Win32;
 
 namespace EvilBaschdi.CoreExtended.AppHelpers
@@ -7,9 +6,9 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
     /// <inheritdoc />
     public class AutoStart : IAutoStart
     {
+        private const string SubKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
         private readonly string _appName;
         private readonly string _location;
-        private const string SubKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
 
         /// <summary>
         ///     Constructor

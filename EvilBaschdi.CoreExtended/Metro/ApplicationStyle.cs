@@ -15,8 +15,8 @@ namespace EvilBaschdi.CoreExtended.Metro
     /// </summary>
     public class ApplicationStyle : IApplicationStyle
     {
-        private readonly MetroWindow _mainWindow;
         private readonly IApplicationStyleSettings _applicationStyleSettings;
+        private readonly MetroWindow _mainWindow;
         private readonly IThemeManagerHelper _themeManagerHelper;
 
         /// <summary>
@@ -253,10 +253,10 @@ namespace EvilBaschdi.CoreExtended.Metro
         private void EnableDisableThemeControl()
         {
             var accent = Accent.SelectedValue.ToString();
-            var isWindows10AndsystemStyle = VersionHelper.IsWindows10 && accent == "Accent from windows";
+            var isWindows10AndSystemStyle = VersionHelper.IsWindows10 && accent == "Accent from windows";
             if (Theme != null)
             {
-                Theme.IsEnabled = !isWindows10AndsystemStyle;
+                Theme.IsEnabled = !isWindows10AndSystemStyle;
             }
         }
 

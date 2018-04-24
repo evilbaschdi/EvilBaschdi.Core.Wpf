@@ -8,6 +8,10 @@ namespace EvilBaschdi.CoreExtended.Metro
     public interface IThemeManagerHelper
     {
         /// <summary>
+        /// </summary>
+        bool? AppUsesLightTheme { get; }
+
+        /// <summary>
         ///     Creates a new app style by color and name.
         /// </summary>
         /// <param name="color">Color to create app style for.</param>

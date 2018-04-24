@@ -22,18 +22,6 @@
             </Button>
         </controls:WindowCommands>
     </controls:MetroWindow.RightWindowCommands>
-    <!-- TaskbarItemInfo -->
-    <Window.TaskbarItemInfo>
-        <TaskbarItemInfo>
-            <TaskbarItemInfo.ThumbButtonInfos>
-                <ThumbButtonInfoCollection>
-                    <ThumbButtonInfo
-                        ImageSource="{Binding Source={x:Static iconPacks:PackIconMaterialKind.Settings}, Converter={converter:PackIconMaterialImageSourceConverter}, ConverterParameter={StaticResource TextBrush}}"
-                        Command="{Binding ThumbButtonInfoBrowseClick.Command}" />
-                </ThumbButtonInfoCollection>
-            </TaskbarItemInfo.ThumbButtonInfos>
-        </TaskbarItemInfo>
-    </Window.TaskbarItemInfo>
     <Grid>
         <!-- Taskbar Icon -->
         <tb:TaskbarIcon Name="TestTaskbarIcon" ToolTip="Test" ToolTipText="Test" Visibility="Hidden" />
@@ -69,7 +57,7 @@
                         <Label Width="50" Margin="0,5,0,0" HorizontalAlignment="Left"
                                VerticalAlignment="Top" Content="Theme" />
                         <controls:ToggleSwitch Name="ThemeSwitch" Margin="10,1,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"
-                                               IsChecked="{Binding AppUsesDarkTheme}"
+                                               IsChecked="{Binding AppUsesDarkTheme, Mode=TwoWay}" IsEnabled="{Binding AppDoesNotUseSystemStyle, Mode=TwoWay}"
                                                OnSwitchBrush="{DynamicResource AccentColorBrush}" OnLabel="Dark"
                                                OffSwitchBrush="{DynamicResource AccentColorBrush}" OffLabel="Light" />
                     </StackPanel>
@@ -102,3 +90,5 @@
         </controls:FlyoutsControl>
     </controls:MetroWindow.Flyouts>
 </controls:MetroWindow>
+
+<!-- MainWindow.xaml:StyleAccent => ApplicationStyleViewModel.cs:StyleAccent => ApplicationStyleViewModelCodeBehind.cs:StyleAccent => SetAccent(_styleAccentName)-->

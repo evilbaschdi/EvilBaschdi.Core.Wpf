@@ -8,10 +8,10 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
     /// <inheritdoc cref="INotifyPropertyChanged" />
     public sealed class DefaultCommand : ICommandViewModel, INotifyPropertyChanged
     {
-        private Visibility _visibility;
         private ICommand _command;
         private string _imagePath;
         private string _text;
+        private Visibility _visibility;
 
         /// <inheritdoc />
 

@@ -75,8 +75,8 @@
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
     <PackageReference Include="MahApps.Metro" Version="1.6.5" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="2.3.0" />
-    <PackageReference Include="Unity" Version="5.8.6" />
-    <PackageReference Include="Unity.Abstractions" Version="3.3.0" />
+    <PackageReference Include="Unity" Version="5.8.11" />
+    <PackageReference Include="Unity.Abstractions" Version="3.3.1" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Build" />

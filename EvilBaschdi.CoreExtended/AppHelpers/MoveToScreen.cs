@@ -25,13 +25,11 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
 
             var targetScreen = Screen.AllScreens.FirstOrDefault(screen => screen.DeviceName == deviceName);
 
-            if (targetScreen != null)
-            {
-                var workingArea = targetScreen.WorkingArea;
+            if (targetScreen == null) return;
+            var workingArea = targetScreen.WorkingArea;
 
-                metroWindow.Left = workingArea.Left + (workingArea.Width - metroWindow.Width) / 2;
-                metroWindow.Top = workingArea.Top + (workingArea.Height - metroWindow.Height) / 2;
-            }
+            metroWindow.Left = workingArea.Left + (workingArea.Width - metroWindow.Width) / 2;
+            metroWindow.Top = workingArea.Top + (workingArea.Height - metroWindow.Height) / 2;
         }
     }
 }

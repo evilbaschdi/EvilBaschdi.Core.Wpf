@@ -78,29 +78,29 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
                 return true;
             }
 
-            if (value is string s)
+            switch (value)
             {
-                if (string.IsNullOrWhiteSpace(s))
-                {
+                case string s when string.IsNullOrWhiteSpace(s):
                     return true;
-                }
-            }
+                case StringCollection collection:
+                {
+                    if (collection.Count == 0)
+                    {
+                        return true;
+                    }
 
-            if (value is StringCollection collection)
-            {
-                if (collection.Count == 0)
-                {
-                    return true;
+                    break;
                 }
-            }
-            else
-            {
-                if (value.Equals(default))
+                default:
                 {
-                    return true;
-                }
-            }
+                    if (value.Equals(default))
+                    {
+                        return true;
+                    }
 
+                    break;
+                }
+            }
             return false;
         }
     }

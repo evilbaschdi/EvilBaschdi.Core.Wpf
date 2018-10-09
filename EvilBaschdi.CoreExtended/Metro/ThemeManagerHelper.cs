@@ -91,13 +91,13 @@ namespace EvilBaschdi.CoreExtended.Metro
                                  };
 
 
-            var newAccent = new Accent
-                            {
-                                Name = accentName,
-                                Resources = resourceDictionary
-                            };
+            //var newAccent = new Accent
+            //                {
+            //                    Name = accentName,
+            //                    Resources = resourceDictionary
+            //                };
 
-            ThemeManager.AddAccent(newAccent.Name, newAccent.Resources.Source);
+            //ThemeManager.AddAccent(newAccent.Name, newAccent.Resources.Source);
         }
 
 

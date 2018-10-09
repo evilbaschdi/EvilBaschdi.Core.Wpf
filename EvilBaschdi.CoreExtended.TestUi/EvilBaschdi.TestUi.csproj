@@ -70,10 +70,10 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="3.0.2.4" />
+    <PackageReference Include="ControlzEx" Version="4.0.0-alpha0176" />
     <PackageReference Include="EvilBaschdi.Core" Version="2018.416.22.11" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
-    <PackageReference Include="MahApps.Metro" Version="1.6.5" />
+    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0083" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="2.3.0" />
     <PackageReference Include="Unity" Version="5.8.11" />
     <PackageReference Include="Unity.Abstractions" Version="3.3.1" />

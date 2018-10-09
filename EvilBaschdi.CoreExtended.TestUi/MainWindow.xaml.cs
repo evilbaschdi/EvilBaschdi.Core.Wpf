@@ -38,13 +38,13 @@ namespace TestUi
             //LoadNetworkBrowserToArrayList();
             //MessageBox.Show(VersionHelper.GetWindowsClientVersion());
 
-            IAppSettingsBase appSettingsBase = new AppSettingsBase(Settings.Default);
-            IApplicationStyleSettings applicationStyleSettings = new ApplicationStyleSettings(appSettingsBase);
-            IThemeManagerHelper themeManagerHelper = new ThemeManagerHelper();
-            IEncryption encryption = new Encryption();
+            //IAppSettingsBase appSettingsBase = new AppSettingsBase(Settings.Default);
+            //IApplicationStyleSettings applicationStyleSettings = new ApplicationStyleSettings(appSettingsBase);
+            //IThemeManagerHelper themeManagerHelper = new ThemeManagerHelper();
+            //IEncryption encryption = new Encryption();
 
-            _mainWindowViewModel = new MainWindowViewModel(applicationStyleSettings, themeManagerHelper, encryption);
-            Loaded += MainWindowLoaded;
+            //_mainWindowViewModel = new MainWindowViewModel(applicationStyleSettings, themeManagerHelper, encryption);
+            //Loaded += MainWindowLoaded;
 
             _dialogService = new DialogService(this);
 

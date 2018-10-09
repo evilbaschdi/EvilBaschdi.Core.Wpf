@@ -19,15 +19,15 @@ namespace EvilBaschdi.CoreExtended.Metro
         private readonly MetroWindow _mainWindow;
         private readonly IThemeManagerHelper _themeManagerHelper;
 
-        /// <summary>
-        ///     Accent of Application ApplicationStyle.
-        /// </summary>
-        private Accent _styleAccent = ThemeManager.DetectAppStyle(Application.Current).Item2;
+        ///// <summary>
+        /////     Accent of Application ApplicationStyle.
+        ///// </summary>
+        //private Accent _styleAccent = ThemeManager.DetectAppStyle(Application.Current).Item2;
 
-        /// <summary>
-        ///     Theme of Application ApplicationStyle.
-        /// </summary>
-        private AppTheme _styleTheme = ThemeManager.DetectAppStyle(Application.Current).Item1;
+        ///// <summary>
+        /////     Theme of Application ApplicationStyle.
+        ///// </summary>
+        //private AppTheme _styleTheme = ThemeManager.DetectAppStyle(Application.Current).Item1;
 
         /// <summary>
         ///     Handle metro style by ToggleSwitch.
@@ -99,36 +99,36 @@ namespace EvilBaschdi.CoreExtended.Metro
 
             _themeManagerHelper.RegisterSystemColorTheme();
 
-            if (!string.IsNullOrWhiteSpace(_applicationStyleSettings.Accent))
-            {
-                _styleAccent = ThemeManager.GetAccent(_applicationStyleSettings.Accent);
-            }
+            //if (!string.IsNullOrWhiteSpace(_applicationStyleSettings.Accent))
+            //{
+            //    _styleAccent = ThemeManager.GetAccent(_applicationStyleSettings.Accent);
+            //}
 
-            if (!string.IsNullOrWhiteSpace(_applicationStyleSettings.Theme))
-            {
-                _styleTheme = ThemeManager.GetAppTheme(_applicationStyleSettings.Theme);
-            }
+            //if (!string.IsNullOrWhiteSpace(_applicationStyleSettings.Theme))
+            //{
+            //    _styleTheme = ThemeManager.GetAppTheme(_applicationStyleSettings.Theme);
+            //}
 
-            Accent.SelectedValue = _styleAccent.Name;
+            //Accent.SelectedValue = _styleAccent.Name;
 
-            if (Theme != null)
-            {
-                switch (_styleTheme.Name)
-                {
-                    case "BaseDark":
-                        Theme.IsChecked = true;
-                        break;
-                    case "BaseLight":
-                        Theme.IsChecked = false;
-                        break;
-                }
-            }
+            //if (Theme != null)
+            //{
+            //    switch (_styleTheme.Name)
+            //    {
+            //        case "BaseDark":
+            //            Theme.IsChecked = true;
+            //            break;
+            //        case "BaseLight":
+            //            Theme.IsChecked = false;
+            //            break;
+            //    }
+            //}
 
             EnableDisableThemeControl();
             LoadSystemAppColor();
             SetStyle();
 
-            foreach (var accent in ThemeManager.Accents.OrderBy(a => a.Name))
+            foreach (var accent in ThemeManager.Themes.OrderBy(a => a.Name))
             {
                 Accent.Items.Add(accent.Name);
             }
@@ -154,7 +154,7 @@ namespace EvilBaschdi.CoreExtended.Metro
             }
 
             var accent = Accent.SelectedValue.ToString();
-            _styleAccent = ThemeManager.GetAccent(accent);
+            //_styleAccent = ThemeManager.GetAccent(accent);
 
             EnableDisableThemeControl();
             LoadSystemAppColor();
@@ -175,26 +175,26 @@ namespace EvilBaschdi.CoreExtended.Metro
             }
 
             // get the theme from the current application
-            var style = ThemeManager.DetectAppStyle(Application.Current);
+            //var style = ThemeManager.DetectAppStyle(Application.Current);
 
             var radiobutton = sender as RadioButton;
             var toggleSwitch = sender as ToggleSwitch;
 
             //BaseDark, BaseLight
-            var themeName = style.Item1.Name;
+            //var themeName = style.Item1.Name;
 
             if (radiobutton != null)
-            {
-                //BaseDark, BaseLight
-                themeName = $"Base{radiobutton.Name}";
-            }
-            else if (toggleSwitch != null)
-            {
-                //BaseDark, BaseLight
-                themeName = toggleSwitch.IsChecked.HasValue && toggleSwitch.IsChecked.Value ? "BaseDark" : "BaseLight";
-            }
+            //{
+            //    //BaseDark, BaseLight
+            //    themeName = $"Base{radiobutton.Name}";
+            //}
+            //else if (toggleSwitch != null)
+            //{
+            //    //BaseDark, BaseLight
+            //    themeName = toggleSwitch.IsChecked.HasValue && toggleSwitch.IsChecked.Value ? "BaseDark" : "BaseLight";
+            //}
 
-            _styleTheme = ThemeManager.GetAppTheme(themeName);
+            //_styleTheme = ThemeManager.GetAppTheme(themeName);
 
             SetStyle();
         }
@@ -226,8 +226,8 @@ namespace EvilBaschdi.CoreExtended.Metro
         /// </summary>
         public void SaveStyle()
         {
-            _applicationStyleSettings.Accent = _styleAccent.Name;
-            _applicationStyleSettings.Theme = _styleTheme.Name;
+            //_applicationStyleSettings.Accent = _styleAccent.Name;
+            //_applicationStyleSettings.Theme = _styleTheme.Name;
         }
 
         /// <inheritdoc />
@@ -247,7 +247,7 @@ namespace EvilBaschdi.CoreExtended.Metro
         /// </summary>
         private void SetStyle()
         {
-            ThemeManager.ChangeAppStyle(Application.Current, _styleAccent, _styleTheme);
+            //ThemeManager.ChangeAppStyle(Application.Current, _styleAccent, _styleTheme);
         }
 
         private void EnableDisableThemeControl()
@@ -292,7 +292,7 @@ namespace EvilBaschdi.CoreExtended.Metro
                 }
             }
 
-            _styleTheme = ThemeManager.GetAppTheme(appsTheme);
+           // _styleTheme = ThemeManager.GetAppTheme(appsTheme);
         }
     }
 }

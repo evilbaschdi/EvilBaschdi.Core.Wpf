@@ -69,9 +69,9 @@ namespace TestUi.ViewModel
                 {
                     _themeManagerHelper.CreateAppStyleFor(_customColorText.ToColor(), _customColorText);
 
-                    var styleAccent = ThemeManager.GetAccent(_customColorText);
-                    var styleTheme = ThemeManager.GetAppTheme(_applicationStyleSettings.Theme);
-                    ThemeManager.ChangeAppStyle(Application.Current, styleAccent, styleTheme);
+                    //var styleAccent = ThemeManager.GetAccent(_customColorText);
+                    //var styleTheme = ThemeManager.GetAppTheme(_applicationStyleSettings.Theme);
+                    //ThemeManager.ChangeAppStyle(Application.Current, styleAccent, styleTheme);
                 }
                 catch (Exception exception)
                 {

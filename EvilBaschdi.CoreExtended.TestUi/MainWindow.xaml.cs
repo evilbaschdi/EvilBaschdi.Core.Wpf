@@ -4,13 +4,9 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using EvilBaschdi.Core.Internal;
-using EvilBaschdi.Core.Security;
 using EvilBaschdi.CoreExtended;
-using EvilBaschdi.CoreExtended.AppHelpers;
 using EvilBaschdi.CoreExtended.Browsers;
-using EvilBaschdi.CoreExtended.Metro;
 using MahApps.Metro.Controls;
-using TestUi.Properties;
 using TestUi.ViewModel;
 
 namespace TestUi
@@ -22,10 +18,10 @@ namespace TestUi
     public partial class MainWindow : MetroWindow
     {
         private readonly IDialogService _dialogService;
-        private readonly MainWindowViewModel _mainWindowViewModel;
 
         // ReSharper disable once NotAccessedField.Local
         private readonly IFileListFromPath _filePath;
+        private readonly MainWindowViewModel _mainWindowViewModel;
 
 
         private INetworkBrowser _networkBrowser;

@@ -6,7 +6,6 @@ using System.Windows.Media;
 using System.Xml;
 using EvilBaschdi.Core.Extensions;
 using EvilBaschdi.CoreExtended.Extensions;
-using MahApps.Metro;
 using Microsoft.Win32;
 
 namespace EvilBaschdi.CoreExtended.Metro

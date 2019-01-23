@@ -43,15 +43,12 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
             }
 
             var value = (T) _settingsBase[setting];
-            if (fallback != null)
+            if (fallback == null)
             {
-                if (IsValueEmpty(value))
-                {
-                    return fallback;
-                }
+                return value;
             }
 
-            return value;
+            return IsValueEmpty(value) ? fallback : value;
         }
 
         /// <inheritdoc />
@@ -101,6 +98,7 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
                     break;
                 }
             }
+
             return false;
         }
     }

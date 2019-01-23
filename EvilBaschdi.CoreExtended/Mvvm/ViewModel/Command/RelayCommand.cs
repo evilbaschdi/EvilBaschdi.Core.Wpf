@@ -32,8 +32,8 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
         /// <summary>
         /// </summary>
         public event EventHandler CanExecuteChanged;
+
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="parameter"></param>
         /// <returns></returns>
@@ -41,8 +41,8 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
         {
             return _canExecute == null || _canExecute(parameter);
         }
+
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="parameter"></param>
         public void Execute(object parameter)

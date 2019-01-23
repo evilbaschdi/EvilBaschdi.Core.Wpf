@@ -9,9 +9,9 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
     public interface ICommandViewModel
     {
         /// <summary>
-        ///     Displaytext from command.
+        ///     Command to execute.
         /// </summary>
-        string Text { get; set; }
+        ICommand Command { get; set; }
 
         /// <summary>
         ///     Imagepath if available.
@@ -19,9 +19,9 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
         string ImagePath { get; set; }
 
         /// <summary>
-        ///     Command to execute.
+        ///     Displaytext from command.
         /// </summary>
-        ICommand Command { get; set; }
+        string Text { get; set; }
 
         /// <summary>
         ///     Acutal visibility.

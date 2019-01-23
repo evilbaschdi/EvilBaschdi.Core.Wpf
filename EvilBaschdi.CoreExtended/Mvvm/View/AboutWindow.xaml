@@ -7,7 +7,6 @@
                       ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
                       Height="460" Width="530" GlowBrush="{DynamicResource AccentColorBrush}">
 
-
     <controls:MetroContentControl>
         <Grid Margin="15">
             <Grid.RowDefinitions>

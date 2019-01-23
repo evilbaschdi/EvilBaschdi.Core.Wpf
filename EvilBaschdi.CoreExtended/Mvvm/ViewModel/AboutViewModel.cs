@@ -24,15 +24,11 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
 
         /// <summary>
         /// </summary>
-        public string ProductName => _aboutWindowContent.Value.ProductName;
+        public string Company => _aboutWindowContent.Value.Company;
 
         /// <summary>
         /// </summary>
         public string Copyright => $"{_aboutWindowContent.Value.Copyright} by {_aboutWindowContent.Value.Company}";
-
-        /// <summary>
-        /// </summary>
-        public string Company => _aboutWindowContent.Value.Company;
 
         /// <summary>
         /// </summary>
@@ -41,11 +37,15 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
         /// <summary>
         /// </summary>
 
-        public string Version => $"Version: {_aboutWindowContent.Value.Version}";
+        public BitmapImage LogoSource => _aboutWindowContent.Value.LogoSource;
+
+        /// <summary>
+        /// </summary>
+        public string ProductName => _aboutWindowContent.Value.ProductName;
 
         /// <summary>
         /// </summary>
 
-        public BitmapImage LogoSource => _aboutWindowContent.Value.LogoSource;
+        public string Version => $"Version: {_aboutWindowContent.Value.Version}";
     }
 }

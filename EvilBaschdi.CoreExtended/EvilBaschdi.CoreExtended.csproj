@@ -40,10 +40,10 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="4.0.0-alpha0176" />
+    <PackageReference Include="ControlzEx" Version="4.0.0-alpha0222" />
     <PackageReference Include="EvilBaschdi.Core" Version="2018.416.22.11" />
-    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0083" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="2.3.0" />
+    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0212" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0096" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />

@@ -184,19 +184,21 @@ namespace EvilBaschdi.CoreExtended.Metro
             //var themeName = style.Item1.Name;
 
             if (radiobutton != null)
-            //{
-            //    //BaseDark, BaseLight
-            //    themeName = $"Base{radiobutton.Name}";
-            //}
-            //else if (toggleSwitch != null)
-            //{
-            //    //BaseDark, BaseLight
-            //    themeName = toggleSwitch.IsChecked.HasValue && toggleSwitch.IsChecked.Value ? "BaseDark" : "BaseLight";
-            //}
+                //{
+                //    //BaseDark, BaseLight
+                //    themeName = $"Base{radiobutton.Name}";
+                //}
+                //else if (toggleSwitch != null)
+                //{
+                //    //BaseDark, BaseLight
+                //    themeName = toggleSwitch.IsChecked.HasValue && toggleSwitch.IsChecked.Value ? "BaseDark" : "BaseLight";
+                //}
 
-            //_styleTheme = ThemeManager.GetAppTheme(themeName);
+                //_styleTheme = ThemeManager.GetAppTheme(themeName);
 
-            SetStyle();
+            {
+                SetStyle();
+            }
         }
 
         /// <inheritdoc />
@@ -278,21 +280,26 @@ namespace EvilBaschdi.CoreExtended.Metro
             var appsTheme = personalize.GetValue("AppsUseLightTheme") != null && personalize.GetValue("AppsUseLightTheme").ToString().Equals("0")
                 ? "BaseDark"
                 : "BaseLight";
-            if (Theme != null)
+            if (Theme == null)
             {
-                switch (appsTheme)
-                {
-                    case "BaseDark":
-                        Theme.IsChecked = true;
-                        break;
-
-                    case "BaseLight":
-                        Theme.IsChecked = false;
-                        break;
-                }
+                return;
             }
 
-           // _styleTheme = ThemeManager.GetAppTheme(appsTheme);
+            switch (appsTheme)
+            {
+                case "BaseDark":
+                    Theme.IsChecked = true;
+                    break;
+
+                case "BaseLight":
+                    Theme.IsChecked = false;
+                    break;
+                default:
+                    Theme.IsChecked = false;
+                    break;
+            }
+
+            // _styleTheme = ThemeManager.GetAppTheme(appsTheme);
         }
     }
 }

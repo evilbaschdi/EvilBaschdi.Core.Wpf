@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>   
+    <iconUrl>https://avatars1.githubusercontent.com/u/1897807?s=120&amp;v=4</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>    
+     <copyright>Copyright © evilbaschdi 2015 - 2018</copyright>
+    <tags>Core</tags>
+  </metadata>
+</package>

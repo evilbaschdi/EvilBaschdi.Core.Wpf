@@ -6,13 +6,14 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("EvilBaschdi.CoreExtended")]
-[assembly: AssemblyDescription("extended core assembly")]
+[assembly: AssemblyDescription("Extended core assembly")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("evilbaschdi")]
 [assembly: AssemblyProduct("EvilBaschdi.CoreExtended")]
-[assembly: AssemblyCopyright("Copyright © evilbaschdi 2017 - 2018")]
+[assembly: AssemblyCopyright("Copyright © evilbaschdi 2015 - 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from

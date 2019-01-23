@@ -25,7 +25,11 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
 
             var targetScreen = Screen.AllScreens.FirstOrDefault(screen => screen.DeviceName == deviceName);
 
-            if (targetScreen == null) return;
+            if (targetScreen == null)
+            {
+                return;
+            }
+
             var workingArea = targetScreen.WorkingArea;
 
             metroWindow.Left = workingArea.Left + (workingArea.Width - metroWindow.Width) / 2;

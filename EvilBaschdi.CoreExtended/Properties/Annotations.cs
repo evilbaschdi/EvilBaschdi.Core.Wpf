@@ -316,8 +316,7 @@ namespace EvilBaschdi.CoreExtended.Properties
             BaseType = baseType;
         }
 
-        [NotNull]
-        public Type BaseType { get; private set; }
+        [NotNull] public Type BaseType { get; private set; }
     }
 
     /// <summary>
@@ -350,9 +349,9 @@ namespace EvilBaschdi.CoreExtended.Properties
             TargetFlags = targetFlags;
         }
 
-        public ImplicitUseKindFlags UseKindFlags { get; private set; }
-
         public ImplicitUseTargetFlags TargetFlags { get; private set; }
+
+        public ImplicitUseKindFlags UseKindFlags { get; private set; }
     }
 
     /// <summary>
@@ -385,11 +384,9 @@ namespace EvilBaschdi.CoreExtended.Properties
             TargetFlags = targetFlags;
         }
 
-        [UsedImplicitly]
-        public ImplicitUseKindFlags UseKindFlags { get; private set; }
+        [UsedImplicitly] public ImplicitUseTargetFlags TargetFlags { get; private set; }
 
-        [UsedImplicitly]
-        public ImplicitUseTargetFlags TargetFlags { get; private set; }
+        [UsedImplicitly] public ImplicitUseKindFlags UseKindFlags { get; private set; }
     }
 
     [Flags]
@@ -447,8 +444,7 @@ namespace EvilBaschdi.CoreExtended.Properties
             Comment = comment;
         }
 
-        [NotNull]
-        public string Comment { get; private set; }
+        [NotNull] public string Comment { get; private set; }
     }
 
     /// <summary>
@@ -498,8 +494,7 @@ namespace EvilBaschdi.CoreExtended.Properties
             BasePath = basePath;
         }
 
-        [NotNull]
-        public string BasePath { get; private set; }
+        [NotNull] public string BasePath { get; private set; }
     }
 
     // ASP.NET MVC attributes
@@ -570,8 +565,7 @@ namespace EvilBaschdi.CoreExtended.Properties
             AnonymousProperty = anonymousProperty;
         }
 
-        [NotNull]
-        public string AnonymousProperty { get; private set; }
+        [NotNull] public string AnonymousProperty { get; private set; }
     }
 
     /// <summary>
@@ -591,8 +585,7 @@ namespace EvilBaschdi.CoreExtended.Properties
             AnonymousProperty = anonymousProperty;
         }
 
-        [NotNull]
-        public string AnonymousProperty { get; private set; }
+        [NotNull] public string AnonymousProperty { get; private set; }
     }
 
     /// <summary>
@@ -614,8 +607,7 @@ namespace EvilBaschdi.CoreExtended.Properties
             AnonymousProperty = anonymousProperty;
         }
 
-        [NotNull]
-        public string AnonymousProperty { get; private set; }
+        [NotNull] public string AnonymousProperty { get; private set; }
     }
 
     /// <summary>
@@ -732,8 +724,7 @@ namespace EvilBaschdi.CoreExtended.Properties
             Name = name;
         }
 
-        [NotNull]
-        public string Name { get; private set; }
+        [NotNull] public string Name { get; private set; }
     }
 
     [AttributeUsage(
@@ -746,8 +737,7 @@ namespace EvilBaschdi.CoreExtended.Properties
             Name = name;
         }
 
-        [NotNull]
-        public string Name { get; private set; }
+        [NotNull] public string Name { get; private set; }
     }
 
     // Razor attributes

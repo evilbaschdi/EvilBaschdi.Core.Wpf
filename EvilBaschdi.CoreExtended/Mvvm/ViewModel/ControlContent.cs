@@ -12,14 +12,14 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
 
         /// <summary>
         /// </summary>
+        public Brush FillBrush { get; set; }
+
+        /// <summary>
+        /// </summary>
         public string ImageResourceName { get; set; }
 
         /// <summary>
         /// </summary>
         public int ImageSize { get; set; }
-
-        /// <summary>
-        /// </summary>
-        public Brush FillBrush { get; set; }
     }
 }

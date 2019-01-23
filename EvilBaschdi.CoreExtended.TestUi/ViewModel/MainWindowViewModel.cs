@@ -7,7 +7,6 @@ using EvilBaschdi.CoreExtended.Extensions;
 using EvilBaschdi.CoreExtended.Metro;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
-using MahApps.Metro;
 
 namespace TestUi.ViewModel
 {
@@ -17,19 +16,15 @@ namespace TestUi.ViewModel
     /// </summary>
     public class MainWindowViewModel : ApplicationStyleViewModel
     {
-      
-        public ICommandViewModel EncryptClick { get; set; }
-        public ICommandViewModel DecryptClick { get; set; }
-        public ICommandViewModel CompareClick { get; set; }
         private readonly IApplicationStyleSettings _applicationStyleSettings;
-        private readonly IThemeManagerHelper _themeManagerHelper;
         private readonly IEncryption _encryption;
+        private readonly IThemeManagerHelper _themeManagerHelper;
         private string _customColorText;
-        private string _inputText;
-        private string _outputText;
         private string _encryptedText;
         private Brush _inputBackground;
+        private string _inputText;
         private Brush _outputBackground;
+        private string _outputText;
 
 
         protected internal MainWindowViewModel(IApplicationStyleSettings applicationStyleSettings,
@@ -40,7 +35,6 @@ namespace TestUi.ViewModel
             _themeManagerHelper = themeManagerHelper ?? throw new ArgumentNullException(nameof(themeManagerHelper));
             _encryption = encryption ?? throw new ArgumentNullException(nameof(encryption));
 
-           
 
             EncryptClick = new DefaultCommand
                            {
@@ -61,6 +55,73 @@ namespace TestUi.ViewModel
                            };
         }
 
+        public ICommandViewModel CompareClick { get; set; }
+
+        public string CustomColorText
+        {
+            get => _customColorText;
+            set
+            {
+                _customColorText = value;
+                ExecuteCustomColorOnLostFocus();
+                OnPropertyChanged();
+            }
+        }
+
+        public ICommandViewModel DecryptClick { get; set; }
+
+        public ICommandViewModel EncryptClick { get; set; }
+
+        public string EncryptedText
+        {
+            get => _encryptedText;
+            set
+            {
+                _encryptedText = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public Brush InputBackground
+        {
+            get => _inputBackground;
+            set
+            {
+                _inputBackground = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string InputText
+        {
+            get => _inputText;
+            set
+            {
+                _inputText = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public Brush OutputBackground
+        {
+            get => _outputBackground;
+            set
+            {
+                _outputBackground = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string OutputText
+        {
+            get => _outputText;
+            set
+            {
+                _outputText = value;
+                OnPropertyChanged();
+            }
+        }
+
         private void ExecuteCustomColorOnLostFocus()
         {
             if (!string.IsNullOrWhiteSpace(_customColorText))
@@ -77,67 +138,6 @@ namespace TestUi.ViewModel
                 {
                     MessageBox.Show(exception.Message);
                 }
-            }
-        }
-
-        public Brush InputBackground
-        {
-            get => _inputBackground;
-            set
-            {
-                _inputBackground = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public Brush OutputBackground
-        {
-            get => _outputBackground;
-            set
-            {
-                _outputBackground = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string CustomColorText
-        {
-            get => _customColorText;
-            set
-            {
-                _customColorText = value;
-                ExecuteCustomColorOnLostFocus();
-                OnPropertyChanged();
-            }
-        }
-
-        public string InputText
-        {
-            get => _inputText;
-            set
-            {
-                _inputText = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string OutputText
-        {
-            get => _outputText;
-            set
-            {
-                _outputText = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string EncryptedText
-        {
-            get => _encryptedText;
-            set
-            {
-                _encryptedText = value;
-                OnPropertyChanged();
             }
         }
 

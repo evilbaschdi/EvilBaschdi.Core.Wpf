@@ -12,14 +12,14 @@ namespace EvilBaschdi.CoreExtended.Browsers
     public interface INetworkBrowser : IValue<List<string>>
     {
         /// <summary>
+        ///     Contains an Exception if Value has thrown some.
+        /// </summary>
+        Exception Exception { get; }
+
+        /// <summary>
         ///     Contains an ArrayList of computers found in the network.
         /// </summary>
         [Obsolete("replaced with 'Value'")]
         ArrayList GetNetworkComputers { get; }
-
-        /// <summary>
-        ///     Contains an Exception if Value has thrown some.
-        /// </summary>
-        Exception Exception { get; }
     }
 }

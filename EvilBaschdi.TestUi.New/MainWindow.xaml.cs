@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using MahApps.Metro;
 using MahApps.Metro.Controls;
 
@@ -26,8 +27,14 @@ namespace EvilBaschdi.TestUi.New
             //ThemeManager.IsAutomaticWindowsAppModeSettingSyncEnabled = true;
             //ThemeManager.SyncThemeWithWindowsAppModeSetting();
 
+
+         
+
+
             foreach (var theme in ThemeManager.Themes)
             {
+                Color expectedColor = ((SolidColorBrush)ThemeManager.GetTheme(theme.Name).Resources["AccentColorBrush"]).Color;
+
                 //ColorScheme = Accent (Crimson)
                 //BaseColorScheme = Theme of current ColorScheme (Dark, Light)
                 //Name = Theme.Accent / BaseColorScheme.ColorScheme (Dark.Crimson)
@@ -40,9 +47,7 @@ namespace EvilBaschdi.TestUi.New
         {
             MessageBox.Show(ThemesComboBox.SelectedValue.ToString());
             ThemeManager.ChangeTheme(this, ThemesComboBox.SelectedValue.ToString());
-            var appUsesLightTheme = _themeManagerHelper.AppUsesLightTheme;
-            var lightDark = appUsesLightTheme.HasValue && appUsesLightTheme.Value ? "Light" : "Dark";
-            ThemeManager.ChangeThemeBaseColor(this, lightDark);
+       
         }
     }
 }

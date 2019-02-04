@@ -71,12 +71,12 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ControlzEx" Version="4.0.0-alpha0222" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2018.416.22.11" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2.0.0-CI-20190130-072657" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
     <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0212" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0096" />
-    <PackageReference Include="Unity" Version="5.9.0" />
-    <PackageReference Include="Unity.Abstractions" Version="4.0.0" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0103" />
+    <PackageReference Include="Unity" Version="5.9.3" />
+    <PackageReference Include="Unity.Abstractions" Version="4.0.2" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Build" />
@@ -166,7 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EvilBaschdi.CoreExtended\EvilBaschdi.CoreExtended.csproj">
-      <Project>{8a06a423-244f-404f-aad8-53de2ee2aed7}</Project>
+      <Project>{ba6d2250-794d-45ab-80e6-23df07e6be5c}</Project>
       <Name>EvilBaschdi.CoreExtended</Name>
     </ProjectReference>
   </ItemGroup>

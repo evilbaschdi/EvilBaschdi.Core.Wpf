@@ -6,7 +6,8 @@ using System.Runtime.CompilerServices;
 using EvilBaschdi.Core.Extensions;
 using EvilBaschdi.CoreExtended.Metro;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
-using EvilBaschdi.CoreExtended.Properties;
+using JetBrains.Annotations;
+//using EvilBaschdi.CoreExtended.Properties;
 using MahApps.Metro;
 
 namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel

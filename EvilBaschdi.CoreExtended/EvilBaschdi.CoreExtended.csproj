@@ -1,28 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.0;net462;net47</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon />
+    <StartupObject />
+    <TieredCompilation>true</TieredCompilation>
+    <Authors>Sebastian Walter</Authors>
+    <Company>evilbaschdi</Company>
+    <AssemblyVersion>2019.2.4.0</AssemblyVersion>
     <AssemblyName>EvilBaschdi.CoreExtended</AssemblyName>
     <RootNamespace>EvilBaschdi.CoreExtended</RootNamespace>
-    <ApplicationIcon />
-    <OutputType>Library</OutputType>
-    <StartupObject />
-    <LangVersion>latest</LangVersion>
+    <PackageId>EvilBaschdi.CoreExtended</PackageId>
+    <FileVersion>2019.2.4.0</FileVersion>
     <Version>2019.02.04-alpha1</Version>
-    <Authors>Sebastian Walter</Authors>
-    <Company />
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Copyright>Copyright © evilbaschdi 2015 - 2019</Copyright>
-    <PackageIconUrl>https://avatars1.githubusercontent.com/u/1897807?s=120&amp;v=4</PackageIconUrl>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.0|AnyCPU'">
-    <DocumentationFile>C:\Git\EvilBaschdi.CoreExtended\EvilBaschdi.CoreExtended\EvilBaschdi.CoreExtended.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp3.0|AnyCPU'">
-    <DocumentationFile>C:\Git\EvilBaschdi.CoreExtended\EvilBaschdi.CoreExtended\EvilBaschdi.CoreExtended.xml</DocumentationFile>
+    <PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
+    <OutputType>Library</OutputType>
+    <LangVersion>latest</LangVersion>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,7 +34,7 @@
     <PackageReference Include="JetBrains.Annotations" Version="2018.3.0" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net462'"> 
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0-preview.19073.11" />
   </ItemGroup>
 

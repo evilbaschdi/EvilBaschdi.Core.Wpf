@@ -5,10 +5,13 @@ using System.Windows;
 using EvilBaschdi.Core.Security;
 using EvilBaschdi.CoreExtended.Extensions;
 using EvilBaschdi.CoreExtended.Metro;
+using EvilBaschdi.CoreExtended.Mvvm;
+using EvilBaschdi.CoreExtended.Mvvm.View;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
+using MahApps.Metro;
 
-namespace TestUi.ViewModel
+namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
 {
     /// <inheritdoc cref="INotifyPropertyChanged" />
     /// <summary>
@@ -16,7 +19,6 @@ namespace TestUi.ViewModel
     /// </summary>
     public class MainWindowViewModel : ApplicationStyleViewModel
     {
-        private readonly IApplicationStyleSettings _applicationStyleSettings;
         private readonly IEncryption _encryption;
         private readonly IThemeManagerHelper _themeManagerHelper;
         private string _customColorText;
@@ -27,14 +29,11 @@ namespace TestUi.ViewModel
         private string _outputText;
 
 
-        protected internal MainWindowViewModel(IApplicationStyleSettings applicationStyleSettings,
-                                               IThemeManagerHelper themeManagerHelper, IEncryption encryption)
-            : base(applicationStyleSettings, themeManagerHelper)
+        protected internal MainWindowViewModel(IEncryption encryption, IThemeManagerHelper themeManagerHelper)
+            : base(themeManagerHelper)
         {
-            _applicationStyleSettings = applicationStyleSettings ?? throw new ArgumentNullException(nameof(applicationStyleSettings));
-            _themeManagerHelper = themeManagerHelper ?? throw new ArgumentNullException(nameof(themeManagerHelper));
             _encryption = encryption ?? throw new ArgumentNullException(nameof(encryption));
-
+            _themeManagerHelper = themeManagerHelper ?? throw new ArgumentNullException(nameof(themeManagerHelper));
 
             EncryptClick = new DefaultCommand
                            {
@@ -53,7 +52,14 @@ namespace TestUi.ViewModel
                                Text = "Compare",
                                Command = new RelayCommand(rc => BtnCompareClick())
                            };
+            AboutWindowClick = new DefaultCommand
+                               {
+                                   Text = "About",
+                                   Command = new RelayCommand(rc => BtnAboutWindowClick())
+                               };
         }
+
+        public ICommandViewModel AboutWindowClick { get; set; }
 
         public ICommandViewModel CompareClick { get; set; }
 
@@ -132,7 +138,7 @@ namespace TestUi.ViewModel
 
                     //var styleAccent = ThemeManager.GetAccent(_customColorText);
                     //var styleTheme = ThemeManager.GetAppTheme(_applicationStyleSettings.Theme);
-                    //ThemeManager.ChangeAppStyle(Application.Current, styleAccent, styleTheme);
+                    ThemeManager.ChangeTheme(Application.Current, _customColorText);
                 }
                 catch (Exception exception)
                 {
@@ -157,6 +163,16 @@ namespace TestUi.ViewModel
 
             InputBackground = brush;
             OutputBackground = brush;
+        }
+
+        private void BtnAboutWindowClick()
+        {
+            var aboutWindow = new AboutWindow();
+            var assembly = typeof(MainWindow).Assembly;
+
+            IAboutWindowContent aboutWindowContent = new AboutWindowContent(assembly, $@"{AppDomain.CurrentDomain.BaseDirectory}\b.png");
+            aboutWindow.DataContext = new AboutViewModel(aboutWindowContent, _themeManagerHelper);
+            aboutWindow.Show();
         }
     }
 }

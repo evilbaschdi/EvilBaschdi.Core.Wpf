@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
+    <OutputType>Library</OutputType>
     <TargetFrameworks>netcoreapp3.0;net462;net47</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
@@ -8,30 +9,23 @@
     <TieredCompilation>true</TieredCompilation>
     <Authors>Sebastian Walter</Authors>
     <Company>evilbaschdi</Company>
-    <AssemblyVersion>2019.2.4.0</AssemblyVersion>
-    <AssemblyName>EvilBaschdi.CoreExtended</AssemblyName>
-    <RootNamespace>EvilBaschdi.CoreExtended</RootNamespace>
     <PackageId>EvilBaschdi.CoreExtended</PackageId>
-    <FileVersion>2019.2.4.0</FileVersion>
-    <Version>2019.02.04-alpha1</Version>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>2019.3.3.1900-develop</Version>
     <Copyright>Copyright © evilbaschdi 2015 - 2019</Copyright>
-    <PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
-    <OutputType>Library</OutputType>
+    <PackageIconUrl>https://avatars1.githubusercontent.com/u/1897807?s=120&amp;v=4</PackageIconUrl>
+    <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
     <LangVersion>latest</LangVersion>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="4.0.0-alpha0222" />
+    <PackageReference Include="ControlzEx" Version="4.0.0-alpha*" />
     <PackageReference Include="EvilBaschdi.Core" Version="2.0.0-CI-20190130-072657" />
-    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0212" />
+    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0261" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0103" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />
     <PackageReference Include="JetBrains.Annotations" Version="2018.3.0" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="3.0.0-preview4.19126.13" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net462'">

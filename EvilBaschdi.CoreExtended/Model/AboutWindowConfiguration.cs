@@ -1,6 +1,4 @@
-﻿using System.Windows.Media.Imaging;
-
-namespace EvilBaschdi.CoreExtended.Model
+﻿namespace EvilBaschdi.CoreExtended.Model
 {
     /// <summary>
     /// </summary>
@@ -24,7 +22,7 @@ namespace EvilBaschdi.CoreExtended.Model
 
         /// <summary>
         /// </summary>
-        public BitmapImage LogoSource { get; set; }
+        public string LogoSourcePath { get; set; }
 
         /// <summary>
         /// </summary>

@@ -1,19 +1,21 @@
 ﻿using System;
-using System.Windows.Media.Imaging;
+using EvilBaschdi.CoreExtended.Metro;
 
 namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
 {
     /// <summary>
     /// </summary>
-    public class AboutViewModel
+    public class AboutViewModel : ApplicationStyleViewModel
     {
         private readonly IAboutWindowContent _aboutWindowContent;
 
         /// <summary>
         /// </summary>
         /// <param name="aboutWindowContent"></param>
+        /// <param name="themeManagerHelper"></param>
         /// <exception cref="ArgumentNullException"></exception>
-        public AboutViewModel(IAboutWindowContent aboutWindowContent)
+        public AboutViewModel(IAboutWindowContent aboutWindowContent, IThemeManagerHelper themeManagerHelper)
+            : base(themeManagerHelper)
         {
             _aboutWindowContent = aboutWindowContent ?? throw new ArgumentNullException(nameof(aboutWindowContent));
         }
@@ -28,7 +30,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
 
         /// <summary>
         /// </summary>
-        public string Copyright => $"{_aboutWindowContent.Value.Copyright} by {_aboutWindowContent.Value.Company}";
+        public string Copyright => $"{_aboutWindowContent.Value.Copyright}";
 
         /// <summary>
         /// </summary>
@@ -36,8 +38,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
 
         /// <summary>
         /// </summary>
-
-        public BitmapImage LogoSource => _aboutWindowContent.Value.LogoSource;
+        public string LogoSourcePath => _aboutWindowContent.Value.LogoSourcePath;
 
         /// <summary>
         /// </summary>

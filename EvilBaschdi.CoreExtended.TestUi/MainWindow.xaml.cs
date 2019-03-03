@@ -4,12 +4,13 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using EvilBaschdi.Core.Internal;
-using EvilBaschdi.CoreExtended;
+using EvilBaschdi.Core.Security;
 using EvilBaschdi.CoreExtended.Browsers;
+using EvilBaschdi.CoreExtended.Metro;
+using EvilBaschdi.CoreExtended.TestUi.ViewModel;
 using MahApps.Metro.Controls;
-using TestUi.ViewModel;
 
-namespace TestUi
+namespace EvilBaschdi.CoreExtended.TestUi
 {
     /// <inheritdoc cref="MetroWindow" />
     /// <summary>
@@ -33,15 +34,11 @@ namespace TestUi
             _filePath = new FileListFromPath(multiThreading);
             //LoadNetworkBrowserToArrayList();
             //MessageBox.Show(VersionHelper.GetWindowsClientVersion());
+            IThemeManagerHelper themeManagerHelper = new ThemeManagerHelper();
+            IEncryption encryption = new Encryption();
 
-            //IAppSettingsBase appSettingsBase = new AppSettingsBase(Settings.Default);
-            //IApplicationStyleSettings applicationStyleSettings = new ApplicationStyleSettings(appSettingsBase);
-            //IThemeManagerHelper themeManagerHelper = new ThemeManagerHelper();
-            //IEncryption encryption = new Encryption();
-
-            //_mainWindowViewModel = new MainWindowViewModel(applicationStyleSettings, themeManagerHelper, encryption);
-            //Loaded += MainWindowLoaded;
-
+            _mainWindowViewModel = new MainWindowViewModel(encryption, themeManagerHelper);
+            Loaded += MainWindowLoaded;
             _dialogService = new DialogService(this);
 
             var filePath = Assembly.GetEntryAssembly()?.Location;

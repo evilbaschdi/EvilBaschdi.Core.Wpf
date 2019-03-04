@@ -13,15 +13,19 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
     /// </summary>
     public class ApplicationStyleViewModel : INotifyPropertyChanged
     {
+        private readonly bool _center;
+        private readonly bool _resizeWithBorder400;
         private readonly IThemeManagerHelper _themeManagerHelper;
         private bool _settingsFlyoutIsOpen;
 
         /// <summary>
         ///     Constructor
         /// </summary>
-        protected ApplicationStyleViewModel(IThemeManagerHelper themeManagerHelper)
+        protected ApplicationStyleViewModel(IThemeManagerHelper themeManagerHelper, bool center = false, bool resizeWithBorder400 = false)
         {
             _themeManagerHelper = themeManagerHelper ?? throw new ArgumentNullException(nameof(themeManagerHelper));
+            _center = center;
+            _resizeWithBorder400 = resizeWithBorder400;
             InitializeCommandViewModels();
             Load();
         }
@@ -65,9 +69,24 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
         }
 
         /// <summary>
+        ///     Load.
         /// </summary>
         private void Load()
         {
+            if (Application.Current.MainWindow != null)
+            {
+                if (_center)
+                {
+                    Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                }
+
+                if (_resizeWithBorder400)
+                {
+                    Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;
+                    Application.Current.MainWindow.Height = SystemParameters.PrimaryScreenHeight - 400;
+                }
+            }
+
             foreach (Window currentWindow in Application.Current.Windows)
             {
                 _themeManagerHelper.SetSystemColorTheme(currentWindow);

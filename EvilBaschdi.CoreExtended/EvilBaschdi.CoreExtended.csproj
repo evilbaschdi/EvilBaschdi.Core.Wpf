@@ -10,17 +10,19 @@
     <Authors>Sebastian Walter</Authors>
     <Company>evilbaschdi</Company>
     <PackageId>EvilBaschdi.CoreExtended</PackageId>
-    <Version>2019.3.3.1900-develop</Version>
+    <Version>2019.3.4.1921-develop</Version>
     <Copyright>Copyright © evilbaschdi 2015 - 2019</Copyright>
-    <PackageIconUrl>https://avatars1.githubusercontent.com/u/1897807?s=120&amp;v=4</PackageIconUrl>
+    <PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
+    <PackageTags>Core</PackageTags>
+    <Description>Microsoft.NET.Sdk.WindowsDesktop</Description>
     <LangVersion>latest</LangVersion>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="4.0.0-alpha*" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2.0.0-CI-20190130-072657" />
+    <PackageReference Include="ControlzEx" Version="4.0.0-alpha0231" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2019.3.4.751-develop" />
     <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0261" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0103" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />

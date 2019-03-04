@@ -11,14 +11,25 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
     /// </summary>
     public class AppSettingsBase : IAppSettingsBase
     {
-        private readonly SettingsBase _settingsBase;
+        private readonly ApplicationSettingsBase _settingsBase;
 
         /// <summary>
         /// </summary>
         /// <param name="settingsBase"></param>
-        public AppSettingsBase(SettingsBase settingsBase)
+        public AppSettingsBase(ApplicationSettingsBase settingsBase)
         {
             _settingsBase = settingsBase ?? throw new ArgumentNullException(nameof(settingsBase));
+            Upgrade();
+        }
+
+        private void Upgrade()
+        {
+            if (Get("UpgradeRequired", false))
+            {
+                _settingsBase.Upgrade();
+                Set("UpgradeRequired",false);
+                _settingsBase.Save();
+            }
         }
 
         /// <inheritdoc />

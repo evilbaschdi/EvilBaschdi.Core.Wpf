@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using System.Windows.Markup;
@@ -22,82 +23,91 @@ namespace EvilBaschdi.CoreExtended.Metro
         /// <param name="accentName">Name of the new app style.</param>
         public void CreateAppStyleFor(Color color, string accentName)
         {
-            if (string.IsNullOrWhiteSpace(accentName))
+            if (accentName == null)
             {
-                throw new ArgumentException("Value cannot be null or whitespace.", nameof(accentName));
+                throw new ArgumentNullException(nameof(accentName));
             }
 
             var accentColor1 = Color.FromArgb(255, color.R, color.G, color.B);
             var accentColor2 = Color.FromArgb(153, color.R, color.G, color.B);
             var accentColor3 = Color.FromArgb(102, color.R, color.G, color.B);
             var accentColor4 = Color.FromArgb(51, color.R, color.G, color.B);
+
             var highlightColor = Color.FromArgb(255, color.R.Subtract(30), color.G.Subtract(30), color.B.Subtract(30));
             var idealForegroundColor = (int) Math.Sqrt(color.R * color.R * .241 + color.G * color.G * .691 + color.B * color.B * .068) < 130 ? Colors.White : Colors.Black;
 
-            // create a runtime accent resource dictionary
-            var resourceDictionary = new ResourceDictionary
-                                     {
-                                         { "AccentColor", accentColor1 },
-                                         { "AccentColor2", accentColor2 },
-                                         { "AccentColor3", accentColor3 },
-                                         { "AccentColor4", accentColor4 },
-                                         { "HighlightColor", highlightColor },
-                                         { "HighlightBrush", new SolidColorBrush(highlightColor) },
-                                         { "AccentColorBrush", new SolidColorBrush(accentColor1) },
-                                         { "AccentColorBrush2", new SolidColorBrush(accentColor2) },
-                                         { "AccentColorBrush3", new SolidColorBrush(accentColor3) },
-                                         { "AccentColorBrush4", new SolidColorBrush(accentColor4) },
-                                         { "WindowTitleColorBrush", new SolidColorBrush(accentColor1) },
-                                         {
-                                             "ProgressBrush", new LinearGradientBrush(
-                                                 new GradientStopCollection(new[]
-                                                                            {
-                                                                                new GradientStop(highlightColor, 0),
-                                                                                new GradientStop(accentColor3, 1)
-                                                                            }), new Point(1.002, 0.5), new Point(0.001, 0.5))
-                                         },
-                                         { "CheckmarkFill", new SolidColorBrush(accentColor1) },
-                                         { "RightArrowFill", new SolidColorBrush(accentColor1) },
-                                         { "IdealForegroundColor", idealForegroundColor },
-                                         { "IdealForegroundColorBrush", new SolidColorBrush(idealForegroundColor) },
-                                         { "IdealForegroundDisabledBrush", new SolidColorBrush(idealForegroundColor) },
-                                         { "AccentSelectedColorBrush", new SolidColorBrush(idealForegroundColor) },
-                                         { "MetroDataGrid.HighlightBrush", new SolidColorBrush(accentColor1) },
-                                         { "MetroDataGrid.HighlightTextBrush", new SolidColorBrush(idealForegroundColor) },
-                                         { "MetroDataGrid.MouseOverHighlightBrush", new SolidColorBrush(accentColor3) },
-                                         { "MetroDataGrid.FocusBorderBrush", new SolidColorBrush(accentColor1) },
-                                         { "MetroDataGrid.InactiveSelectionHighlightBrush", new SolidColorBrush(accentColor2) },
-                                         { "MetroDataGrid.InactiveSelectionHighlightTextBrush", new SolidColorBrush(idealForegroundColor) }
-                                     };
-
-
-            // applying theme to MahApps
-            var resDictName = $"ApplicationAccent_{accentName}.xaml";
-
-            var fileName = Path.Combine(Path.GetTempPath(), resDictName);
-
-            using (var writer = XmlWriter.Create(fileName, new XmlWriterSettings
-                                                           {
-                                                               Indent = true
-                                                           }))
+            foreach (var lightDark in new List<string> { "Light", "Dark" })
             {
-                XamlWriter.Save(resourceDictionary, writer);
-                writer.Close();
+                // create a runtime accent resource dictionary
+                var resourceDictionary = new ResourceDictionary
+                                         {
+                                             //Metadata
+                                             { "Theme.Name", $"{lightDark}.{accentName}" },
+                                             { "Theme.DisplayName", $"{accentName} ({lightDark})" },
+                                             { "Theme.BaseColorScheme", lightDark },
+                                             { "Theme.ColorScheme", accentName },
+                                             { "Theme.ShowcaseBrush", new SolidColorBrush(accentColor1) },
+                                             //Theme Base Colors 
+                                             { "HighlightColor", highlightColor },
+                                             { "AccentBaseColor", accentColor1 },
+                                             { "AccentColor", accentColor1 },
+                                             { "AccentColor2", accentColor2 },
+                                             { "AccentColor3", accentColor3 },
+                                             { "AccentColor4", accentColor4 },
+
+                                             { "AccentBaseColorBrush", new SolidColorBrush(accentColor1) },
+                                             { "HighlightBrush", new SolidColorBrush(highlightColor) },
+                                             { "AccentColorBrush", new SolidColorBrush(accentColor1) },
+                                             { "AccentColorBrush2", new SolidColorBrush(accentColor2) },
+                                             { "AccentColorBrush3", new SolidColorBrush(accentColor3) },
+                                             { "AccentColorBrush4", new SolidColorBrush(accentColor4) },
+                                             { "WindowTitleColorBrush", new SolidColorBrush(accentColor1) },
+                                             {
+                                                 "ProgressBrush", new LinearGradientBrush(
+                                                     new GradientStopCollection(new[]
+                                                                                {
+                                                                                    new GradientStop(highlightColor, 0),
+                                                                                    new GradientStop(accentColor3, 1)
+                                                                                }), new Point(1.002, 0.5), new Point(0.001, 0.5))
+                                             },
+                                             { "CheckmarkFill", new SolidColorBrush(accentColor1) },
+                                             { "RightArrowFill", new SolidColorBrush(accentColor1) },
+                                             { "IdealForegroundColor", idealForegroundColor },
+                                             { "IdealForegroundColorBrush", new SolidColorBrush(idealForegroundColor) },
+                                             { "IdealForegroundDisabledBrush", new SolidColorBrush(idealForegroundColor) },
+                                             { "AccentSelectedColorBrush", new SolidColorBrush(idealForegroundColor) },
+                                             { "MetroDataGrid.HighlightBrush", new SolidColorBrush(accentColor1) },
+                                             { "MetroDataGrid.HighlightTextBrush", new SolidColorBrush(idealForegroundColor) },
+                                             { "MetroDataGrid.MouseOverHighlightBrush", new SolidColorBrush(accentColor3) },
+                                             { "MetroDataGrid.FocusBorderBrush", new SolidColorBrush(accentColor1) },
+                                             { "MetroDataGrid.InactiveSelectionHighlightBrush", new SolidColorBrush(accentColor2) },
+                                             { "MetroDataGrid.InactiveSelectionHighlightTextBrush", new SolidColorBrush(idealForegroundColor) },
+                                             { "MahApps.Metro.Brushes.ToggleSwitchButton.OnSwitchBrush.Win10", new SolidColorBrush(accentColor1) },
+                                             { "MahApps.Metro.Brushes.ToggleSwitchButton.OnSwitchMouseOverBrush.Win10", new SolidColorBrush(accentColor2) },
+                                             { "MahApps.Metro.Brushes.ToggleSwitchButton.ThumbIndicatorCheckedBrush.Win10", new SolidColorBrush(idealForegroundColor) }
+                                         };
+
+
+                // applying theme to MahApps
+                var resDictName = $"{lightDark}.{accentName}.xaml";
+
+                var fileName = Path.Combine(Path.GetTempPath(), resDictName);
+
+                using (var writer = XmlWriter.Create(fileName, new XmlWriterSettings
+                                                               {
+                                                                   Indent = true
+                                                               }))
+                {
+                    XamlWriter.Save(resourceDictionary, writer);
+                    writer.Close();
+                }
+
+                resourceDictionary = new ResourceDictionary
+                                     {
+                                         Source = new Uri(fileName, UriKind.Absolute)
+                                     };
+                ThemeManager.AddTheme(resourceDictionary);
             }
-
-            resourceDictionary = new ResourceDictionary
-                                 {
-                                     Source = new Uri(fileName, UriKind.Absolute)
-                                 };
-
-
-            var newAccent = new Accent
-                            {
-                                Name = accentName,
-                                Resources = resourceDictionary
-                            };
-
-            ThemeManager.AddAccent(newAccent.Name, newAccent.Resources.Source);
         }
 
 
@@ -132,6 +142,9 @@ namespace EvilBaschdi.CoreExtended.Metro
             }
 
             CreateAppStyleFor(accentColor, "Accent from windows");
+
+            ThemeManager.IsAutomaticWindowsAppModeSettingSyncEnabled = true;
+            ThemeManager.SyncThemeWithWindowsAppModeSetting();
         }
 
         /// <inheritdoc />
@@ -144,6 +157,13 @@ namespace EvilBaschdi.CoreExtended.Metro
                     ? (bool?) null
                     : !(personalize.GetValue("AppsUseLightTheme") != null && personalize.GetValue("AppsUseLightTheme").ToString().Equals("0"));
             }
+        }
+
+        /// <inheritdoc />
+        public void SetSystemColorTheme(Window window)
+
+        {
+            ThemeManager.ChangeTheme(window, "Light.Accent from windows");
         }
     }
 }

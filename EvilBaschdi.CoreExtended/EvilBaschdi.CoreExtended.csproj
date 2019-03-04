@@ -1,192 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8A06A423-244F-404F-AAD8-53DE2EE2AED7}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EvilBaschdi.CoreExtended</RootNamespace>
-    <AssemblyName>EvilBaschdi.CoreExtended</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <TargetFrameworks>netcoreapp3.0;net462;net47</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon />
+    <StartupObject />
+    <TieredCompilation>true</TieredCompilation>
+    <Authors>Sebastian Walter</Authors>
+    <Company>evilbaschdi</Company>
+    <PackageId>EvilBaschdi.CoreExtended</PackageId>
+    <Version>2019.3.4.1921-develop</Version>
+    <Copyright>Copyright © evilbaschdi 2015 - 2019</Copyright>
+    <PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
+    <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
+    <PackageTags>Core</PackageTags>
+    <Description>Microsoft.NET.Sdk.WindowsDesktop</Description>
+    <LangVersion>latest</LangVersion>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.xml</DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\EvilBaschdi.CoreExtended.xml</DocumentationFile>
-    <LangVersion>7.1</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\EvilBaschdi.CoreExtended.xml</DocumentationFile>
-    <LangVersion>7.1</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="3.0.2.4" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2018.416.22.11" />
-    <PackageReference Include="MahApps.Metro" Version="1.6.5" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="2.3.0" />
+    <PackageReference Include="ControlzEx" Version="4.0.0-alpha0231" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2019.3.4.751-develop" />
+    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0261" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0103" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />
+    <PackageReference Include="JetBrains.Annotations" Version="2018.3.0" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="3.0.0-preview4.19126.13" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0-preview.19073.11" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Converter\PackIconEntypoImageSourceConverter.cs">
-      <DependentUpon>PackIconImageSourceConverterBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Converter\PackIconFontAwesomeImageSourceConverter.cs">
-      <DependentUpon>PackIconImageSourceConverterBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Converter\PackIconMaterialImageSourceConverter.cs">
-      <DependentUpon>PackIconImageSourceConverterBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Converter\PackIconMaterialLightImageSourceConverter.cs">
-      <DependentUpon>PackIconImageSourceConverterBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Converter\PackIconModernImageSourceConverter.cs">
-      <DependentUpon>PackIconImageSourceConverterBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Converter\PackIconOcticonsImageSourceConverter.cs">
-      <DependentUpon>PackIconImageSourceConverterBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mvvm\AboutWindowContent.cs">
-      <DependentUpon>IAboutWindowContent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppHelpers\AppSettingsBase.cs">
-      <DependentUpon>IAppSettingsBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppHelpers\AutoStart.cs">
-      <DependentUpon>IAutoStart.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppHelpers\AutoStartByConfiguration.cs">
-      <DependentUpon>IAutoStartByConfiguration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppHelpers\AppSettingFromConfigurationManager.cs">
-      <DependentUpon>IAppSettingFromConfigurationManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppHelpers\IAppSettingFromConfigurationManager.cs" />
-    <Compile Include="Metro\ApplicationStyleSettings.cs">
-      <DependentUpon>IApplicationStyleSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppHelpers\CurrentScreen.cs">
-      <DependentUpon>ICurrentScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mvvm\IAboutWindowContent.cs" />
-    <Compile Include="AppHelpers\IAppSettingsBase.cs" />
-    <Compile Include="AppHelpers\IAutoStart.cs" />
-    <Compile Include="AppHelpers\IAutoStartByConfiguration.cs" />
-    <Compile Include="AppHelpers\ICurrentScreen.cs" />
-    <Compile Include="AppHelpers\IMoveToScreen.cs" />
-    <Compile Include="AppHelpers\IScreenCapture.cs" />
-    <Compile Include="AppHelpers\IScreenCount.cs" />
-    <Compile Include="Metro\IApplicationStyleSettings.cs" />
-    <Compile Include="AppHelpers\MoveToScreen.cs">
-      <DependentUpon>IMoveToScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppHelpers\ScreenCapture.cs">
-      <DependentUpon>IScreenCapture.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppHelpers\ScreenCapture.Gdi32.cs">
-      <DependentUpon>IScreenCapture.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppHelpers\ScreenCapture.User32.cs">
-      <DependentUpon>IScreenCapture.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppHelpers\ScreenCount.cs">
-      <DependentUpon>IScreenCount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Browsers\ExplorerFolderBrower.cs">
-      <DependentUpon>IFolderBrowser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Browsers\ExplorerFolderBrowser.NativeMethods.cs">
-      <DependentUpon>IFolderBrowser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Browsers\FolderBrowser.cs">
-      <DependentUpon>IFolderBrowser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Browsers\IFolderBrowser.cs" />
-    <Compile Include="Browsers\INetworkBrowser.cs" />
-    <Compile Include="Browsers\NetworkBrowser.cs">
-      <DependentUpon>INetworkBrowser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Extensions\ColorExtensions.cs" />
-    <Compile Include="Model\AboutWindowConfiguration.cs" />
-    <Compile Include="Converter\PackIconImageSourceConverterBase.cs" />
-    <Compile Include="Mvvm\ViewModel\ApplicationStyleViewModel.cs" />
-    <Compile Include="Mvvm\ViewModel\Command\DefaultCommand.cs" />
-    <Compile Include="Mvvm\ViewModel\Command\ICommandViewModel.cs" />
-    <Compile Include="Mvvm\ViewModel\Command\RelayCommand.cs" />
-    <Compile Include="Mvvm\ViewModel\ControlContent.cs" />
-    <Compile Include="DialogService.cs">
-      <DependentUpon>IDialogService.cs</DependentUpon>
-    </Compile>
-    <Compile Include="IDialogService.cs" />
-    <Compile Include="Metro\IThemeManagerHelper.cs" />
-    <Compile Include="Extensions\Margins.cs" />
-    <Compile Include="Metro\ApplicationStyle.cs">
-      <DependentUpon>IApplicationStyle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Metro\IApplicationStyle.cs" />
-    <Compile Include="Extensions\RemoveChildExtension.cs" />
-    <Compile Include="Metro\ThemeManagerHelper.cs">
-      <DependentUpon>IThemeManagerHelper.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mvvm\ViewModel\AboutViewModel.cs" />
-    <Compile Include="Mvvm\View\AboutWindow.xaml.cs">
-      <DependentUpon>AboutWindow.xaml</DependentUpon>
-    </Compile>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net47'">
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0-preview.19073.11" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="app.manifest" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Mvvm\View\AboutWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>

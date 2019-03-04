@@ -1,6 +1,4 @@
-﻿using System.Windows.Media.Imaging;
-
-namespace EvilBaschdi.CoreExtended.Model
+﻿namespace EvilBaschdi.CoreExtended.Model
 {
     /// <summary>
     /// </summary>
@@ -12,7 +10,7 @@ namespace EvilBaschdi.CoreExtended.Model
 
         /// <summary>
         /// </summary>
-        public string ProductName { get; set; }
+        public string Company { get; set; }
 
         /// <summary>
         /// </summary>
@@ -20,18 +18,18 @@ namespace EvilBaschdi.CoreExtended.Model
 
         /// <summary>
         /// </summary>
-        public string Company { get; set; }
-
-        /// <summary>
-        /// </summary>
         public string Description { get; set; }
 
         /// <summary>
         /// </summary>
-        public string Version { get; set; }
+        public string LogoSourcePath { get; set; }
 
         /// <summary>
         /// </summary>
-        public BitmapImage LogoSource { get; set; }
+        public string ProductName { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public string Version { get; set; }
     }
 }

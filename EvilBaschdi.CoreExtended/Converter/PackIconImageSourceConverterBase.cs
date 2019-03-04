@@ -17,6 +17,7 @@ namespace EvilBaschdi.CoreExtended.Converter
         /// <summary>
         ///     Gets or sets the thickness to draw the icon with.
         /// </summary>
+        // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Local
         private double Thickness { get; set; } = 0.25;
 
         /// <inheritdoc />

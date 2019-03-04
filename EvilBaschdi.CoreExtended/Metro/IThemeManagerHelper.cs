@@ -1,3 +1,4 @@
+using System.Windows;
 using System.Windows.Media;
 
 namespace EvilBaschdi.CoreExtended.Metro
@@ -7,8 +8,6 @@ namespace EvilBaschdi.CoreExtended.Metro
     /// </summary>
     public interface IThemeManagerHelper
     {
-        /// <summary>
-        /// </summary>
         bool? AppUsesLightTheme { get; }
 
         /// <summary>
@@ -23,5 +22,11 @@ namespace EvilBaschdi.CoreExtended.Metro
         ///     accents.
         /// </summary>
         void RegisterSystemColorTheme();
+
+        /// <summary>
+        ///     Set System color theme
+        /// </summary>
+        /// <param name="window"></param>
+        void SetSystemColorTheme(Window window);
     }
 }

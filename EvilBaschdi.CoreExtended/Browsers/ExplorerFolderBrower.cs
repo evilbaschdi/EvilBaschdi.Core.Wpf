@@ -139,14 +139,16 @@ namespace EvilBaschdi.CoreExtended.Browsers
 
         private void SetInitialFolder(IFileOpenDialog dialog)
         {
-            if (!string.IsNullOrEmpty(SelectedPath))
+            if (string.IsNullOrEmpty(SelectedPath))
             {
-                uint atts = 0;
-                if (NativeMethods.SHILCreateFromPath(SelectedPath, out var idl, ref atts) == 0
-                    && NativeMethods.SHCreateShellItem(IntPtr.Zero, IntPtr.Zero, idl, out var item) == 0)
-                {
-                    dialog.SetFolder(item);
-                }
+                return;
+            }
+
+            uint atts = 0;
+            if (NativeMethods.SHILCreateFromPath(SelectedPath, out var idl, ref atts) == 0
+                && NativeMethods.SHCreateShellItem(IntPtr.Zero, IntPtr.Zero, idl, out var item) == 0)
+            {
+                dialog.SetFolder(item);
             }
         }
 

@@ -5,15 +5,12 @@ using System.Windows;
 using System.Windows.Controls.Primitives;
 using EvilBaschdi.Core.Internal;
 using EvilBaschdi.Core.Security;
-using EvilBaschdi.CoreExtended;
-using EvilBaschdi.CoreExtended.AppHelpers;
 using EvilBaschdi.CoreExtended.Browsers;
 using EvilBaschdi.CoreExtended.Metro;
+using EvilBaschdi.CoreExtended.TestUi.ViewModel;
 using MahApps.Metro.Controls;
-using TestUi.Properties;
-using TestUi.ViewModel;
 
-namespace TestUi
+namespace EvilBaschdi.CoreExtended.TestUi
 {
     /// <inheritdoc cref="MetroWindow" />
     /// <summary>
@@ -22,10 +19,10 @@ namespace TestUi
     public partial class MainWindow : MetroWindow
     {
         private readonly IDialogService _dialogService;
-        private readonly MainWindowViewModel _mainWindowViewModel;
 
         // ReSharper disable once NotAccessedField.Local
         private readonly IFileListFromPath _filePath;
+        private readonly MainWindowViewModel _mainWindowViewModel;
 
 
         private INetworkBrowser _networkBrowser;
@@ -37,15 +34,11 @@ namespace TestUi
             _filePath = new FileListFromPath(multiThreading);
             //LoadNetworkBrowserToArrayList();
             //MessageBox.Show(VersionHelper.GetWindowsClientVersion());
-
-            IAppSettingsBase appSettingsBase = new AppSettingsBase(Settings.Default);
-            IApplicationStyleSettings applicationStyleSettings = new ApplicationStyleSettings(appSettingsBase);
             IThemeManagerHelper themeManagerHelper = new ThemeManagerHelper();
             IEncryption encryption = new Encryption();
 
-            _mainWindowViewModel = new MainWindowViewModel(applicationStyleSettings, themeManagerHelper, encryption);
+            _mainWindowViewModel = new MainWindowViewModel(encryption, themeManagerHelper);
             Loaded += MainWindowLoaded;
-
             _dialogService = new DialogService(this);
 
             var filePath = Assembly.GetEntryAssembly()?.Location;

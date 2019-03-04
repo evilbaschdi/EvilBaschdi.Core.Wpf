@@ -11,14 +11,25 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
     /// </summary>
     public class AppSettingsBase : IAppSettingsBase
     {
-        private readonly SettingsBase _settingsBase;
+        private readonly ApplicationSettingsBase _settingsBase;
 
         /// <summary>
         /// </summary>
         /// <param name="settingsBase"></param>
-        public AppSettingsBase(SettingsBase settingsBase)
+        public AppSettingsBase(ApplicationSettingsBase settingsBase)
         {
             _settingsBase = settingsBase ?? throw new ArgumentNullException(nameof(settingsBase));
+            Upgrade();
+        }
+
+        private void Upgrade()
+        {
+            if (Get("UpgradeRequired", false))
+            {
+                _settingsBase.Upgrade();
+                Set("UpgradeRequired",false);
+                _settingsBase.Save();
+            }
         }
 
         /// <inheritdoc />
@@ -43,15 +54,12 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
             }
 
             var value = (T) _settingsBase[setting];
-            if (fallback != null)
+            if (fallback == null)
             {
-                if (IsValueEmpty(value))
-                {
-                    return fallback;
-                }
+                return value;
             }
 
-            return value;
+            return IsValueEmpty(value) ? fallback : value;
         }
 
         /// <inheritdoc />
@@ -101,6 +109,7 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
                     break;
                 }
             }
+
             return false;
         }
     }

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFrameworks>netcoreapp3.0;net462;net47</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon />
@@ -10,32 +10,24 @@
     <Authors>Sebastian Walter</Authors>
     <Company>evilbaschdi</Company>
     <PackageId>EvilBaschdi.CoreExtended</PackageId>
-    <Version>2019.3.5.822-develop</Version>
+    <Version>2019.3.9.1706-develop</Version>
     <Copyright>Copyright © evilbaschdi 2015 - 2019</Copyright>
     <PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
     <PackageTags>Core</PackageTags>
     <Description>Microsoft.NET.Sdk.WindowsDesktop</Description>
     <LangVersion>latest</LangVersion>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.xml</DocumentationFile>    
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="4.0.0-alpha0231" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2019.3.4.751-develop" />
-    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0261" />
+    <PackageReference Include="ControlzEx" Version="4.0.0-alpha0232" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2019.3.9.1706-develop" />
+    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0262" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0103" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />
     <PackageReference Include="JetBrains.Annotations" Version="2018.3.0" />
-    <PackageReference Include="Microsoft.NETCore.Platforms" Version="3.0.0-preview4.19126.13" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0-preview.19073.11" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net47'">
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0-preview.19073.11" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="3.0.0-preview4.19126.13" />        
   </ItemGroup>
 
 </Project>

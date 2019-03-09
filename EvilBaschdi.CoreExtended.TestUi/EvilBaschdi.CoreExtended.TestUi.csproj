@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFrameworks>netcoreapp3.0;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <Authors>Sebastian Walter</Authors>
     <Company>evilbaschdi</Company>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.TestUi.xml</DocumentationFile>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RuntimeIdentifiers>win</RuntimeIdentifiers>
-    <Version>2019.3.3.1900-develop</Version>
+    <Version>2019.3.9.1706-develop</Version>
     <PackageIconUrl>https://avatars1.githubusercontent.com/u/1897807?s=120&amp;v=4</PackageIconUrl>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
     <Copyright>Copyright © evilbaschdi 2015 - 2019</Copyright>
@@ -16,15 +16,14 @@
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.TestUi.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="4.0.0-alpha0231" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2019.3.4.751-develop" />
+    <PackageReference Include="ControlzEx" Version="4.0.0-alpha0232" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2019.3.9.1706-develop" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
-    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0261" />
+    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0262" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0103" />
-    <PackageReference Include="Unity" Version="5.9.6" />
+    <PackageReference Include="Unity" Version="5.9.7" />
     <PackageReference Include="Unity.Abstractions" Version="4.1.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0-preview.19073.11" />
   </ItemGroup>
 
   <ItemGroup>

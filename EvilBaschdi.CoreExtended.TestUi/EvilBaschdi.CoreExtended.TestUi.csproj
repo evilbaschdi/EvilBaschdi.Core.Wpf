@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>netcoreapp3.0;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0;net45;net451;net452;net46;net461;net462;net47;net471;net472</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <Authors>Sebastian Walter</Authors>
     <Company>evilbaschdi</Company>
@@ -24,6 +24,7 @@
     <PackageReference Include="Unity" Version="5.9.7" />
     <PackageReference Include="Unity.Abstractions" Version="4.1.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="3.0.0-preview4.19126.13" />   
   </ItemGroup>
 
   <ItemGroup>

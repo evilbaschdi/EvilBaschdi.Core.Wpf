@@ -4,8 +4,7 @@
                       xmlns:tb="http://www.hardcodet.net/taskbar" AllowsTransparency="True"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-                      xmlns:converter="clr-namespace:EvilBaschdi.CoreExtended.Converter;assembly=EvilBaschdi.CoreExtended"
-                      Height="350" Width="525"
+                      Height="350" Width="525" Icon="b.ico"
                       SaveWindowPosition="True"
                       GlowBrush="{DynamicResource AccentColorBrush}"
                       Title="EvilBaschdi.Core TestUI">
@@ -13,19 +12,19 @@
     <!--  RightWindowCommands  -->
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
-            <TextBox Name="CustomColor" Text="{Binding CustomColorText, UpdateSourceTrigger=LostFocus}" Width="100" />
+            <!--<TextBox Name="CustomColor" Text="{Binding CustomColorText, UpdateSourceTrigger=LostFocus}" Width="100" />-->
             <Button Command="{Binding AboutWindowClick.Command}" Name="AboutWindow">
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconMaterial Kind="Information" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Text="settings" />
+                    <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Text="about" />
                 </StackPanel>
             </Button>
-            <Button Command="{Binding ToggleFlyout.Command}" Name="ToggleSettingsFlyout">
+            <!--<Button Command="{Binding ToggleFlyout.Command}" Name="ToggleSettingsFlyout">
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconMaterial Kind="Settings" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Text="settings" />
                 </StackPanel>
-            </Button>
+            </Button>-->
         </controls:WindowCommands>
     </controls:MetroWindow.RightWindowCommands>
     <Grid>

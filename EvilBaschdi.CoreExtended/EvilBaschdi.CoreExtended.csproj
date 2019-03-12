@@ -10,8 +10,8 @@
     <Authors>Sebastian Walter</Authors>
     <Company>evilbaschdi</Company>
     <PackageId>EvilBaschdi.CoreExtended</PackageId>
-    <Version>2019.3.9.1706-develop</Version>
-    <Copyright>Copyright © evilbaschdi 2015 - 2019</Copyright>
+    <Version>2019.3.12.757-develop</Version>
+    <Copyright>Copyright © 2015 - 2019 evilbaschdi</Copyright>
     <PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
     <PackageTags>Core</PackageTags>
@@ -24,7 +24,7 @@
     <PackageReference Include="ControlzEx" Version="4.0.0-alpha0232" />
     <PackageReference Include="EvilBaschdi.Core" Version="2019.3.9.1706-develop" />
     <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0262" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0103" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0128" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />
     <PackageReference Include="JetBrains.Annotations" Version="2018.3.0" />
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="3.0.0-preview4.19126.13" />        

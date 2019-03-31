@@ -26,7 +26,7 @@
 
         /// <summary>
         /// </summary>
-        public string ProductName { get; set; }
+        public string Authors { get; set; }
 
         /// <summary>
         /// </summary>

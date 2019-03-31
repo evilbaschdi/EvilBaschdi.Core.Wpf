@@ -11,7 +11,7 @@ namespace EvilBaschdi.CoreExtended.Browsers
     /// <summary>
     ///     Stellt einen Auswahldialog für Ordner und Systemelemente ab Windows Vista bereit.
     /// </summary>
-    [GeneratedCode("EvilBaschdi.CoreExtended", "2.0")]
+    [GeneratedCode("EvilBaschdi.CoreExtended", "2018.0")]
     public sealed partial class ExplorerFolderBrowser : IFolderBrowser
     {
         #region Properties

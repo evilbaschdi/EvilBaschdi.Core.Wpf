@@ -26,7 +26,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
 
         /// <summary>
         /// </summary>
-        public string Company => _aboutWindowContent.Value.Company;
+        public string Company => $"Company / Authors: {_aboutWindowContent.Value.Company}";
 
         /// <summary>
         /// </summary>
@@ -42,11 +42,6 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
 
         /// <summary>
         /// </summary>
-        public string ProductName => _aboutWindowContent.Value.ProductName;
-
-        /// <summary>
-        /// </summary>
-
         public string Version => $"Version: {_aboutWindowContent.Value.Version}";
     }
 }

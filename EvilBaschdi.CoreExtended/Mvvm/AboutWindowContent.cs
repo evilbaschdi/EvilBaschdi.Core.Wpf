@@ -28,10 +28,13 @@ namespace EvilBaschdi.CoreExtended.Mvvm
         {
             get
             {
+                var title = _assembly.GetCustomAttributes<AssemblyProductAttribute>().FirstOrDefault() != null
+                    ? _assembly.GetCustomAttributes<AssemblyProductAttribute>().FirstOrDefault()?.Product
+                    : _assembly.GetCustomAttributes<AssemblyTitleAttribute>().FirstOrDefault()?.Title;
+
                 var config = new AboutWindowConfiguration
                              {
-                                 ApplicationTitle = _assembly.GetCustomAttributes<AssemblyTitleAttribute>().FirstOrDefault()?.Title,
-                                 ProductName = _assembly.GetCustomAttributes<AssemblyProductAttribute>().FirstOrDefault()?.Product,
+                                 ApplicationTitle = title,
                                  Copyright = _assembly.GetCustomAttributes<AssemblyCopyrightAttribute>().FirstOrDefault()?.Copyright,
                                  Company = _assembly.GetCustomAttributes<AssemblyCompanyAttribute>().FirstOrDefault()?.Company,
                                  Description = _assembly.GetCustomAttributes<AssemblyDescriptionAttribute>().FirstOrDefault()?.Description,

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvilBaschdi.CoreExtended.TestUi", "EvilBaschdi.CoreExtended.TestUi\EvilBaschdi.CoreExtended.TestUi.csproj", "{B4487BC3-80C2-43C3-800F-F686F14A8BE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvilBaschdi.CoreExtended.TestUi", "EvilBaschdi.CoreExtended.TestUi\EvilBaschdi.CoreExtended.TestUi.csproj", "{B4487BC3-80C2-43C3-800F-F686F14A8BE7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ABDFDFCB-5272-4C4F-A0B5-20C699A118A6}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvilBaschdi.CoreExtended", "EvilBaschdi.CoreExtended\EvilBaschdi.CoreExtended.csproj", "{BA6D2250-794D-45AB-80E6-23DF07E6BE5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUi.Uwp", "TestUi.Uwp\TestUi.Uwp.csproj", "{62F8189F-7605-4363-A100-3016AC5C802E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,26 @@ Global
 		{BA6D2250-794D-45AB-80E6-23DF07E6BE5C}.Release|x64.Build.0 = Release|Any CPU
 		{BA6D2250-794D-45AB-80E6-23DF07E6BE5C}.Release|x86.ActiveCfg = Release|Any CPU
 		{BA6D2250-794D-45AB-80E6-23DF07E6BE5C}.Release|x86.Build.0 = Release|Any CPU
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Debug|ARM.Build.0 = Debug|ARM
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Debug|ARM.Deploy.0 = Debug|ARM
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Debug|x64.ActiveCfg = Debug|x64
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Debug|x64.Build.0 = Debug|x64
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Debug|x64.Deploy.0 = Debug|x64
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Debug|x86.ActiveCfg = Debug|x86
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Debug|x86.Build.0 = Debug|x86
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Debug|x86.Deploy.0 = Debug|x86
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Release|Any CPU.ActiveCfg = Release|x86
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Release|ARM.ActiveCfg = Release|ARM
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Release|ARM.Build.0 = Release|ARM
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Release|ARM.Deploy.0 = Release|ARM
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Release|x64.ActiveCfg = Release|x64
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Release|x64.Build.0 = Release|x64
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Release|x64.Deploy.0 = Release|x64
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Release|x86.ActiveCfg = Release|x86
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Release|x86.Build.0 = Release|x86
+		{62F8189F-7605-4363-A100-3016AC5C802E}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -30,7 +30,7 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
 
 
         protected internal MainWindowViewModel(IEncryption encryption, IThemeManagerHelper themeManagerHelper)
-            : base(themeManagerHelper)
+            : base(themeManagerHelper, true)
         {
             _encryption = encryption ?? throw new ArgumentNullException(nameof(encryption));
             _themeManagerHelper = themeManagerHelper ?? throw new ArgumentNullException(nameof(themeManagerHelper));
@@ -164,12 +164,14 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
 
         private void BtnAboutWindowClick()
         {
-            var aboutWindow = new AboutWindow();
             var assembly = typeof(MainWindow).Assembly;
 
             IAboutWindowContent aboutWindowContent = new AboutWindowContent(assembly, $@"{AppDomain.CurrentDomain.BaseDirectory}\b.png");
-            aboutWindow.DataContext = new AboutViewModel(aboutWindowContent, _themeManagerHelper);
-            aboutWindow.Show();
+            var aboutWindow = new AboutWindow
+                              {
+                                  DataContext = new AboutViewModel(aboutWindowContent, _themeManagerHelper)
+                              };
+            aboutWindow.ShowDialog();
         }
     }
 }

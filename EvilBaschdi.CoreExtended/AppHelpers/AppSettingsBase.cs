@@ -22,16 +22,6 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
             Upgrade();
         }
 
-        private void Upgrade()
-        {
-            if (Get("UpgradeRequired", false))
-            {
-                _settingsBase.Upgrade();
-                Set("UpgradeRequired",false);
-                _settingsBase.Save();
-            }
-        }
-
         /// <inheritdoc />
         /// <summary>
         ///     Get value of type T
@@ -79,7 +69,19 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
             _settingsBase.Save();
         }
 
-        private bool IsValueEmpty<T>(T value)
+        private void Upgrade()
+        {
+            if (!Get("UpgradeRequired", false))
+            {
+                return;
+            }
+
+            _settingsBase.Upgrade();
+            Set("UpgradeRequired", false);
+            _settingsBase.Save();
+        }
+
+        private static bool IsValueEmpty<T>(T value)
         {
             if (value == null)
             {

@@ -4,26 +4,28 @@
     <TargetFrameworks>netcoreapp3.0;net45;net451;net452;net46;net461;net462;net47;net471;net472</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <Authors>Sebastian Walter</Authors>
-    <Company>evilbaschdi</Company>
+    <Company>evilbaschdi (Sebastian Walter)</Company>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.TestUi.xml</DocumentationFile>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RuntimeIdentifiers>win</RuntimeIdentifiers>
-    <Version>2019.3.12.757-develop</Version>
+    <Version>2019.3.31.1028-develop</Version>
     <Copyright>Copyright © 2015 - 2019 evilbaschdi</Copyright>
     <PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
     <LangVersion>latest</LangVersion>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.TestUi.xml</DocumentationFile>
     <ApplicationIcon>b.ico</ApplicationIcon>
+    <PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</PackageProjectUrl>
+    <Product>EvilBaschdi.CoreExtended TestUi</Product>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ControlzEx" Version="4.0.0-alpha0232" />
     <PackageReference Include="EvilBaschdi.Core" Version="2019.3.9.1706-develop" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
     <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0262" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0128" />
-    <PackageReference Include="Unity" Version="5.9.7" />
-    <PackageReference Include="Unity.Abstractions" Version="4.1.0" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0137" />
+    <PackageReference Include="Unity" Version="5.10.2" />
+    <PackageReference Include="Unity.Abstractions" Version="4.1.2" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="3.0.0-preview4.19126.13" />   
   </ItemGroup>

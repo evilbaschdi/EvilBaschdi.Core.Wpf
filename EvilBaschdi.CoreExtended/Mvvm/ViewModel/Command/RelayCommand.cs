@@ -7,14 +7,14 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
     /// </summary>
     public class RelayCommand : ICommand
     {
-        private readonly Predicate<object> _canExecute;
-        private readonly Action<object> _execute;
+        private Predicate<object> _canExecute;
+        private Action<object> _execute;
 
         /// <summary>
         /// </summary>
         /// <param name="execute"></param>
         public RelayCommand(Action<object> execute)
-            : this(execute, null)
+            : this(execute, DefaultCanExecute)
         {
         }
 
@@ -31,7 +31,20 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
 
         /// <summary>
         /// </summary>
-        public event EventHandler CanExecuteChanged;
+        public event EventHandler CanExecuteChanged
+        {
+            add
+            {
+                CommandManager.RequerySuggested += value;
+                CanExecuteChangedInternal += value;
+            }
+
+            remove
+            {
+                CommandManager.RequerySuggested -= value;
+                CanExecuteChangedInternal -= value;
+            }
+        }
 
         /// <summary>
         /// </summary>
@@ -48,6 +61,31 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
         public void Execute(object parameter)
         {
             _execute(parameter);
+        }
+
+        private event EventHandler CanExecuteChangedInternal;
+
+        /// <summary>
+        /// </summary>
+        public void OnCanExecuteChanged()
+        {
+            var handler = CanExecuteChangedInternal;
+            //DispatcherHelper.BeginInvokeOnUIThread(() => handler.Invoke(this, EventArgs.Empty));
+            handler?.Invoke(this, EventArgs.Empty);
+        }
+
+        /// <summary>
+        /// </summary>
+        public void Destroy()
+        {
+            _canExecute = _ => false;
+            _execute = _ => { };
+        }
+
+
+        private static bool DefaultCanExecute(object parameter)
+        {
+            return true;
         }
     }
 }

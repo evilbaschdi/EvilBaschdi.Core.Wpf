@@ -128,14 +128,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="EvilBaschdi.Core">
+      <Version>2019.3.9.1706-develop</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.0.6</Version>
+      <Version>6.2.8</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EvilBaschdi.Core\EvilBaschdi.Core.csproj">
+    <ProjectReference Include="..\EvilBaschdi.CoreExtended\EvilBaschdi.CoreExtended.csproj">
       <Project>{40644d57-a210-48c4-95e3-5576600d0a40}</Project>
-      <Name>EvilBaschdi.Core</Name>
+      <Name>EvilBaschdi.CoreExtended</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

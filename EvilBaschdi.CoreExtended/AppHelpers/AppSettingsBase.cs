@@ -71,7 +71,7 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
 
         private void Upgrade()
         {
-            if (!Get("UpgradeRequired", false))
+            if (!Get("UpgradeRequired", true))
             {
                 return;
             }

@@ -8,6 +8,8 @@ namespace EvilBaschdi.CoreExtended.Metro
     /// </summary>
     public interface IThemeManagerHelper
     {
+        /// <summary>
+        /// </summary>
         bool? AppUsesLightTheme { get; }
 
         /// <summary>

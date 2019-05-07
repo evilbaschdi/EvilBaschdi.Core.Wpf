@@ -52,6 +52,7 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
             return IsValueEmpty(value) ? fallback : value;
         }
 
+
         /// <inheritdoc />
         /// <summary>
         ///     Set value of type T
@@ -101,6 +102,7 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
 
                     break;
                 }
+
                 default:
                 {
                     if (value.Equals(default))

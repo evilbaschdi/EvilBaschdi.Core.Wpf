@@ -12,24 +12,25 @@
     <PackageId>EvilBaschdi.CoreExtended</PackageId>
     <RootNamespace>EvilBaschdi.CoreExtended</RootNamespace>
     <AssemblyName>EvilBaschdi.CoreExtended</AssemblyName>
-    <Version>2019.4.19.0035-develop</Version>
-    <Copyright>Copyright © 2015 - 2019 evilbaschdi</Copyright>
+    <Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.hmm))-develop</Version>
+    <Copyright>Copyright © 2015 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
     <PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
     <PackageTags>Core</PackageTags>
     <Description>Microsoft.NET.Sdk.WindowsDesktop</Description>
     <LangVersion>latest</LangVersion>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.xml</DocumentationFile>
-    <PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</PackageProjectUrl>    
+    <PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="ControlzEx" Version="4.0.0-alpha0232" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2019.3.9.1706-develop" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2019.5.7.622-develop" />
     <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0262" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0141" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0146" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />
     <PackageReference Include="JetBrains.Annotations" Version="2019.1.1" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0-preview.1" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-18618-05" PrivateAssets="All" />
   </ItemGroup>
 

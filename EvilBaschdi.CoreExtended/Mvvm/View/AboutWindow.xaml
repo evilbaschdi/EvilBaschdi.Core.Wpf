@@ -3,7 +3,7 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       Title="About" ShowIconOnTitleBar="False" AllowsTransparency="True"
-                      WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" TitleCharacterCasing="Normal"
+                      WindowStartupLocation="CenterScreen" ResizeMode="NoResize" TitleCharacterCasing="Normal"
                       Height="460" Width="530" GlowBrush="{DynamicResource AccentColorBrush}">
 
     <controls:MetroContentControl>

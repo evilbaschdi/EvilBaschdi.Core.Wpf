@@ -32,7 +32,7 @@ namespace EvilBaschdi.CoreExtended.TestUi
             InitializeComponent();
             IMultiThreading multiThreading = new MultiThreading();
             _filePath = new FileListFromPath(multiThreading);
-            //LoadNetworkBrowserToArrayList();
+            
             //MessageBox.Show(VersionHelper.GetWindowsClientVersion());
             IThemeManagerHelper themeManagerHelper = new ThemeManagerHelper();
             IEncryption encryption = new Encryption();
@@ -62,6 +62,8 @@ namespace EvilBaschdi.CoreExtended.TestUi
 
 
             //TestTaskbarIcon.ContextMenu = contextMenu;
+
+            LoadNetworkBrowserToArrayList();
         }
 
         private void MainWindowLoaded(object sender, RoutedEventArgs e)
@@ -73,14 +75,15 @@ namespace EvilBaschdi.CoreExtended.TestUi
         private void LoadNetworkBrowserToArrayList()
         {
             _networkBrowser = new NetworkBrowser();
+
             var networkBrowserValue = _networkBrowser.Value;
-            if (networkBrowserValue != null && networkBrowserValue.Any())
+            if (networkBrowserValue != null)
             {
-                //UpdateCombo(cboNetwork, networkBrowserValue);
+                UpdateCombo(cboNetwork, networkBrowserValue);
             }
             else
             {
-                _dialogService.ShowMessage("Problem :-/", _networkBrowser.Exception.Message);
+                _dialogService.ShowMessage("Problem :-/", _networkBrowser.Exception?.Message);
             }
         }
 
@@ -88,9 +91,10 @@ namespace EvilBaschdi.CoreExtended.TestUi
         private void UpdateCombo(Selector selector, IEnumerable enumerable)
         {
             selector.Items.Clear();
-            foreach (string value in enumerable)
+            
+            foreach (var item in enumerable)
             {
-                selector.Items.Add(value);
+                selector.Items.Add(item);
             }
 
             selector.SelectedIndex = 0;

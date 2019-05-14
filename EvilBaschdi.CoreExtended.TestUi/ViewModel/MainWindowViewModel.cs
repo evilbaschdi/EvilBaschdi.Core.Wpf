@@ -156,7 +156,7 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
 
         private void BtnCompareClick()
         {
-            var brush = _inputText.Equals(_outputText) ? Brushes.DarkGreen : Brushes.DarkRed;
+            var brush = EncryptedText.Equals(OutputText) ? Brushes.DarkGreen : Brushes.DarkRed;
 
             InputBackground = brush;
             OutputBackground = brush;

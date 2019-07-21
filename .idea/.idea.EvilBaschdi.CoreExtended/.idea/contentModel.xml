@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Git\EvilBaschdi.CoreExtended" t="IncludeFlat">
+      <e p=".git\info\exclude" t="IncludeRecursive" />
+      <e p=".gitattributes" t="Include" />
+      <e p=".gitignore" t="Include" />
+      <e p="EvilBaschdi.CoreExtended" t="IncludeRecursive">
+        <e p="AppHelpers" t="Include">
+          <e p="AppSettingFromConfigurationManager.cs" t="Include" />
+          <e p="AppSettingsBase.cs" t="Include" />
+          <e p="AutoStart.cs" t="Include" />
+          <e p="AutoStartByConfiguration.cs" t="Include" />
+          <e p="CurrentScreen.cs" t="Include" />
+          <e p="IAppSettingFromConfigurationManager.cs" t="Include" />
+          <e p="IAppSettingsBase.cs" t="Include" />
+          <e p="IAutoStart.cs" t="Include" />
+          <e p="IAutoStartByConfiguration.cs" t="Include" />
+          <e p="ICurrentScreen.cs" t="Include" />
+          <e p="IMoveToScreen.cs" t="Include" />
+          <e p="IScreenCount.cs" t="Include" />
+          <e p="IScreenShot.cs" t="Include" />
+          <e p="MoveToScreen.cs" t="Include" />
+          <e p="ScreenCount.cs" t="Include" />
+          <e p="ScreenShot.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Browsers" t="Include">
+          <e p="ExplorerFolderBrower.cs" t="Include" />
+          <e p="ExplorerFolderBrowser.NativeMethods.cs" t="Include" />
+          <e p="FolderBrowser.cs" t="Include" />
+          <e p="IFolderBrowser.cs" t="Include" />
+          <e p="INetworkBrowser.cs" t="Include" />
+          <e p="NetworkBrowser.cs" t="Include" />
+        </e>
+        <e p="Converter" t="Include">
+          <e p="PackIconEntypoImageSourceConverter.cs" t="Include" />
+          <e p="PackIconFontAwesomeImageSourceConverter.cs" t="Include" />
+          <e p="PackIconImageSourceConverterBase.cs" t="Include" />
+          <e p="PackIconMaterialImageSourceConverter.cs" t="Include" />
+          <e p="PackIconMaterialLightImageSourceConverter.cs" t="Include" />
+          <e p="PackIconModernImageSourceConverter.cs" t="Include" />
+          <e p="PackIconOcticonsImageSourceConverter.cs" t="Include" />
+        </e>
+        <e p="DialogService.cs" t="Include" />
+        <e p="EvilBaschdi.CoreExtended.csproj" t="IncludeRecursive" />
+        <e p="Extensions" t="Include">
+          <e p="ColorExtensions.cs" t="Include" />
+          <e p="Margins.cs" t="Include" />
+          <e p="RemoveChildExtension.cs" t="Include" />
+        </e>
+        <e p="IDialogService.cs" t="Include" />
+        <e p="Metro" t="Include">
+          <e p="ApplicationStyle.cs" t="Include" />
+          <e p="ApplicationStyleSettings.cs" t="Include" />
+          <e p="IApplicationStyle.cs" t="Include" />
+          <e p="IApplicationStyleSettings.cs" t="Include" />
+          <e p="IThemeManagerHelper.cs" t="Include" />
+          <e p="ThemeManagerHelper.cs" t="Include" />
+        </e>
+        <e p="Model" t="Include">
+          <e p="AboutWindowConfiguration.cs" t="Include" />
+        </e>
+        <e p="Mvvm" t="Include">
+          <e p="AboutWindowContent.cs" t="Include" />
+          <e p="IAboutWindowContent.cs" t="Include" />
+          <e p="View" t="Include">
+            <e p="AboutWindow.xaml" t="Include" />
+            <e p="AboutWindow.xaml.cs" t="Include" />
+          </e>
+          <e p="ViewModel" t="Include">
+            <e p="AboutViewModel.cs" t="Include" />
+            <e p="ApplicationStyleViewModel.cs" t="Include" />
+            <e p="Command" t="Include">
+              <e p="DefaultCommand.cs" t="Include" />
+              <e p="ICommandViewModel.cs" t="Include" />
+              <e p="RelayCommand.cs" t="Include" />
+            </e>
+            <e p="ControlContent.cs" t="Include" />
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net45" t="Include">
+              <e p="EvilBaschdi.CoreExtended.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net451" t="Include">
+              <e p="EvilBaschdi.CoreExtended.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net452" t="Include">
+              <e p="EvilBaschdi.CoreExtended.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net46" t="Include">
+              <e p="EvilBaschdi.CoreExtended.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net461" t="Include">
+              <e p="EvilBaschdi.CoreExtended.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net462" t="Include">
+              <e p="EvilBaschdi.CoreExtended.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net47" t="Include">
+              <e p="EvilBaschdi.CoreExtended.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net471" t="Include">
+              <e p="EvilBaschdi.CoreExtended.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net472" t="Include">
+              <e p="EvilBaschdi.CoreExtended.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net48" t="Include">
+              <e p="EvilBaschdi.CoreExtended.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="netcoreapp3.0" t="Include">
+              <e p="EvilBaschdi.CoreExtended.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="EvilBaschdi.CoreExtended.sln" t="IncludeFlat" />
+      <e p="EvilBaschdi.CoreExtended.TestUi" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="app.manifest" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="b.ico" t="Include" />
+        <e p="b.png" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="EvilBaschdi.CoreExtended.TestUi.csproj" t="IncludeRecursive" />
+        <e p="EvilBaschdi.CoreExtended.TestUi.csproj.DotSettings" t="Include" />
+        <e p="EvilBaschdi.CoreExtended.TestUi.VisualElementsManifest.xml" t="Include" />
+        <e p="EvilBaschdi.TestUi.csproj.DotSettings" t="Include" />
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net45" t="Include">
+              <e p="EvilBaschdi.CoreExtended.TestUi.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net451" t="Include">
+              <e p="EvilBaschdi.CoreExtended.TestUi.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net452" t="Include">
+              <e p="EvilBaschdi.CoreExtended.TestUi.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net46" t="Include">
+              <e p="EvilBaschdi.CoreExtended.TestUi.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net461" t="Include">
+              <e p="EvilBaschdi.CoreExtended.TestUi.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net462" t="Include">
+              <e p="EvilBaschdi.CoreExtended.TestUi.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net47" t="Include">
+              <e p="EvilBaschdi.CoreExtended.TestUi.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net471" t="Include">
+              <e p="EvilBaschdi.CoreExtended.TestUi.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net472" t="Include">
+              <e p="EvilBaschdi.CoreExtended.TestUi.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="net48" t="Include">
+              <e p="EvilBaschdi.CoreExtended.TestUi.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="netcoreapp3.0" t="Include">
+              <e p="EvilBaschdi.CoreExtended.TestUi.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Properties" t="Include">
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="ViewModel" t="Include">
+          <e p="MainWindowViewModel.cs" t="Include" />
+        </e>
+      </e>
+      <e p="NuGet.config" t="Include" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="README.md" t="Include" />
+      <e p="Solution Items" t="Include" />
+    </e>
+    <e p="C:\Users\evilb\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\evilb\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_EvilBaschdi.CoreExtended.1313770951.00" t="ExcludeRecursive" />
+  </component>
+</project>

@@ -25,14 +25,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="4.0.0-alpha0303" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2019.6.12.1732-develop" />
-    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0391" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0158" />
-    <PackageReference Include="JetBrains.Annotations" Version="2019.1.1" />
+    <PackageReference Include="ControlzEx" Version="4.0.0" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2019.7.21.835-develop" />
+    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0409" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0188" />
+    <PackageReference Include="JetBrains.Annotations" Version="2019.1.3" />
     <PackageReference Include="System.DirectoryServices" Version="4.6.0-preview6.19303.8" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19270-01" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.SourceLink.Vsts.Git" Version="1.0.0-beta2-19270-01" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19367-01" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.Vsts.Git" Version="1.0.0-beta2-19367-01" PrivateAssets="All" />
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0-preview.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />
   </ItemGroup>

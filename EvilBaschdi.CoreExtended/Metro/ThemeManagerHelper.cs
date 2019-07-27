@@ -34,7 +34,7 @@ namespace EvilBaschdi.CoreExtended.Metro
             var accentColor4 = Color.FromArgb(51, color.R, color.G, color.B);
 
             var highlightColor = Color.FromArgb(255, color.R.Subtract(30), color.G.Subtract(30), color.B.Subtract(30));
-            var idealForegroundColor = (int) Math.Sqrt(color.R * color.R * .241 + color.G * color.G * .691 + color.B * color.B * .068) < 130 ? Colors.White : Colors.Black;
+            var idealForegroundColor = IdealTextColor(color);
 
             foreach (var lightDark in new List<string> { "Light", "Dark" })
             {
@@ -48,20 +48,20 @@ namespace EvilBaschdi.CoreExtended.Metro
                                              { "Theme.ColorScheme", accentName },
                                              { "Theme.ShowcaseBrush", new SolidColorBrush(accentColor1) },
                                              //Theme Base Colors 
-                                             { "HighlightColor", highlightColor },
-                                             { "AccentBaseColor", accentColor1 },
-                                             { "AccentColor", accentColor1 },
-                                             { "AccentColor2", accentColor2 },
-                                             { "AccentColor3", accentColor3 },
-                                             { "AccentColor4", accentColor4 },
-
-                                             { "AccentBaseColorBrush", new SolidColorBrush(accentColor1) },
-                                             { "HighlightBrush", new SolidColorBrush(highlightColor) },
-                                             { "AccentColorBrush", new SolidColorBrush(accentColor1) },
-                                             { "AccentColorBrush2", new SolidColorBrush(accentColor2) },
-                                             { "AccentColorBrush3", new SolidColorBrush(accentColor3) },
-                                             { "AccentColorBrush4", new SolidColorBrush(accentColor4) },
-                                             { "WindowTitleColorBrush", new SolidColorBrush(accentColor1) },
+                                             { "MahApps.Colors.Highlight", highlightColor },
+                                             { "MahApps.Colors.AccentBase", accentColor1 },
+                                             { "MahApps.Colors.Accent", accentColor1 },
+                                             { "MahApps.Colors.Accent2", accentColor2 },
+                                             { "MahApps.Colors.Accent3", accentColor3 },
+                                             { "MahApps.Colors.Accent4", accentColor4 },
+                                             // Universal Control Brushes
+                                             { "MahApps.Brushes.AccentBase", new SolidColorBrush(accentColor1) },
+                                             { "MahApps.Brushes.Highlight", new SolidColorBrush(highlightColor) },
+                                             { "MahApps.Brushes.Accent", new SolidColorBrush(accentColor1) },
+                                             { "MahApps.Brushes.Accent2", new SolidColorBrush(accentColor2) },
+                                             { "MahApps.Brushes.Accent3", new SolidColorBrush(accentColor3) },
+                                             { "MahApps.Brushes.Accent4", new SolidColorBrush(accentColor4) },
+                                             { "MahApps.Brushes.WindowTitle", new SolidColorBrush(accentColor1) },
                                              {
                                                  "ProgressBrush", new LinearGradientBrush(
                                                      new GradientStopCollection(new[]
@@ -70,23 +70,52 @@ namespace EvilBaschdi.CoreExtended.Metro
                                                                                     new GradientStop(accentColor3, 1)
                                                                                 }), new Point(1.002, 0.5), new Point(0.001, 0.5))
                                              },
-                                             { "CheckmarkFill", new SolidColorBrush(accentColor1) },
-                                             { "RightArrowFill", new SolidColorBrush(accentColor1) },
-                                             { "IdealForegroundColor", idealForegroundColor },
-                                             { "IdealForegroundColorBrush", new SolidColorBrush(idealForegroundColor) },
-                                             { "IdealForegroundDisabledBrush", new SolidColorBrush(idealForegroundColor) },
-                                             { "AccentSelectedColorBrush", new SolidColorBrush(idealForegroundColor) },
-                                             { "MetroDataGrid.HighlightBrush", new SolidColorBrush(accentColor1) },
-                                             { "MetroDataGrid.HighlightTextBrush", new SolidColorBrush(idealForegroundColor) },
-                                             { "MetroDataGrid.MouseOverHighlightBrush", new SolidColorBrush(accentColor3) },
-                                             { "MetroDataGrid.FocusBorderBrush", new SolidColorBrush(accentColor1) },
-                                             { "MetroDataGrid.InactiveSelectionHighlightBrush", new SolidColorBrush(accentColor2) },
-                                             { "MetroDataGrid.InactiveSelectionHighlightTextBrush", new SolidColorBrush(idealForegroundColor) },
-                                             { "MahApps.Metro.Brushes.ToggleSwitchButton.OnSwitchBrush.Win10", new SolidColorBrush(accentColor1) },
-                                             { "MahApps.Metro.Brushes.ToggleSwitchButton.OnSwitchMouseOverBrush.Win10", new SolidColorBrush(accentColor2) },
-                                             { "MahApps.Metro.Brushes.ToggleSwitchButton.ThumbIndicatorCheckedBrush.Win10", new SolidColorBrush(idealForegroundColor) }
+                                             { "MahApps.Brushes.CheckmarkFill", new SolidColorBrush(accentColor1) },
+                                             { "MahApps.Brushes.RightArrowFill", new SolidColorBrush(accentColor1) },
+                                             { "MahApps.Colors.IdealForeground", idealForegroundColor },
+                                             { "MahApps.Brushes.IdealForeground", new SolidColorBrush(idealForegroundColor) },
+                                             { "MahApps.Brushes.IdealForegroundDisabled", new SolidColorBrush(idealForegroundColor) },
+                                             { "MahApps.Brushes.AccentSelectedColor", new SolidColorBrush(idealForegroundColor) },
+                                             // DataGrid brushes
+                                             { "MahApps.Brushes.DataGrid.Highlight", new SolidColorBrush(accentColor1) },
+                                             { "MahApps.Brushes.DataGrid.HighlightText", new SolidColorBrush(idealForegroundColor) },
+                                             { "MahApps.Brushes.DataGrid.MouseOverHighlight", new SolidColorBrush(accentColor3) },
+                                             { "MahApps.Brushes.DataGrid.FocusBorder", new SolidColorBrush(accentColor1) },
+                                             { "MahApps.Brushes.DataGrid.InactiveSelectionHighlight", new SolidColorBrush(accentColor2) },
+                                             { "MahApps.Brushes.DataGrid.InactiveSelectionHighlightText", new SolidColorBrush(idealForegroundColor) },
+
+                                             { "MahApps.Colors.ToggleSwitchButton.OnSwitchBrush.Win10", new SolidColorBrush(accentColor1) },
+                                             { "MahApps.Colors.ToggleSwitchButton.OnSwitchMouseOverBrush.Win10", new SolidColorBrush(accentColor2) },
+                                             { "MahApps.Colors.ToggleSwitchButton.ThumbIndicatorCheckedBrush.Win10", new SolidColorBrush(idealForegroundColor) }
                                          };
 
+
+                //accentName = accentName ?? $"RuntimeTheme_{lightDark}_{color.ToString().Replace("#", string.Empty)}";
+                //var accentBaseColor = color;
+                //var baseColorScheme = lightDark;
+
+                //var generatorParameters = GetGeneratorParameters();
+                //var themeTemplateContent = GetThemeTemplateContent();
+
+                //var variant = generatorParameters.BaseColorSchemes.First(x => x.Name == baseColorScheme);
+                //var colorScheme = new ColorScheme();
+                //colorScheme.Name = accentBaseColor.ToString().Replace("#", string.Empty);
+                //var values = colorScheme.Values;
+                //values.Add("MahApps.Colors.AccentBase", accentBaseColor.ToString());
+                //values.Add("MahApps.Colors.Accent", Color.FromArgb(204, accentBaseColor.R, accentBaseColor.G, accentBaseColor.B).ToString());
+                //values.Add("MahApps.Colors.Accent2", Color.FromArgb(153, accentBaseColor.R, accentBaseColor.G, accentBaseColor.B).ToString());
+                //values.Add("MahApps.Colors.Accent3", Color.FromArgb(102, accentBaseColor.R, accentBaseColor.G, accentBaseColor.B).ToString());
+                //values.Add("MahApps.Colors.Accent4", Color.FromArgb(51, accentBaseColor.R, accentBaseColor.G, accentBaseColor.B).ToString());
+
+                //values.Add("MahApps.Colors.Highlight", accentBaseColor.ToString());
+                //values.Add("MahApps.Colors.IdealForeground", IdealTextColor(accentBaseColor).ToString());
+
+                //var xamlContent = new ColorSchemeGenerator().GenerateColorSchemeFileContent(generatorParameters, variant, colorScheme, themeTemplateContent,
+                //    $"{lightDark}.{accentName}", $"{accentName} ({lightDark})");
+
+                //var resourceDictionary = (ResourceDictionary) XamlReader.Parse(xamlContent);
+                //var newTheme = new Theme(resourceDictionary);
+                //ThemeManager.AddTheme(newTheme.Resources);
 
                 // applying theme to MahApps
                 var resDictName = $"{lightDark}.{accentName}.xaml";
@@ -163,7 +192,56 @@ namespace EvilBaschdi.CoreExtended.Metro
         public void SetSystemColorTheme(Window window)
 
         {
+            //foreach (var theme in ThemeManager.Themes)
+            //{
+            //    var name = theme.DisplayName + " | " + theme.Name;
+            //    MessageBox.Show(name);
+            //}
+
             ThemeManager.ChangeTheme(window, "Light.Accent from windows");
         }
+
+        /// <summary>
+        ///     Determining Ideal Text Color Based on Specified Background Color
+        ///     http://www.codeproject.com/KB/GDI-plus/IdealTextColor.aspx
+        /// </summary>
+        /// <param name="color">The bg.</param>
+        /// <returns></returns>
+        private static Color IdealTextColor(Color color)
+        {
+            const int nThreshold = 105;
+            var bgDelta = Convert.ToInt32((color.R * 0.299) + (color.G * 0.587) + (color.B * 0.114));
+            var foreColor = 255 - bgDelta < nThreshold
+                ? Colors.Black
+                : Colors.White;
+            return foreColor;
+        }
+
+        //private static string GetThemeTemplateContent()
+        //{
+        //    using (var stream = typeof(ThemeManager).Assembly.GetManifestResourceStream("MahApps.Metro.Styles.Themes.Theme.Template.xaml"))
+        //    {
+        //        using (var reader = new StreamReader(stream))
+        //        {
+        //            return reader.ReadToEnd();
+        //        }
+        //    }
+        //}
+
+        //private static GeneratorParameters GetGeneratorParameters()
+        //{
+        //    return JsonConvert.DeserializeObject<GeneratorParameters>(GetGeneratorParametersJson());
+        //}
+
+        //private static string GetGeneratorParametersJson()
+        //{
+        //    using (var stream = typeof(ThemeManager).Assembly.GetManifestResourceStream("MahApps.Metro.Styles.Themes.GeneratorParameters.json"))
+        //    {
+        //        using (var reader = new StreamReader(stream))
+        //        {
+        //            return reader.ReadToEnd();
+        //        }
+        //    }
+        //}
     }
 }

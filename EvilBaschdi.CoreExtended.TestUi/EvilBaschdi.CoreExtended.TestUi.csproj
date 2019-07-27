@@ -8,7 +8,7 @@
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.TestUi.xml</DocumentationFile>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RuntimeIdentifiers>win</RuntimeIdentifiers>
-    <Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))-develop</Version>
+    <Version>$([System.DateTime]::UtcNow.AddHours(2).ToString(yyyy.M.d.Hmm))-develop</Version>
     <Copyright>Copyright © 2015 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
     <PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
@@ -19,11 +19,11 @@
     <Product>EvilBaschdi.CoreExtended TestUi</Product>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="4.0.0" />
+    <PackageReference Include="ControlzEx" Version="4.0.1" />
     <PackageReference Include="EvilBaschdi.Core" Version="2019.7.21.835-develop" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
-    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0409" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0188" />
+    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0455" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0189" />
     <PackageReference Include="Unity" Version="5.11.1" />
     <PackageReference Include="Unity.Abstractions" Version="5.11.1" />
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0-preview.2" PrivateAssets="All" />

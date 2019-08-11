@@ -7,7 +7,7 @@
                       AllowsTransparency="True"
                       Height="350" Width="525" Icon="b.ico"
                       SaveWindowPosition="True" TitleCharacterCasing="Normal"
-                      GlowBrush="{DynamicResource AccentColorBrush}"
+                      GlowBrush="{DynamicResource MahApps.Brushes.AccentBase}"
                       Title="EvilBaschdi.Core TestUI">
 
     <!--  RightWindowCommands  -->
@@ -64,8 +64,8 @@
                                VerticalAlignment="Top" Content="Theme" />
                         <controls:ToggleSwitch Name="ThemeSwitch" Margin="10,1,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"
                                                IsChecked="{Binding AppUsesDarkTheme, Mode=TwoWay}" IsEnabled="{Binding AppDoesNotUseSystemStyle, Mode=TwoWay}"
-                                               OnSwitchBrush="{DynamicResource AccentColorBrush}" OnLabel="Dark"
-                                               OffSwitchBrush="{DynamicResource AccentColorBrush}" OffLabel="Light" />
+                                               OnSwitchBrush="{DynamicResource MahApps.Brushes.AccentBase}" OnLabel="Dark"
+                                               OffSwitchBrush="{DynamicResource MahApps.Brushes.AccentBase}" OffLabel="Light" />
                     </StackPanel>
                     <!-- Accent -->
                     <StackPanel Margin="10,5,0,0" Orientation="Horizontal">
@@ -84,7 +84,7 @@
                     </StackPanel>
                     <!-- Horizontal Line -->
                     <StackPanel Margin="15,10,15,0" Orientation="Vertical">
-                        <Separator Background="{DynamicResource AccentColorBrush}" />
+                        <Separator Background="{DynamicResource MahApps.Brushes.AccentBase}" />
                     </StackPanel>
                     <!-- Build / Linker Time -->
                     <StackPanel Orientation="Horizontal">

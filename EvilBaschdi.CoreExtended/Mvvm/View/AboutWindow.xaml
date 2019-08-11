@@ -4,7 +4,7 @@
                       xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       Title="About" ShowIconOnTitleBar="False" AllowsTransparency="True"
                       WindowStartupLocation="CenterScreen" ResizeMode="NoResize" TitleCharacterCasing="Normal"
-                      Height="460" Width="530" GlowBrush="{DynamicResource AccentColorBrush}">
+                      Height="460" Width="530" GlowBrush="{DynamicResource MahApps.Brushes.AccentBase}" Opacity="0.95">
 
     <controls:MetroContentControl>
         <Grid Margin="15">

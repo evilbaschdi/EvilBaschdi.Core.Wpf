@@ -20,10 +20,10 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ControlzEx" Version="4.0.1" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2019.7.21.835-develop" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2019.7.27.1257-develop" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
     <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0455" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0189" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0206" />
     <PackageReference Include="Unity" Version="5.11.1" />
     <PackageReference Include="Unity.Abstractions" Version="5.11.1" />
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0-preview.2" PrivateAssets="All" />

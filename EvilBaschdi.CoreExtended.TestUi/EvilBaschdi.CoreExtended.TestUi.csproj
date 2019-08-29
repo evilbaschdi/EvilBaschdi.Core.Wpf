@@ -19,7 +19,7 @@
     <Product>EvilBaschdi.CoreExtended TestUi</Product>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="4.0.1" />
+    <PackageReference Include="ControlzEx" Version="4.0.2" />
     <PackageReference Include="EvilBaschdi.Core" Version="2019.7.27.1257-develop" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
     <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0455" />

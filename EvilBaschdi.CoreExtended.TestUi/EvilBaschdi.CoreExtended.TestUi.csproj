@@ -20,7 +20,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ControlzEx" Version="4.0.2" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2019.7.27.1257-develop" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2019.9.4.822-develop" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
     <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0455" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0206" />

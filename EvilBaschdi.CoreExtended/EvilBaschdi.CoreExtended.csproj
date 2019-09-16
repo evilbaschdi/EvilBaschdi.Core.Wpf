@@ -26,11 +26,11 @@
 
   <ItemGroup>
     <PackageReference Include="ControlzEx" Version="4.0.3" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2019.9.4.822-develop" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2019.9.16.2028-develop" />
     <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0479" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0206" />
     <PackageReference Include="JetBrains.Annotations" Version="2019.1.3" />
-    <PackageReference Include="System.DirectoryServices" Version="4.6.0-preview9.19421.4" />
+    <PackageReference Include="System.DirectoryServices" Version="4.6.0-rc1.19456.4" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19367-01">
       <PrivateAssets>all</PrivateAssets>

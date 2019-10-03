@@ -61,5 +61,35 @@ namespace EvilBaschdi.CoreExtended.Converter
         /// <param name="penThickness"></param>
         /// <returns></returns>
         protected abstract ImageSource CreateImageSource(object value, Brush foregroundBrush, double penThickness);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="foregroundBrush"></param>
+        /// <param name="penThickness"></param>
+        /// <param name="packIconData"></param>
+        /// <returns></returns>
+        protected ImageSource InnerCreateImageSource(Brush foregroundBrush, double penThickness, string packIconData)
+        {
+            var geometryDrawing = new GeometryDrawing
+                                  {
+                                      Geometry = Geometry.Parse(packIconData),
+                                      Brush = foregroundBrush,
+                                      Pen = new Pen(foregroundBrush, penThickness)
+                                  };
+
+            var drawingGroup = new DrawingGroup
+                               {
+                                   Children =
+                                   {
+                                       geometryDrawing
+                                   },
+                                   Transform = new ScaleTransform(1, -1)
+                               };
+
+            return new DrawingImage
+                   {
+                       Drawing = drawingGroup
+                   };
+        }
     }
 }

@@ -5,7 +5,7 @@ namespace EvilBaschdi.CoreExtended.Converter
 {
     /// <summary>
     /// </summary>
-    public class PackIconMaterialImageSourceConverter : PackIconImageSourceConverterBase<PackIconMaterialKind>
+    public class PackIconBoxIconsImageSourceConverter : PackIconImageSourceConverterBase<PackIconBoxIconsKind>
     {
         /// <summary>
         /// </summary>
@@ -15,9 +15,9 @@ namespace EvilBaschdi.CoreExtended.Converter
         /// <returns></returns>
         protected override ImageSource CreateImageSource(object value, Brush foregroundBrush, double penThickness)
         {
-            var packIcon = new PackIconMaterial
+            var packIcon = new PackIconBoxIcons
                            {
-                               Kind = (PackIconMaterialKind) value
+                               Kind = (PackIconBoxIconsKind) value
                            };
 
             return InnerCreateImageSource(foregroundBrush, penThickness, packIcon.Data);

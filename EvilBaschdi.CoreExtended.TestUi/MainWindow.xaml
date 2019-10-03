@@ -4,11 +4,12 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:tb="http://www.hardcodet.net/taskbar"
                       xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:converter="clr-namespace:EvilBaschdi.CoreExtended.Converter;assembly=EvilBaschdi.CoreExtended"
                       AllowsTransparency="True"
                       Height="350" Width="525" Icon="b.ico"
                       SaveWindowPosition="True" TitleCharacterCasing="Normal"
                       GlowBrush="{DynamicResource MahApps.Brushes.AccentBase}"
-                      Title="EvilBaschdi.Core TestUI" > 
+                      Title="EvilBaschdi.Core TestUI">
     <!--  RightWindowCommands  -->
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
@@ -26,8 +27,8 @@
                 </StackPanel>
             </Button>-->
         </controls:WindowCommands>
-    </controls:MetroWindow.RightWindowCommands>    
-        <Grid>      
+    </controls:MetroWindow.RightWindowCommands>
+    <Grid>
         <!-- Taskbar Icon -->
         <tb:TaskbarIcon Name="TestTaskbarIcon" ToolTip="Test" ToolTipText="Test" Visibility="Hidden" />
         <Label Content="Input:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
@@ -50,6 +51,18 @@
         <Label Content="Network:" HorizontalAlignment="Left" Margin="10,251,0,0" VerticalAlignment="Top" />
         <ComboBox Height="23" Margin="100,251,10,0" IsReadOnly="False" Name="cboNetwork" VerticalAlignment="Top" />
     </Grid>
+    <!-- TaskBarItemInfo -->
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo>
+            <TaskbarItemInfo.ThumbButtonInfos>
+                <ThumbButtonInfoCollection>
+                    <ThumbButtonInfo
+                        ImageSource="{Binding Source={x:Static iconPacks:PackIconMaterialKind.Information}, Converter={converter:PackIconMaterialImageSourceConverter}, ConverterParameter={StaticResource MahApps.Brushes.Text}}"
+                        Command="{Binding AboutWindowClick.Command}" />
+                </ThumbButtonInfoCollection>
+            </TaskbarItemInfo.ThumbButtonInfos>
+        </TaskbarItemInfo>
+    </Window.TaskbarItemInfo>
     <!--  Fly-outs  -->
     <controls:MetroWindow.Flyouts>
         <controls:FlyoutsControl>
@@ -93,5 +106,5 @@
                 </StackPanel>
             </controls:Flyout>
         </controls:FlyoutsControl>
-    </controls:MetroWindow.Flyouts>  
+    </controls:MetroWindow.Flyouts>
 </controls:MetroWindow>

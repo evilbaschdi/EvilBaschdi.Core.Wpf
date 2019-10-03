@@ -20,25 +20,7 @@ namespace EvilBaschdi.CoreExtended.Converter
                                Kind = (PackIconModernKind) value
                            };
 
-            var geometryDrawing = new GeometryDrawing
-                                  {
-                                      Geometry = Geometry.Parse(packIcon.Data),
-                                      Brush = foregroundBrush,
-                                      Pen = new Pen(foregroundBrush, penThickness)
-                                  };
-
-            var drawingGroup = new DrawingGroup
-                               {
-                                   Children =
-                                   {
-                                       geometryDrawing
-                                   }
-                               };
-
-            return new DrawingImage
-                   {
-                       Drawing = drawingGroup
-                   };
+            return InnerCreateImageSource(foregroundBrush, penThickness, packIcon.Data);
         }
     }
 }

@@ -134,8 +134,7 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             {
                 try
                 {
-                    _themeManagerHelper.CreateAppStyleFor(_customColorText.ToColor(), _customColorText);
-                    ThemeManager.ChangeTheme(Application.Current, _customColorText);
+                   
                 }
                 catch (Exception exception)
                 {

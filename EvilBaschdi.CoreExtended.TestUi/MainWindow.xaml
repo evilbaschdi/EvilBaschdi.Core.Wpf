@@ -16,7 +16,8 @@
             <!--<TextBox Name="CustomColor" Text="{Binding CustomColorText, UpdateSourceTrigger=LostFocus}" Width="100" />-->
             <Button Command="{Binding AboutWindowClick.Command}" Name="AboutWindow">
                 <StackPanel Orientation="Horizontal">
-                    <iconPacks:PackIconMaterial Kind="Information" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <iconPacks:PackIconControl Kind="{x:Static iconPacks:PackIconMaterialKind.Information}" Width="20" Height="20" HorizontalAlignment="Center"
+                                               VerticalAlignment="Center" />
                     <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Text="about" />
                 </StackPanel>
             </Button>

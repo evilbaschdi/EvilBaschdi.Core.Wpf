@@ -1,17 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-  <PropertyGroup>
-    <OutputType>Library</OutputType>
+  <PropertyGroup>    
     <TargetFrameworks>netcoreapp3.0;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48</TargetFrameworks>
     <UseWPF>true</UseWPF>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon />
-    <StartupObject />
-    <TieredCompilation>true</TieredCompilation>
+    
     <Authors>Sebastian Walter</Authors>
     <Company>evilbaschdi (Sebastian Walter)</Company>
     <PackageId>EvilBaschdi.CoreExtended</PackageId>
     <RootNamespace>EvilBaschdi.CoreExtended</RootNamespace>
     <AssemblyName>EvilBaschdi.CoreExtended</AssemblyName>
+    <Title>EvilBaschdi.CoreExtended</Title>
     <Copyright>Copyright © 2015 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
     <PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
@@ -25,13 +22,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="4.1.0" />
+    <PackageReference Include="ControlzEx" Version="4.1.1" />
     <PackageReference Include="EvilBaschdi.Core" Version="2019.10.10.1115-develop" />
-    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0490" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0242" />
+    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0531" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0243" />
     <PackageReference Include="JetBrains.Annotations" Version="2019.1.3" />
     <PackageReference Include="System.DirectoryServices" Version="4.6.0" />
-    <!--<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />-->
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.30" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19367-01">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
@@ -44,7 +41,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    
+
     <!--<PackageReference Include="XamlColorSchemeGenerator" Version="3.0.0.31" PrivateAssets="All" />-->
   </ItemGroup>
 </Project>

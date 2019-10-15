@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFrameworks>netcoreapp3.0;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48</TargetFrameworks>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
     <Authors>Sebastian Walter</Authors>
     <Company>evilbaschdi (Sebastian Walter)</Company>
     <Version>$([System.DateTime]::UtcNow.AddHours(2).ToString(yyyy.M.d.Hmm))-develop</Version>
@@ -17,15 +18,26 @@
     <Product>EvilBaschdi.CoreExtended TestUi</Product>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="4.1.0" />
+    <PackageReference Include="ControlzEx" Version="4.1.1" />
     <PackageReference Include="EvilBaschdi.Core" Version="2019.10.10.1115-develop" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
-    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0490" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0242" />
+    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0531" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0243" />
     <PackageReference Include="Unity" Version="5.11.1" />
     <PackageReference Include="Unity.Abstractions" Version="5.11.1" />
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0-preview.2" PrivateAssets="All" />
-    <!--<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />-->
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.30" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19367-01">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.SourceLink.Vsts.Git" Version="1.0.0-beta2-19367-01">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0-preview.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="b.ico" />
@@ -50,4 +62,5 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+
 </Project>

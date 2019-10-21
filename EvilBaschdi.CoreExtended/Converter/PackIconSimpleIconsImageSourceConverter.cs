@@ -4,7 +4,7 @@ namespace EvilBaschdi.CoreExtended.Converter
 {
     /// <summary>
     /// </summary>
-    public class PackIconSimpleIconsImageSourceConverter : PackIconImageSourceConverterBase<PackIconSimpleIcons, PackIconSimpleIconsKind>
+    public class PackIconSimpleIconsImageSourceConverter : PackIconImageSourceConverterBase<PackIconSimpleIconsKind>
     {
     }
 }

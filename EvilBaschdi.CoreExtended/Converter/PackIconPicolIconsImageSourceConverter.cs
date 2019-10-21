@@ -5,7 +5,7 @@ namespace EvilBaschdi.CoreExtended.Converter
     /// <summary>
     /// </summary>
     // ReSharper disable once InconsistentNaming
-    public class PackIconPicolIconsImageSourceConverter : PackIconImageSourceConverterBase<PackIconPicolIcons, PackIconPicolIconsKind>
+    public class PackIconPicolIconsImageSourceConverter : PackIconImageSourceConverterBase<PackIconPicolIconsKind>
     {
     }
 }

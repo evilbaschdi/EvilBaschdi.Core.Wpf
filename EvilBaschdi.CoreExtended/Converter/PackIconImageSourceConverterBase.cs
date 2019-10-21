@@ -13,8 +13,9 @@ namespace EvilBaschdi.CoreExtended.Converter
     ///     Converts a PackIcon to an ImageSource.
     ///     Use the ConverterParameter to pass a Brush.
     /// </summary>
-    public abstract class PackIconImageSourceConverterBase<TPack, TKind> : MarkupExtension, IValueConverter
-        where TPack : PackIconControl<TKind>, new()
+    public abstract class PackIconImageSourceConverterBase<TKind> : MarkupExtension, IValueConverter
+        where TKind : Enum
+
     {
         /// <summary>
         ///     Gets or sets the thickness to draw the icon with.
@@ -45,7 +46,7 @@ namespace EvilBaschdi.CoreExtended.Converter
                                      {
                                          new GeometryDrawing
                                          {
-                                             Geometry = Geometry.Parse(new TPack
+                                             Geometry = Geometry.Parse(new PackIconControl
                                                                        {
                                                                            Kind = (TKind) value
                                                                        }.Data),

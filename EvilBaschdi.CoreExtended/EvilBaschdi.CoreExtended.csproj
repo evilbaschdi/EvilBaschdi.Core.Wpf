@@ -17,7 +17,7 @@
     <LangVersion>8</LangVersion>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.xml</DocumentationFile>
     <PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</PackageProjectUrl>
-    <Version>$([System.DateTime]::UtcNow.AddHours(2).ToString(yyyy.M.d.Hmm))-develop</Version>
+    <Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))-develop</Version>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
 

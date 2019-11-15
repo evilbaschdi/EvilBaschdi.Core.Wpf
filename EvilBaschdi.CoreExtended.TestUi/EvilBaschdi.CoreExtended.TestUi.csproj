@@ -22,7 +22,7 @@
     <PackageReference Include="ControlzEx" Version="4.1.1" />
     <PackageReference Include="EvilBaschdi.Core" Version="2019.11.4.16-develop" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
-    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0589" />
+    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0605" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0-alpha0260" />
     <PackageReference Include="Unity" Version="5.11.1" />
     <PackageReference Include="Unity.Abstractions" Version="5.11.1" />

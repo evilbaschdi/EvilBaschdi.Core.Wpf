@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.DirectoryServices;
+using System.Linq;
 
 namespace EvilBaschdi.CoreExtended.Browsers
 {
@@ -23,18 +24,12 @@ namespace EvilBaschdi.CoreExtended.Browsers
 
                 try
                 {
-                    DirectoryEntry root = new DirectoryEntry("WinNT:");
+                    var root = new DirectoryEntry("WinNT:");
 
-                    foreach (DirectoryEntry computers in root.Children)
-                    {
-                        foreach (DirectoryEntry computer in computers.Children)
-                        {
-                            if (computer.SchemaClassName == "Computer")
-                            {
-                                networkComputers.Add(computer.Name.ToLower());
-                            }
-                        }
-                    }
+                    networkComputers.AddRange(from DirectoryEntry computers in root.Children
+                                              from DirectoryEntry computer in computers.Children
+                                              where computer.SchemaClassName == "Computer"
+                                              select computer.Name.ToLower());
 
                     return networkComputers;
                 }

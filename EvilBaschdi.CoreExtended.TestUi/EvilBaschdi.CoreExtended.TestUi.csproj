@@ -1,29 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFrameworks>netcoreapp3.1;netcoreapp3.0;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48</TargetFrameworks>
-    <UseWPF>true</UseWPF>
-    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>b.ico</ApplicationIcon>
     <Authors>Sebastian Walter</Authors>
     <Company>evilbaschdi (Sebastian Walter)</Company>
-    <Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))-develop</Version>
     <Copyright>Copyright © 2015 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
-    <PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
-    <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
-    <LangVersion>8</LangVersion>
+    <!-- ReSharper disable once UnknownProperty -->
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.TestUi.xml</DocumentationFile>
-    <ApplicationIcon>b.ico</ApplicationIcon>
+    <LangVersion>8</LangVersion>
+    <OutputType>WinExe</OutputType>
+    <PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
     <PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</PackageProjectUrl>
     <Product>EvilBaschdi.CoreExtended TestUi</Product>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
+    <TargetFrameworks>netcoreapp3.1;netcoreapp3.0;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48</TargetFrameworks>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Title>EvilBaschdi.CoreExtended.TestUi</Title>
+    <UseWPF>true</UseWPF>
+    <Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))-develop</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ControlzEx" Version="4.2.0" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2019.12.14.1448" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2020.1.4.1203-develop" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
     <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0660" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.0" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.0.1" />
     <PackageReference Include="Unity" Version="5.11.2" />
     <PackageReference Include="Unity.Abstractions" Version="5.11.3" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.3" />

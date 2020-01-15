@@ -48,6 +48,4 @@ namespace EvilBaschdi.CoreExtended.Metro
             }
         }
     }
-
-  
 }

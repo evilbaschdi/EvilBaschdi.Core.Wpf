@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 
-namespace EvilBaschdi.CoreExtended
+namespace EvilBaschdi.CoreExtended.Metro
 {
     /// <inheritdoc />
     public class DialogService : IDialogService

@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using MahApps.Metro.Controls.Dialogs;
 
-namespace EvilBaschdi.CoreExtended
+namespace EvilBaschdi.CoreExtended.Metro
 {
     /// <summary>
     /// </summary>

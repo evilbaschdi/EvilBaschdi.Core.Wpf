@@ -10,7 +10,8 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
         /// <summary>
         /// </summary>
         /// <param name="pngBitmapEncoder"></param>
-        void SaveToFile(PngBitmapEncoder pngBitmapEncoder);
+        /// <param name="path"></param>
+        void SaveToFile(PngBitmapEncoder pngBitmapEncoder, string path);
 
         /// <summary>
         /// </summary>

@@ -24,14 +24,14 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
 
 
         /// <inheritdoc />
-        public void SaveToFile(PngBitmapEncoder pngBitmapEncoder)
+        public void SaveToFile(PngBitmapEncoder pngBitmapEncoder, string path = @"C:\Temp\Screenshot.png")
         {
             if (pngBitmapEncoder == null)
             {
                 throw new ArgumentNullException(nameof(pngBitmapEncoder));
             }
 
-            var fs = new FileStream(@"C:\Temp\Screenshot.png", FileMode.Create);
+            var fs = new FileStream(path, FileMode.Create);
             pngBitmapEncoder.Save(fs);
             fs.Close();
         }

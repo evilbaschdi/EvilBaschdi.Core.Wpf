@@ -3,13 +3,11 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows;
 using EvilBaschdi.Core.Security;
-using EvilBaschdi.CoreExtended.Extensions;
 using EvilBaschdi.CoreExtended.Metro;
 using EvilBaschdi.CoreExtended.Mvvm;
 using EvilBaschdi.CoreExtended.Mvvm.View;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
-using MahApps.Metro;
 
 namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
 {
@@ -134,7 +132,6 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             {
                 try
                 {
-                   
                 }
                 catch (Exception exception)
                 {

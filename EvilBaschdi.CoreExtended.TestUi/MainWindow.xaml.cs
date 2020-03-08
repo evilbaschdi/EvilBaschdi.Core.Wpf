@@ -22,7 +22,6 @@ namespace EvilBaschdi.CoreExtended.TestUi
         private readonly IDialogService _dialogService;
 
         // ReSharper disable once NotAccessedField.Local
-        private readonly IFileListFromPath _filePath;
         private readonly MainWindowViewModel _mainWindowViewModel;
 
 
@@ -32,7 +31,7 @@ namespace EvilBaschdi.CoreExtended.TestUi
         {
             InitializeComponent();
             IMultiThreading multiThreading = new MultiThreading();
-            _filePath = new FileListFromPath(multiThreading);
+            
             
             //MessageBox.Show(VersionHelper.GetWindowsClientVersion());
             IThemeManagerHelper themeManagerHelper = new ThemeManagerHelper();

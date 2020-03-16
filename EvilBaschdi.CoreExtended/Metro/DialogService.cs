@@ -16,6 +16,11 @@ namespace EvilBaschdi.CoreExtended.Metro
         /// <param name="mainWindow"></param>
         public DialogService(MetroWindow mainWindow)
         {
+            if (mainWindow == null)
+            {
+                throw new ArgumentNullException(nameof(mainWindow));
+            }
+
             _mainWindow = mainWindow ?? throw new ArgumentNullException(nameof(mainWindow));
         }
 
@@ -25,6 +30,16 @@ namespace EvilBaschdi.CoreExtended.Metro
         /// <returns></returns>
         public async Task<MessageDialogResult> ShowMessage(string title, string message)
         {
+            if (title == null)
+            {
+                throw new ArgumentNullException(nameof(title));
+            }
+
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message));
+            }
+
             var options = new MetroDialogSettings
                           {
                               ColorScheme = MetroDialogColorScheme.Accented
@@ -41,6 +56,16 @@ namespace EvilBaschdi.CoreExtended.Metro
         /// <returns></returns>
         public async Task<MessageDialogResult> ShowMessage(string title, string message, MessageDialogStyle dialogStyle)
         {
+            if (title == null)
+            {
+                throw new ArgumentNullException(nameof(title));
+            }
+
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message));
+            }
+
             _mainWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
             return await _mainWindow.ShowMessageAsync(title, message, dialogStyle, _mainWindow.MetroDialogOptions);
         }

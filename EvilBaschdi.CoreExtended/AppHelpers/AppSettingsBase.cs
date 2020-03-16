@@ -2,6 +2,7 @@ using System;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.Linq;
+using JetBrains.Annotations;
 
 namespace EvilBaschdi.CoreExtended.AppHelpers
 {
@@ -31,11 +32,16 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         // ReSharper disable once RedundantTypeSpecificationInDefaultExpression
-        public T Get<T>(string setting, T fallback = default)
+        public T Get<T>(string setting, [NotNull] T fallback = default)
         {
             if (setting == null)
             {
                 throw new ArgumentNullException(nameof(setting));
+            }
+
+            if (fallback == null)
+            {
+                throw new ArgumentNullException(nameof(fallback));
             }
 
             if (!_settingsBase.Properties.OfType<SettingsProperty>().ToList().Any(x => x.Name.Equals(setting)))
@@ -44,10 +50,6 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
             }
 
             var value = (T) _settingsBase[setting];
-            if (fallback == null)
-            {
-                return value;
-            }
 
             return IsValueEmpty(value) ? fallback : value;
         }
@@ -59,11 +61,16 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
         /// </summary>
         /// <param name="setting"></param>
         /// <param name="value"></param>
-        public void Set(string setting, object value)
+        public void Set(string setting, [NotNull] object value)
         {
             if (setting == null)
             {
                 throw new ArgumentNullException(nameof(setting));
+            }
+
+            if (value == null)
+            {
+                throw new ArgumentNullException(nameof(value));
             }
 
             _settingsBase[setting] = value ?? throw new ArgumentNullException(nameof(value));

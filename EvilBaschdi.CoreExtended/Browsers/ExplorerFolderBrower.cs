@@ -3,6 +3,7 @@ using System.CodeDom.Compiler;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
+using JetBrains.Annotations;
 using Microsoft.Win32;
 
 namespace EvilBaschdi.CoreExtended.Browsers
@@ -67,8 +68,13 @@ namespace EvilBaschdi.CoreExtended.Browsers
         /// </summary>
         /// <param name="owner">Der Besitzer des Fensters</param>
         /// <returns><c>true</c> wenn der Benutzer die Ordnerauswahl bestätigte; andernfalls <c>false</c></returns>
-        public bool ShowDialog(Window owner)
+        public bool ShowDialog([NotNull] Window owner)
         {
+            if (owner == null)
+            {
+                throw new ArgumentNullException(nameof(owner));
+            }
+
             return ShowDialog(owner == null ? IntPtr.Zero : new WindowInteropHelper(owner).Handle);
         }
 
@@ -119,8 +125,13 @@ namespace EvilBaschdi.CoreExtended.Browsers
 
         #region Helper
 
-        private void GetPathAndElementName(IShellItem item, out string path, out string elementName)
+        private void GetPathAndElementName([NotNull] IShellItem item, out string path, out string elementName)
         {
+            if (item == null)
+            {
+                throw new ArgumentNullException(nameof(item));
+            }
+
             item.GetDisplayName(Sigdn.Parentrelativeforaddressbar, out elementName);
             try
             {
@@ -137,8 +148,13 @@ namespace EvilBaschdi.CoreExtended.Browsers
             return new FileOpenDialog() as IFileOpenDialog;
         }
 
-        private void SetInitialFolder(IFileOpenDialog dialog)
+        private void SetInitialFolder([NotNull] IFileOpenDialog dialog)
         {
+            if (dialog == null)
+            {
+                throw new ArgumentNullException(nameof(dialog));
+            }
+
             if (string.IsNullOrEmpty(SelectedPath))
             {
                 return;
@@ -152,8 +168,13 @@ namespace EvilBaschdi.CoreExtended.Browsers
             }
         }
 
-        private void SetOptions(IFileOpenDialog dialog)
+        private void SetOptions([NotNull] IFileOpenDialog dialog)
         {
+            if (dialog == null)
+            {
+                throw new ArgumentNullException(nameof(dialog));
+            }
+
             dialog.SetOptions(GetDialogOptions());
         }
 
@@ -173,8 +194,13 @@ namespace EvilBaschdi.CoreExtended.Browsers
             return options;
         }
 
-        private void SetDialogResults(IFileOpenDialog dialog)
+        private void SetDialogResults([NotNull] IFileOpenDialog dialog)
         {
+            if (dialog == null)
+            {
+                throw new ArgumentNullException(nameof(dialog));
+            }
+
             IShellItem item;
             try
             {

@@ -12,7 +12,7 @@
     <PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</PackageProjectUrl>
     <Product>EvilBaschdi.CoreExtended TestUi</Product>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
-    <TargetFrameworks>netcoreapp3.1;netcoreapp3.0;net461;net462;net47;net471;net472;net48</TargetFrameworks>
+    <TargetFrameworks>netcoreapp5.0;netcoreapp3.1;netcoreapp3.0;net461;net462;net47;net471;net472;net48</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
     <Title>EvilBaschdi.CoreExtended.TestUi</Title>
     <UseWPF>true</UseWPF>
@@ -23,7 +23,7 @@
     <PackageReference Include="EvilBaschdi.Core" Version="2020.1.19.1004" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
     <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0748" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.3.0" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.4.0" />
     <PackageReference Include="Unity" Version="5.11.4" />
     <PackageReference Include="Unity.Abstractions" Version="5.11.4" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.19" />

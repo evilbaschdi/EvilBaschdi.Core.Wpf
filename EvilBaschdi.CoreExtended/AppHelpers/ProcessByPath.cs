@@ -10,7 +10,10 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
         /// <inheritdoc />
         public Process ValueFor([NotNull] string value)
         {
-            if (value == null) throw new ArgumentNullException(nameof(value));
+            if (value == null)
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
 
             var process = new Process
                           {
@@ -27,7 +30,10 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
         /// <inheritdoc />
         public void RunFor([NotNull] string value)
         {
-            if (value == null) throw new ArgumentNullException(nameof(value));
+            if (value == null)
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
 
             ValueFor(value).Start();
         }

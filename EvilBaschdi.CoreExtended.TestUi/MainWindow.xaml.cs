@@ -1,10 +1,7 @@
 ﻿using System.Collections;
-using System.Linq;
 using System.Reflection;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using EvilBaschdi.Core.Internal;
 using EvilBaschdi.Core.Security;
 using EvilBaschdi.CoreExtended.Browsers;
 using EvilBaschdi.CoreExtended.Metro;
@@ -27,17 +24,16 @@ namespace EvilBaschdi.CoreExtended.TestUi
 
         private INetworkBrowser _networkBrowser;
 
+        /// <summary>
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
-            IMultiThreading multiThreading = new MultiThreading();
-            
-            
+
             //MessageBox.Show(VersionHelper.GetWindowsClientVersion());
-            IThemeManagerHelper themeManagerHelper = new ThemeManagerHelper();
             IEncryption encryption = new Encryption();
 
-            _mainWindowViewModel = new MainWindowViewModel(encryption, themeManagerHelper);
+            _mainWindowViewModel = new MainWindowViewModel(encryption);
             Loaded += MainWindowLoaded;
             _dialogService = new DialogService(this);
 
@@ -48,7 +44,6 @@ namespace EvilBaschdi.CoreExtended.TestUi
             }
 
             //var contextMenu = new ContextMenu();
-
 
             //foreach (string accentItem in applicationStyleViewModelCodeBehind.StyleAccents)
             //{
@@ -91,7 +86,7 @@ namespace EvilBaschdi.CoreExtended.TestUi
         private void UpdateCombo(Selector selector, IEnumerable enumerable)
         {
             selector.Items.Clear();
-            
+
             foreach (var item in enumerable)
             {
                 selector.Items.Add(item);

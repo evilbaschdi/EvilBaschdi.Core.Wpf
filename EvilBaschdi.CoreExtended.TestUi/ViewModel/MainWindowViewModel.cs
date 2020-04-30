@@ -2,8 +2,8 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows;
+using ControlzEx.Theming;
 using EvilBaschdi.Core.Security;
-using EvilBaschdi.CoreExtended.Metro;
 using EvilBaschdi.CoreExtended.Mvvm;
 using EvilBaschdi.CoreExtended.Mvvm.View;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
@@ -18,7 +18,6 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
     public class MainWindowViewModel : ApplicationStyleViewModel
     {
         private readonly IEncryption _encryption;
-        private readonly IThemeManagerHelper _themeManagerHelper;
         private string _customColorText;
         private string _encryptedText;
         private Brush _inputBackground;
@@ -27,12 +26,10 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
         private string _outputText;
 
 
-        protected internal MainWindowViewModel(IEncryption encryption, IThemeManagerHelper themeManagerHelper)
-            : base(themeManagerHelper, true)
+        protected internal MainWindowViewModel(IEncryption encryption)
+            : base(true)
         {
             _encryption = encryption ?? throw new ArgumentNullException(nameof(encryption));
-            _themeManagerHelper = themeManagerHelper ?? throw new ArgumentNullException(nameof(themeManagerHelper));
-
             EncryptClick = new DefaultCommand
                            {
                                Text = "Encrypt",
@@ -55,6 +52,10 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
                                    Text = "About",
                                    Command = new RelayCommand(rc => BtnAboutWindowClick())
                                };
+            LostFocus = new DefaultCommand
+                        {
+                            Command = new RelayCommand(rc => ExecuteCustomColorOnLostFocus())
+                        };
         }
 
         public ICommandViewModel AboutWindowClick { get; set; }
@@ -67,7 +68,6 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             set
             {
                 _customColorText = value;
-                ExecuteCustomColorOnLostFocus();
                 OnPropertyChanged();
             }
         }
@@ -106,6 +106,8 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             }
         }
 
+        public ICommandViewModel LostFocus { get; set; }
+
         public Brush OutputBackground
         {
             get => _outputBackground;
@@ -132,6 +134,7 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             {
                 try
                 {
+                    ThemeManager.Current.ChangeThemeBaseColor(Application.Current, _customColorText);
                 }
                 catch (Exception exception)
                 {
@@ -162,10 +165,11 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
         {
             var assembly = typeof(MainWindow).Assembly;
 
-            IAboutWindowContent aboutWindowContent = new AboutWindowContent(assembly, $@"{AppDomain.CurrentDomain.BaseDirectory}\b.png");
+            IAboutWindowContent aboutWindowContent =
+                new AboutWindowContent(assembly, $@"{AppDomain.CurrentDomain.BaseDirectory}\b.png");
             var aboutWindow = new AboutWindow
                               {
-                                  DataContext = new AboutViewModel(aboutWindowContent, _themeManagerHelper)
+                                  DataContext = new AboutViewModel(aboutWindowContent)
                               };
             aboutWindow.ShowDialog();
         }

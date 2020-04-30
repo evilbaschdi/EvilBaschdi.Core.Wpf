@@ -4,6 +4,7 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:tb="http://www.hardcodet.net/taskbar"
                       xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
                       AllowsTransparency="True"
                       Height="350" Width="525" Icon="b.ico"
                       SaveWindowPosition="True" TitleCharacterCasing="Normal"
@@ -12,11 +13,18 @@
     <!--  RightWindowCommands  -->
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
-            <!--<TextBox Name="CustomColor" Text="{Binding CustomColorText, UpdateSourceTrigger=LostFocus}" Width="100" />-->
+            <TextBox Name="CustomColor" Text="{Binding CustomColorText, UpdateSourceTrigger=PropertyChanged}"
+                     Width="100">
+                <b:Interaction.Triggers>
+                    <b:EventTrigger EventName="LostFocus">
+                        <b:InvokeCommandAction Command="{Binding LostFocus}"
+                                               CommandParameter="{Binding CustomColorText}" />
+                    </b:EventTrigger>
+                </b:Interaction.Triggers>
+            </TextBox>
             <Button Command="{Binding AboutWindowClick.Command}" Name="AboutWindow">
                 <StackPanel Orientation="Horizontal">
-                    <iconPacks:PackIconControl Kind="{x:Static iconPacks:PackIconMaterialKind.Information}" Width="20" Height="20" HorizontalAlignment="Center"
-                                               VerticalAlignment="Center" />
+                    <iconPacks:PackIconMaterial Kind="Information" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Text="about" />
                 </StackPanel>
             </Button>
@@ -32,20 +40,26 @@
         <!-- Taskbar Icon -->
         <tb:TaskbarIcon Name="TestTaskbarIcon" ToolTip="Test" ToolTipText="Test" Visibility="Hidden" />
         <Label Content="Input:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
-        <TextBox Height="23" Margin="100,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txtInput" Text="{Binding InputText}" Background="{Binding InputBackground}" />
+        <TextBox Height="23" Margin="100,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txtInput"
+                 Text="{Binding InputText}" Background="{Binding InputBackground}" />
 
         <Label Content="Output:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" />
-        <TextBox Height="23" Margin="100,41,10,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" Text="{Binding OutputText}" Background="{Binding OutputBackground}" />
+        <TextBox Height="23" Margin="100,41,10,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True"
+                 Text="{Binding OutputText}" Background="{Binding OutputBackground}" />
 
-        <Button Content="{Binding EncryptClick.Text}" HorizontalAlignment="Left" Margin="100,72,0,0" VerticalAlignment="Top" Width="80"
+        <Button Content="{Binding EncryptClick.Text}" HorizontalAlignment="Left" Margin="100,72,0,0"
+                VerticalAlignment="Top" Width="80"
                 Name="btnEncrypt" Command="{Binding EncryptClick.Command}" />
-        <Button Content="{Binding DecryptClick.Text}" HorizontalAlignment="Left" Margin="185,72,0,0" VerticalAlignment="Top" Width="80"
+        <Button Content="{Binding DecryptClick.Text}" HorizontalAlignment="Left" Margin="185,72,0,0"
+                VerticalAlignment="Top" Width="80"
                 Name="btnDecrypt" Command="{Binding DecryptClick.Command}" />
-        <Button Content="{Binding CompareClick.Text}" HorizontalAlignment="Left" Margin="270,72,0,0" VerticalAlignment="Top" Width="80"
+        <Button Content="{Binding CompareClick.Text}" HorizontalAlignment="Left" Margin="270,72,0,0"
+                VerticalAlignment="Top" Width="80"
                 Name="btnCompare" Command="{Binding CompareClick.Command}" />
 
         <Label Content="Encrypted:" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top" />
-        <TextBox Height="140" Margin="100,106,10,0" TextWrapping="Wrap" IsReadOnly="True" Name="txtEncrypted" Text="{Binding EncryptedText}"
+        <TextBox Height="140" Margin="100,106,10,0" TextWrapping="Wrap" IsReadOnly="True" Name="txtEncrypted"
+                 Text="{Binding EncryptedText}"
                  VerticalAlignment="Top" />
 
         <Label Content="Network:" HorizontalAlignment="Left" Margin="10,251,0,0" VerticalAlignment="Top" />
@@ -67,7 +81,8 @@
     <controls:MetroWindow.Flyouts>
         <controls:FlyoutsControl>
             <!--  Settings Fly-out  -->
-            <controls:Flyout Width="250" AnimateOnPositionChange="True" AnimateOpacity="True" Header="Settings" Position="Right" Theme="Accent"
+            <controls:Flyout Width="250" AnimateOnPositionChange="True" AnimateOpacity="True" Header="Settings"
+                             Position="Right" Theme="Accent"
                              IsOpen="{Binding SettingsFlyoutIsOpen}">
                 <StackPanel>
                     <StackPanel Margin="15,10,15,0" Orientation="Vertical">
@@ -75,8 +90,10 @@
                     </StackPanel>
                     <!-- Build / Linker Time -->
                     <StackPanel Orientation="Horizontal">
-                        <Label Width="50" Margin="10,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Build" />
-                        <Label Width="310" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Name="LinkerTime" />
+                        <Label Width="50" Margin="10,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                               Content="Build" />
+                        <Label Width="310" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                               Name="LinkerTime" />
                     </StackPanel>
                 </StackPanel>
             </controls:Flyout>

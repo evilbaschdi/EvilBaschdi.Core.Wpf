@@ -1,8 +1,6 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using EvilBaschdi.CoreExtended.Metro;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
 using JetBrains.Annotations;
 
@@ -15,15 +13,13 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
     {
         private readonly bool _center;
         private readonly bool _resizeWithBorder400;
-        private readonly IThemeManagerHelper _themeManagerHelper;
         private bool _settingsFlyoutIsOpen;
 
         /// <summary>
         ///     Constructor
         /// </summary>
-        protected ApplicationStyleViewModel(IThemeManagerHelper themeManagerHelper, bool center = false, bool resizeWithBorder400 = false)
+        protected ApplicationStyleViewModel(bool center = false, bool resizeWithBorder400 = false)
         {
-            _themeManagerHelper = themeManagerHelper ?? throw new ArgumentNullException(nameof(themeManagerHelper));
             _center = center;
             _resizeWithBorder400 = resizeWithBorder400;
             InitializeCommandViewModels();
@@ -85,11 +81,6 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
                     Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;
                     Application.Current.MainWindow.Height = SystemParameters.PrimaryScreenHeight - 400;
                 }
-            }
-
-            foreach (Window currentWindow in Application.Current.Windows)
-            {
-                _themeManagerHelper.SetSystemColorTheme(currentWindow);
             }
         }
 

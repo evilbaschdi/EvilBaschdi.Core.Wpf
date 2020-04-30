@@ -37,8 +37,10 @@ namespace EvilBaschdi.CoreExtended.Mvvm
                                  ApplicationTitle = title,
                                  Copyright = _assembly.GetCustomAttributes<AssemblyCopyrightAttribute>().FirstOrDefault()?.Copyright,
                                  Company = _assembly.GetCustomAttributes<AssemblyCompanyAttribute>().FirstOrDefault()?.Company,
-                                 Description = _assembly.GetCustomAttributes<AssemblyDescriptionAttribute>().FirstOrDefault()?.Description,
-                                 Version = _assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion,
+                                 Description = _assembly.GetCustomAttributes<AssemblyDescriptionAttribute>().FirstOrDefault()
+                                                        ?.Description,
+                                 Version = _assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+                                                    ?.InformationalVersion,
                                  LogoSourcePath = !string.IsNullOrWhiteSpace(_logoSourcePath) ? _logoSourcePath : string.Empty
                              };
 

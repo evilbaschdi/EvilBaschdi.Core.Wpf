@@ -19,7 +19,8 @@
             </Grid.ColumnDefinitions>
 
             <!-- ReSharper disable once UnusedMember.Global -->
-            <Image Name="Logo" Source="{Binding LogoSourcePath}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Stretch="Fill" HorizontalAlignment="Center"
+            <Image Name="Logo" Source="{Binding LogoSourcePath}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                   Stretch="Fill" HorizontalAlignment="Center"
                    VerticalAlignment="Center" Width="256" Height="256" />
 
             <StackPanel Grid.Column="1" Grid.Row="1">

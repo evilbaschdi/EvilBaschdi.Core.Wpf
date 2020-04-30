@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using EvilBaschdi.CoreExtended.Metro;
+using ControlzEx.Theming;
 
 namespace EvilBaschdi.CoreExtended.TestUi
 {
@@ -11,8 +11,10 @@ namespace EvilBaschdi.CoreExtended.TestUi
         /// <inheritdoc />
         protected override void OnStartup(StartupEventArgs e)
         {
-            var themeManagerHelper = new ThemeManagerHelper();
-            themeManagerHelper.RegisterSystemColorTheme();
+            //ThemeManager.Current.SyncTheme(ThemeSyncMode.SyncWithAppMode);
+            //ThemeManager.Current.SyncTheme(ThemeSyncMode.SyncWithAccent);
+
+            ThemeManager.Current.SyncTheme(ThemeSyncMode.SyncAll);
 
             base.OnStartup(e);
         }

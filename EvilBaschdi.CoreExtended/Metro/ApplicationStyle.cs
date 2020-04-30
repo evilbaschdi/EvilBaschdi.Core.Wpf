@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 
 namespace EvilBaschdi.CoreExtended.Metro
 {
@@ -9,17 +8,6 @@ namespace EvilBaschdi.CoreExtended.Metro
     /// </summary>
     public class ApplicationStyle : IApplicationStyle
     {
-        private readonly IThemeManagerHelper _themeManagerHelper;
-
-        /// <summary>
-        ///     Constructor
-        /// </summary>
-        /// <param name="themeManagerHelper"></param>
-        public ApplicationStyle(IThemeManagerHelper themeManagerHelper)
-        {
-            _themeManagerHelper = themeManagerHelper ?? throw new ArgumentNullException(nameof(themeManagerHelper));
-        }
-
         /// <inheritdoc />
         /// <summary>
         ///     Load.
@@ -28,24 +16,23 @@ namespace EvilBaschdi.CoreExtended.Metro
         /// <param name="resizeWithBorder400"></param>
         public void Load(bool center = false, bool resizeWithBorder400 = false)
         {
-            if (Application.Current.MainWindow != null)
+            if (Application.Current.MainWindow == null)
             {
-                if (center)
-                {
-                    Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                }
-
-                if (resizeWithBorder400)
-                {
-                    Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;
-                    Application.Current.MainWindow.Height = SystemParameters.PrimaryScreenHeight - 400;
-                }
+                return;
             }
 
-            foreach (Window currentWindow in Application.Current.Windows)
+            if (center)
             {
-                _themeManagerHelper.SetSystemColorTheme(currentWindow);
+                Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             }
+
+            if (!resizeWithBorder400)
+            {
+                return;
+            }
+
+            Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;
+            Application.Current.MainWindow.Height = SystemParameters.PrimaryScreenHeight - 400;
         }
     }
 }

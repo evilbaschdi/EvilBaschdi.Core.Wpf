@@ -1,5 +1,4 @@
 ﻿using System;
-using EvilBaschdi.CoreExtended.Metro;
 
 namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
 {
@@ -12,10 +11,9 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
         /// <summary>
         /// </summary>
         /// <param name="aboutWindowContent"></param>
-        /// <param name="themeManagerHelper"></param>
         /// <exception cref="ArgumentNullException"></exception>
-        public AboutViewModel(IAboutWindowContent aboutWindowContent, IThemeManagerHelper themeManagerHelper)
-            : base(themeManagerHelper)
+        public AboutViewModel(IAboutWindowContent aboutWindowContent)
+
         {
             _aboutWindowContent = aboutWindowContent ?? throw new ArgumentNullException(nameof(aboutWindowContent));
         }

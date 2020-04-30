@@ -24,7 +24,8 @@ namespace EvilBaschdi.CoreExtended.Tests.AppHelpers
         [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
         public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
         {
-            assertion.Verify(typeof(AppSettingFromConfigurationManager).GetMethods().Where(method => !method.IsAbstract));
+            assertion.Verify(
+                typeof(AppSettingFromConfigurationManager).GetMethods().Where(method => !method.IsAbstract));
         }
     }
 }

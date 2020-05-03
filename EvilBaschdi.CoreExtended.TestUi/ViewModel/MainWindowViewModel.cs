@@ -4,8 +4,7 @@ using System.Drawing;
 using System.Windows;
 using ControlzEx.Theming;
 using EvilBaschdi.Core.Security;
-using EvilBaschdi.CoreExtended.Mvvm;
-using EvilBaschdi.CoreExtended.Mvvm.View;
+using EvilBaschdi.CoreExtended.Controls.About;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
 
@@ -165,11 +164,11 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
         {
             var assembly = typeof(MainWindow).Assembly;
 
-            IAboutWindowContent aboutWindowContent =
-                new AboutWindowContent(assembly, $@"{AppDomain.CurrentDomain.BaseDirectory}\b.png");
+            IAboutContent aboutContent =
+                new AboutContent(assembly, $@"{AppDomain.CurrentDomain.BaseDirectory}\b.png");
             var aboutWindow = new AboutWindow
                               {
-                                  DataContext = new AboutViewModel(aboutWindowContent)
+                                  DataContext = new AboutViewModel(aboutContent)
                               };
             aboutWindow.ShowDialog();
         }

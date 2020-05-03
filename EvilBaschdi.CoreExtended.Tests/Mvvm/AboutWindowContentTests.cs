@@ -1,5 +1,6 @@
 using System.Linq;
 using AutoFixture.Idioms;
+using EvilBaschdi.CoreExtended.Controls.About;
 using EvilBaschdi.CoreExtended.Mvvm;
 using EvilBaschdi.Testing;
 using FluentAssertions;
@@ -12,19 +13,19 @@ namespace EvilBaschdi.CoreExtended.Tests.Mvvm
         [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
         public void Constructor_HasNullGuards(GuardClauseAssertion assertion)
         {
-            assertion.Verify(typeof(AboutWindowContent).GetConstructors());
+            assertion.Verify(typeof(AboutContent).GetConstructors());
         }
 
         [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-        public void Constructor_ReturnsInterfaceName(AboutWindowContent sut)
+        public void Constructor_ReturnsInterfaceName(AboutContent sut)
         {
-            sut.Should().BeAssignableTo<IAboutWindowContent>();
+            sut.Should().BeAssignableTo<IAboutContent>();
         }
 
         [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
         public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
         {
-            assertion.Verify(typeof(AboutWindowContent).GetMethods().Where(method => !method.IsAbstract));
+            assertion.Verify(typeof(AboutContent).GetMethods().Where(method => !method.IsAbstract));
         }
     }
 }

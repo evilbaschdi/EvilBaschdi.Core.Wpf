@@ -1,5 +1,6 @@
 using System.Linq;
 using AutoFixture.Idioms;
+using EvilBaschdi.CoreExtended.Controls.About;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 using EvilBaschdi.Testing;
 using FluentAssertions;

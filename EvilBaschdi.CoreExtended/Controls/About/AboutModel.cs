@@ -1,8 +1,8 @@
-﻿namespace EvilBaschdi.CoreExtended.Model
+﻿namespace EvilBaschdi.CoreExtended.Controls.About
 {
     /// <summary>
     /// </summary>
-    public class AboutWindowConfiguration
+    public class AboutModel
     {
         /// <summary>
         /// </summary>

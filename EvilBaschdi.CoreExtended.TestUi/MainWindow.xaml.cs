@@ -4,9 +4,9 @@ using System.Windows;
 using System.Windows.Controls.Primitives;
 using EvilBaschdi.Core.Security;
 using EvilBaschdi.CoreExtended.Browsers;
-using EvilBaschdi.CoreExtended.Metro;
 using EvilBaschdi.CoreExtended.TestUi.ViewModel;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace EvilBaschdi.CoreExtended.TestUi
 {
@@ -16,8 +16,6 @@ namespace EvilBaschdi.CoreExtended.TestUi
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        private readonly IDialogService _dialogService;
-
         // ReSharper disable once NotAccessedField.Local
         private readonly MainWindowViewModel _mainWindowViewModel;
 
@@ -35,7 +33,6 @@ namespace EvilBaschdi.CoreExtended.TestUi
 
             _mainWindowViewModel = new MainWindowViewModel(encryption);
             Loaded += MainWindowLoaded;
-            _dialogService = new DialogService(this);
 
             var filePath = Assembly.GetEntryAssembly()?.Location;
             if (filePath != null)
@@ -58,6 +55,7 @@ namespace EvilBaschdi.CoreExtended.TestUi
 
             //TestTaskbarIcon.ContextMenu = contextMenu;
 
+
             LoadNetworkBrowserToArrayList();
         }
 
@@ -78,7 +76,7 @@ namespace EvilBaschdi.CoreExtended.TestUi
             }
             else
             {
-                _dialogService.ShowMessage("Problem :-/", _networkBrowser.Exception?.Message);
+                this.ShowMessageAsync("Problem :-/", _networkBrowser.Exception?.Message);
             }
         }
 

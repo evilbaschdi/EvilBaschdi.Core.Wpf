@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using EvilBaschdi.CoreExtended.Model;
 
-namespace EvilBaschdi.CoreExtended.Mvvm
+namespace EvilBaschdi.CoreExtended.Controls.About
 {
     /// <inheritdoc />
-    public class AboutWindowContent : IAboutWindowContent
+    public class AboutContent : IAboutContent
     {
         private readonly Assembly _assembly;
         private readonly string _logoSourcePath;
@@ -17,14 +16,14 @@ namespace EvilBaschdi.CoreExtended.Mvvm
         /// <param name="assembly"></param>
         /// <param name="logoSourcePath">AppDomain.CurrentDomain.BaseDirectory</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public AboutWindowContent(Assembly assembly, string logoSourcePath)
+        public AboutContent(Assembly assembly, string logoSourcePath)
         {
             _assembly = assembly ?? throw new ArgumentNullException(nameof(assembly));
             _logoSourcePath = logoSourcePath ?? throw new ArgumentNullException(nameof(logoSourcePath));
         }
 
         /// <inheritdoc />
-        public AboutWindowConfiguration Value
+        public AboutModel Value
         {
             get
             {
@@ -32,7 +31,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm
                     ? _assembly.GetCustomAttributes<AssemblyProductAttribute>().FirstOrDefault()?.Product
                     : _assembly.GetCustomAttributes<AssemblyTitleAttribute>().FirstOrDefault()?.Title;
 
-                var config = new AboutWindowConfiguration
+                var config = new AboutModel
                              {
                                  ApplicationTitle = title,
                                  Copyright = _assembly.GetCustomAttributes<AssemblyCopyrightAttribute>().FirstOrDefault()?.Copyright,

@@ -1,6 +1,6 @@
 ﻿using MahApps.Metro.Controls;
 
-namespace EvilBaschdi.CoreExtended.Mvvm.View
+namespace EvilBaschdi.CoreExtended.Controls.About
 {
     /// <inheritdoc cref="MetroWindow" />
     /// <summary>

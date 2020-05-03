@@ -1,6 +1,8 @@
 ﻿using System.Windows;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
-namespace EvilBaschdi.CoreExtended.Metro
+namespace EvilBaschdi.CoreExtended
 {
     /// <inheritdoc />
     /// <summary>
@@ -16,6 +18,14 @@ namespace EvilBaschdi.CoreExtended.Metro
         /// <param name="resizeWithBorder400"></param>
         public void Load(bool center = false, bool resizeWithBorder400 = false)
         {
+            foreach (Window currentWindow in Application.Current.Windows)
+            {
+                if (currentWindow is MetroWindow metroWindow)
+                {
+                    metroWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
+                }
+            }
+
             if (Application.Current.MainWindow == null)
             {
                 return;

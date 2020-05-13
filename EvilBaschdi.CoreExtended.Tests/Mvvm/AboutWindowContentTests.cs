@@ -1,14 +1,13 @@
 using System.Linq;
 using AutoFixture.Idioms;
 using EvilBaschdi.CoreExtended.Controls.About;
-using EvilBaschdi.CoreExtended.Mvvm;
 using EvilBaschdi.Testing;
 using FluentAssertions;
 using Xunit;
 
 namespace EvilBaschdi.CoreExtended.Tests.Mvvm
 {
-    public class AboutWindowContentTests
+    public class AboutContentTests
     {
         [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
         public void Constructor_HasNullGuards(GuardClauseAssertion assertion)

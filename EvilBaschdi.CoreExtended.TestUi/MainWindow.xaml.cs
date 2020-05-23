@@ -40,6 +40,7 @@ namespace EvilBaschdi.CoreExtended.TestUi
                 TestTaskbarIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(filePath);
             }
 
+
             //var contextMenu = new ContextMenu();
 
             //foreach (string accentItem in applicationStyleViewModelCodeBehind.StyleAccents)

@@ -13,7 +13,7 @@ namespace EvilBaschdi.CoreExtended.Browsers
     ///     Stellt einen Auswahldialog für Ordner und Systemelemente ab Windows Vista bereit.
     /// </summary>
     [GeneratedCode("EvilBaschdi.CoreExtended", "2018.0")]
-    public sealed partial class ExplorerFolderBrowser : IFolderBrowser
+    public sealed partial class ExplorerFolderBrowser
     {
         #region Properties
 
@@ -68,13 +68,8 @@ namespace EvilBaschdi.CoreExtended.Browsers
         /// </summary>
         /// <param name="owner">Der Besitzer des Fensters</param>
         /// <returns><c>true</c> wenn der Benutzer die Ordnerauswahl bestätigte; andernfalls <c>false</c></returns>
-        public bool ShowDialog([NotNull] Window owner)
+        public bool ShowDialog(Window owner)
         {
-            if (owner == null)
-            {
-                throw new ArgumentNullException(nameof(owner));
-            }
-
             return ShowDialog(owner == null ? IntPtr.Zero : new WindowInteropHelper(owner).Handle);
         }
 

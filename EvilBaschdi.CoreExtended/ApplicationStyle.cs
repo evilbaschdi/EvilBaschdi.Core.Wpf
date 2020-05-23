@@ -36,13 +36,11 @@ namespace EvilBaschdi.CoreExtended
                 Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             }
 
-            if (!resizeWithBorder400)
+            if (resizeWithBorder400)
             {
-                return;
+                Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;
+                Application.Current.MainWindow.Height = SystemParameters.PrimaryScreenHeight - 400;
             }
-
-            Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;
-            Application.Current.MainWindow.Height = SystemParameters.PrimaryScreenHeight - 400;
         }
     }
 }

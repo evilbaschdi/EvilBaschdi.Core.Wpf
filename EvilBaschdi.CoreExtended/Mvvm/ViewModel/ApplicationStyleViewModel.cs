@@ -3,6 +3,8 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
 using JetBrains.Annotations;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
 {
@@ -69,18 +71,28 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
         /// </summary>
         private void Load()
         {
-            if (Application.Current.MainWindow != null)
+            foreach (Window currentWindow in Application.Current.Windows)
             {
-                if (_center)
+                if (currentWindow is MetroWindow metroWindow)
                 {
-                    Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    metroWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
                 }
+            }
 
-                if (_resizeWithBorder400)
-                {
-                    Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;
-                    Application.Current.MainWindow.Height = SystemParameters.PrimaryScreenHeight - 400;
-                }
+            if (Application.Current.MainWindow == null)
+            {
+                return;
+            }
+
+            if (_center)
+            {
+                Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            }
+
+            if (_resizeWithBorder400)
+            {
+                Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;
+                Application.Current.MainWindow.Height = SystemParameters.PrimaryScreenHeight - 400;
             }
         }
 

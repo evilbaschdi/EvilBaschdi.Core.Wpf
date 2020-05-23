@@ -6,7 +6,7 @@ namespace EvilBaschdi.CoreExtended.Controls.About
     /// <summary>
     ///     Interaction logic for AboutWindow.xaml
     /// </summary>
-    public partial class AboutWindow : MetroWindow
+    public partial class AboutWindow
     {
         /// <inheritdoc />
         public AboutWindow()

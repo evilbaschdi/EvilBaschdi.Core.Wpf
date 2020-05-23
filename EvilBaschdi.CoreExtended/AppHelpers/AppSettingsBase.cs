@@ -32,7 +32,7 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         // ReSharper disable once RedundantTypeSpecificationInDefaultExpression
-        public T Get<T>(string setting, [NotNull] T fallback = default)
+        public T Get<T>(string setting, T fallback = default)
         {
             if (setting == null)
             {

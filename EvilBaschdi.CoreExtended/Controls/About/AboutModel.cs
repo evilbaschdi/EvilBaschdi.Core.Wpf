@@ -10,10 +10,6 @@
 
         /// <summary>
         /// </summary>
-        public string Authors { get; set; }
-
-        /// <summary>
-        /// </summary>
         public string Company { get; set; }
 
         /// <summary>

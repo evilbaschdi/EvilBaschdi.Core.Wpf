@@ -1,0 +1,13 @@
+﻿<controls:MetroWindow x:Class="EvilBaschdi.CoreExtended.Controls.About.AboutWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:about="clr-namespace:EvilBaschdi.CoreExtended.Controls.About"
+                      Title="About" ShowIconOnTitleBar="False" AllowsTransparency="True"
+                      WindowStartupLocation="CenterScreen" ResizeMode="NoResize" TitleCharacterCasing="Normal"
+                      Height="460" Width="530" GlowBrush="{DynamicResource MahApps.Brushes.AccentBase}">
+
+    <controls:MetroContentControl>
+        <about:AboutControl />
+    </controls:MetroContentControl>
+</controls:MetroWindow>

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Media;
+﻿using System.Windows.Media;
 
 namespace EvilBaschdi.CoreExtended.Extensions
 {
@@ -8,29 +7,6 @@ namespace EvilBaschdi.CoreExtended.Extensions
     /// </summary>
     public static class ColorExtensions
     {
-        /// <summary>
-        ///     Subtracts integers from byte.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="integer"></param>
-        /// <returns></returns>
-        public static byte Subtract(this byte value, int integer)
-        {
-            var result = Convert.ToInt32(value) - integer;
-            return result < 0 ? (byte) 0 : Convert.ToByte(result);
-        }
-
-        /// <summary>
-        ///     Adds integer to byte.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="integer"></param>
-        /// <returns></returns>
-        public static byte Add(this byte value, int integer)
-        {
-            return Convert.ToByte(Convert.ToInt32(value) + integer);
-        }
-
         /// <summary>
         ///     Converts hex to Color.
         /// </summary>

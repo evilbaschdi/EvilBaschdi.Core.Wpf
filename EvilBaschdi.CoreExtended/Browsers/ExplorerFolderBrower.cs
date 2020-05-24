@@ -3,6 +3,7 @@ using System.CodeDom.Compiler;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
+using JetBrains.Annotations;
 using Microsoft.Win32;
 
 namespace EvilBaschdi.CoreExtended.Browsers
@@ -11,8 +12,8 @@ namespace EvilBaschdi.CoreExtended.Browsers
     /// <summary>
     ///     Stellt einen Auswahldialog für Ordner und Systemelemente ab Windows Vista bereit.
     /// </summary>
-    [GeneratedCode("EvilBaschdi.CoreExtended", "2.0")]
-    public sealed partial class ExplorerFolderBrowser : IFolderBrowser
+    [GeneratedCode("EvilBaschdi.CoreExtended", "2018.0")]
+    public sealed partial class ExplorerFolderBrowser
     {
         #region Properties
 
@@ -119,8 +120,13 @@ namespace EvilBaschdi.CoreExtended.Browsers
 
         #region Helper
 
-        private void GetPathAndElementName(IShellItem item, out string path, out string elementName)
+        private void GetPathAndElementName([NotNull] IShellItem item, out string path, out string elementName)
         {
+            if (item == null)
+            {
+                throw new ArgumentNullException(nameof(item));
+            }
+
             item.GetDisplayName(Sigdn.Parentrelativeforaddressbar, out elementName);
             try
             {
@@ -137,21 +143,33 @@ namespace EvilBaschdi.CoreExtended.Browsers
             return new FileOpenDialog() as IFileOpenDialog;
         }
 
-        private void SetInitialFolder(IFileOpenDialog dialog)
+        private void SetInitialFolder([NotNull] IFileOpenDialog dialog)
         {
-            if (!string.IsNullOrEmpty(SelectedPath))
+            if (dialog == null)
             {
-                uint atts = 0;
-                if (NativeMethods.SHILCreateFromPath(SelectedPath, out var idl, ref atts) == 0
-                    && NativeMethods.SHCreateShellItem(IntPtr.Zero, IntPtr.Zero, idl, out var item) == 0)
-                {
-                    dialog.SetFolder(item);
-                }
+                throw new ArgumentNullException(nameof(dialog));
+            }
+
+            if (string.IsNullOrEmpty(SelectedPath))
+            {
+                return;
+            }
+
+            uint atts = 0;
+            if (NativeMethods.SHILCreateFromPath(SelectedPath, out var idl, ref atts) == 0
+                && NativeMethods.SHCreateShellItem(IntPtr.Zero, IntPtr.Zero, idl, out var item) == 0)
+            {
+                dialog.SetFolder(item);
             }
         }
 
-        private void SetOptions(IFileOpenDialog dialog)
+        private void SetOptions([NotNull] IFileOpenDialog dialog)
         {
+            if (dialog == null)
+            {
+                throw new ArgumentNullException(nameof(dialog));
+            }
+
             dialog.SetOptions(GetDialogOptions());
         }
 
@@ -171,8 +189,13 @@ namespace EvilBaschdi.CoreExtended.Browsers
             return options;
         }
 
-        private void SetDialogResults(IFileOpenDialog dialog)
+        private void SetDialogResults([NotNull] IFileOpenDialog dialog)
         {
+            if (dialog == null)
+            {
+                throw new ArgumentNullException(nameof(dialog));
+            }
+
             IShellItem item;
             try
             {
@@ -230,8 +253,13 @@ namespace EvilBaschdi.CoreExtended.Browsers
                                IntPtr pbc, [In] ref Guid rbhid, [In] ref Guid riid, out IntPtr ppvOut);
 
             void GetPropertyStore([In] int flags, [In] ref Guid riid, out IntPtr ppv);
-            void GetPropertyDescriptionList([In] [MarshalAs(UnmanagedType.Struct)] ref IntPtr keyType, [In] ref Guid riid, out IntPtr ppv);
-            void GetAttributes([In] [MarshalAs(UnmanagedType.I4)] IntPtr dwAttribFlags, [In] uint sfgaoMask, out uint psfgaoAttribs);
+
+            void GetPropertyDescriptionList([In] [MarshalAs(UnmanagedType.Struct)] ref IntPtr keyType,
+                                            [In] ref Guid riid, out IntPtr ppv);
+
+            void GetAttributes([In] [MarshalAs(UnmanagedType.I4)] IntPtr dwAttribFlags, [In] uint sfgaoMask,
+                               out uint psfgaoAttribs);
+
             void GetCount(out uint pdwNumItems);
             void GetItemAt([In] uint dwIndex, [MarshalAs(UnmanagedType.Interface)] out IShellItem ppsi);
             void EnumItems([MarshalAs(UnmanagedType.Interface)] out IntPtr ppenumShellItems);

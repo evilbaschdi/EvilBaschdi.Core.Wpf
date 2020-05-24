@@ -2,14 +2,13 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows;
+using ControlzEx.Theming;
 using EvilBaschdi.Core.Security;
-using EvilBaschdi.CoreExtended.Extensions;
-using EvilBaschdi.CoreExtended.Metro;
+using EvilBaschdi.CoreExtended.Controls.About;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
-using MahApps.Metro;
 
-namespace TestUi.ViewModel
+namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
 {
     /// <inheritdoc cref="INotifyPropertyChanged" />
     /// <summary>
@@ -17,31 +16,19 @@ namespace TestUi.ViewModel
     /// </summary>
     public class MainWindowViewModel : ApplicationStyleViewModel
     {
-      
-        public ICommandViewModel EncryptClick { get; set; }
-        public ICommandViewModel DecryptClick { get; set; }
-        public ICommandViewModel CompareClick { get; set; }
-        private readonly IApplicationStyleSettings _applicationStyleSettings;
-        private readonly IThemeManagerHelper _themeManagerHelper;
         private readonly IEncryption _encryption;
         private string _customColorText;
-        private string _inputText;
-        private string _outputText;
         private string _encryptedText;
         private Brush _inputBackground;
+        private string _inputText;
         private Brush _outputBackground;
+        private string _outputText;
 
 
-        protected internal MainWindowViewModel(IApplicationStyleSettings applicationStyleSettings,
-                                               IThemeManagerHelper themeManagerHelper, IEncryption encryption)
-            : base(applicationStyleSettings, themeManagerHelper)
+        protected internal MainWindowViewModel(IEncryption encryption)
+            : base(true)
         {
-            _applicationStyleSettings = applicationStyleSettings ?? throw new ArgumentNullException(nameof(applicationStyleSettings));
-            _themeManagerHelper = themeManagerHelper ?? throw new ArgumentNullException(nameof(themeManagerHelper));
             _encryption = encryption ?? throw new ArgumentNullException(nameof(encryption));
-
-           
-
             EncryptClick = new DefaultCommand
                            {
                                Text = "Encrypt",
@@ -59,24 +46,42 @@ namespace TestUi.ViewModel
                                Text = "Compare",
                                Command = new RelayCommand(rc => BtnCompareClick())
                            };
+            AboutWindowClick = new DefaultCommand
+                               {
+                                   Text = "About",
+                                   Command = new RelayCommand(rc => BtnAboutWindowClick())
+                               };
+            LostFocus = new DefaultCommand
+                        {
+                            Command = new RelayCommand(rc => ExecuteCustomColorOnLostFocus())
+                        };
         }
 
-        private void ExecuteCustomColorOnLostFocus()
-        {
-            if (!string.IsNullOrWhiteSpace(_customColorText))
-            {
-                try
-                {
-                    _themeManagerHelper.CreateAppStyleFor(_customColorText.ToColor(), _customColorText);
+        public ICommandViewModel AboutWindowClick { get; set; }
 
-                    var styleAccent = ThemeManager.GetAccent(_customColorText);
-                    var styleTheme = ThemeManager.GetAppTheme(_applicationStyleSettings.Theme);
-                    ThemeManager.ChangeAppStyle(Application.Current, styleAccent, styleTheme);
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show(exception.Message);
-                }
+        public ICommandViewModel CompareClick { get; set; }
+
+        public string CustomColorText
+        {
+            get => _customColorText;
+            set
+            {
+                _customColorText = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ICommandViewModel DecryptClick { get; set; }
+
+        public ICommandViewModel EncryptClick { get; set; }
+
+        public string EncryptedText
+        {
+            get => _encryptedText;
+            set
+            {
+                _encryptedText = value;
+                OnPropertyChanged();
             }
         }
 
@@ -86,27 +91,6 @@ namespace TestUi.ViewModel
             set
             {
                 _inputBackground = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public Brush OutputBackground
-        {
-            get => _outputBackground;
-            set
-            {
-                _outputBackground = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string CustomColorText
-        {
-            get => _customColorText;
-            set
-            {
-                _customColorText = value;
-                ExecuteCustomColorOnLostFocus();
                 OnPropertyChanged();
             }
         }
@@ -121,6 +105,18 @@ namespace TestUi.ViewModel
             }
         }
 
+        public ICommandViewModel LostFocus { get; set; }
+
+        public Brush OutputBackground
+        {
+            get => _outputBackground;
+            set
+            {
+                _outputBackground = value;
+                OnPropertyChanged();
+            }
+        }
+
         public string OutputText
         {
             get => _outputText;
@@ -131,13 +127,18 @@ namespace TestUi.ViewModel
             }
         }
 
-        public string EncryptedText
+        private void ExecuteCustomColorOnLostFocus()
         {
-            get => _encryptedText;
-            set
+            if (!string.IsNullOrWhiteSpace(_customColorText))
             {
-                _encryptedText = value;
-                OnPropertyChanged();
+                try
+                {
+                    ThemeManager.Current.ChangeThemeBaseColor(Application.Current, _customColorText);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
             }
         }
 
@@ -153,10 +154,23 @@ namespace TestUi.ViewModel
 
         private void BtnCompareClick()
         {
-            var brush = _inputText.Equals(_outputText) ? Brushes.DarkGreen : Brushes.DarkRed;
+            var brush = EncryptedText.Equals(OutputText) ? Brushes.DarkGreen : Brushes.DarkRed;
 
             InputBackground = brush;
             OutputBackground = brush;
+        }
+
+        private void BtnAboutWindowClick()
+        {
+            var assembly = typeof(MainWindow).Assembly;
+
+            IAboutContent aboutContent =
+                new AboutContent(assembly, $@"{AppDomain.CurrentDomain.BaseDirectory}\b.png");
+            var aboutWindow = new AboutWindow
+                              {
+                                  DataContext = new AboutViewModel(aboutContent)
+                              };
+            aboutWindow.ShowDialog();
         }
     }
 }

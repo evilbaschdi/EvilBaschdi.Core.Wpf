@@ -13,9 +13,12 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
         /// </summary>
         /// <param name="appSettingFromConfigurationManager"></param>
         /// <param name="autoStart"></param>
-        public AutoStartByConfiguration(IAppSettingFromConfigurationManager appSettingFromConfigurationManager, IAutoStart autoStart)
+        public AutoStartByConfiguration(IAppSettingFromConfigurationManager appSettingFromConfigurationManager,
+                                        IAutoStart autoStart)
         {
-            _appSettingFromConfigurationManager = appSettingFromConfigurationManager ?? throw new ArgumentNullException(nameof(appSettingFromConfigurationManager));
+            _appSettingFromConfigurationManager = appSettingFromConfigurationManager ??
+                                                  throw new ArgumentNullException(
+                                                      nameof(appSettingFromConfigurationManager));
             _autoStart = autoStart ?? throw new ArgumentNullException(nameof(autoStart));
         }
 

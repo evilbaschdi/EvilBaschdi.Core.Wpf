@@ -2,6 +2,7 @@ using System;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.Linq;
+using JetBrains.Annotations;
 
 namespace EvilBaschdi.CoreExtended.AppHelpers
 {
@@ -11,14 +12,15 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
     /// </summary>
     public class AppSettingsBase : IAppSettingsBase
     {
-        private readonly SettingsBase _settingsBase;
+        private readonly ApplicationSettingsBase _settingsBase;
 
         /// <summary>
         /// </summary>
         /// <param name="settingsBase"></param>
-        public AppSettingsBase(SettingsBase settingsBase)
+        public AppSettingsBase(ApplicationSettingsBase settingsBase)
         {
             _settingsBase = settingsBase ?? throw new ArgumentNullException(nameof(settingsBase));
+            Upgrade();
         }
 
         /// <inheritdoc />
@@ -37,22 +39,21 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
                 throw new ArgumentNullException(nameof(setting));
             }
 
+            if (fallback == null)
+            {
+                throw new ArgumentNullException(nameof(fallback));
+            }
+
             if (!_settingsBase.Properties.OfType<SettingsProperty>().ToList().Any(x => x.Name.Equals(setting)))
             {
                 return fallback;
             }
 
             var value = (T) _settingsBase[setting];
-            if (fallback != null)
-            {
-                if (IsValueEmpty(value))
-                {
-                    return fallback;
-                }
-            }
 
-            return value;
+            return IsValueEmpty(value) ? fallback : value;
         }
+
 
         /// <inheritdoc />
         /// <summary>
@@ -60,44 +61,63 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
         /// </summary>
         /// <param name="setting"></param>
         /// <param name="value"></param>
-        public void Set(string setting, object value)
+        public void Set(string setting, [NotNull] object value)
         {
             if (setting == null)
             {
                 throw new ArgumentNullException(nameof(setting));
             }
 
+            if (value == null)
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
+
             _settingsBase[setting] = value ?? throw new ArgumentNullException(nameof(value));
             _settingsBase.Save();
         }
 
-        private bool IsValueEmpty<T>(T value)
+        private void Upgrade()
+        {
+            if (!Get("UpgradeRequired", true))
+            {
+                return;
+            }
+
+            _settingsBase.Upgrade();
+            Set("UpgradeRequired", false);
+            _settingsBase.Save();
+        }
+
+        private static bool IsValueEmpty<T>(T value)
         {
             if (value == null)
             {
                 return true;
             }
 
-            if (value is string s)
+            switch (value)
             {
-                if (string.IsNullOrWhiteSpace(s))
-                {
+                case string s when string.IsNullOrWhiteSpace(s):
                     return true;
-                }
-            }
+                case StringCollection collection:
+                {
+                    if (collection.Count == 0)
+                    {
+                        return true;
+                    }
 
-            if (value is StringCollection collection)
-            {
-                if (collection.Count == 0)
-                {
-                    return true;
+                    break;
                 }
-            }
-            else
-            {
-                if (value.Equals(default))
+
+                default:
                 {
-                    return true;
+                    if (value.Equals(default))
+                    {
+                        return true;
+                    }
+
+                    break;
                 }
             }
 

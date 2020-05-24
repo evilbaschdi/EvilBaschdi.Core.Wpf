@@ -61,9 +61,6 @@
         <TextBox Height="140" Margin="100,106,10,0" TextWrapping="Wrap" IsReadOnly="True" Name="txtEncrypted"
                  Text="{Binding EncryptedText}"
                  VerticalAlignment="Top" />
-
-        <Label Content="Network:" HorizontalAlignment="Left" Margin="10,251,0,0" VerticalAlignment="Top" />
-        <ComboBox Height="23" Margin="100,251,10,0" IsReadOnly="False" Name="cboNetwork" VerticalAlignment="Top" />
     </Grid>
     <!-- TaskBarItemInfo -->
     <Window.TaskbarItemInfo>

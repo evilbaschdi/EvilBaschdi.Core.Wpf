@@ -7,7 +7,7 @@
     <Copyright>Copyright © 2015 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
     <!-- ReSharper disable once UnknownProperty -->
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.TestUi.xml</DocumentationFile>
-    <LangVersion>8</LangVersion>
+    <LangVersion>preview</LangVersion>
     <OutputType>WinExe</OutputType>
     <PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</PackageProjectUrl>
     <Product>EvilBaschdi.CoreExtended TestUi</Product>
@@ -18,10 +18,10 @@
     <Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))-develop</Version>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="4.3.0-alpha0107" />
+    <PackageReference Include="ControlzEx" Version="4.3.0" />
     <PackageReference Include="EvilBaschdi.Core" Version="2020.5.3.1518" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
-    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0888" />
+    <PackageReference Include="MahApps.Metro" Version="2.0.0" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="4.1.0" />
     <PackageReference Include="Unity" Version="5.11.6" />
     <PackageReference Include="Unity.Abstractions" Version="5.11.5" />
@@ -47,7 +47,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <ProjectReference Include="..\EvilBaschdi.CoreExtended\EvilBaschdi.CoreExtended.csproj" />
-    <!--<ProjectReference Include="D:\dev\MahApps.Metro\src\MahApps.Metro\MahApps.Metro.csproj" />-->
     <Resource Include="EvilBaschdi.CoreExtended.TestUi.VisualElementsManifest.xml" />
   </ItemGroup>
   <ItemGroup>

@@ -1,12 +1,8 @@
-﻿using System.Collections;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Windows;
-using System.Windows.Controls.Primitives;
 using EvilBaschdi.Core.Security;
-using EvilBaschdi.CoreExtended.Browsers;
 using EvilBaschdi.CoreExtended.TestUi.ViewModel;
 using MahApps.Metro.Controls;
-using MahApps.Metro.Controls.Dialogs;
 
 namespace EvilBaschdi.CoreExtended.TestUi
 {
@@ -18,9 +14,6 @@ namespace EvilBaschdi.CoreExtended.TestUi
     {
         // ReSharper disable once NotAccessedField.Local
         private readonly MainWindowViewModel _mainWindowViewModel;
-
-
-        private INetworkBrowser _networkBrowser;
 
         /// <summary>
         /// </summary>
@@ -55,43 +48,11 @@ namespace EvilBaschdi.CoreExtended.TestUi
 
 
             //TestTaskbarIcon.ContextMenu = contextMenu;
-
-
-            LoadNetworkBrowserToArrayList();
         }
 
         private void MainWindowLoaded(object sender, RoutedEventArgs e)
         {
             DataContext = _mainWindowViewModel;
-        }
-
-        // ReSharper disable once UnusedMember.Local
-        private void LoadNetworkBrowserToArrayList()
-        {
-            _networkBrowser = new NetworkBrowser();
-
-            var networkBrowserValue = _networkBrowser.Value;
-            if (networkBrowserValue != null)
-            {
-                UpdateCombo(cboNetwork, networkBrowserValue);
-            }
-            else
-            {
-                this.ShowMessageAsync("Problem :-/", _networkBrowser.Exception?.Message);
-            }
-        }
-
-
-        private void UpdateCombo(Selector selector, IEnumerable enumerable)
-        {
-            selector.Items.Clear();
-
-            foreach (var item in enumerable)
-            {
-                selector.Items.Add(item);
-            }
-
-            selector.SelectedIndex = 0;
         }
     }
 }

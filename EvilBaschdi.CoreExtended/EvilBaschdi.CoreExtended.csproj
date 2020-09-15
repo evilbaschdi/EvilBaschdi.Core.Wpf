@@ -16,8 +16,7 @@
     <PackageTags>Microsoft.NET.Sdk.WindowsDesktop Core</PackageTags>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
-    <TargetFrameworks>net461;net462;net47;net471;net472;net48;netcoreapp3.0;netcoreapp3.1;net5.0</TargetFrameworks>
-    <Title>EvilBaschdi.CoreExtended</Title>
+    <TargetFrameworks>net461;net462;net47;net471;net472;net48;netcoreapp3.1;net5-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))-develop</Version>
   </PropertyGroup>
@@ -29,11 +28,11 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="4.3.0" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2020.5.3.1518" />
-    <PackageReference Include="MahApps.Metro" Version="2.0.0" />
+    <PackageReference Include="ControlzEx" Version="4.3.2" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2020.9.15.1926-develop" />
+    <PackageReference Include="MahApps.Metro" Version="2.2.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.19" />
-    <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2020.2.0-eap" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.0-beta-20204-02">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>

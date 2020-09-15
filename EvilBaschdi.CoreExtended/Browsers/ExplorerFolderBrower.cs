@@ -112,7 +112,9 @@ namespace EvilBaschdi.CoreExtended.Browsers
             }
             finally
             {
+#pragma warning disable CA1416 // Validate platform compatibility
                 Marshal.ReleaseComObject(dialog);
+#pragma warning restore CA1416 // Validate platform compatibility
             }
         }
 

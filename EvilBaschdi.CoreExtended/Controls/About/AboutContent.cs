@@ -41,7 +41,6 @@ namespace EvilBaschdi.CoreExtended.Controls.About
                                  Version = _assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()
                                                     ?.InformationalVersion,
                                  LogoSourcePath = !string.IsNullOrWhiteSpace(_logoSourcePath) ? _logoSourcePath : string.Empty,
-
                              };
 
                 return config;

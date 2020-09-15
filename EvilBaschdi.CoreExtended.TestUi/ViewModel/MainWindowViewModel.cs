@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Drawing;
 using System.Windows;
+using System.Windows.Media;
 using ControlzEx.Theming;
 using EvilBaschdi.Core.Security;
 using EvilBaschdi.CoreExtended.Controls.About;
@@ -24,7 +24,10 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
         private Brush _outputBackground;
         private string _outputText;
 
-
+        /// <summary>
+        ///     Constructor
+        /// </summary>
+        /// <param name="encryption"></param>
         protected internal MainWindowViewModel(IEncryption encryption)
             : base(true)
         {
@@ -57,13 +60,32 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
                         };
         }
 
+        /// <summary>
+        ///     {Binding AboutWindowClick}
+        /// </summary>
+        // ReSharper disable once MemberCanBePrivate.Global
+
+        // ReSharper disable once UnusedAutoPropertyAccessor.Global
+        // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
         public ICommandViewModel AboutWindowClick { get; set; }
 
+        /// <summary>
+        ///     {Binding CompareClick}
+        /// </summary>
+        // ReSharper disable once MemberCanBePrivate.Global
+        // ReSharper disable once UnusedAutoPropertyAccessor.Global
+        // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
         public ICommandViewModel CompareClick { get; set; }
 
+        /// <summary>
+        ///     {Binding CustomColorText}
+        /// </summary>
+        // ReSharper disable once MemberCanBePrivate.Global
         public string CustomColorText
         {
             get => _customColorText;
+
+            // ReSharper disable once UnusedMember.Global
             set
             {
                 _customColorText = value;
@@ -71,12 +93,30 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             }
         }
 
+        /// <summary>
+        ///     {Binding DecryptClick}
+        /// </summary>
+        // ReSharper disable once MemberCanBePrivate.Global
+        // ReSharper disable once UnusedAutoPropertyAccessor.Global
+        // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
         public ICommandViewModel DecryptClick { get; set; }
 
+        /// <summary>
+        ///     {Binding EncryptClick}
+        /// </summary>
+        // ReSharper disable once MemberCanBePrivate.Global
+        // ReSharper disable once UnusedAutoPropertyAccessor.Global
+        // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
         public ICommandViewModel EncryptClick { get; set; }
+
+        /// <summary>
+        ///     {Binding EncryptedText}
+        /// </summary>
+        // ReSharper disable once MemberCanBePrivate.Global
 
         public string EncryptedText
         {
+            // ReSharper disable once UnusedMember.Global
             get => _encryptedText;
             set
             {
@@ -85,8 +125,13 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             }
         }
 
+        /// <summary>
+        ///     {Binding InputBackground}
+        /// </summary>
+        // ReSharper disable once MemberCanBePrivate.Global
         public Brush InputBackground
         {
+            // ReSharper disable once UnusedMember.Global
             get => _inputBackground;
             set
             {
@@ -95,9 +140,14 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             }
         }
 
+        /// <summary>
+        ///     {Binding InputText}
+        /// </summary>
+        // ReSharper disable once MemberCanBePrivate.Global
         public string InputText
         {
             get => _inputText;
+            // ReSharper disable once UnusedMember.Global
             set
             {
                 _inputText = value;
@@ -105,10 +155,21 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             }
         }
 
+        /// <summary>
+        ///     {Binding LostFocus}
+        /// </summary>
+        // ReSharper disable once MemberCanBePrivate.Global
+        // ReSharper disable once UnusedAutoPropertyAccessor.Global
+        // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
         public ICommandViewModel LostFocus { get; set; }
 
+        /// <summary>
+        ///     {Binding OutputBackground}
+        /// </summary>
+        // ReSharper disable once MemberCanBePrivate.Global
         public Brush OutputBackground
         {
+            // ReSharper disable once UnusedMember.Global
             get => _outputBackground;
             set
             {
@@ -117,6 +178,10 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             }
         }
 
+        /// <summary>
+        ///     {Binding OutputText}
+        /// </summary>
+        // ReSharper disable once MemberCanBePrivate.Global
         public string OutputText
         {
             get => _outputText;
@@ -129,16 +194,18 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
 
         private void ExecuteCustomColorOnLostFocus()
         {
-            if (!string.IsNullOrWhiteSpace(_customColorText))
+            if (string.IsNullOrWhiteSpace(CustomColorText))
             {
-                try
-                {
-                    ThemeManager.Current.ChangeThemeBaseColor(Application.Current, _customColorText);
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show(exception.Message);
-                }
+                return;
+            }
+
+            try
+            {
+                ThemeManager.Current.ChangeThemeBaseColor(Application.Current, CustomColorText);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
             }
         }
 
@@ -154,7 +221,7 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
 
         private void BtnCompareClick()
         {
-            var brush = EncryptedText.Equals(OutputText) ? Brushes.DarkGreen : Brushes.DarkRed;
+            var brush = InputText.Equals(OutputText) ? Brushes.DarkGreen : Brushes.DarkRed;
 
             InputBackground = brush;
             OutputBackground = brush;

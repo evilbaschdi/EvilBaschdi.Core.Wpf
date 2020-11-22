@@ -39,7 +39,7 @@ namespace EvilBaschdi.CoreExtended.Controls.About
                                  Description = _assembly.GetCustomAttributes<AssemblyDescriptionAttribute>().FirstOrDefault()
                                                         ?.Description,
                                  Version = _assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()
-                                                    ?.InformationalVersion,
+                                                    ?.InformationalVersion.Split('+').FirstOrDefault(),
                                  LogoSourcePath = !string.IsNullOrWhiteSpace(_logoSourcePath) ? _logoSourcePath : string.Empty,
                              };
 

@@ -11,9 +11,6 @@ namespace EvilBaschdi.CoreExtended.TestUi
         /// <inheritdoc />
         protected override void OnStartup(StartupEventArgs e)
         {
-            //ThemeManager.Current.SyncTheme(ThemeSyncMode.SyncWithAppMode);
-            //ThemeManager.Current.SyncTheme(ThemeSyncMode.SyncWithAccent);
-
             ThemeManager.Current.SyncTheme(ThemeSyncMode.SyncAll);
 
             base.OnStartup(e);

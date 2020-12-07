@@ -35,28 +35,28 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             EncryptClick = new DefaultCommand
                            {
                                Text = "Encrypt",
-                               Command = new RelayCommand(rc => BtnEncryptClick())
+                               Command = new RelayCommand(_ => BtnEncryptClick())
                            };
 
             DecryptClick = new DefaultCommand
                            {
                                Text = "Decrypt",
-                               Command = new RelayCommand(rc => BtnDecryptClick())
+                               Command = new RelayCommand(_ => BtnDecryptClick())
                            };
 
             CompareClick = new DefaultCommand
                            {
                                Text = "Compare",
-                               Command = new RelayCommand(rc => BtnCompareClick())
+                               Command = new RelayCommand(_ => BtnCompareClick())
                            };
             AboutWindowClick = new DefaultCommand
                                {
                                    Text = "About",
-                                   Command = new RelayCommand(rc => BtnAboutWindowClick())
+                                   Command = new RelayCommand(_ => BtnAboutWindowClick())
                                };
             LostFocus = new DefaultCommand
                         {
-                            Command = new RelayCommand(rc => ExecuteCustomColorOnLostFocus())
+                            Command = new RelayCommand(_ => ExecuteCustomColorOnLostFocus())
                         };
         }
 
@@ -227,7 +227,7 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             OutputBackground = brush;
         }
 
-        private void BtnAboutWindowClick()
+        private static void BtnAboutWindowClick()
         {
             var assembly = typeof(MainWindow).Assembly;
 

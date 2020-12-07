@@ -10,6 +10,7 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
     /// <summary>
     ///     Classes to get values from or set values in AppSettingsBase
     /// </summary>
+    // ReSharper disable once UnusedType.Global
     public class AppSettingsBase : IAppSettingsBase
     {
         private readonly ApplicationSettingsBase _settingsBase;

@@ -5,6 +5,7 @@ using System.Reflection;
 namespace EvilBaschdi.CoreExtended.Controls.About
 {
     /// <inheritdoc />
+    // ReSharper disable once UnusedType.Global
     public class AboutContent : IAboutContent
     {
         private readonly Assembly _assembly;

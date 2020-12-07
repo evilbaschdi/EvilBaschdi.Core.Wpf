@@ -4,7 +4,7 @@ using EvilBaschdi.Testing;
 using FluentAssertions;
 using Xunit;
 
-namespace EvilBaschdi.CoreExtended.Tests.Metro
+namespace EvilBaschdi.CoreExtended.Tests
 {
     public class ApplicationStyleTests
     {

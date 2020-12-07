@@ -5,12 +5,14 @@ namespace EvilBaschdi.CoreExtended.Extensions
 {
     /// <summary>
     /// </summary>
+    // ReSharper disable once UnusedType.Global
     public static class RemoveChildExtension
     {
         /// <summary>
         /// </summary>
         /// <param name="parent"></param>
         /// <param name="child"></param>
+        // ReSharper disable once UnusedMember.Global
         public static void RemoveChild(this DependencyObject parent, UIElement child)
         {
             switch (parent)

@@ -4,6 +4,7 @@ using static Microsoft.Win32.Registry;
 namespace EvilBaschdi.CoreExtended.AppHelpers
 {
     /// <inheritdoc />
+    // ReSharper disable once UnusedType.Global
     public class AutoStart : IAutoStart
     {
         private const string SubKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
@@ -20,7 +21,7 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
             _appName = appName ?? throw new ArgumentNullException(nameof(appName));
             _location = location ?? throw new ArgumentNullException(nameof(location));
         }
-#pragma warning disable CA1416 // Validate platform compatibility
+
         /// <inheritdoc />
         public void Enable()
         {
@@ -32,7 +33,6 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
         public void Disable()
         {
             var registryKey = CurrentUser.OpenSubKey(SubKey, true);
-
             registryKey?.DeleteValue(_appName, false);
         }
 
@@ -46,6 +46,5 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
                 return value != null;
             }
         }
-#pragma warning restore CA1416 // Validate platform compatibility
     }
 }

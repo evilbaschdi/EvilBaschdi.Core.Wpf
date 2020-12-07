@@ -4,6 +4,7 @@ namespace EvilBaschdi.CoreExtended.Extensions
 {
     /// <summary>
     /// </summary>
+    // ReSharper disable once UnusedType.Global
     public static class ObjectExtensions
     {
         /// <summary>
@@ -12,6 +13,7 @@ namespace EvilBaschdi.CoreExtended.Extensions
         /// <param name="obj"></param>
         /// <returns></returns>
         [ContractAnnotation("obj:null => true")]
+        // ReSharper disable once UnusedMember.Global
         public static bool IsNull(this object obj)
         {
             return obj is null;
@@ -23,6 +25,7 @@ namespace EvilBaschdi.CoreExtended.Extensions
         /// <param name="obj"></param>
         /// <returns></returns>
         [ContractAnnotation("obj:null => false")]
+        // ReSharper disable once UnusedMember.Global
         public static bool IsNotNull(this object obj)
         {
             return obj is null == false;

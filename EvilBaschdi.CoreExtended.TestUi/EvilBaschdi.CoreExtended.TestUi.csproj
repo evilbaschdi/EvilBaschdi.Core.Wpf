@@ -19,11 +19,11 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ControlzEx" Version="4.4.0" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2020.10.2.2122-develop" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2020.12.1.744-develop" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
-    <PackageReference Include="MahApps.Metro" Version="2.3.4" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.3" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="4.8.0" />
-    <PackageReference Include="Unity" Version="5.11.7" />
+    <PackageReference Include="Unity" Version="5.11.9" />
     <PackageReference Include="Unity.Abstractions" Version="5.11.6" />
     <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.0-beta-20204-02">

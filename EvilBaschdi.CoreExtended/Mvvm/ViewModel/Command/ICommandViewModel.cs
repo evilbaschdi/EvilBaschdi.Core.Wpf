@@ -11,21 +11,29 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
         /// <summary>
         ///     Command to execute.
         /// </summary>
+        // ReSharper disable UnusedMemberInSuper.Global
         ICommand Command { get; set; }
+        // ReSharper restore UnusedMemberInSuper.Global
 
         /// <summary>
-        ///     Imagepath if available.
+        ///     ImagePath if available.
         /// </summary>
+        // ReSharper disable UnusedMember.Global
         string ImagePath { get; set; }
+        // ReSharper restore UnusedMember.Global
 
         /// <summary>
-        ///     Displaytext from command.
+        ///     Display text from command.
         /// </summary>
+        // ReSharper disable UnusedMember.Global
         string Text { get; set; }
+        // ReSharper restore UnusedMember.Global
 
         /// <summary>
-        ///     Acutal visibility.
+        ///     Actual visibility.
         /// </summary>
+        // ReSharper disable UnusedMember.Global
         Visibility Visibility { get; set; }
+        // ReSharper restore UnusedMember.Global
     }
 }

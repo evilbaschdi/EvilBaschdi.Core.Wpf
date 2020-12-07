@@ -3,6 +3,7 @@
 namespace EvilBaschdi.CoreExtended.AppHelpers
 {
     /// <inheritdoc />
+    // ReSharper disable once UnusedType.Global
     public class AutoStartByConfiguration : IAutoStartByConfiguration
     {
         private readonly IAppSettingFromConfigurationManager _appSettingFromConfigurationManager;

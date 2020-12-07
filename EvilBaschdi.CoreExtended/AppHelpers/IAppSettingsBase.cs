@@ -14,6 +14,7 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         // ReSharper disable once RedundantTypeSpecificationInDefaultExpression
+        // ReSharper disable once UnusedMemberInSuper.Global
         T Get<T>(string setting, T fallback = default);
 
         /// <summary>
@@ -21,6 +22,7 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
         /// </summary>
         /// <param name="setting"></param>
         /// <param name="value"></param>
+        // ReSharper disable once UnusedMemberInSuper.Global
         void Set(string setting, object value);
     }
 }

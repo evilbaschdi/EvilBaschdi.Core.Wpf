@@ -62,7 +62,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
         {
             ToggleFlyout = new DefaultCommand
                            {
-                               Command = new RelayCommand(rc => ExecuteToggleFlyout())
+                               Command = new RelayCommand(_ => ExecuteToggleFlyout())
                            };
         }
 
@@ -89,6 +89,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
                 Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             }
 
+            // ReSharper disable once InvertIf
             if (_resizeWithBorder400)
             {
                 Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;

@@ -8,6 +8,7 @@ namespace EvilBaschdi.CoreExtended
     /// <summary>
     ///     Class that handle metro style on Wpf.
     /// </summary>
+    // ReSharper disable once UnusedType.Global
     public class ApplicationStyle : IApplicationStyle
     {
         /// <inheritdoc />
@@ -36,6 +37,7 @@ namespace EvilBaschdi.CoreExtended
                 Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             }
 
+            // ReSharper disable once InvertIf
             if (resizeWithBorder400)
             {
                 Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;

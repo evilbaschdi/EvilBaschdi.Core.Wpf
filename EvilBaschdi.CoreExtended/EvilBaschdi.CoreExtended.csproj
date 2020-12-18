@@ -29,7 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ControlzEx" Version="4.4.0" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2020.12.1.744-develop" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2020.12.18.704-develop" />
     <PackageReference Include="MahApps.Metro" Version="2.4.3" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.19" />
     <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />

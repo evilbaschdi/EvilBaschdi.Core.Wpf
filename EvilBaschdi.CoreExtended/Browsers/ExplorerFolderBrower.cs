@@ -18,7 +18,13 @@ namespace EvilBaschdi.CoreExtended.Browsers
         public string SelectedPath
         {
             get => _vistaFolderBrowserDialog.SelectedPath;
-            set => _vistaFolderBrowserDialog.SelectedPath = value;
+            set
+            {
+                if (value != null)
+                {
+                    _vistaFolderBrowserDialog.SelectedPath = value;
+                }
+            }
         }
 
         /// <inheritdoc />

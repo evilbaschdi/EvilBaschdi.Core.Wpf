@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
@@ -16,11 +17,13 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
         private readonly bool _center;
         private readonly bool _resizeWithBorder400;
         private bool _settingsFlyoutIsOpen;
+        private ICommandViewModel _toggleFlyout;
 
         /// <summary>
         ///     Constructor
         /// </summary>
-        protected ApplicationStyleViewModel(bool center = false, bool resizeWithBorder400 = false)
+        // ReSharper disable once MemberCanBeProtected.Global
+        public ApplicationStyleViewModel(bool center = false, bool resizeWithBorder400 = false)
         {
             _center = center;
             _resizeWithBorder400 = resizeWithBorder400;
@@ -46,15 +49,33 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
         ///     Toggle Flyout.
         /// </summary>
         // ReSharper disable once MemberCanBePrivate.Global
+        // ReSharper disable once UnusedAutoPropertyAccessor.Global
+
         public ICommandViewModel ToggleFlyout
         {
-            // ReSharper disable once UnusedAutoPropertyAccessor.Global
-            get;
-            set;
+            get => _toggleFlyout;
+            set => _toggleFlyout = value ?? throw new ArgumentNullException(nameof(value));
         }
 
         /// <inheritdoc />
-        public event PropertyChangedEventHandler PropertyChanged;
+        event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
+        {
+            add
+            {
+                if (value != null)
+                {
+                    PropertyChanged += value;
+                }
+            }
+            remove
+            {
+                if (value != null)
+                {
+                    PropertyChanged -= value;
+                }
+            }
+        }
+
 
         /// <summary>
         /// </summary>
@@ -71,7 +92,12 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
         /// </summary>
         private void Load()
         {
-            foreach (Window currentWindow in Application.Current.Windows)
+            if (Application.Current == null)
+            {
+                return;
+            }
+
+            foreach (Window currentWindow in Application.Current?.Windows)
             {
                 if (currentWindow is MetroWindow metroWindow)
                 {
@@ -79,7 +105,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
                 }
             }
 
-            if (Application.Current.MainWindow == null)
+            if (Application.Current?.MainWindow == null)
             {
                 return;
             }
@@ -104,13 +130,16 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
             SettingsFlyoutIsOpen = !SettingsFlyoutIsOpen;
         }
 
+        /// <inheritdoc cref="PropertyChanged" />
+        private event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         ///     INotifyPropertyChanged - method to synchronize UI and Property.
         /// </summary>
         /// <param name="propertyName"></param>
         [NotifyPropertyChangedInvocator]
-        // ReSharper disable once VirtualMemberNeverOverridden.Global
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        // ReSharper disable once MemberCanBePrivate.Global
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

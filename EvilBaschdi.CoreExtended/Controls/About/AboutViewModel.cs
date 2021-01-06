@@ -5,6 +5,7 @@ namespace EvilBaschdi.CoreExtended.Controls.About
 {
     /// <summary>
     /// </summary>
+    // ReSharper disable once UnusedType.Global
     public class AboutViewModel : ApplicationStyleViewModel
     {
         private readonly IAboutContent _aboutContent;
@@ -21,6 +22,7 @@ namespace EvilBaschdi.CoreExtended.Controls.About
 
         /// <summary>
         /// </summary>
+        // ReSharper disable UnusedMember.Global
         public string ApplicationTitle => _aboutContent.Value.ApplicationTitle;
 
         /// <summary>
@@ -42,5 +44,6 @@ namespace EvilBaschdi.CoreExtended.Controls.About
         /// <summary>
         /// </summary>
         public string Version => $"Version: {_aboutContent.Value.Version}";
+        // ReSharper restore UnusedMember.Global
     }
 }

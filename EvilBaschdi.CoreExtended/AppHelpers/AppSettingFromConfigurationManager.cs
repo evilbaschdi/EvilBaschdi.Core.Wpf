@@ -4,6 +4,7 @@ using System.Configuration;
 namespace EvilBaschdi.CoreExtended.AppHelpers
 {
     /// <inheritdoc />
+    // ReSharper disable once UnusedType.Global
     public class AppSettingFromConfigurationManager : IAppSettingFromConfigurationManager
     {
         /// <inheritdoc />

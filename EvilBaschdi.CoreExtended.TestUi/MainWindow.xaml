@@ -13,15 +13,8 @@
     <!--  RightWindowCommands  -->
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
-            <TextBox Name="CustomColor" Text="{Binding CustomColorText, UpdateSourceTrigger=PropertyChanged}"
-                     Width="100">
-                <b:Interaction.Triggers>
-                    <b:EventTrigger EventName="LostFocus">
-                        <b:InvokeCommandAction Command="{Binding LostFocus}"
-                                               CommandParameter="{Binding CustomColorText}" />
-                    </b:EventTrigger>
-                </b:Interaction.Triggers>
-            </TextBox>
+            <TextBox Name="CustomColor" Text="{Binding CustomColorText,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Width="100" />
             <Button Command="{Binding AboutWindowClick.Command}" Name="AboutWindow">
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconMaterial Kind="Information" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
@@ -40,7 +33,7 @@
         <!-- Taskbar Icon -->
         <tb:TaskbarIcon Name="TestTaskbarIcon" ToolTip="Test" ToolTipText="Test" Visibility="Hidden" />
         <Label Content="Input:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
-        <TextBox Height="23" Margin="100,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txtInput"
+        <TextBox Height="23" Margin="100,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="InputTextBox"
                  Text="{Binding InputText}" Background="{Binding InputBackground}" />
 
         <Label Content="Output:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" />
@@ -49,16 +42,16 @@
 
         <Button Content="{Binding EncryptClick.Text}" HorizontalAlignment="Left" Margin="100,72,0,0"
                 VerticalAlignment="Top" Width="80"
-                Name="btnEncrypt" Command="{Binding EncryptClick.Command}" />
+                Name="EncryptButton" Command="{Binding EncryptClick.Command}" />
         <Button Content="{Binding DecryptClick.Text}" HorizontalAlignment="Left" Margin="185,72,0,0"
                 VerticalAlignment="Top" Width="80"
-                Name="btnDecrypt" Command="{Binding DecryptClick.Command}" />
+                Name="DecryptButton" Command="{Binding DecryptClick.Command}" />
         <Button Content="{Binding CompareClick.Text}" HorizontalAlignment="Left" Margin="270,72,0,0"
                 VerticalAlignment="Top" Width="80"
-                Name="btnCompare" Command="{Binding CompareClick.Command}" />
+                Name="CompareButton" Command="{Binding CompareClick.Command}" />
 
         <Label Content="Encrypted:" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top" />
-        <TextBox Height="140" Margin="100,106,10,0" TextWrapping="Wrap" IsReadOnly="True" Name="txtEncrypted"
+        <TextBox Height="140" Margin="100,106,10,0" TextWrapping="Wrap" IsReadOnly="True" Name="EncryptedTextBox"
                  Text="{Binding EncryptedText}"
                  VerticalAlignment="Top" />
     </Grid>

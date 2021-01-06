@@ -5,6 +5,7 @@ using System.Reflection;
 namespace EvilBaschdi.CoreExtended.Controls.About
 {
     /// <inheritdoc />
+    // ReSharper disable once UnusedType.Global
     public class AboutContent : IAboutContent
     {
         private readonly Assembly _assembly;
@@ -39,9 +40,8 @@ namespace EvilBaschdi.CoreExtended.Controls.About
                                  Description = _assembly.GetCustomAttributes<AssemblyDescriptionAttribute>().FirstOrDefault()
                                                         ?.Description,
                                  Version = _assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()
-                                                    ?.InformationalVersion,
+                                                    ?.InformationalVersion.Split('+').FirstOrDefault(),
                                  LogoSourcePath = !string.IsNullOrWhiteSpace(_logoSourcePath) ? _logoSourcePath : string.Empty,
-
                              };
 
                 return config;

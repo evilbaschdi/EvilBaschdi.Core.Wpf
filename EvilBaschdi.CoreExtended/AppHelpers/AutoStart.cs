@@ -1,9 +1,10 @@
 ﻿using System;
-using Microsoft.Win32;
+using static Microsoft.Win32.Registry;
 
 namespace EvilBaschdi.CoreExtended.AppHelpers
 {
     /// <inheritdoc />
+    // ReSharper disable once UnusedType.Global
     public class AutoStart : IAutoStart
     {
         private const string SubKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
@@ -24,14 +25,14 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
         /// <inheritdoc />
         public void Enable()
         {
-            var registryKey = Registry.CurrentUser.OpenSubKey(SubKey, true);
+            var registryKey = CurrentUser.OpenSubKey(SubKey, true);
             registryKey?.SetValue(_appName, _location);
         }
 
         /// <inheritdoc />
         public void Disable()
         {
-            var registryKey = Registry.CurrentUser.OpenSubKey(SubKey, true);
+            var registryKey = CurrentUser.OpenSubKey(SubKey, true);
             registryKey?.DeleteValue(_appName, false);
         }
 
@@ -40,7 +41,7 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
         {
             get
             {
-                var registryKey = Registry.CurrentUser.OpenSubKey(SubKey, true);
+                var registryKey = CurrentUser.OpenSubKey(SubKey, true);
                 var value = registryKey?.GetValue(_appName);
                 return value != null;
             }

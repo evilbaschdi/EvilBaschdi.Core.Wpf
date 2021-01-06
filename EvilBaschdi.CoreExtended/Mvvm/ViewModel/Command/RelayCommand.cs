@@ -23,10 +23,11 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
         /// <param name="execute"></param>
         /// <param name="canExecute"></param>
         /// <exception cref="ArgumentNullException"></exception>
+        // ReSharper disable once MemberCanBePrivate.Global
         public RelayCommand(Action<object> execute, Predicate<object> canExecute)
         {
             _execute = execute ?? throw new ArgumentNullException(nameof(execute));
-            _canExecute = canExecute;
+            _canExecute = canExecute ?? throw new ArgumentNullException(nameof(canExecute));
         }
 
         /// <summary>
@@ -35,12 +36,22 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
         {
             add
             {
+                if (value == null)
+                {
+                    return;
+                }
+
                 CommandManager.RequerySuggested += value;
                 CanExecuteChangedInternal += value;
             }
 
             remove
             {
+                if (value == null)
+                {
+                    return;
+                }
+
                 CommandManager.RequerySuggested -= value;
                 CanExecuteChangedInternal -= value;
             }

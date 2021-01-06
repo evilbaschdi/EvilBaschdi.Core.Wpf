@@ -1,5 +1,3 @@
-using System.Windows.Controls;
-
 namespace EvilBaschdi.CoreExtended.Controls.About
 {
     /// <summary>

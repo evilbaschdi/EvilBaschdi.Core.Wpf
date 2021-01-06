@@ -10,7 +10,7 @@ namespace EvilBaschdi.CoreExtended.TestUi
     /// <summary>
     ///     Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class MainWindow
     {
         // ReSharper disable once NotAccessedField.Local
         private readonly MainWindowViewModel _mainWindowViewModel;
@@ -33,7 +33,6 @@ namespace EvilBaschdi.CoreExtended.TestUi
                 TestTaskbarIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(filePath);
             }
 
-
             //var contextMenu = new ContextMenu();
 
             //foreach (string accentItem in applicationStyleViewModelCodeBehind.StyleAccents)
@@ -45,7 +44,6 @@ namespace EvilBaschdi.CoreExtended.TestUi
 
             //    contextMenu.Items.Add(menuItem);
             //}
-
 
             //TestTaskbarIcon.ContextMenu = contextMenu;
         }

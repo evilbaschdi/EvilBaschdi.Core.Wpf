@@ -8,6 +8,7 @@ using JetBrains.Annotations;
 namespace EvilBaschdi.CoreExtended.AppHelpers
 {
     /// <inheritdoc />
+    // ReSharper disable once UnusedType.Global
     public class ScreenShot : IScreenShot
     {
         /// <inheritdoc />

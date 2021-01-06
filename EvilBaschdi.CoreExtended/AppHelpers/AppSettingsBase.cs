@@ -10,6 +10,7 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
     /// <summary>
     ///     Classes to get values from or set values in AppSettingsBase
     /// </summary>
+    // ReSharper disable once UnusedType.Global
     public class AppSettingsBase : IAppSettingsBase
     {
         private readonly ApplicationSettingsBase _settingsBase;
@@ -44,12 +45,18 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
                 throw new ArgumentNullException(nameof(fallback));
             }
 
-            if (!_settingsBase.Properties.OfType<SettingsProperty>().ToList().Any(x => x.Name.Equals(setting)))
+            if (_settingsBase == null)
             {
                 return fallback;
             }
 
-            var value = (T) _settingsBase[setting];
+
+            if (_settingsBase?.Properties != null && !_settingsBase.Properties.OfType<SettingsProperty>().ToList().Any(x => x.Name.Equals(setting)))
+            {
+                return fallback;
+            }
+
+            var value = (T) _settingsBase[setting] ?? fallback;
 
             return IsValueEmpty(value) ? fallback : value;
         }

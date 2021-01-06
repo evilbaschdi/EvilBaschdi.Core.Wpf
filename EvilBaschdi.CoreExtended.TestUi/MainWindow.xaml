@@ -13,15 +13,8 @@
     <!--  RightWindowCommands  -->
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
-            <TextBox Name="CustomColor" Text="{Binding CustomColorText, UpdateSourceTrigger=PropertyChanged}"
-                     Width="100">
-                <b:Interaction.Triggers>
-                    <b:EventTrigger EventName="LostFocus">
-                        <b:InvokeCommandAction Command="{Binding LostFocus}"
-                                               CommandParameter="{Binding CustomColorText}" />
-                    </b:EventTrigger>
-                </b:Interaction.Triggers>
-            </TextBox>
+            <TextBox Name="CustomColor" Text="{Binding CustomColorText,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Width="100" />
             <Button Command="{Binding AboutWindowClick.Command}" Name="AboutWindow">
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconMaterial Kind="Information" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />

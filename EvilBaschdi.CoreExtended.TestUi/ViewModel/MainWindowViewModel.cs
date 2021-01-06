@@ -54,10 +54,6 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
                                    Text = "About",
                                    Command = new RelayCommand(_ => BtnAboutWindowClick())
                                };
-            LostFocus = new DefaultCommand
-                        {
-                            Command = new RelayCommand(_ => ExecuteCustomColorOnLostFocus())
-                        };
         }
 
         /// <summary>
@@ -89,6 +85,7 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             set
             {
                 _customColorText = value;
+                ExecuteCustomColorOnLostFocus();
                 OnPropertyChanged();
             }
         }
@@ -155,13 +152,6 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             }
         }
 
-        /// <summary>
-        ///     {Binding LostFocus}
-        /// </summary>
-        // ReSharper disable once MemberCanBePrivate.Global
-        // ReSharper disable once UnusedAutoPropertyAccessor.Global
-        // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
-        public ICommandViewModel LostFocus { get; set; }
 
         /// <summary>
         ///     {Binding OutputBackground}
@@ -201,7 +191,8 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
 
             try
             {
-                ThemeManager.Current.ChangeThemeBaseColor(Application.Current, CustomColorText);
+                ThemeManager.Current.SyncTheme(ThemeSyncMode.SyncWithAccent);
+                ThemeManager.Current.ChangeThemeColorScheme(Application.Current, $"#{CustomColorText.PadRight(6, '0')}");
             }
             catch (Exception exception)
             {

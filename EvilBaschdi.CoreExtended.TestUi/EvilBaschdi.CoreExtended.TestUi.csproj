@@ -7,7 +7,7 @@
     <Copyright>Copyright © 2015 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
     <!-- ReSharper disable once UnknownProperty -->
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.TestUi.xml</DocumentationFile>
-    <LangVersion>preview</LangVersion>
+    <LangVersion>9</LangVersion>
     <OutputType>WinExe</OutputType>
     <PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</PackageProjectUrl>
     <Product>EvilBaschdi.CoreExtended TestUi</Product>
@@ -19,13 +19,13 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ControlzEx" Version="4.4.0" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2021.1.6.936" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2021.2.16.726-develop" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
     <PackageReference Include="MahApps.Metro" Version="2.4.3" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="4.8.0" />
-    <PackageReference Include="Unity" Version="5.11.9" />
-    <PackageReference Include="Unity.Abstractions" Version="5.11.6" />
-    <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
+    <PackageReference Include="Unity" Version="5.11.10" />
+    <PackageReference Include="Unity.Abstractions" Version="5.11.7" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0-preview.1.21102.12" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.0-beta-20204-02">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>

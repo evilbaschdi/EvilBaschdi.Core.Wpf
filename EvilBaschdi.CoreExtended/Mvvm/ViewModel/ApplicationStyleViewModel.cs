@@ -97,7 +97,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
                 return;
             }
 
-            foreach (Window currentWindow in Application.Current?.Windows)
+            foreach (Window currentWindow in Application.Current.Windows)
             {
                 if (currentWindow is MetroWindow metroWindow)
                 {

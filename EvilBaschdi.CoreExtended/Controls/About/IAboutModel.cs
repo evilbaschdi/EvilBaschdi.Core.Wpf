@@ -2,34 +2,34 @@
 {
     /// <summary>
     /// </summary>
-    public class AboutModel : IAboutModel
+    public interface IAboutModel
     {
         /// <summary>
         /// </summary>
-        public string ApplicationTitle { get; set; }
+        public string ApplicationTitle { get; }
 
         /// <summary>
         /// </summary>
-        public string Company { get; set; }
+        public string Company { get; }
 
         /// <summary>
         /// </summary>
-        public string Copyright { get; set; }
+        public string Copyright { get; }
 
         /// <summary>
         /// </summary>
-        public string Description { get; set; }
+        public string Description { get; }
 
         /// <summary>
         /// </summary>
-        public string LogoSourcePath { get; set; }
+        public string LogoSourcePath { get; }
 
         /// <summary>
         /// </summary>
-        public string Runtime { get; set; }
+        public string Runtime { get; }
 
         /// <summary>
         /// </summary>
-        public string Version { get; set; }
+        public string Version { get; }
     }
 }

@@ -6,7 +6,7 @@ namespace EvilBaschdi.CoreExtended.Controls.About
     /// <summary>
     /// </summary>
     // ReSharper disable once UnusedType.Global
-    public class AboutViewModel : ApplicationStyleViewModel
+    public class AboutViewModel : ApplicationStyleViewModel, IAboutModel
     {
         private readonly IAboutContent _aboutContent;
 
@@ -40,6 +40,10 @@ namespace EvilBaschdi.CoreExtended.Controls.About
         /// <summary>
         /// </summary>
         public string LogoSourcePath => _aboutContent.Value.LogoSourcePath;
+
+        /// <summary>
+        /// </summary>
+        public string Runtime => $"CLR Runtime: {_aboutContent.Value.Runtime}";
 
         /// <summary>
         /// </summary>

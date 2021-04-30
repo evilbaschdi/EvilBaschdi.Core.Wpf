@@ -16,7 +16,7 @@
     <PackageTags>Microsoft.NET.Sdk.WindowsDesktop Core</PackageTags>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
-    <TargetFrameworks>netcoreapp3.1;net5.0-windows</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net5.0-windows;net6.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))-develop</Version>
   </PropertyGroup>
@@ -24,9 +24,9 @@
     <None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="EvilBaschdi.Core" Version="2021.2.25.2046-develop" />
-    <PackageReference Include="ControlzEx" Version="4.4.0" />
-    <PackageReference Include="MahApps.Metro" Version="2.4.3" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2021.4.30.627-develop" />
+    <PackageReference Include="ControlzEx" Version="5.0.0" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.5" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
     <PackageReference Include="Ookii.Dialogs.Wpf" Version="3.1.0" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.0-beta-20204-02">

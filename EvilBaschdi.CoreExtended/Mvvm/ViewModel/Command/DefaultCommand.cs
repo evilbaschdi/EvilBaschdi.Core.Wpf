@@ -26,7 +26,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
                     _text = value;
                 }
 
-                OnPropertyChanged("Text");
+                OnPropertyChanged(nameof(Text));
             }
         }
 
@@ -41,7 +41,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
                     _imagePath = value;
                 }
 
-                OnPropertyChanged("ImagePath");
+                OnPropertyChanged(nameof(ImagePath));
             }
         }
 
@@ -56,7 +56,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
                     _command = value;
                 }
 
-                OnPropertyChanged("Command");
+                OnPropertyChanged(nameof(Command));
             }
         }
 
@@ -67,7 +67,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
             set
             {
                 _visibility = value;
-                OnPropertyChanged("Visibility");
+                OnPropertyChanged(nameof(Visibility));
             }
         }
 
@@ -91,7 +91,9 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// 
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>

@@ -43,7 +43,7 @@ namespace EvilBaschdi.CoreExtended.Controls.About
 
         /// <summary>
         /// </summary>
-        public string Runtime => $"CLR Runtime: {_aboutContent.Value.Runtime}";
+        public string Runtime => $"CLR: {_aboutContent.Value.Runtime}";
 
         /// <summary>
         /// </summary>

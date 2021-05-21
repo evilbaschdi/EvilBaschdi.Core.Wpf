@@ -24,7 +24,7 @@ namespace EvilBaschdi.CoreExtended.TestUi
             //MessageBox.Show(VersionHelper.GetWindowsClientVersion());
             IEncryption encryption = new Encryption();
 
-            _mainWindowViewModel = new MainWindowViewModel(encryption);
+            _mainWindowViewModel = new(encryption);
             Loaded += MainWindowLoaded;
 
             var filePath = Assembly.GetEntryAssembly()?.Location;

@@ -3,9 +3,9 @@
 namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
 {
     /// <inheritdoc cref="IDefaultCommand" />
-    /// <inheritdoc cref="IRunTask" />
+    /// <inheritdoc cref="IRun" />
     // ReSharper disable once UnusedType.Global
-    public interface ITaskRunDefaultCommand : IDefaultCommand, IRunTask
+    public interface IDefaultCommandRun : IDefaultCommand, IRun
     {
     }
 }

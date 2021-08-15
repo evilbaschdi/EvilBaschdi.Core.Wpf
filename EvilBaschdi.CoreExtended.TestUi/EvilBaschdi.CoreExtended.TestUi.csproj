@@ -8,7 +8,7 @@
     <Description>TestUi for EvilBaschdi.CoreExtended</Description>
     <!-- ReSharper disable once UnknownProperty -->
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.TestUi.xml</DocumentationFile>
-    <LangVersion>9</LangVersion>
+    <LangVersion>preview</LangVersion>
     <OutputType>WinExe</OutputType>
     <PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</PackageProjectUrl>
     <Product>EvilBaschdi.CoreExtended TestUi</Product>
@@ -19,9 +19,9 @@
     <Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))-develop</Version>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="5.0.0" />
+    <PackageReference Include="ControlzEx" Version="5.0.1" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
-    <PackageReference Include="MahApps.Metro" Version="2.4.5" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.7" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="4.8.0" />
     <PackageReference Include="Unity" Version="5.11.10" />
     <PackageReference Include="Unity.Abstractions" Version="5.11.7" />

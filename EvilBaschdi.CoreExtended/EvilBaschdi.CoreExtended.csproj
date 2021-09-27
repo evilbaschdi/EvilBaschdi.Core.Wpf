@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
     <Authors>Sebastian Walter</Authors>
@@ -17,7 +17,7 @@
     <PackageTags>Microsoft.NET.Sdk.WindowsDesktop Core</PackageTags>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
-    <TargetFrameworks>netcoreapp3.1;net5.0-windows;net6.0-windows</TargetFrameworks>
+    <TargetFrameworks>net5.0-windows;net6.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</VersionPrefix>
   </PropertyGroup>
@@ -25,11 +25,11 @@
     <None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="EvilBaschdi.Core" Version="2021.7.12.1538-develop" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2021.9.27.1934-develop" />
     <PackageReference Include="ControlzEx" Version="5.0.1" />
     <PackageReference Include="MahApps.Metro" Version="2.4.7" />
-    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
-    <PackageReference Include="Ookii.Dialogs.Wpf" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.37" />
+    <PackageReference Include="Ookii.Dialogs.Wpf" Version="4.0.0" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.0-beta-20204-02">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>

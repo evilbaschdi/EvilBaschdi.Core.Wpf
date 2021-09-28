@@ -1,4 +1,6 @@
-﻿namespace EvilBaschdi.CoreExtended.Controls.About
+﻿using EvilBaschdi.CoreExtended.Extensions;
+
+namespace EvilBaschdi.CoreExtended.Controls.About
 {
     /// <summary>
     ///     Interaction logic for AboutWindow.xaml
@@ -10,6 +12,9 @@
         public AboutWindow()
         {
             InitializeComponent();
+
+            IRoundCorners roundCorners = new RoundCorners();
+            roundCorners.RunFor(this);
         }
     }
 }

@@ -30,13 +30,13 @@ namespace EvilBaschdi.CoreExtended.TestUi
 
 
             IRoundCorners roundCorners = new RoundCorners();
-            roundCorners.RunFor(this);
+            //roundCorners.RunFor(this);
             //rounded corners
 
             //MessageBox.Show(VersionHelper.GetWindowsClientVersion());
             IEncryption encryption = new Encryption();
 
-            _mainWindowViewModel = new(encryption);
+            _mainWindowViewModel = new(encryption, roundCorners);
             Loaded += MainWindowLoaded;
 
             var filePath = Assembly.GetEntryAssembly()?.Location;

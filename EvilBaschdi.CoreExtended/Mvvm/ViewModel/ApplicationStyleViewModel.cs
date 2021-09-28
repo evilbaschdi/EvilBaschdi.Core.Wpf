@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using EvilBaschdi.CoreExtended.Extensions;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
 using JetBrains.Annotations;
 using MahApps.Metro.Controls;
@@ -16,6 +17,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
     {
         private readonly bool _center;
         private readonly bool _resizeWithBorder400;
+        private readonly IRoundCorners _roundCorners;
         private bool _settingsFlyoutIsOpen;
         private ICommandViewModel _toggleFlyout;
 
@@ -23,8 +25,9 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
         ///     Constructor
         /// </summary>
         // ReSharper disable once MemberCanBeProtected.Global
-        public ApplicationStyleViewModel(bool center = false, bool resizeWithBorder400 = false)
+        public ApplicationStyleViewModel([NotNull] IRoundCorners roundCorners, bool center = false, bool resizeWithBorder400 = false)
         {
+            _roundCorners = roundCorners ?? throw new ArgumentNullException(nameof(roundCorners));
             _center = center;
             _resizeWithBorder400 = resizeWithBorder400;
             InitializeCommandViewModels();
@@ -102,6 +105,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
                 if (currentWindow is MetroWindow metroWindow)
                 {
                     metroWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
+                    _roundCorners.RunFor(metroWindow);
                 }
             }
 
@@ -112,7 +116,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
 
             if (_center)
             {
-                Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             }
 
             // ReSharper disable once InvertIf

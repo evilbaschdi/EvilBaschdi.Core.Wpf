@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using EvilBaschdi.CoreExtended.Extensions;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
 using JetBrains.Annotations;
 using MahApps.Metro.Controls;

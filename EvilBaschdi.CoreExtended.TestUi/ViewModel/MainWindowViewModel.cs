@@ -5,7 +5,6 @@ using System.Windows.Media;
 using ControlzEx.Theming;
 using EvilBaschdi.Core.Security;
 using EvilBaschdi.CoreExtended.Controls.About;
-using EvilBaschdi.CoreExtended.Extensions;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
 using JetBrains.Annotations;
@@ -20,7 +19,6 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
     {
         private static IRoundCorners _roundCornersStatic;
         private readonly IEncryption _encryption;
-        private readonly IRoundCorners _roundCorners;
         private string _customColorText;
         private string _encryptedText;
         private Brush _inputBackground;
@@ -37,8 +35,7 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             : base(roundCorners, true)
         {
             _encryption = encryption ?? throw new ArgumentNullException(nameof(encryption));
-            _roundCorners = roundCorners ?? throw new ArgumentNullException(nameof(roundCorners));
-            _roundCornersStatic = _roundCorners;
+            _roundCornersStatic = roundCorners ?? throw new ArgumentNullException(nameof(roundCorners));
             EncryptClick = new DefaultCommand
                            {
                                Text = "Encrypt",

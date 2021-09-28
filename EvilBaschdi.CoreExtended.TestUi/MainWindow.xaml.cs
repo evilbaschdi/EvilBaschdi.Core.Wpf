@@ -1,7 +1,6 @@
 ﻿using System.Reflection;
 using System.Windows;
 using EvilBaschdi.Core.Security;
-using EvilBaschdi.CoreExtended.Extensions;
 using EvilBaschdi.CoreExtended.TestUi.ViewModel;
 using MahApps.Metro.Controls;
 

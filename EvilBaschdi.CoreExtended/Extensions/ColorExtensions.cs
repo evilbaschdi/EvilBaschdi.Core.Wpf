@@ -27,7 +27,7 @@ namespace EvilBaschdi.CoreExtended.Extensions
             var convertFromString = ColorConverter.ConvertFromString(value);
             if (convertFromString != null)
             {
-                return (Color) convertFromString;
+                return (Color)convertFromString;
             }
 
             return Colors.Black;

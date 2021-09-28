@@ -19,7 +19,7 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
                 throw new ArgumentNullException(nameof(frameworkElement));
             }
 
-            var bmp = new RenderTargetBitmap((int) frameworkElement.ActualWidth, (int) frameworkElement.ActualHeight,
+            var bmp = new RenderTargetBitmap((int)frameworkElement.ActualWidth, (int)frameworkElement.ActualHeight,
                 96, 96, PixelFormats.Pbgra32);
             bmp.Render(frameworkElement);
 

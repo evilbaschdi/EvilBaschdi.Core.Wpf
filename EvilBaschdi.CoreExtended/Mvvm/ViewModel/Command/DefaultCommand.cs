@@ -92,7 +92,6 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
         }
 
         /// <summary>
-        /// 
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 

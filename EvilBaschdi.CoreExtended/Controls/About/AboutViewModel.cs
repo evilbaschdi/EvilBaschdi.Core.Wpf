@@ -1,5 +1,4 @@
 ﻿using System;
-using EvilBaschdi.CoreExtended.Extensions;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 using JetBrains.Annotations;
 

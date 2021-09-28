@@ -3,5 +3,7 @@
 namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
 {
     /// <inheritdoc />
-    public interface IDefaultCommand : IValue<DefaultCommand>{}
+    public interface IDefaultCommand : IValue<DefaultCommand>
+    {
+    }
 }

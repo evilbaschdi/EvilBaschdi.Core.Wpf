@@ -1,7 +1,7 @@
 ﻿using EvilBaschdi.Core;
 using MahApps.Metro.Controls;
 
-namespace EvilBaschdi.CoreExtended.Extensions
+namespace EvilBaschdi.CoreExtended
 {
     /// <inheritdoc />
     public interface IRoundCorners : IRunFor<MetroWindow>

@@ -10,9 +10,6 @@
         public AboutWindow()
         {
             InitializeComponent();
-
-            //IRoundCorners roundCorners = new RoundCorners();
-            //roundCorners.RunFor(this);
         }
     }
 }

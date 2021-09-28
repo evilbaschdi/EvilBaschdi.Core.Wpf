@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
+using EvilBaschdi.CoreExtended.Extensions;
 using JetBrains.Annotations;
 using MahApps.Metro.Controls;
 
-namespace EvilBaschdi.CoreExtended.Extensions
+namespace EvilBaschdi.CoreExtended
 {
     /// <inheritdoc />
     public class RoundCorners : IRoundCorners

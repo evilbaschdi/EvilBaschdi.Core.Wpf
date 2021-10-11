@@ -26,7 +26,9 @@ namespace EvilBaschdi.CoreExtended.Tests.Mvvm.ViewModel.Command
         [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
         public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
         {
-            assertion.Verify(typeof(DefaultCommand).GetMethods().Where(method => !method.IsAbstract));
+            assertion.Verify(typeof(DefaultCommand).GetMethods()
+                                                   .Where(method => !method.IsAbstract & !method.Name.StartsWith("set_") & !method.Name.StartsWith("add_") &
+                                                                    !method.Name.StartsWith("remove_")));
         }
     }
 }

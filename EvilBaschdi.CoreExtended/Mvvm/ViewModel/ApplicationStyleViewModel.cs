@@ -101,11 +101,13 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
 
             foreach (Window currentWindow in Application.Current.Windows)
             {
-                if (currentWindow is MetroWindow metroWindow)
+                if (currentWindow is not MetroWindow metroWindow)
                 {
-                    metroWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
-                    _roundCorners.RunFor(metroWindow);
+                    continue;
                 }
+
+                metroWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
+                _roundCorners.RunFor(metroWindow);
             }
 
             if (Application.Current?.MainWindow == null)

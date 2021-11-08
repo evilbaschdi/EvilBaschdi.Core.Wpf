@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
     <Authors>Sebastian Walter</Authors>
@@ -7,6 +7,7 @@
     <Description>Microsoft.NET.Sdk.WindowsDesktop Core Package</Description>
     <!-- ReSharper disable once UnknownProperty -->
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.CoreExtended.xml</DocumentationFile>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <IsPackable>true</IsPackable>
     <LangVersion>preview</LangVersion>
     <PackageIcon>icon.png</PackageIcon>
@@ -16,23 +17,19 @@
     <PackageTags>Microsoft.NET.Sdk.WindowsDesktop Core</PackageTags>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
-    <TargetFrameworks>net461;net462;net47;net471;net472;net48;netcoreapp3.1;net5.0-windows</TargetFrameworks>
+    <TargetFrameworks>net5.0-windows;net6.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
-    <Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</Version>
+    <VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</VersionPrefix>
   </PropertyGroup>
   <ItemGroup>
     <None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
   </ItemGroup>
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('net4')) ">
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
-  </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ControlzEx" Version="4.4.0" />
-    <PackageReference Include="EvilBaschdi.Core" Version="2021.1.6.936" />
-    <PackageReference Include="MahApps.Metro" Version="2.4.3" />
-    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
-    <PackageReference Include="Ookii.Dialogs.Wpf" Version="3.1.0" />
+    <PackageReference Include="EvilBaschdi.Core" Version="2021.11.8.1657" />
+    <PackageReference Include="ControlzEx" Version="5.0.1" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.9" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.37" />
+    <PackageReference Include="Ookii.Dialogs.Wpf" Version="4.0.0" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.0-beta-20204-02">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
@@ -41,7 +38,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="DotNet.ReproducibleBuilds" Version="0.1.66">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>

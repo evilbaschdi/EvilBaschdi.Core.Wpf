@@ -16,6 +16,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
     {
         private readonly bool _center;
         private readonly bool _resizeWithBorder400;
+        private readonly IRoundCorners _roundCorners;
         private bool _settingsFlyoutIsOpen;
         private ICommandViewModel _toggleFlyout;
 
@@ -23,8 +24,9 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
         ///     Constructor
         /// </summary>
         // ReSharper disable once MemberCanBeProtected.Global
-        public ApplicationStyleViewModel(bool center = false, bool resizeWithBorder400 = false)
+        public ApplicationStyleViewModel([NotNull] IRoundCorners roundCorners, bool center = false, bool resizeWithBorder400 = false)
         {
+            _roundCorners = roundCorners ?? throw new ArgumentNullException(nameof(roundCorners));
             _center = center;
             _resizeWithBorder400 = resizeWithBorder400;
             InitializeCommandViewModels();
@@ -97,12 +99,15 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
                 return;
             }
 
-            foreach (Window currentWindow in Application.Current?.Windows)
+            foreach (Window currentWindow in Application.Current.Windows)
             {
-                if (currentWindow is MetroWindow metroWindow)
+                if (currentWindow is not MetroWindow metroWindow)
                 {
-                    metroWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
+                    continue;
                 }
+
+                metroWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
+                _roundCorners.RunFor(metroWindow);
             }
 
             if (Application.Current?.MainWindow == null)
@@ -112,7 +117,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
 
             if (_center)
             {
-                Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             }
 
             // ReSharper disable once InvertIf

@@ -26,7 +26,9 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
         ///     Display text from command.
         /// </summary>
         // ReSharper disable UnusedMember.Global
+        // ReSharper disable UnusedMemberInSuper.Global
         string Text { get; set; }
+        // ReSharper restore UnusedMemberInSuper.Global
         // ReSharper restore UnusedMember.Global
 
         /// <summary>

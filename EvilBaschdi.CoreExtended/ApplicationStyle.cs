@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using JetBrains.Annotations;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 
@@ -11,34 +13,55 @@ namespace EvilBaschdi.CoreExtended
     // ReSharper disable once UnusedType.Global
     public class ApplicationStyle : IApplicationStyle
     {
-        /// <inheritdoc />
+        private readonly bool _center;
+        private readonly bool _resizeWithBorder400;
+        private readonly IRoundCorners _roundCorners;
+
         /// <summary>
-        ///     Load.
+        ///     Constructor
         /// </summary>
+        /// <param name="roundCorners"></param>
         /// <param name="center"></param>
         /// <param name="resizeWithBorder400"></param>
-        public void Load(bool center = false, bool resizeWithBorder400 = false)
+        /// <exception cref="ArgumentNullException"></exception>
+        public ApplicationStyle([NotNull] IRoundCorners roundCorners, bool center = false, bool resizeWithBorder400 = false)
         {
-            foreach (Window currentWindow in Application.Current.Windows)
-            {
-                if (currentWindow is MetroWindow metroWindow)
-                {
-                    metroWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
-                }
-            }
+            _roundCorners = roundCorners ?? throw new ArgumentNullException(nameof(roundCorners));
+            _center = center;
+            _resizeWithBorder400 = resizeWithBorder400;
+        }
 
-            if (Application.Current.MainWindow == null)
+        /// <inheritdoc />
+        public void Run()
+        {
+            if (Application.Current == null)
             {
                 return;
             }
 
-            if (center)
+            foreach (Window currentWindow in Application.Current.Windows)
             {
-                Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                if (currentWindow is not MetroWindow metroWindow)
+                {
+                    continue;
+                }
+
+                metroWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
+                _roundCorners.RunFor(metroWindow);
+            }
+
+            if (Application.Current?.MainWindow == null)
+            {
+                return;
+            }
+
+            if (_center)
+            {
+                Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             }
 
             // ReSharper disable once InvertIf
-            if (resizeWithBorder400)
+            if (_resizeWithBorder400)
             {
                 Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;
                 Application.Current.MainWindow.Height = SystemParameters.PrimaryScreenHeight - 400;

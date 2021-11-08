@@ -24,7 +24,7 @@ namespace EvilBaschdi.CoreExtended.Tests.Browsers
         [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
         public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
         {
-            assertion.Verify(typeof(ExplorerFolderBrowser).GetMethods().Where(method => !method.IsAbstract));
+            assertion.Verify(typeof(ExplorerFolderBrowser).GetMethods().Where(method => !method.IsAbstract & !method.Name.StartsWith("set_")));
         }
     }
 }

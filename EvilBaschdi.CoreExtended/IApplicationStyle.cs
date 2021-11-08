@@ -1,15 +1,11 @@
+using EvilBaschdi.Core;
+
 namespace EvilBaschdi.CoreExtended
 {
     /// <summary>
     ///     Interface for classes that handle metro style on wpf.
     /// </summary>
-    public interface IApplicationStyle
+    public interface IApplicationStyle : IRun
     {
-        /// <summary>
-        ///     Load.
-        /// </summary>
-        /// <param name="center"></param>
-        /// <param name="resizeWithBorder400"></param>
-        void Load(bool center = false, bool resizeWithBorder400 = false);
     }
 }

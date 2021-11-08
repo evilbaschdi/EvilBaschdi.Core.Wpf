@@ -1,20 +1,23 @@
 ﻿using System;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
+using JetBrains.Annotations;
 
 namespace EvilBaschdi.CoreExtended.Controls.About
 {
     /// <summary>
     /// </summary>
     // ReSharper disable once UnusedType.Global
-    public class AboutViewModel : ApplicationStyleViewModel
+    public class AboutViewModel : ApplicationStyleViewModel, IAboutModel
     {
         private readonly IAboutContent _aboutContent;
 
         /// <summary>
         /// </summary>
         /// <param name="aboutContent"></param>
+        /// <param name="roundCorners"></param>
         /// <exception cref="ArgumentNullException"></exception>
-        public AboutViewModel(IAboutContent aboutContent)
+        public AboutViewModel(IAboutContent aboutContent, [NotNull] IRoundCorners roundCorners)
+            : base(roundCorners)
 
         {
             _aboutContent = aboutContent ?? throw new ArgumentNullException(nameof(aboutContent));
@@ -40,6 +43,10 @@ namespace EvilBaschdi.CoreExtended.Controls.About
         /// <summary>
         /// </summary>
         public string LogoSourcePath => _aboutContent.Value.LogoSourcePath;
+
+        /// <summary>
+        /// </summary>
+        public string Runtime => $"CLR: {_aboutContent.Value.Runtime}";
 
         /// <summary>
         /// </summary>

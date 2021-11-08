@@ -56,7 +56,7 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
                 return fallback;
             }
 
-            var value = (T) _settingsBase[setting] ?? fallback;
+            var value = (T)_settingsBase[setting] ?? fallback;
 
             return IsValueEmpty(value) ? fallback : value;
         }

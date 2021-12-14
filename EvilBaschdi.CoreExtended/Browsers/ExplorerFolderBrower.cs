@@ -1,4 +1,5 @@
-﻿using Ookii.Dialogs.Wpf;
+﻿
+using Ookii.Dialogs.Wpf;
 
 namespace EvilBaschdi.CoreExtended.Browsers
 {
@@ -12,6 +13,7 @@ namespace EvilBaschdi.CoreExtended.Browsers
     public class ExplorerFolderBrowser : IFolderBrowser
     {
         private readonly VistaFolderBrowserDialog _vistaFolderBrowserDialog = new();
+        
 
 
         /// <inheritdoc />

@@ -27,7 +27,6 @@ namespace EvilBaschdi.CoreExtended.TestUi
             //var preference = WindowExtensions.DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
             //DwmSetWindowAttribute(hWnd, attribute, ref preference, sizeof(uint));
 
-
             IRoundCorners roundCorners = new RoundCorners();
             //roundCorners.RunFor(this);
             //rounded corners

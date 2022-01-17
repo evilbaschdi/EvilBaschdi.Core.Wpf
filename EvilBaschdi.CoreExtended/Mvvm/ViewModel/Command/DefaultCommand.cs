@@ -71,7 +71,6 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
             }
         }
 
-
         /// <inheritdoc />
         event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
         {

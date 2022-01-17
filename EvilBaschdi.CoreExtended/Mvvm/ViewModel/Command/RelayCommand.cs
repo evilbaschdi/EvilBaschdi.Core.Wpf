@@ -93,7 +93,6 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
             _execute = _ => { };
         }
 
-
         private static bool DefaultCanExecute(object parameter)
         {
             return true;

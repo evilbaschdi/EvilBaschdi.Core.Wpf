@@ -156,7 +156,6 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             }
         }
 
-
         /// <summary>
         ///     {Binding OutputBackground}
         /// </summary>

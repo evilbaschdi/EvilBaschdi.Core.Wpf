@@ -23,13 +23,11 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
                 96, 96, PixelFormats.Pbgra32);
             bmp.Render(frameworkElement);
 
-
             var encoder = new PngBitmapEncoder();
             encoder.Frames.Add(BitmapFrame.Create(bmp));
 
             return encoder;
         }
-
 
         /// <inheritdoc />
         public void SaveToFile([NotNull] PngBitmapEncoder pngBitmapEncoder,

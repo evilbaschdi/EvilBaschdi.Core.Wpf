@@ -78,7 +78,6 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
             }
         }
 
-
         /// <summary>
         /// </summary>
         private void InitializeCommandViewModels()

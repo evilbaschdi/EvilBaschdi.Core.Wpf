@@ -50,7 +50,6 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
                 return fallback;
             }
 
-
             if (_settingsBase?.Properties != null && !_settingsBase.Properties.OfType<SettingsProperty>().ToList().Any(x => x.Name.Equals(setting)))
             {
                 return fallback;
@@ -60,7 +59,6 @@ namespace EvilBaschdi.CoreExtended.AppHelpers
 
             return IsValueEmpty(value) ? fallback : value;
         }
-
 
         /// <inheritdoc />
         /// <summary>

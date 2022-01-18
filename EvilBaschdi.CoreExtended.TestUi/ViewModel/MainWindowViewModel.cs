@@ -17,8 +17,8 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
     /// </summary>
     public class MainWindowViewModel : ApplicationStyleViewModel
     {
-        private static IRoundCorners _roundCornersStatic;
         private readonly IEncryption _encryption;
+        private readonly IRoundCorners _roundCorners;
         private string _customColorText;
         private string _encryptedText;
         private Brush _inputBackground;
@@ -35,7 +35,7 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             : base(roundCorners, true)
         {
             _encryption = encryption ?? throw new ArgumentNullException(nameof(encryption));
-            _roundCornersStatic = roundCorners ?? throw new ArgumentNullException(nameof(roundCorners));
+            _roundCorners = roundCorners ?? throw new ArgumentNullException(nameof(roundCorners));
             EncryptClick = new DefaultCommand
                            {
                                Text = "Encrypt",
@@ -221,16 +221,13 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             OutputBackground = brush;
         }
 
-        private static void BtnAboutWindowClick()
+        private void BtnAboutWindowClick()
         {
-            var assembly = typeof(MainWindow).Assembly;
+            ICurrentAssembly currentAssembly = new CurrentAssembly();
+            IAboutContent aboutContent = new AboutContent(currentAssembly);
+            IAboutModel aboutModel = new AboutViewModel(aboutContent);
+            var aboutWindow = new AboutWindow(aboutModel);
 
-            IAboutContent aboutContent =
-                new AboutContent(assembly, $@"{AppDomain.CurrentDomain.BaseDirectory}\b.png");
-            var aboutWindow = new AboutWindow
-                              {
-                                  DataContext = new AboutViewModel(aboutContent, _roundCornersStatic)
-                              };
             aboutWindow.ShowDialog();
         }
     }

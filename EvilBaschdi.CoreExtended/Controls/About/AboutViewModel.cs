@@ -1,6 +1,5 @@
 ﻿using System;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
-using JetBrains.Annotations;
 
 namespace EvilBaschdi.CoreExtended.Controls.About
 {
@@ -14,11 +13,8 @@ namespace EvilBaschdi.CoreExtended.Controls.About
         /// <summary>
         /// </summary>
         /// <param name="aboutContent"></param>
-        /// <param name="roundCorners"></param>
         /// <exception cref="ArgumentNullException"></exception>
-        public AboutViewModel(IAboutContent aboutContent, [NotNull] IRoundCorners roundCorners)
-            : base(roundCorners)
-
+        public AboutViewModel(IAboutContent aboutContent)
         {
             _aboutContent = aboutContent ?? throw new ArgumentNullException(nameof(aboutContent));
         }

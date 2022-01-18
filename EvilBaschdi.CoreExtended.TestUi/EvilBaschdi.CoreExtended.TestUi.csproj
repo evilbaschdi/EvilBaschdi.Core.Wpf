@@ -38,7 +38,7 @@
     <Resource Include="b.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="b.png">
+    <Content Include="about.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <ProjectReference Include="..\EvilBaschdi.CoreExtended\EvilBaschdi.CoreExtended.csproj" />

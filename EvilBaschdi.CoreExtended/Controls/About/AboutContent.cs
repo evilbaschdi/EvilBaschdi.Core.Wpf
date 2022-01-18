@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using JetBrains.Annotations;
 
 namespace EvilBaschdi.CoreExtended.Controls.About
 {
@@ -21,6 +22,17 @@ namespace EvilBaschdi.CoreExtended.Controls.About
         {
             _assembly = assembly ?? throw new ArgumentNullException(nameof(assembly));
             _logoSourcePath = logoSourcePath ?? throw new ArgumentNullException(nameof(logoSourcePath));
+        }
+
+        /// <summary>
+        ///     Constructor
+        /// </summary>
+        /// <param name="currentAssembly"></param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public AboutContent([NotNull] ICurrentAssembly currentAssembly)
+        {
+            _assembly = currentAssembly.Value ?? throw new ArgumentNullException(nameof(currentAssembly));
+            _logoSourcePath = $@"{AppDomain.CurrentDomain.BaseDirectory}\about.png";
         }
 
         /// <inheritdoc />

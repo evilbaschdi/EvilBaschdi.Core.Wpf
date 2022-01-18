@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Reflection;
 using System.Windows;
+using EvilBaschdi.Core;
 using JetBrains.Annotations;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
@@ -65,6 +67,27 @@ namespace EvilBaschdi.CoreExtended
             {
                 Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;
                 Application.Current.MainWindow.Height = SystemParameters.PrimaryScreenHeight - 400;
+            }
+        }
+    }
+
+    public interface ICurrentAssembly : IValue<Assembly>
+    {
+    }
+
+    public class CurrentAssembly : ICurrentAssembly
+    {
+        public Assembly Value
+        {
+            get
+            {
+                if (Application.Current?.MainWindow == null)
+                {
+                    return null;
+                }
+
+                var mainWindow = Application.Current?.MainWindow;
+                return mainWindow.GetType().Assembly;
             }
         }
     }

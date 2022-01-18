@@ -24,9 +24,9 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
         ///     Constructor
         /// </summary>
         // ReSharper disable once MemberCanBeProtected.Global
-        public ApplicationStyleViewModel([NotNull] IRoundCorners roundCorners, bool center = false, bool resizeWithBorder400 = false)
+        public ApplicationStyleViewModel(IRoundCorners roundCorners = null, bool center = false, bool resizeWithBorder400 = false)
         {
-            _roundCorners = roundCorners ?? throw new ArgumentNullException(nameof(roundCorners));
+            _roundCorners = roundCorners;
             _center = center;
             _resizeWithBorder400 = resizeWithBorder400;
             InitializeCommandViewModels();
@@ -106,7 +106,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel
                 }
 
                 metroWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
-                _roundCorners.RunFor(metroWindow);
+                _roundCorners?.RunFor(metroWindow);
             }
 
             if (Application.Current?.MainWindow == null)

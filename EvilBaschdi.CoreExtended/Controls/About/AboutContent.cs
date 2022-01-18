@@ -31,7 +31,7 @@ namespace EvilBaschdi.CoreExtended.Controls.About
         /// <exception cref="ArgumentNullException"></exception>
         public AboutContent([NotNull] ICurrentAssembly currentAssembly)
         {
-            _assembly = currentAssembly.Value ?? throw new ArgumentNullException(nameof(currentAssembly));
+            _assembly = currentAssembly?.Value ?? throw new ArgumentNullException(nameof(currentAssembly));
             _logoSourcePath = $@"{AppDomain.CurrentDomain.BaseDirectory}\about.png";
         }
 

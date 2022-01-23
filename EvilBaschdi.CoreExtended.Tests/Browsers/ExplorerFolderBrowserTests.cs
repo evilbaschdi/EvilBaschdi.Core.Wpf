@@ -5,26 +5,25 @@ using EvilBaschdi.Testing;
 using FluentAssertions;
 using Xunit;
 
-namespace EvilBaschdi.CoreExtended.Tests.Browsers
+namespace EvilBaschdi.CoreExtended.Tests.Browsers;
+
+public class ExplorerFolderBrowserTests
 {
-    public class ExplorerFolderBrowserTests
+    [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
+    public void Constructor_HasNullGuards(GuardClauseAssertion assertion)
     {
-        [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-        public void Constructor_HasNullGuards(GuardClauseAssertion assertion)
-        {
-            assertion.Verify(typeof(ExplorerFolderBrowser).GetConstructors());
-        }
+        assertion.Verify(typeof(ExplorerFolderBrowser).GetConstructors());
+    }
 
-        [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-        public void Constructor_ReturnsInterfaceName(ExplorerFolderBrowser sut)
-        {
-            sut.Should().BeAssignableTo<IFolderBrowser>();
-        }
+    [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
+    public void Constructor_ReturnsInterfaceName(ExplorerFolderBrowser sut)
+    {
+        sut.Should().BeAssignableTo<IFolderBrowser>();
+    }
 
-        [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-        public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
-        {
-            assertion.Verify(typeof(ExplorerFolderBrowser).GetMethods().Where(method => !method.IsAbstract & !method.Name.StartsWith("set_")));
-        }
+    [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
+    public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
+    {
+        assertion.Verify(typeof(ExplorerFolderBrowser).GetMethods().Where(method => !method.IsAbstract & !method.Name.StartsWith("set_")));
     }
 }

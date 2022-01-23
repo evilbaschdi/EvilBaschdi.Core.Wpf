@@ -18,7 +18,6 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
     public class MainWindowViewModel : ApplicationStyleViewModel
     {
         private readonly IEncryption _encryption;
-        private readonly IRoundCorners _roundCorners;
         private string _customColorText;
         private string _encryptedText;
         private Brush _inputBackground;
@@ -35,7 +34,6 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             : base(roundCorners, true)
         {
             _encryption = encryption ?? throw new ArgumentNullException(nameof(encryption));
-            _roundCorners = roundCorners ?? throw new ArgumentNullException(nameof(roundCorners));
             EncryptClick = new DefaultCommand
                            {
                                Text = "Encrypt",

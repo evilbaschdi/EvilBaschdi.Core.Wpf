@@ -5,26 +5,25 @@ using EvilBaschdi.Testing;
 using FluentAssertions;
 using Xunit;
 
-namespace EvilBaschdi.CoreExtended.Tests.AppHelpers
+namespace EvilBaschdi.CoreExtended.Tests.AppHelpers;
+
+public class ProcessByPathTests
 {
-    public class ProcessByPathTests
+    [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
+    public void Constructor_HasNullGuards(GuardClauseAssertion assertion)
     {
-        [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-        public void Constructor_HasNullGuards(GuardClauseAssertion assertion)
-        {
-            assertion.Verify(typeof(ProcessByPath).GetConstructors());
-        }
+        assertion.Verify(typeof(ProcessByPath).GetConstructors());
+    }
 
-        [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-        public void Constructor_ReturnsInterfaceName(ProcessByPath sut)
-        {
-            sut.Should().BeAssignableTo<IProcessByPath>();
-        }
+    [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
+    public void Constructor_ReturnsInterfaceName(ProcessByPath sut)
+    {
+        sut.Should().BeAssignableTo<IProcessByPath>();
+    }
 
-        [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-        public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
-        {
-            assertion.Verify(typeof(ProcessByPath).GetMethods().Where(method => !method.IsAbstract));
-        }
+    [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
+    public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
+    {
+        assertion.Verify(typeof(ProcessByPath).GetMethods().Where(method => !method.IsAbstract));
     }
 }

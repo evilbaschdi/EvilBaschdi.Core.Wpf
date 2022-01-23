@@ -31,6 +31,7 @@ namespace EvilBaschdi.CoreExtended.Controls.About
         /// <exception cref="ArgumentNullException"></exception>
         public AboutContent([NotNull] ICurrentAssembly currentAssembly)
         {
+            // ReSharper disable once ConstantConditionalAccessQualifier
             _assembly = currentAssembly?.Value ?? throw new ArgumentNullException(nameof(currentAssembly));
             _logoSourcePath = $@"{AppDomain.CurrentDomain.BaseDirectory}\about.png";
         }

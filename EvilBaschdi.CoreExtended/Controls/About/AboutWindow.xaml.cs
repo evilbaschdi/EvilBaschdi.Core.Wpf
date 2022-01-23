@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows;
 using JetBrains.Annotations;
-using MicaWPF.Controls;
 
 namespace EvilBaschdi.CoreExtended.Controls.About
 {
@@ -9,7 +8,7 @@ namespace EvilBaschdi.CoreExtended.Controls.About
     ///     Interaction logic for AboutWindow.xaml
     /// </summary>
     // ReSharper disable once UnusedType.Global
-    public partial class AboutWindow : MicaWindow
+    public partial class AboutWindow
     {
         [NotNull] private readonly IAboutModel _aboutModel;
 

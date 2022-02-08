@@ -193,7 +193,7 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel
             try
             {
                 ThemeManager.Current.SyncTheme(ThemeSyncMode.SyncWithAccent);
-                ThemeManager.Current.ChangeThemeColorScheme(Application.Current, $"#{CustomColorText.PadRight(6, '0')}");
+                ThemeManager.Current.ChangeThemeColorScheme(Application.Current, $"#{CustomColorText.Replace(" ", "").PadRight(6, '0')}");
             }
             catch (Exception exception)
             {

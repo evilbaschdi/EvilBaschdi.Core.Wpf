@@ -1,24 +1,23 @@
 ﻿using System.Reflection;
 using System.Windows;
 
-namespace EvilBaschdi.CoreExtended
+namespace EvilBaschdi.CoreExtended;
+
+/// <inheritdoc />
+public class CurrentAssembly : ICurrentAssembly
 {
     /// <inheritdoc />
-    public class CurrentAssembly : ICurrentAssembly
+    public Assembly Value
     {
-        /// <inheritdoc />
-        public Assembly Value
+        get
         {
-            get
+            if (Application.Current?.MainWindow == null)
             {
-                if (Application.Current?.MainWindow == null)
-                {
-                    return null;
-                }
-
-                var mainWindow = Application.Current?.MainWindow;
-                return mainWindow.GetType().Assembly;
+                return null;
             }
+
+            var mainWindow = Application.Current?.MainWindow;
+            return mainWindow.GetType().Assembly;
         }
     }
 }

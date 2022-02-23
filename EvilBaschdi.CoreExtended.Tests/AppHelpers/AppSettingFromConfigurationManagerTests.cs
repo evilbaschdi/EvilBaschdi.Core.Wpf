@@ -1,4 +1,3 @@
-using System.Linq;
 using AutoFixture.Idioms;
 using EvilBaschdi.CoreExtended.AppHelpers;
 using EvilBaschdi.Testing;

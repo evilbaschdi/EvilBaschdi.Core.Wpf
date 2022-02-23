@@ -1,23 +1,22 @@
-﻿namespace EvilBaschdi.CoreExtended.AppHelpers
+﻿namespace EvilBaschdi.CoreExtended.AppHelpers;
+
+/// <summary>
+///     Manage AutoStart
+/// </summary>
+public interface IAutoStart
 {
     /// <summary>
-    ///     Manage AutoStart
+    ///     Is AutoStart enabled
     /// </summary>
-    public interface IAutoStart
-    {
-        /// <summary>
-        ///     Is AutoStart enabled
-        /// </summary>
-        bool IsEnabled { get; }
+    bool IsEnabled { get; }
 
-        /// <summary>
-        ///     Enable AutoStart
-        /// </summary>
-        void Enable();
+    /// <summary>
+    ///     Enable AutoStart
+    /// </summary>
+    void Enable();
 
-        /// <summary>
-        ///     Disable AutoStart
-        /// </summary>
-        void Disable();
-    }
+    /// <summary>
+    ///     Disable AutoStart
+    /// </summary>
+    void Disable();
 }

@@ -1,101 +1,99 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
-namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command
+namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
+
+/// <summary>
+/// </summary>
+public class RelayCommand : ICommand
 {
+    private Predicate<object> _canExecute;
+    private Action<object> _execute;
+
     /// <summary>
     /// </summary>
-    public class RelayCommand : ICommand
+    /// <param name="execute"></param>
+    public RelayCommand(Action<object> execute)
+        : this(execute, DefaultCanExecute)
     {
-        private Predicate<object> _canExecute;
-        private Action<object> _execute;
+    }
 
-        /// <summary>
-        /// </summary>
-        /// <param name="execute"></param>
-        public RelayCommand(Action<object> execute)
-            : this(execute, DefaultCanExecute)
-        {
-        }
+    /// <summary>
+    /// </summary>
+    /// <param name="execute"></param>
+    /// <param name="canExecute"></param>
+    /// <exception cref="ArgumentNullException"></exception>
+    // ReSharper disable once MemberCanBePrivate.Global
+    public RelayCommand(Action<object> execute, Predicate<object> canExecute)
+    {
+        _execute = execute ?? throw new ArgumentNullException(nameof(execute));
+        _canExecute = canExecute ?? throw new ArgumentNullException(nameof(canExecute));
+    }
 
-        /// <summary>
-        /// </summary>
-        /// <param name="execute"></param>
-        /// <param name="canExecute"></param>
-        /// <exception cref="ArgumentNullException"></exception>
-        // ReSharper disable once MemberCanBePrivate.Global
-        public RelayCommand(Action<object> execute, Predicate<object> canExecute)
+    /// <summary>
+    /// </summary>
+    public event EventHandler CanExecuteChanged
+    {
+        add
         {
-            _execute = execute ?? throw new ArgumentNullException(nameof(execute));
-            _canExecute = canExecute ?? throw new ArgumentNullException(nameof(canExecute));
-        }
-
-        /// <summary>
-        /// </summary>
-        public event EventHandler CanExecuteChanged
-        {
-            add
+            if (value == null)
             {
-                if (value == null)
-                {
-                    return;
-                }
-
-                CommandManager.RequerySuggested += value;
-                CanExecuteChangedInternal += value;
+                return;
             }
 
-            remove
+            CommandManager.RequerySuggested += value;
+            CanExecuteChangedInternal += value;
+        }
+
+        remove
+        {
+            if (value == null)
             {
-                if (value == null)
-                {
-                    return;
-                }
-
-                CommandManager.RequerySuggested -= value;
-                CanExecuteChangedInternal -= value;
+                return;
             }
-        }
 
-        /// <summary>
-        /// </summary>
-        /// <param name="parameter"></param>
-        /// <returns></returns>
-        public bool CanExecute(object parameter)
-        {
-            return _canExecute == null || _canExecute(parameter);
+            CommandManager.RequerySuggested -= value;
+            CanExecuteChangedInternal -= value;
         }
+    }
 
-        /// <summary>
-        /// </summary>
-        /// <param name="parameter"></param>
-        public void Execute(object parameter)
-        {
-            _execute(parameter);
-        }
+    /// <summary>
+    /// </summary>
+    /// <param name="parameter"></param>
+    /// <returns></returns>
+    public bool CanExecute(object parameter)
+    {
+        return _canExecute == null || _canExecute(parameter);
+    }
 
-        private event EventHandler CanExecuteChangedInternal;
+    /// <summary>
+    /// </summary>
+    /// <param name="parameter"></param>
+    public void Execute(object parameter)
+    {
+        _execute(parameter);
+    }
 
-        /// <summary>
-        /// </summary>
-        public void OnCanExecuteChanged()
-        {
-            var handler = CanExecuteChangedInternal;
-            //DispatcherHelper.BeginInvokeOnUIThread(() => handler.Invoke(this, EventArgs.Empty));
-            handler?.Invoke(this, EventArgs.Empty);
-        }
+    private event EventHandler CanExecuteChangedInternal;
 
-        /// <summary>
-        /// </summary>
-        public void Destroy()
-        {
-            _canExecute = _ => false;
-            _execute = _ => { };
-        }
+    /// <summary>
+    /// </summary>
+    public void OnCanExecuteChanged()
+    {
+        var handler = CanExecuteChangedInternal;
+        //DispatcherHelper.BeginInvokeOnUIThread(() => handler.Invoke(this, EventArgs.Empty));
+        handler?.Invoke(this, EventArgs.Empty);
+    }
 
-        private static bool DefaultCanExecute(object parameter)
-        {
-            return true;
-        }
+    /// <summary>
+    /// </summary>
+    public void Destroy()
+    {
+        _canExecute = _ => false;
+        _execute = _ => { };
+    }
+
+    private static bool DefaultCanExecute(object parameter)
+    {
+        return true;
     }
 }

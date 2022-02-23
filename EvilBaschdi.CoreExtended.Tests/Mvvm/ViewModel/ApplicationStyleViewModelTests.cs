@@ -1,5 +1,4 @@
 using System.ComponentModel;
-using System.Linq;
 using AutoFixture.Idioms;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 using EvilBaschdi.Testing;

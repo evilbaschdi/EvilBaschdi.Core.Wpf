@@ -1,42 +1,40 @@
-using System;
 using System.Diagnostics;
 using JetBrains.Annotations;
 
-namespace EvilBaschdi.CoreExtended.AppHelpers
+namespace EvilBaschdi.CoreExtended.AppHelpers;
+
+/// <inheritdoc />
+// ReSharper disable once UnusedType.Global
+public class ProcessByPath : IProcessByPath
 {
     /// <inheritdoc />
-    // ReSharper disable once UnusedType.Global
-    public class ProcessByPath : IProcessByPath
+    public Process ValueFor([NotNull] string value)
     {
-        /// <inheritdoc />
-        public Process ValueFor([NotNull] string value)
+        if (value == null)
         {
-            if (value == null)
-            {
-                throw new ArgumentNullException(nameof(value));
-            }
+            throw new ArgumentNullException(nameof(value));
+        }
 
-            var process = new Process
+        var process = new Process
+                      {
+                          StartInfo =
                           {
-                              StartInfo =
-                              {
-                                  FileName = value,
-                                  UseShellExecute = true
-                              }
-                          };
+                              FileName = value,
+                              UseShellExecute = true
+                          }
+                      };
 
-            return process;
-        }
+        return process;
+    }
 
-        /// <inheritdoc />
-        public void RunFor([NotNull] string value)
+    /// <inheritdoc />
+    public void RunFor([NotNull] string value)
+    {
+        if (value == null)
         {
-            if (value == null)
-            {
-                throw new ArgumentNullException(nameof(value));
-            }
-
-            ValueFor(value).Start();
+            throw new ArgumentNullException(nameof(value));
         }
+
+        ValueFor(value).Start();
     }
 }

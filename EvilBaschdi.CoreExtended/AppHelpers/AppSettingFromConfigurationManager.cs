@@ -1,24 +1,22 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 
-namespace EvilBaschdi.CoreExtended.AppHelpers
+namespace EvilBaschdi.CoreExtended.AppHelpers;
+
+/// <inheritdoc />
+// ReSharper disable once UnusedType.Global
+public class AppSettingFromConfigurationManager : IAppSettingFromConfigurationManager
 {
     /// <inheritdoc />
-    // ReSharper disable once UnusedType.Global
-    public class AppSettingFromConfigurationManager : IAppSettingFromConfigurationManager
+    /// <summary>
+    ///     Reads key value from app.config.
+    /// </summary>
+    public string ValueFor(string key)
     {
-        /// <inheritdoc />
-        /// <summary>
-        ///     Reads key value from app.config.
-        /// </summary>
-        public string ValueFor(string key)
+        if (key == null)
         {
-            if (key == null)
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
-
-            return ConfigurationManager.AppSettings[key];
+            throw new ArgumentNullException(nameof(key));
         }
+
+        return ConfigurationManager.AppSettings[key];
     }
 }

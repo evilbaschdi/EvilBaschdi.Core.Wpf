@@ -1,29 +1,27 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using JetBrains.Annotations;
 
-namespace EvilBaschdi.CoreExtended.Controls.About
+namespace EvilBaschdi.CoreExtended.Controls.About;
+
+/// <summary>
+///     Interaction logic for AboutWindow.xaml
+/// </summary>
+// ReSharper disable once UnusedType.Global
+public partial class AboutWindow
 {
-    /// <summary>
-    ///     Interaction logic for AboutWindow.xaml
-    /// </summary>
-    // ReSharper disable once UnusedType.Global
-    public partial class AboutWindow
+    [NotNull] private readonly IAboutModel _aboutModel;
+
+    /// <inheritdoc />
+    public AboutWindow([NotNull] IAboutModel aboutModel)
     {
-        [NotNull] private readonly IAboutModel _aboutModel;
+        _aboutModel = aboutModel ?? throw new ArgumentNullException(nameof(aboutModel));
+        InitializeComponent();
 
-        /// <inheritdoc />
-        public AboutWindow([NotNull] IAboutModel aboutModel)
-        {
-            _aboutModel = aboutModel ?? throw new ArgumentNullException(nameof(aboutModel));
-            InitializeComponent();
+        Loaded += AboutWindowLoaded;
+    }
 
-            Loaded += AboutWindowLoaded;
-        }
-
-        private void AboutWindowLoaded(object sender, RoutedEventArgs e)
-        {
-            DataContext = _aboutModel;
-        }
+    private void AboutWindowLoaded(object sender, RoutedEventArgs e)
+    {
+        DataContext = _aboutModel;
     }
 }

@@ -1,10 +1,9 @@
 ﻿using System.Reflection;
 using EvilBaschdi.Core;
 
-namespace EvilBaschdi.CoreExtended
+namespace EvilBaschdi.CoreExtended;
+
+/// <inheritdoc />
+public interface ICurrentAssembly : IValue<Assembly>
 {
-    /// <inheritdoc />
-    public interface ICurrentAssembly : IValue<Assembly>
-    {
-    }
 }

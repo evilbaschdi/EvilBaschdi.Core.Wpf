@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Windows.Input;
 using AutoFixture.Idioms;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;

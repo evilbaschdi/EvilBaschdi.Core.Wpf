@@ -1,9 +1,8 @@
 ﻿using EvilBaschdi.Core;
 
-namespace EvilBaschdi.CoreExtended.AppHelpers
+namespace EvilBaschdi.CoreExtended.AppHelpers;
+
+/// <inheritdoc />
+public interface IAutoStartByConfiguration : IRun
 {
-    /// <inheritdoc />
-    public interface IAutoStartByConfiguration : IRun
-    {
-    }
 }

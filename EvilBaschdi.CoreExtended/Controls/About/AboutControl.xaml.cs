@@ -1,14 +1,13 @@
-namespace EvilBaschdi.CoreExtended.Controls.About
+namespace EvilBaschdi.CoreExtended.Controls.About;
+
+/// <summary>
+///     Interaction logic for UserControl1.xaml
+/// </summary>
+public partial class AboutControl
 {
-    /// <summary>
-    ///     Interaction logic for UserControl1.xaml
-    /// </summary>
-    public partial class AboutControl
+    /// <inheritdoc />
+    public AboutControl()
     {
-        /// <inheritdoc />
-        public AboutControl()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

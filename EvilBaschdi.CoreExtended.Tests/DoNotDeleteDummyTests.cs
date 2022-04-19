@@ -18,7 +18,6 @@ namespace EvilBaschdi.CoreExtended.Tests
             // Use FluentAssertions equivalent
             Assert.Equal(1, 1);
             // Use FluentAssertions equivalent
-            
         }
     }
 }

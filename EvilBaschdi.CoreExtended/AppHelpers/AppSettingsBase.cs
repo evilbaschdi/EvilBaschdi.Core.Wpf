@@ -53,7 +53,7 @@ public class AppSettingsBase : IAppSettingsBase
             return fallback;
         }
 
-        var value = (T)_settingsBase[setting] ?? fallback;
+        var value = (T)_settingsBase?[setting] ?? fallback;
 
         return IsValueEmpty(value) ? fallback : value;
     }

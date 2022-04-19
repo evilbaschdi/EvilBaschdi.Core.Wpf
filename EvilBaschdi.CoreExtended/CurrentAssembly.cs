@@ -17,7 +17,7 @@ public class CurrentAssembly : ICurrentAssembly
             }
 
             var mainWindow = Application.Current?.MainWindow;
-            return mainWindow.GetType().Assembly;
+            return mainWindow?.GetType().Assembly;
         }
     }
 }

@@ -15,7 +15,7 @@
     <PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</PackageProjectUrl>
     <Product>EvilBaschdi.CoreExtended TestUi</Product>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
     <Title>EvilBaschdi.CoreExtended.TestUi</Title>
     <UseWPF>true</UseWPF>
     <Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</Version>

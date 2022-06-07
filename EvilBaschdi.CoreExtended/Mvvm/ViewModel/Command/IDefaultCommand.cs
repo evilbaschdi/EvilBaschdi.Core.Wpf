@@ -6,7 +6,7 @@
 public interface IDefaultCommand
 {
     /// <summary>
-    ///     Command
+    ///     DefaultCommand
     /// </summary>
-    DefaultCommand Command { get; }
+    DefaultCommand DefaultCommandValue { get; }
 }

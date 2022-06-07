@@ -1,8 +1,12 @@
-﻿using EvilBaschdi.Core;
+﻿namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
 
-namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
-
-/// <inheritdoc />
-public interface IDefaultCommand : IValue<DefaultCommand>
+/// <summary>
+///     IDefaultCommand
+/// </summary>
+public interface IDefaultCommand
 {
+    /// <summary>
+    ///     Command
+    /// </summary>
+    DefaultCommand Command { get; }
 }

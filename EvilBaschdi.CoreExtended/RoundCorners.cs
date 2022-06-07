@@ -18,8 +18,8 @@ public class RoundCorners : IRoundCorners
         }
 
         //rounded corners
-        IntPtr hWnd = new WindowInteropHelper(metroWindow).EnsureHandle();
-        var attribute = WindowExtensions.DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE;
+        var hWnd = new WindowInteropHelper(metroWindow).EnsureHandle();
+        const WindowExtensions.DWMWINDOWATTRIBUTE attribute = WindowExtensions.DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE;
         var preference = WindowExtensions.DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
         DwmSetWindowAttribute(hWnd, attribute, ref preference, sizeof(uint));
         //rounded corners

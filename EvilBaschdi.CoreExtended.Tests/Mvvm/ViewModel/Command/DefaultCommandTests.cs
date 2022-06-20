@@ -1,9 +1,5 @@
 using System.ComponentModel;
-using AutoFixture.Idioms;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
-using EvilBaschdi.Testing;
-using FluentAssertions;
-using Xunit;
 
 namespace EvilBaschdi.CoreExtended.Tests.Mvvm.ViewModel.Command;
 

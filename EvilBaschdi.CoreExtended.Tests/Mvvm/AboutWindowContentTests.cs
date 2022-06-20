@@ -1,8 +1,4 @@
-using AutoFixture.Idioms;
 using EvilBaschdi.CoreExtended.Controls.About;
-using EvilBaschdi.Testing;
-using FluentAssertions;
-using Xunit;
 
 namespace EvilBaschdi.CoreExtended.Tests.Mvvm;
 

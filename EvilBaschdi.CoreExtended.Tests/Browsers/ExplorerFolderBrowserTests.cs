@@ -1,8 +1,4 @@
-using AutoFixture.Idioms;
 using EvilBaschdi.CoreExtended.Browsers;
-using EvilBaschdi.Testing;
-using FluentAssertions;
-using Xunit;
 
 namespace EvilBaschdi.CoreExtended.Tests.Browsers;
 

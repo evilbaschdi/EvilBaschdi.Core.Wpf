@@ -1,8 +1,4 @@
-using AutoFixture.Idioms;
 using EvilBaschdi.CoreExtended.AppHelpers;
-using EvilBaschdi.Testing;
-using FluentAssertions;
-using Xunit;
 
 namespace EvilBaschdi.CoreExtended.Tests.AppHelpers;
 

@@ -1,8 +1,3 @@
-using AutoFixture.Idioms;
-using EvilBaschdi.Testing;
-using FluentAssertions;
-using Xunit;
-
 namespace EvilBaschdi.CoreExtended.Tests;
 
 public class ApplicationStyleTests

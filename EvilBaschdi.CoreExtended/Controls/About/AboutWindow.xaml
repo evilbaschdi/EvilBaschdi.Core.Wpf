@@ -6,6 +6,6 @@
                      xmlns:controls="clr-namespace:MicaWPF.Controls;assembly=MicaWPF"
                      xmlns:about="clr-namespace:EvilBaschdi.CoreExtended.Controls.About"
                      mc:Ignorable="d" ResizeMode="NoResize"
-                     Title="AboutWindow" Height="460" Width="530">
+                     Title="About" Height="460" Width="530">
     <about:AboutControl />
 </controls:MicaWindow>

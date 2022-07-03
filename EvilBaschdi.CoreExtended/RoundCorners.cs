@@ -9,12 +9,28 @@ namespace EvilBaschdi.CoreExtended;
 /// <inheritdoc />
 public class RoundCorners : IRoundCorners
 {
+    private readonly bool _enabled;
+
+    /// <summary>
+    ///     Constructor
+    /// </summary>
+    /// <param name="enabled"></param>
+    public RoundCorners(bool enabled = true)
+    {
+        _enabled = enabled;
+    }
+
     /// <inheritdoc />
     public void RunFor([NotNull] MetroWindow metroWindow)
     {
         if (metroWindow == null)
         {
             throw new ArgumentNullException(nameof(metroWindow));
+        }
+
+        if (!_enabled)
+        {
+            return;
         }
 
         //rounded corners

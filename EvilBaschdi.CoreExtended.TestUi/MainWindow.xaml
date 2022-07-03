@@ -32,12 +32,12 @@
                     <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Text="about" />
                 </StackPanel>
             </Button>
-            <!--<Button Command="{Binding ToggleFlyout.Command}" Name="ToggleSettingsFlyout">
+            <Button Command="{Binding ToggleFlyout.Command}" Name="ToggleSettingsFlyout">
                 <StackPanel Orientation="Horizontal">
-                    <iconPacks:PackIconMaterial Kind="Settings" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <!--<iconPacks:PackIconMaterial Kind="Settings" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
                     <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Text="settings" />
                 </StackPanel>
-            </Button>-->
+            </Button>
         </controls:WindowCommands>
     </controls:MetroWindow.RightWindowCommands>
 
@@ -84,7 +84,7 @@
         <controls:FlyoutsControl>
             <!--  Settings Fly-out  -->
             <controls:Flyout Width="250" AnimateOnPositionChange="True" AnimateOpacity="True" Header="Settings"
-                             Position="Right" Theme="Accent"
+                             Position="Right" Theme="Adapt"
                              IsOpen="{Binding SettingsFlyoutIsOpen}">
                 <StackPanel>
                     <StackPanel Margin="15,10,15,0" Orientation="Vertical">

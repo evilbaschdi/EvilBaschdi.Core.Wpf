@@ -99,12 +99,14 @@ public class ApplicationStyleViewModel : INotifyPropertyChanged
 
         foreach (Window currentWindow in Application.Current.Windows)
         {
-            if (currentWindow is not MetroWindow metroWindow)
+            if (currentWindow is not MetroWindow metroWindow ||
+                metroWindow.MetroDialogOptions == null)
             {
                 continue;
             }
 
             metroWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
+
             _roundCorners?.RunFor(metroWindow);
         }
 

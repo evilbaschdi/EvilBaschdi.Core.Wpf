@@ -1,7 +1,7 @@
 ﻿using JetBrains.Annotations;
 using MahApps.Metro.Controls;
 
-namespace EvilBaschdi.CoreExtended;
+namespace EvilBaschdi.CoreExtended.FlyOut;
 
 /// <summary>
 /// </summary>
@@ -12,5 +12,5 @@ public interface IToggleFlyOut
     /// <param name="flyOuts"></param>
     /// <param name="index"></param>
     /// <param name="stayOpen"></param>
-    void RunFor([CanBeNull] FlyoutsControl flyOuts, int index, bool stayOpen);
+    void RunFor([CanBeNull] FlyoutsControl flyOuts, int index, bool stayOpen = false);
 }

@@ -3,6 +3,7 @@
 namespace EvilBaschdi.CoreExtended.FlyOut;
 
 /// <inheritdoc />
+// ReSharper disable once UnusedType.Global
 public class CurrentFlyOuts : ICurrentFlyOuts
 {
     /// <summary>
@@ -13,6 +14,12 @@ public class CurrentFlyOuts : ICurrentFlyOuts
     /// <returns></returns>
     public CurrentFlyOutsModel ValueFor(FlyoutsControl flyOuts, int index)
     {
+        // ReSharper disable once UseNullPropagation
+        if (flyOuts == null)
+        {
+            return null;
+        }
+
         var activeFlyOut = (Flyout)flyOuts.Items[index];
         if (activeFlyOut == null)
         {
@@ -23,7 +30,7 @@ public class CurrentFlyOuts : ICurrentFlyOuts
                                       .Where(nonactiveFlyOut =>
                                                  nonactiveFlyOut.IsOpen && nonactiveFlyOut.Name != activeFlyOut.Name).ToList();
 
-        return new CurrentFlyOutsModel
+        return new()
                {
                    ActiveFlyOut = activeFlyOut,
                    NonActiveFlyOuts = nonactiveFlyOuts,

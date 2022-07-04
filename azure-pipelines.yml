@@ -5,7 +5,7 @@
 
 trigger:
   branches:
-    include: 
+    include:
       - '*'
 
 resources:
@@ -19,3 +19,4 @@ jobs:
 - template: buildNPack.yml@templates  # Template reference
   parameters:
     projectName: $(Build.Repository.Name)
+    projectParentDirectory: $(Build.Repository.Name)

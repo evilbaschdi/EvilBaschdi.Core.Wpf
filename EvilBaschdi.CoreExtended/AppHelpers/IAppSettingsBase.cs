@@ -4,7 +4,6 @@ namespace EvilBaschdi.CoreExtended.AppHelpers;
 ///     Interface for classes to get values from or set values in AppSettingsBase
 /// </summary>
 public interface IAppSettingsBase
-
 {
     /// <summary>
     ///     Get value of type T

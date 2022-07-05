@@ -15,7 +15,6 @@ public sealed class DefaultCommand : ICommandViewModel, INotifyPropertyChanged
     private Visibility _visibility;
 
     /// <inheritdoc />
-
     public string Text
     {
         get => _text;

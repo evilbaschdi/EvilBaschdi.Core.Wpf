@@ -6,7 +6,6 @@ namespace EvilBaschdi.CoreExtended.Browsers;
 /// <summary>
 ///     Stellt einen Auswahldialog für Ordner und Systemelemente ab Windows Vista bereit.
 /// </summary>
-
 // ReSharper disable once ClassNeverInstantiated.Global
 // ReSharper disable once UnusedType.Global
 public class ExplorerFolderBrowser : IFolderBrowser

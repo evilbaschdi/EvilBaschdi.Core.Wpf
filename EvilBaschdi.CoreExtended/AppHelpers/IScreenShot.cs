@@ -1,6 +1,5 @@
 using System.Windows;
 using System.Windows.Media.Imaging;
-using EvilBaschdi.Core;
 
 namespace EvilBaschdi.CoreExtended.AppHelpers;
 

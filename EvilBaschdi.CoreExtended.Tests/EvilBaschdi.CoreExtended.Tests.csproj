@@ -40,6 +40,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Using Include="AutoFixture.Idioms"/>
+		<Using Include="EvilBaschdi.Testing"/>
+		<Using Include="FluentAssertions"/>
+		<Using Include="Xunit"/>
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\EvilBaschdi.CoreExtended\EvilBaschdi.CoreExtended.csproj" />
 	</ItemGroup>
 

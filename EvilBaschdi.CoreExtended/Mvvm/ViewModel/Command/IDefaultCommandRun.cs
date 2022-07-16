@@ -1,6 +1,4 @@
-﻿using EvilBaschdi.Core;
-
-namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
+﻿namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
 
 /// <inheritdoc cref="IDefaultCommand" />
 /// <inheritdoc cref="IRun" />

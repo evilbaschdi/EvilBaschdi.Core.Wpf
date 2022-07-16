@@ -1,5 +1,4 @@
-﻿using EvilBaschdi.Core;
-using MahApps.Metro.Controls;
+﻿using MahApps.Metro.Controls;
 
 namespace EvilBaschdi.CoreExtended.FlyOut;
 

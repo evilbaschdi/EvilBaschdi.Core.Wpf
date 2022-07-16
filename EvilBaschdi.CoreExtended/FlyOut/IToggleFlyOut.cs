@@ -1,6 +1,4 @@
-﻿using EvilBaschdi.Core;
-
-namespace EvilBaschdi.CoreExtended.FlyOut;
+﻿namespace EvilBaschdi.CoreExtended.FlyOut;
 
 /// <summary>
 /// </summary>

@@ -8,6 +8,7 @@ namespace EvilBaschdi.CoreExtended.Controls.About;
 /// </summary>
 // ReSharper disable once UnusedType.Global
 public partial class AboutWindow
+
 {
     [NotNull] private readonly IAboutModel _aboutModel;
 
@@ -15,6 +16,7 @@ public partial class AboutWindow
     public AboutWindow([NotNull] IAboutModel aboutModel)
     {
         _aboutModel = aboutModel ?? throw new ArgumentNullException(nameof(aboutModel));
+
         InitializeComponent();
 
         Loaded += AboutWindowLoaded;
@@ -22,6 +24,8 @@ public partial class AboutWindow
 
     private void AboutWindowLoaded(object sender, RoutedEventArgs e)
     {
+        Wpf.Ui.Appearance.Watcher.Watch(this);
+
         DataContext = _aboutModel;
     }
 }

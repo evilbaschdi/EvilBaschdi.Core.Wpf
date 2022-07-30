@@ -1,8 +1,9 @@
 ﻿using System.Runtime.InteropServices;
 using System.Windows.Interop;
-using EvilBaschdi.CoreExtended.Extensions;
+using EvilBaschdi.CoreExtended.Enums;
 using JetBrains.Annotations;
 using MahApps.Metro.Controls;
+using static EvilBaschdi.CoreExtended.Extensions.Imports;
 
 namespace EvilBaschdi.CoreExtended;
 
@@ -35,17 +36,8 @@ public class RoundCorners : IRoundCorners
 
         //rounded corners
         var hWnd = new WindowInteropHelper(metroWindow).EnsureHandle();
-        const WindowExtensions.DWMWINDOWATTRIBUTE attribute = WindowExtensions.DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE;
-        var preference = WindowExtensions.DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
-        DwmSetWindowAttribute(hWnd, attribute, ref preference, sizeof(uint));
-        //rounded corners
+        const DwmWindowAttribute attribute = DwmWindowAttribute.DWMWA_WINDOW_CORNER_PREFERENCE;
+        var preference = (int)DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
+        DwmSetWindowAttribute(hWnd, attribute, ref preference, Marshal.SizeOf(typeof(int)));
     }
-
-    // Import dwmapi.dll and define DwmSetWindowAttribute in C# corresponding to the native function.
-    [DllImport("dwmapi.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-    // ReSharper disable once IdentifierTypo
-    private static extern long DwmSetWindowAttribute(IntPtr hwnd,
-                                                     WindowExtensions.DWMWINDOWATTRIBUTE attribute,
-                                                     ref WindowExtensions.DWM_WINDOW_CORNER_PREFERENCE pvAttribute,
-                                                     uint cbAttribute);
 }

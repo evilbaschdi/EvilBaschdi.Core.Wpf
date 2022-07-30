@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using ControlzEx.Theming;
 
 namespace EvilBaschdi.CoreExtended.TestUi;
 
@@ -9,4 +10,14 @@ namespace EvilBaschdi.CoreExtended.TestUi;
 // ReSharper disable once RedundantExtendsListEntry
 public partial class App : Application
 {
+    /// <inheritdoc />
+    protected override void OnStartup(StartupEventArgs e)
+    {
+        if (e == null)
+        {
+            throw new ArgumentNullException(nameof(e));
+        }
+
+        ThemeManager.Current.SyncTheme(ThemeSyncMode.SyncAll);
+    }
 }

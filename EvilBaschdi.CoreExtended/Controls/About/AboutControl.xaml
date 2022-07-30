@@ -22,11 +22,11 @@
 
         <StackPanel Grid.Column="1" Grid.Row="1">
             <!-- ReSharper disable UnusedMember.Global -->
-            <TextBlock Name="ApplicationTitle" Text="{Binding ApplicationTitle}" Margin="0,0,0,5" Foreground="Gray" />
-            <TextBlock Name="Version" Text="{Binding Version}" Margin="0,5,0,5" Foreground="Gray" />
-            <TextBlock Name="Runtime" Text="{Binding Runtime}" Margin="0,5,0,5" Foreground="Gray" />
-            <TextBlock Name="Copyright" Text="{Binding Copyright}" Margin="0,5,0,5" Foreground="Gray" />
-            <TextBlock Name="Description" Text="{Binding Description}" Margin="10,3,0,3" Foreground="Gray" TextWrapping="WrapWithOverflow" />
+            <TextBlock Name="ApplicationTitle" Text="{Binding ApplicationTitle}" Margin="0,0,0,5" Foreground="Gray" FontFamily="Segoe Ui" />
+            <TextBlock Name="Version" Text="{Binding Version}" Margin="0,5,0,5" Foreground="Gray" FontFamily="Segoe Ui" />
+            <TextBlock Name="Runtime" Text="{Binding Runtime}" Margin="0,5,0,5" Foreground="Gray" FontFamily="Segoe Ui" />
+            <TextBlock Name="Copyright" Text="{Binding Copyright}" Margin="0,5,0,5" Foreground="Gray" FontFamily="Segoe Ui" />
+            <TextBlock Name="Description" Text="{Binding Description}" Margin="10,3,0,3" Foreground="Gray" FontFamily="Segoe Ui" TextWrapping="WrapWithOverflow" />
             <!-- ReSharper restore UnusedMember.Global -->
         </StackPanel>
     </Grid>

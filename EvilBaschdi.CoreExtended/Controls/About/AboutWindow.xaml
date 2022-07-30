@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Background="Transparent"
-
         Title="About"
         Height="460"
         Width="530">
@@ -15,6 +14,19 @@
         <WindowChrome CaptionHeight="20" ResizeBorderThickness="8" CornerRadius="0" GlassFrameThickness="-1" UseAeroCaptionButtons="True" />
     </WindowChrome.WindowChrome>
 
-    <about:AboutControl />
-
+    <Grid>
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1">
+            <about:AboutControl />
+        </StackPanel>
+    </Grid>
 </Window>

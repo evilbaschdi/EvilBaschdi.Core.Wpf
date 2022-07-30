@@ -11,15 +11,10 @@
         Height="460"
         Width="530">
     <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="20" ResizeBorderThickness="8" CornerRadius="0" GlassFrameThickness="-1" UseAeroCaptionButtons="True" />
+        <WindowChrome GlassFrameThickness="-1" UseAeroCaptionButtons="True" />
     </WindowChrome.WindowChrome>
 
     <Grid>
-        <!--<Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>-->
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />

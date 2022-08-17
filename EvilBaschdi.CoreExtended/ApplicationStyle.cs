@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using JetBrains.Annotations;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 
@@ -14,18 +13,15 @@ public class ApplicationStyle : IApplicationStyle
 {
     private readonly bool _center;
     private readonly bool _resizeWithBorder400;
-    private readonly IRoundCorners _roundCorners;
 
     /// <summary>
     ///     Constructor
     /// </summary>
-    /// <param name="roundCorners"></param>
     /// <param name="center"></param>
     /// <param name="resizeWithBorder400"></param>
     /// <exception cref="ArgumentNullException"></exception>
-    public ApplicationStyle([NotNull] IRoundCorners roundCorners, bool center = false, bool resizeWithBorder400 = false)
+    public ApplicationStyle(bool center = false, bool resizeWithBorder400 = false)
     {
-        _roundCorners = roundCorners ?? throw new ArgumentNullException(nameof(roundCorners));
         _center = center;
         _resizeWithBorder400 = resizeWithBorder400;
     }
@@ -47,7 +43,6 @@ public class ApplicationStyle : IApplicationStyle
             }
 
             metroWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
-            _roundCorners.RunFor(metroWindow);
         }
 
         if (Application.Current?.MainWindow == null)

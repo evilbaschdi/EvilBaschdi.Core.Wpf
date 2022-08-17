@@ -19,6 +19,7 @@ public interface ICommandViewModel
     ///     ImagePath if available.
     /// </summary>
     // ReSharper disable UnusedMember.Global
+    // ReSharper disable once InconsistentNaming
     string ImagePath { get; set; }
     // ReSharper restore UnusedMember.Global
 

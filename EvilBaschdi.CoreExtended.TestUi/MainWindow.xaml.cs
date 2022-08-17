@@ -21,11 +21,9 @@ public partial class MainWindow
     {
         InitializeComponent();
 
-        IRoundCorners roundCorners = new RoundCorners();
-
         IEncryption encryption = new Encryption();
 
-        _mainWindowViewModel = new(encryption, roundCorners);
+        _mainWindowViewModel = new(encryption);
         Loaded += MainWindowLoaded;
 
         var filePath = Assembly.GetEntryAssembly()?.Location;

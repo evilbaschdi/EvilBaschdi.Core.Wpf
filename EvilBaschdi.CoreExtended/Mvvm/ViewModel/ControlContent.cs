@@ -20,10 +20,12 @@ public class ControlContent
     /// <summary>
     /// </summary>
     // ReSharper disable once UnusedMember.Global
+    // ReSharper disable once InconsistentNaming
     public string ImageResourceName { get; set; }
 
     /// <summary>
     /// </summary>
     // ReSharper disable once UnusedMember.Global
+    // ReSharper disable once InconsistentNaming
     public int ImageSize { get; set; }
 }

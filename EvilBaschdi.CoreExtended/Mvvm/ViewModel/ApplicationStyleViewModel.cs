@@ -15,7 +15,6 @@ public class ApplicationStyleViewModel : INotifyPropertyChanged
 {
     private readonly bool _center;
     private readonly bool _resizeWithBorder400;
-    private readonly IRoundCorners _roundCorners;
     private bool _settingsFlyoutIsOpen;
     private ICommandViewModel _toggleFlyout;
 
@@ -23,9 +22,8 @@ public class ApplicationStyleViewModel : INotifyPropertyChanged
     ///     Constructor
     /// </summary>
     // ReSharper disable once MemberCanBeProtected.Global
-    public ApplicationStyleViewModel(IRoundCorners roundCorners = null, bool center = false, bool resizeWithBorder400 = false)
+    public ApplicationStyleViewModel(bool center = false, bool resizeWithBorder400 = false)
     {
-        _roundCorners = roundCorners;
         _center = center;
         _resizeWithBorder400 = resizeWithBorder400;
         InitializeCommandViewModels();
@@ -106,8 +104,6 @@ public class ApplicationStyleViewModel : INotifyPropertyChanged
             }
 
             metroWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
-
-            _roundCorners?.RunFor(metroWindow);
         }
 
         if (Application.Current?.MainWindow == null)

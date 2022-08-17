@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using JetBrains.Annotations;
 
 namespace EvilBaschdi.CoreExtended.Controls.About;
 
@@ -27,7 +26,7 @@ public class AboutContent : IAboutContent
     /// </summary>
     /// <param name="currentAssembly"></param>
     /// <exception cref="ArgumentNullException"></exception>
-    public AboutContent([NotNull] ICurrentAssembly currentAssembly)
+    public AboutContent(ICurrentAssembly currentAssembly)
     {
         // ReSharper disable once ConstantConditionalAccessQualifier
         _assembly = currentAssembly?.Value ?? throw new ArgumentNullException(nameof(currentAssembly));

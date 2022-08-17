@@ -6,7 +6,6 @@ using EvilBaschdi.Core.Security;
 using EvilBaschdi.CoreExtended.Controls.About;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
-using JetBrains.Annotations;
 
 namespace EvilBaschdi.CoreExtended.TestUi.ViewModel;
 
@@ -28,9 +27,8 @@ public class MainWindowViewModel : ApplicationStyleViewModel
     ///     Constructor
     /// </summary>
     /// <param name="encryption"></param>
-    /// <param name="roundCorners"></param>
-    protected internal MainWindowViewModel(IEncryption encryption, [NotNull] IRoundCorners roundCorners)
-        : base(roundCorners, true)
+    protected internal MainWindowViewModel(IEncryption encryption)
+        : base(true)
     {
         _encryption = encryption ?? throw new ArgumentNullException(nameof(encryption));
         EncryptClick = new DefaultCommand

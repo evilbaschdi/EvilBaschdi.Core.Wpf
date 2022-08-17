@@ -4,13 +4,12 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:tb="http://www.hardcodet.net/taskbar"
                       xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-                      xmlns:controlzex="urn:controlzex"
+
                       xmlns:system="clr-namespace:System;assembly=System.Runtime"
                       xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
-                      AllowsTransparency="True"
+                      xmlns:controlzex="urn:controlzex"
                       Height="350" Width="525" Icon="b.ico"
                       SaveWindowPosition="True" TitleCharacterCasing="Normal"
-                      GlowBrush="{DynamicResource MahApps.Brushes.AccentBase}"
                       Title="EvilBaschdi.Core TestUI">
     <!--  RightWindowCommands  -->
     <controls:MetroWindow.RightWindowCommands>

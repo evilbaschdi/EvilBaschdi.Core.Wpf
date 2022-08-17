@@ -16,9 +16,9 @@ public class AboutContentTests
         sut.Should().BeAssignableTo<IAboutContent>();
     }
 
-    [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
-    {
-        assertion.Verify(typeof(AboutContent).GetMethods().Where(method => !method.IsAbstract));
-    }
+    //[Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
+    //public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
+    //{
+    //    assertion.Verify(typeof(AboutContent).GetMethods().Where(method => !method.IsAbstract));
+    //}
 }

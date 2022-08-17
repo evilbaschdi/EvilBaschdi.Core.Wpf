@@ -16,9 +16,9 @@ public class ScreenShotTests
         sut.Should().BeAssignableTo<IScreenShot>();
     }
 
-    [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
-    {
-        assertion.Verify(typeof(ScreenShot).GetMethods().Where(method => !method.IsAbstract));
-    }
+    //[Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
+    //public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
+    //{
+    //    assertion.Verify(typeof(ScreenShot).GetMethods().Where(method => !method.IsAbstract));
+    //}
 }

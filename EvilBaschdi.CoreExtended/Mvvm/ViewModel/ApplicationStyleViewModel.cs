@@ -1,10 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
 using JetBrains.Annotations;
-using MahApps.Metro.Controls;
-using MahApps.Metro.Controls.Dialogs;
 
 namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 
@@ -13,8 +10,7 @@ namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 /// </summary>
 public class ApplicationStyleViewModel : INotifyPropertyChanged
 {
-    private readonly bool _center;
-    private readonly bool _resizeWithBorder400;
+    private readonly IApplicationStyle _applicationStyle;
     private bool _settingsFlyoutIsOpen;
     private ICommandViewModel _toggleFlyout;
 
@@ -22,12 +18,11 @@ public class ApplicationStyleViewModel : INotifyPropertyChanged
     ///     Constructor
     /// </summary>
     // ReSharper disable once MemberCanBeProtected.Global
-    public ApplicationStyleViewModel(bool center = false, bool resizeWithBorder400 = false)
+    public ApplicationStyleViewModel([NotNull] IApplicationStyle applicationStyle)
     {
-        _center = center;
-        _resizeWithBorder400 = resizeWithBorder400;
+        _applicationStyle = applicationStyle ?? throw new ArgumentNullException(nameof(applicationStyle));
         InitializeCommandViewModels();
-        Load();
+        ApplyApplicationStyle();
     }
 
     /// <summary>
@@ -86,42 +81,11 @@ public class ApplicationStyleViewModel : INotifyPropertyChanged
     }
 
     /// <summary>
-    ///     Load.
+    ///     ApplyApplicationStyle.
     /// </summary>
-    private void Load()
+    private void ApplyApplicationStyle()
     {
-        if (Application.Current == null)
-        {
-            return;
-        }
-
-        foreach (Window currentWindow in Application.Current.Windows)
-        {
-            if (currentWindow is not MetroWindow metroWindow ||
-                metroWindow.MetroDialogOptions == null)
-            {
-                continue;
-            }
-
-            metroWindow.MetroDialogOptions.ColorScheme = MetroDialogColorScheme.Accented;
-        }
-
-        if (Application.Current?.MainWindow == null)
-        {
-            return;
-        }
-
-        if (_center)
-        {
-            Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-        }
-
-        // ReSharper disable once InvertIf
-        if (_resizeWithBorder400)
-        {
-            Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;
-            Application.Current.MainWindow.Height = SystemParameters.PrimaryScreenHeight - 400;
-        }
+        _applicationStyle.Run();
     }
 
     /// <summary>

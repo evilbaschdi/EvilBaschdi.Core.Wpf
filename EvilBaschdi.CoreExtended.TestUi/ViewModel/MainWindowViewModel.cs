@@ -6,6 +6,7 @@ using EvilBaschdi.Core.Security;
 using EvilBaschdi.CoreExtended.Controls.About;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
+using JetBrains.Annotations;
 
 namespace EvilBaschdi.CoreExtended.TestUi.ViewModel;
 
@@ -15,6 +16,7 @@ namespace EvilBaschdi.CoreExtended.TestUi.ViewModel;
 /// </summary>
 public class MainWindowViewModel : ApplicationStyleViewModel
 {
+    private readonly IAboutModel _aboutModel;
     private readonly IEncryption _encryption;
     private string _customColorText;
     private string _encryptedText;
@@ -27,10 +29,13 @@ public class MainWindowViewModel : ApplicationStyleViewModel
     ///     Constructor
     /// </summary>
     /// <param name="encryption"></param>
-    protected internal MainWindowViewModel(IEncryption encryption)
-        : base(true)
+    /// <param name="applicationStyle"></param>
+    /// <param name="aboutModel"></param>
+    protected internal MainWindowViewModel(IEncryption encryption, [NotNull] IApplicationStyle applicationStyle, [NotNull] IAboutModel aboutModel)
+        : base(applicationStyle)
     {
         _encryption = encryption ?? throw new ArgumentNullException(nameof(encryption));
+        _aboutModel = aboutModel ?? throw new ArgumentNullException(nameof(aboutModel));
         EncryptClick = new DefaultCommand
                        {
                            Text = "Encrypt",
@@ -216,13 +221,9 @@ public class MainWindowViewModel : ApplicationStyleViewModel
         OutputBackground = brush;
     }
 
-    private static void BtnAboutWindowClick()
+    private void BtnAboutWindowClick()
     {
-        ICurrentAssembly currentAssembly = new CurrentAssembly();
-        IAboutContent aboutContent = new AboutContent(currentAssembly);
-        IAboutModel aboutModel = new AboutViewModel(aboutContent);
-        var aboutWindow = new AboutWindow(aboutModel);
-
+        var aboutWindow = new AboutWindow(_aboutModel);
         aboutWindow.ShowDialog();
     }
 }

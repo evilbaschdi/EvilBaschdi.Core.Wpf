@@ -12,8 +12,10 @@ public class AboutViewModel : ApplicationStyleViewModel, IAboutModel
     /// <summary>
     /// </summary>
     /// <param name="aboutContent"></param>
+    /// <param name="applicationStyle"></param>
     /// <exception cref="ArgumentNullException"></exception>
-    public AboutViewModel(IAboutContent aboutContent)
+    public AboutViewModel(IAboutContent aboutContent, IApplicationStyle applicationStyle)
+        : base(applicationStyle)
     {
         _aboutContent = aboutContent ?? throw new ArgumentNullException(nameof(aboutContent));
     }

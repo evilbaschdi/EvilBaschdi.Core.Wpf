@@ -23,7 +23,7 @@ public partial class MainWindow
         InitializeComponent();
 
         IEncryption encryption = new Encryption();
-        IApplicationStyle applicationStyle = new ApplicationStyle(true);
+        IApplicationStyle applicationStyle = new ApplicationStyle(true, true);
         ICurrentAssembly currentAssembly = new CurrentAssembly();
         IAboutContent aboutContent = new AboutContent(currentAssembly);
         IAboutModel aboutModel = new AboutViewModel(aboutContent, applicationStyle);

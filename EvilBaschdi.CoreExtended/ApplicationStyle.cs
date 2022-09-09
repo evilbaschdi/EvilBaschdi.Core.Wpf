@@ -50,16 +50,16 @@ public class ApplicationStyle : IApplicationStyle
             return;
         }
 
-        if (_center)
-        {
-            Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-        }
-
         // ReSharper disable once InvertIf
         if (_resizeWithBorder400)
         {
             Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;
             Application.Current.MainWindow.Height = SystemParameters.PrimaryScreenHeight - 400;
+        }
+
+        if (_center)
+        {
+            Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
         }
     }
 }

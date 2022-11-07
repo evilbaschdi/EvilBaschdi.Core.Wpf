@@ -3,7 +3,6 @@ using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
 using EvilBaschdi.CoreExtended.Enums;
-using JetBrains.Annotations;
 using static EvilBaschdi.CoreExtended.Extensions.Imports;
 
 namespace EvilBaschdi.CoreExtended.Controls.About;

@@ -1,6 +1,5 @@
 using System.Collections.Specialized;
 using System.Configuration;
-using JetBrains.Annotations;
 
 namespace EvilBaschdi.CoreExtended.AppHelpers;
 

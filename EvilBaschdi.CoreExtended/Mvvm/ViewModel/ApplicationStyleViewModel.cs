@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
-using JetBrains.Annotations;
 
 namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 

@@ -1,5 +1,4 @@
 ﻿using System.Windows.Media;
-using JetBrains.Annotations;
 
 namespace EvilBaschdi.CoreExtended.Extensions;
 

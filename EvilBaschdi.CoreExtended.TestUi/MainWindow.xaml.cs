@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Windows;
+using EvilBaschdi.Core;
 using EvilBaschdi.Core.Security;
 using EvilBaschdi.CoreExtended.Controls.About;
 using EvilBaschdi.CoreExtended.TestUi.ViewModel;

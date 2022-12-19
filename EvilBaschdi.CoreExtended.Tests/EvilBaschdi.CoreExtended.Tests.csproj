@@ -46,6 +46,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\EvilBaschdi.CoreExtended.TestUi\EvilBaschdi.CoreExtended.TestUi.csproj" />
 		<ProjectReference Include="..\EvilBaschdi.CoreExtended\EvilBaschdi.CoreExtended.csproj" />
 	</ItemGroup>
 

@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace EvilBaschdi.CoreExtended.Controls.About;
 
@@ -51,7 +52,7 @@ public class AboutContent : IAboutContent
                                                     ?.Description,
                              Version = _assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()
                                                 ?.InformationalVersion.Split('+').FirstOrDefault(),
-                             Runtime = Environment.Version.ToString(),
+                             Runtime = $"{RuntimeInformation.FrameworkDescription} ({RuntimeInformation.ProcessArchitecture} on {RuntimeInformation.OSArchitecture})".ToLower(),
                              LogoSourcePath = !string.IsNullOrWhiteSpace(_logoSourcePath) ? _logoSourcePath : string.Empty,
                          };
 

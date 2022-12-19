@@ -15,11 +15,12 @@
 		<PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</PackageProjectUrl>
 		<Product>EvilBaschdi.CoreExtended TestUi</Product>
 		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
-		<RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
 		<TargetFrameworks>net6.0-windows;net7.0-windows</TargetFrameworks>
 		<Title>EvilBaschdi.CoreExtended.TestUi</Title>
 		<UseWPF>true</UseWPF>
 		<Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</Version>
+		<RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
+		<Platforms>x64;ARM64</Platforms>
 	</PropertyGroup>
 
 	<ItemGroup>

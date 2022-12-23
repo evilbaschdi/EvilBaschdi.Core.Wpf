@@ -44,9 +44,4 @@
 		<Resource Include="EvilBaschdi.CoreExtended.TestUi.VisualElementsManifest.xml" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\..\EvilBaschdi.About\EvilBaschdi.About.Core\EvilBaschdi.About.Core.csproj" />
-		<ProjectReference Include="..\..\EvilBaschdi.About\EvilBaschdi.About.Wpf\EvilBaschdi.About.Wpf.csproj" />
-	</ItemGroup>
-
 </Project>

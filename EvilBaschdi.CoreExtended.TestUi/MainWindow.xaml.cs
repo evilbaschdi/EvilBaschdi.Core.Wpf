@@ -1,8 +1,9 @@
 ﻿using System.Reflection;
 using System.Windows;
+using EvilBaschdi.About.Core;
+using EvilBaschdi.About.Core.Models;
 using EvilBaschdi.Core;
 using EvilBaschdi.Core.Security;
-using EvilBaschdi.CoreExtended.Controls.About;
 using EvilBaschdi.CoreExtended.TestUi.ViewModel;
 using MahApps.Metro.Controls;
 
@@ -27,7 +28,7 @@ public partial class MainWindow
         IApplicationStyle applicationStyle = new ApplicationStyle(true, true);
         ICurrentAssembly currentAssembly = new CurrentAssembly();
         IAboutContent aboutContent = new AboutContent(currentAssembly);
-        IAboutModel aboutModel = new AboutViewModel(aboutContent, applicationStyle);
+        IAboutModel aboutModel = new AboutViewModel(aboutContent);
 
         _mainWindowViewModel = new(encryption, applicationStyle, aboutModel);
         Loaded += MainWindowLoaded;

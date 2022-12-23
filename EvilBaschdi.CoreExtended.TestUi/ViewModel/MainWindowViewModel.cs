@@ -2,8 +2,9 @@
 using System.Windows;
 using System.Windows.Media;
 using ControlzEx.Theming;
+using EvilBaschdi.About.Core.Models;
+using EvilBaschdi.About.Wpf;
 using EvilBaschdi.Core.Security;
-using EvilBaschdi.CoreExtended.Controls.About;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
 using JetBrains.Annotations;

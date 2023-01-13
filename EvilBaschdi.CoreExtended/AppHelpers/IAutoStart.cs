@@ -1,4 +1,5 @@
-﻿namespace EvilBaschdi.CoreExtended.AppHelpers;
+﻿// ReSharper disable UnusedMember.Global
+namespace EvilBaschdi.CoreExtended.AppHelpers;
 
 /// <summary>
 ///     Manage AutoStart

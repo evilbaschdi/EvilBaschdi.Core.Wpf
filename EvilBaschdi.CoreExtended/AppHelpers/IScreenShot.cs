@@ -1,3 +1,5 @@
+// ReSharper disable UnusedMember.Global
+
 using System.Windows;
 using System.Windows.Media.Imaging;
 

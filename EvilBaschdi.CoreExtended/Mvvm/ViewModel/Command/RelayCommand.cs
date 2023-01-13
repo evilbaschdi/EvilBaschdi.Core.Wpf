@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿// ReSharper disable UnusedMember.Global
+
+using System.Windows.Input;
 
 namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
 

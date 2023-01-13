@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿// ReSharper disable UnusedMember.Global
+
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
 
@@ -42,7 +44,6 @@ public class ApplicationStyleViewModel : INotifyPropertyChanged
     ///     Toggle Flyout.
     /// </summary>
     // ReSharper disable once MemberCanBePrivate.Global
-    // ReSharper disable once UnusedAutoPropertyAccessor.Global
 
     public ICommandViewModel ToggleFlyout
     {

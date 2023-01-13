@@ -13,10 +13,12 @@
                       Title="EvilBaschdi.Core TestUI">
     <!--  RightWindowCommands  -->
     <controls:MetroWindow.RightWindowCommands>
-
+        <!-- ReSharper disable UnusedMember.Global -->
         <controls:WindowCommands>
+
             <TextBox Name="CustomColor" Text="{Binding CustomColorText,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      Width="100">
+
                 <TextBox.Resources>
                     <system:String x:Key="HexInputMask">&gt;aa aa aa</system:String>
                 </TextBox.Resources>
@@ -38,9 +40,11 @@
                 </StackPanel>
             </Button>
         </controls:WindowCommands>
+        <!-- ReSharper restore UnusedMember.Global -->
     </controls:MetroWindow.RightWindowCommands>
 
     <Grid>
+        <!-- ReSharper disable UnusedMember.Global -->
         <!-- Taskbar Icon -->
         <tb:TaskbarIcon Name="TestTaskbarIcon" ToolTip="Test" ToolTipText="Test" Visibility="Hidden" />
         <Label Content="Input:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
@@ -65,6 +69,7 @@
         <TextBox Height="140" Margin="100,106,10,0" TextWrapping="Wrap" IsReadOnly="True" Name="EncryptedTextBox"
                  Text="{Binding EncryptedText}"
                  VerticalAlignment="Top" />
+        <!-- ReSharper restore UnusedMember.Global -->
     </Grid>
     <!-- TaskBarItemInfo -->
     <Window.TaskbarItemInfo>
@@ -88,13 +93,6 @@
                 <StackPanel>
                     <StackPanel Margin="15,10,15,0" Orientation="Vertical">
                         <Separator Background="{DynamicResource MahApps.Brushes.AccentBase}" />
-                    </StackPanel>
-                    <!-- Build / Linker Time -->
-                    <StackPanel Orientation="Horizontal">
-                        <Label Width="50" Margin="10,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
-                               Content="Build" />
-                        <Label Width="310" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
-                               Name="LinkerTime" />
                     </StackPanel>
                 </StackPanel>
             </controls:Flyout>

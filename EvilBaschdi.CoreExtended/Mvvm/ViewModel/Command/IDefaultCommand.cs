@@ -1,4 +1,6 @@
-﻿namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
+﻿// ReSharper disable UnusedMember.Global
+
+namespace EvilBaschdi.CoreExtended.Mvvm.ViewModel.Command;
 
 /// <summary>
 ///     IDefaultCommand

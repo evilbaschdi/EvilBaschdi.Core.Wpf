@@ -2,8 +2,6 @@
 using System.Windows;
 using System.Windows.Media;
 using ControlzEx.Theming;
-using EvilBaschdi.About.Core.Models;
-using EvilBaschdi.About.Wpf;
 using EvilBaschdi.Core.Security;
 using EvilBaschdi.Core.Wpf.Mvvm.ViewModel;
 using EvilBaschdi.Core.Wpf.Mvvm.ViewModel.Command;
@@ -17,7 +15,6 @@ namespace EvilBaschdi.Core.Wpf.DummyApp.ViewModel;
 /// </summary>
 public class MainWindowViewModel : ApplicationStyleViewModel
 {
-    private readonly IAboutModel _aboutModel;
     private readonly IEncryption _encryption;
     private string _customColorText;
     private string _encryptedText;
@@ -31,12 +28,10 @@ public class MainWindowViewModel : ApplicationStyleViewModel
     /// </summary>
     /// <param name="encryption"></param>
     /// <param name="applicationStyle"></param>
-    /// <param name="aboutModel"></param>
-    protected internal MainWindowViewModel(IEncryption encryption, [NotNull] IApplicationStyle applicationStyle, [NotNull] IAboutModel aboutModel)
+    protected internal MainWindowViewModel(IEncryption encryption, [NotNull] IApplicationStyle applicationStyle)
         : base(applicationStyle)
     {
         _encryption = encryption ?? throw new ArgumentNullException(nameof(encryption));
-        _aboutModel = aboutModel ?? throw new ArgumentNullException(nameof(aboutModel));
         EncryptClick = new DefaultCommand
                        {
                            Text = "Encrypt",
@@ -54,21 +49,7 @@ public class MainWindowViewModel : ApplicationStyleViewModel
                            Text = "Compare",
                            Command = new RelayCommand(_ => BtnCompareClick())
                        };
-        AboutWindowClick = new DefaultCommand
-                           {
-                               Text = "About",
-                               Command = new RelayCommand(_ => BtnAboutWindowClick())
-                           };
     }
-
-    /// <summary>
-    ///     {Binding AboutWindowClick}
-    /// </summary>
-    // ReSharper disable once MemberCanBePrivate.Global
-
-    // ReSharper disable once UnusedAutoPropertyAccessor.Global
-    // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
-    public ICommandViewModel AboutWindowClick { get; set; }
 
     /// <summary>
     ///     {Binding CompareClick}
@@ -220,11 +201,5 @@ public class MainWindowViewModel : ApplicationStyleViewModel
 
         InputBackground = brush;
         OutputBackground = brush;
-    }
-
-    private void BtnAboutWindowClick()
-    {
-        var aboutWindow = new AboutWindow(_aboutModel);
-        aboutWindow.ShowDialog();
     }
 }

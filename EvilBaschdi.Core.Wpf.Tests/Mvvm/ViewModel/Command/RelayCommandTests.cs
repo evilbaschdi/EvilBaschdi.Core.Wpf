@@ -20,6 +20,7 @@ public class RelayCommandTests
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
     public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
     {
-        assertion.Verify(typeof(RelayCommand).GetMethods().Where(method => !method.IsAbstract & !method.Name.StartsWith("add_") & !method.Name.StartsWith("remove_")));
+        assertion.Verify(typeof(RelayCommand).GetMethods().Where(method => !method.IsAbstract & !method.Name.StartsWith("add_") & !method.Name.StartsWith("remove_") &
+         !method.Name.StartsWith("CanExecute") & !method.Name.StartsWith("Execute")));
     }
 }

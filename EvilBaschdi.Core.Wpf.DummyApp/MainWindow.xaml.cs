@@ -1,7 +1,5 @@
 ﻿using System.Reflection;
 using System.Windows;
-using EvilBaschdi.About.Core;
-using EvilBaschdi.About.Core.Models;
 using EvilBaschdi.Core.Security;
 using EvilBaschdi.Core.Wpf.DummyApp.ViewModel;
 using MahApps.Metro.Controls;
@@ -25,11 +23,8 @@ public partial class MainWindow
 
         IEncryption encryption = new Encryption();
         IApplicationStyle applicationStyle = new ApplicationStyle(true, true);
-        ICurrentAssembly currentAssembly = new CurrentAssembly();
-        IAboutContent aboutContent = new AboutContent(currentAssembly);
-        IAboutModel aboutModel = new AboutViewModel(aboutContent);
 
-        _mainWindowViewModel = new(encryption, applicationStyle, aboutModel);
+        _mainWindowViewModel = new(encryption, applicationStyle);
         Loaded += MainWindowLoaded;
 
         var filePath = Assembly.GetEntryAssembly()?.Location;

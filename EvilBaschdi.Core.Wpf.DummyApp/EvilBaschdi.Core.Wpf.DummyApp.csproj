@@ -5,18 +5,18 @@
 		<Authors>Sebastian Walter</Authors>
 		<Company>evilbaschdi (Sebastian Walter)</Company>
 		<Copyright>Copyright © 2015 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
-		<Description>TestUi for EvilBaschdi.CoreExtended</Description>
+		<Description>TestUi for EvilBaschdi.Core.Wpf</Description>
 		<!-- ReSharper disable once UnknownProperty -->
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<LangVersion>preview</LangVersion>
 		<OutputType>WinExe</OutputType>
-		<PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</PackageProjectUrl>
-		<Product>EvilBaschdi.CoreExtended TestUi</Product>
-		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.CoreExtended</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Wpf</PackageProjectUrl>
+		<Product>EvilBaschdi.Core.Wpf DummyApp</Product>
+		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Wpf</RepositoryUrl>
 		<TargetFrameworks>net6.0-windows;net7.0-windows</TargetFrameworks>
-		<Title>EvilBaschdi.CoreExtended.TestUi</Title>
+		<Title>EvilBaschdi.Core.Wpf.DummyApp</Title>
 		<UseWPF>true</UseWPF>
 		<Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</Version>
 		<RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
@@ -37,9 +37,6 @@
 
 	<ItemGroup>
 		<Resource Include="b.ico" />
-		<Content Include="about.png">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</Content>
 		<ProjectReference Include="..\EvilBaschdi.Core.Wpf\EvilBaschdi.Core.Wpf.csproj" />
 	</ItemGroup>
 

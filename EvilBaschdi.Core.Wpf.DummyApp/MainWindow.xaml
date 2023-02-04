@@ -27,12 +27,6 @@
                                                          PromptChar="0" IgnoreSpace="True" />
                 </b:Interaction.Behaviors>
             </TextBox>
-            <Button Command="{Binding AboutWindowClick.Command}" Name="AboutWindow">
-                <StackPanel Orientation="Horizontal">
-                    <iconPacks:PackIconMaterial Kind="Information" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Text="about" />
-                </StackPanel>
-            </Button>
             <Button Command="{Binding ToggleFlyout.Command}" Name="ToggleSettingsFlyout">
                 <StackPanel Orientation="Horizontal">
                     <!--<iconPacks:PackIconMaterial Kind="Settings" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />-->

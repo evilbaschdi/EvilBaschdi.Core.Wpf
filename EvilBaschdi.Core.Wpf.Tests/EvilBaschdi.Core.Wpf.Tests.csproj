@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0-windows;net7.0-windows</TargetFrameworks>
+		<TargetFrameworks>net6.0-windows;net7.0-windows;net8.0-windows</TargetFrameworks>
 		<IsPackable>false</IsPackable>
 		<NoWarn>1701;1702</NoWarn>
 		<Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))-develop</Version>
@@ -11,8 +11,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="EvilBaschdi.Testing" Version="2023.2.20.2114-develop" />
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0-preview-20221221-03" />
+		<PackageReference Include="EvilBaschdi.Testing" Version="2023.2.21.1902-develop" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
 	</ItemGroup>
 
 	<ItemGroup>

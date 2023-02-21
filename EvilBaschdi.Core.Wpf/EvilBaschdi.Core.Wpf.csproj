@@ -20,7 +20,7 @@
 		<PackageTags>Microsoft.NET.Sdk.WindowsDesktop Core</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Wpf</RepositoryUrl>
-		<TargetFrameworks>net6.0-windows;net7.0-windows</TargetFrameworks>
+		<TargetFrameworks>net6.0-windows;net7.0-windows;net8.0-windows</TargetFrameworks>
 		<UseWPF>true</UseWPF>
 		<VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</VersionPrefix>
 		<!-- ReSharper disable once UnknownProperty -->
@@ -45,7 +45,7 @@
 	</ItemGroup>-->
 
 	<ItemGroup>
-		<PackageReference Include="EvilBaschdi.Core" Version="2023.2.1.1815-develop" />
+		<PackageReference Include="EvilBaschdi.Core" Version="2023.2.21.1909-develop" />
 		<PackageReference Include="MahApps.Metro" Version="3.0.0-alpha0440" />
 		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
 		<PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />

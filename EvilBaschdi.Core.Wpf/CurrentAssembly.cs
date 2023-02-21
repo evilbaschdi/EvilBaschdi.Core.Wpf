@@ -4,6 +4,7 @@ using System.Windows;
 namespace EvilBaschdi.Core.Wpf;
 
 /// <inheritdoc />
+// ReSharper disable once UnusedType.Global
 public class CurrentAssembly : ICurrentAssembly
 {
     /// <inheritdoc />

@@ -46,7 +46,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="EvilBaschdi.Core" Version="2023.2.21.1909-develop" />
-		<PackageReference Include="MahApps.Metro" Version="3.0.0-alpha0440" />
+		<PackageReference Include="MahApps.Metro" Version="3.0.0-alpha0444" />
 		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
 		<PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
 	</ItemGroup>

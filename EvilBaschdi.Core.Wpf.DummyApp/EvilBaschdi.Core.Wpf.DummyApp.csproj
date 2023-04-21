@@ -19,7 +19,6 @@
 		<Title>EvilBaschdi.Core.Wpf.DummyApp</Title>
 		<UseWPF>true</UseWPF>
 		<Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</Version>
-		<RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
 	</PropertyGroup>
 
 	<ItemGroup>

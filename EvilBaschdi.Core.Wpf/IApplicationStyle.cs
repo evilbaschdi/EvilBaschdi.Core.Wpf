@@ -1,8 +1,6 @@
-namespace EvilBaschdi.Core.Wpf;
+﻿namespace EvilBaschdi.Core.Wpf;
 
-/// <summary>
-///     Interface for classes that handle metro style on wpf.
-/// </summary>
+/// <inheritdoc />
 public interface IApplicationStyle : IRun
 {
 }

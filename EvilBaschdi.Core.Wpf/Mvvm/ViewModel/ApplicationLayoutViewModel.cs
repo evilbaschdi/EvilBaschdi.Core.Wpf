@@ -7,10 +7,11 @@ using EvilBaschdi.Core.Wpf.Mvvm.ViewModel.Command;
 namespace EvilBaschdi.Core.Wpf.Mvvm.ViewModel;
 
 /// <summary>
-///     ViewModel of ApplicationStyle.
+///     ViewModel with ApplicationLayout.
 /// </summary>
-public class ApplicationStyleViewModel : INotifyPropertyChanged
+public class ApplicationLayoutViewModel : INotifyPropertyChanged
 {
+    private readonly IApplicationLayout _applicationLayout;
     private readonly IApplicationStyle _applicationStyle;
     private bool _settingsFlyoutIsOpen;
     private ICommandViewModel _toggleFlyout;
@@ -19,11 +20,12 @@ public class ApplicationStyleViewModel : INotifyPropertyChanged
     ///     Constructor
     /// </summary>
     // ReSharper disable once MemberCanBeProtected.Global
-    public ApplicationStyleViewModel([NotNull] IApplicationStyle applicationStyle)
+    public ApplicationLayoutViewModel([NotNull] IApplicationLayout applicationLayout, [NotNull] IApplicationStyle applicationStyle)
     {
+        _applicationLayout = applicationLayout ?? throw new ArgumentNullException(nameof(applicationLayout));
         _applicationStyle = applicationStyle ?? throw new ArgumentNullException(nameof(applicationStyle));
         InitializeCommandViewModels();
-        ApplyApplicationStyle();
+        ApplyApplicationStyleAndLayout();
     }
 
     /// <summary>
@@ -83,8 +85,9 @@ public class ApplicationStyleViewModel : INotifyPropertyChanged
     /// <summary>
     ///     ApplyApplicationStyle.
     /// </summary>
-    private void ApplyApplicationStyle()
+    private void ApplyApplicationStyleAndLayout()
     {
+        _applicationLayout.Run();
         _applicationStyle.Run();
     }
 

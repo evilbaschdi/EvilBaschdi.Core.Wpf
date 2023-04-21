@@ -8,11 +8,11 @@ public class ApplicationStyleViewModelTests
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
     public void Constructor_HasNullGuards(GuardClauseAssertion assertion)
     {
-        assertion.Verify(typeof(ApplicationStyleViewModel).GetConstructors());
+        assertion.Verify(typeof(ApplicationLayoutViewModel).GetConstructors());
     }
 
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void Constructor_ReturnsInterfaceName(ApplicationStyleViewModel sut)
+    public void Constructor_ReturnsInterfaceName(ApplicationLayoutViewModel sut)
     {
         sut.Should().BeAssignableTo<INotifyPropertyChanged>();
     }
@@ -20,6 +20,6 @@ public class ApplicationStyleViewModelTests
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
     public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
     {
-        assertion.Verify(typeof(ApplicationStyleViewModel).GetMethods().Where(method => !method.IsAbstract));
+        assertion.Verify(typeof(ApplicationLayoutViewModel).GetMethods().Where(method => !method.IsAbstract));
     }
 }

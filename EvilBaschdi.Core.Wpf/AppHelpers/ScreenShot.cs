@@ -12,10 +12,7 @@ public class ScreenShot : IScreenShot
     /// <inheritdoc />
     public PngBitmapEncoder ValueFor([NotNull] FrameworkElement frameworkElement)
     {
-        if (frameworkElement == null)
-        {
-            throw new ArgumentNullException(nameof(frameworkElement));
-        }
+        ArgumentNullException.ThrowIfNull(frameworkElement);
 
         var bmp = new RenderTargetBitmap((int)frameworkElement.ActualWidth, (int)frameworkElement.ActualHeight,
             96, 96, PixelFormats.Pbgra32);
@@ -31,20 +28,11 @@ public class ScreenShot : IScreenShot
     public void SaveToFile([NotNull] PngBitmapEncoder pngBitmapEncoder,
                            [NotNull] string path = @"C:\Temp\Screenshot.png")
     {
-        if (pngBitmapEncoder == null)
-        {
-            throw new ArgumentNullException(nameof(pngBitmapEncoder));
-        }
+        ArgumentNullException.ThrowIfNull(pngBitmapEncoder);
 
-        if (path == null)
-        {
-            throw new ArgumentNullException(nameof(path));
-        }
+        ArgumentNullException.ThrowIfNull(path);
 
-        if (pngBitmapEncoder == null)
-        {
-            throw new ArgumentNullException(nameof(pngBitmapEncoder));
-        }
+        ArgumentNullException.ThrowIfNull(pngBitmapEncoder);
 
         var fs = new FileStream(path, FileMode.Create);
         pngBitmapEncoder.Save(fs);
@@ -54,10 +42,7 @@ public class ScreenShot : IScreenShot
     /// <inheritdoc />
     public void SaveToClipboard(PngBitmapEncoder pngBitmapEncoder)
     {
-        if (pngBitmapEncoder == null)
-        {
-            throw new ArgumentNullException(nameof(pngBitmapEncoder));
-        }
+        ArgumentNullException.ThrowIfNull(pngBitmapEncoder);
 
         Clipboard.SetImage(pngBitmapEncoder.Frames[0]);
     }

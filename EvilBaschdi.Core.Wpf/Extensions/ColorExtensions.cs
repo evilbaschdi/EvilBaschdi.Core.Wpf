@@ -16,10 +16,7 @@ public static class ColorExtensions
     // ReSharper disable once UnusedMember.Global
     public static Color ToColor([NotNull] this string hex)
     {
-        if (hex == null)
-        {
-            throw new ArgumentNullException(nameof(hex));
-        }
+        ArgumentNullException.ThrowIfNull(hex);
 
         var value = hex.PadLeft(8, 'F').PadLeft(9, '#');
         var convertFromString = ColorConverter.ConvertFromString(value);

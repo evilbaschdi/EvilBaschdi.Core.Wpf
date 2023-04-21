@@ -13,7 +13,7 @@ namespace EvilBaschdi.Core.Wpf.DummyApp.ViewModel;
 /// <summary>
 ///     MainWindowViewModel of TestUi.
 /// </summary>
-public class MainWindowViewModel : ApplicationStyleViewModel
+public class MainWindowViewModel : ApplicationLayoutViewModel
 {
     private readonly IEncryption _encryption;
     private string _customColorText;
@@ -27,9 +27,10 @@ public class MainWindowViewModel : ApplicationStyleViewModel
     ///     Constructor
     /// </summary>
     /// <param name="encryption"></param>
+    /// <param name="applicationLayout"></param>
     /// <param name="applicationStyle"></param>
-    protected internal MainWindowViewModel(IEncryption encryption, [NotNull] IApplicationStyle applicationStyle)
-        : base(applicationStyle)
+    protected internal MainWindowViewModel(IEncryption encryption, [NotNull] IApplicationLayout applicationLayout, IApplicationStyle applicationStyle)
+        : base(applicationLayout, applicationStyle)
     {
         _encryption = encryption ?? throw new ArgumentNullException(nameof(encryption));
         EncryptClick = new DefaultCommand

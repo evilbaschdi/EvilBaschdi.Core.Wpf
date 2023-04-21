@@ -22,9 +22,10 @@ public partial class MainWindow
         InitializeComponent();
 
         IEncryption encryption = new Encryption();
-        IApplicationStyle applicationStyle = new ApplicationStyle(true, true);
+        IApplicationLayout applicationLayout = new ApplicationLayout(true, true);
+        IApplicationStyle applicationStyle = new ApplicationStyle();
 
-        _mainWindowViewModel = new(encryption, applicationStyle);
+        _mainWindowViewModel = new(encryption, applicationLayout, applicationStyle);
         Loaded += MainWindowLoaded;
 
         var filePath = Assembly.GetEntryAssembly()?.Location;

@@ -9,23 +9,8 @@ namespace EvilBaschdi.Core.Wpf;
 // ReSharper disable once UnusedType.Global
 public class ApplicationLayout : IApplicationLayout
 {
-    private readonly bool _center;
-    private readonly bool _resizeWithBorder400;
-
-    /// <summary>
-    ///     Constructor
-    /// </summary>
-    /// <param name="center"></param>
-    /// <param name="resizeWithBorder400"></param>
-    /// <exception cref="ArgumentNullException"></exception>
-    public ApplicationLayout(bool center = false, bool resizeWithBorder400 = false)
-    {
-        _center = center;
-        _resizeWithBorder400 = resizeWithBorder400;
-    }
-
     /// <inheritdoc />
-    public void Run()
+    public void RunFor((bool Center, bool ResizeWithBorder400) value)
     {
         if (Application.Current == null)
         {
@@ -37,16 +22,29 @@ public class ApplicationLayout : IApplicationLayout
             return;
         }
 
-        if (_center)
+        var (center, resizeWithBorder400) = value;
+        var mainWindow = Application.Current.MainWindow;
+
+        if (mainWindow != null)
         {
-            Application.Current.MainWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            RunFor((mainWindow, center, resizeWithBorder400));
+        }
+    }
+
+    /// <inheritdoc />
+    public void RunFor((Window Window, bool Center, bool ResizeWithBorder400) value)
+    {
+        var (window, center, resizeWithBorder400) = value;
+        if (center)
+        {
+            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         // ReSharper disable once InvertIf
-        if (_resizeWithBorder400)
+        if (resizeWithBorder400)
         {
-            Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth - 400;
-            Application.Current.MainWindow.Height = SystemParameters.PrimaryScreenHeight - 400;
+            window.Width = SystemParameters.PrimaryScreenWidth - 400;
+            window.Height = SystemParameters.PrimaryScreenHeight - 400;
         }
     }
 }

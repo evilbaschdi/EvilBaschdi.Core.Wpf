@@ -30,7 +30,7 @@ public class MainWindowViewModel : ApplicationLayoutViewModel
     /// <param name="applicationLayout"></param>
     /// <param name="applicationStyle"></param>
     protected internal MainWindowViewModel(IEncryption encryption, [NotNull] IApplicationLayout applicationLayout, IApplicationStyle applicationStyle)
-        : base(applicationLayout, applicationStyle)
+        : base(applicationLayout, applicationStyle, true, true)
     {
         _encryption = encryption ?? throw new ArgumentNullException(nameof(encryption));
         EncryptClick = new DefaultCommand

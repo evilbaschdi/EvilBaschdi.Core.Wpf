@@ -22,7 +22,7 @@ public partial class MainWindow
         InitializeComponent();
 
         IEncryption encryption = new Encryption();
-        IApplicationLayout applicationLayout = new ApplicationLayout(true, true);
+        IApplicationLayout applicationLayout = new ApplicationLayout();
         IApplicationStyle applicationStyle = new ApplicationStyle();
 
         _mainWindowViewModel = new(encryption, applicationLayout, applicationStyle);

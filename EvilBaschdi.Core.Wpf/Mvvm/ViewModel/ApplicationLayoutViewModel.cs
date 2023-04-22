@@ -13,6 +13,8 @@ public class ApplicationLayoutViewModel : INotifyPropertyChanged
 {
     private readonly IApplicationLayout _applicationLayout;
     private readonly IApplicationStyle _applicationStyle;
+    private readonly bool _center;
+    private readonly bool _resizeWithBorder400;
     private bool _settingsFlyoutIsOpen;
     private ICommandViewModel _toggleFlyout;
 
@@ -20,10 +22,15 @@ public class ApplicationLayoutViewModel : INotifyPropertyChanged
     ///     Constructor
     /// </summary>
     // ReSharper disable once MemberCanBeProtected.Global
-    public ApplicationLayoutViewModel([NotNull] IApplicationLayout applicationLayout, [NotNull] IApplicationStyle applicationStyle)
+    public ApplicationLayoutViewModel([NotNull] IApplicationLayout applicationLayout,
+                                      [NotNull] IApplicationStyle applicationStyle,
+                                      bool center,
+                                      bool resizeWithBorder400)
     {
         _applicationLayout = applicationLayout ?? throw new ArgumentNullException(nameof(applicationLayout));
         _applicationStyle = applicationStyle ?? throw new ArgumentNullException(nameof(applicationStyle));
+        _center = center;
+        _resizeWithBorder400 = resizeWithBorder400;
         InitializeCommandViewModels();
         ApplyApplicationStyleAndLayout();
     }
@@ -87,7 +94,7 @@ public class ApplicationLayoutViewModel : INotifyPropertyChanged
     /// </summary>
     private void ApplyApplicationStyleAndLayout()
     {
-        _applicationLayout.Run();
+        _applicationLayout.RunFor((_center, _resizeWithBorder400));
         _applicationStyle.Run();
     }
 

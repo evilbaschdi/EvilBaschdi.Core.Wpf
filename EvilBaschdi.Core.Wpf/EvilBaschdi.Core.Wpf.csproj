@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
 		<Authors>Sebastian Walter</Authors>
 		<Company>evilbaschdi (Sebastian Walter)</Company>
 		<Copyright>Copyright © 2015 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
@@ -10,10 +9,7 @@
 		<Description>Microsoft.NET.Sdk.WindowsDesktop Core Package</Description>
 		<!-- ReSharper disable once UnknownProperty -->
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-		<EnableNETAnalyzers>true</EnableNETAnalyzers>
-		<ImplicitUsings>enable</ImplicitUsings>
 		<IsPackable>true</IsPackable>
-		<LangVersion>preview</LangVersion>
 		<PackageIcon>icon.png</PackageIcon>
 		<PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
 		<PackageId>EvilBaschdi.Core.Wpf</PackageId>
@@ -21,11 +17,7 @@
 		<PackageTags>Microsoft.NET.Sdk.WindowsDesktop Core</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Wpf</RepositoryUrl>
-		<TargetFrameworks>net6.0-windows;net7.0-windows;net8.0-windows</TargetFrameworks>
-		<UseWPF>true</UseWPF>
 		<VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</VersionPrefix>
-		<!-- ReSharper disable once UnknownProperty -->
-		<!--<GitBranch>$([System.IO.File]::ReadAlltext('$(MSBuildThisFileDirectory)\..\.git\HEAD').Replace('ref: refs/heads/', '').Trim())</GitBranch>-->
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -36,14 +28,6 @@
 		<Using Include="EvilBaschdi.Core" />
 		<Using Include="JetBrains.Annotations" />
 	</ItemGroup>
-
-	<!--<ItemGroup Condition="'$(GitBranch)' == 'develop'">
-		<PackageReference Include="EvilBaschdi.Core" Version="*-develop*" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(GitBranch)' == 'main'">
-		<PackageReference Include="EvilBaschdi.Core" Version="*" />
-	</ItemGroup>-->
 
 	<ItemGroup>
 		<PackageReference Include="EvilBaschdi.Core" />

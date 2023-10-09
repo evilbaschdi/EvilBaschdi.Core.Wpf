@@ -6,10 +6,15 @@ namespace EvilBaschdi.Core.Wpf.Mvvm.ViewModel.Command;
 
 /// <summary>
 /// </summary>
-public class RelayCommand : ICommand
+/// <remarks>
+/// </remarks>
+/// <param name="execute"></param>
+/// <param name="canExecute"></param>
+/// <exception cref="ArgumentNullException"></exception>
+public class RelayCommand(Action<object> execute, Predicate<object> canExecute) : ICommand
 {
-    private Predicate<object> _canExecute;
-    private Action<object> _execute;
+    private Predicate<object> _canExecute = canExecute ?? throw new ArgumentNullException(nameof(canExecute));
+    private Action<object> _execute = execute ?? throw new ArgumentNullException(nameof(execute));
 
     /// <summary>
     /// </summary>
@@ -17,18 +22,6 @@ public class RelayCommand : ICommand
     public RelayCommand(Action<object> execute)
         : this(execute, DefaultCanExecute)
     {
-    }
-
-    /// <summary>
-    /// </summary>
-    /// <param name="execute"></param>
-    /// <param name="canExecute"></param>
-    /// <exception cref="ArgumentNullException"></exception>
-    // ReSharper disable once MemberCanBePrivate.Global
-    public RelayCommand(Action<object> execute, Predicate<object> canExecute)
-    {
-        _execute = execute ?? throw new ArgumentNullException(nameof(execute));
-        _canExecute = canExecute ?? throw new ArgumentNullException(nameof(canExecute));
     }
 
     /// <summary>

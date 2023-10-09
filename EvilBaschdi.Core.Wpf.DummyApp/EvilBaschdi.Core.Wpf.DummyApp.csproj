@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
 		<ApplicationIcon>b.ico</ApplicationIcon>
 		<Authors>Sebastian Walter</Authors>
 		<Company>evilbaschdi (Sebastian Walter)</Company>
@@ -16,10 +15,7 @@
 		<PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Wpf</PackageProjectUrl>
 		<Product>EvilBaschdi.Core.Wpf DummyApp</Product>
 		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Wpf</RepositoryUrl>
-		<TargetFrameworks>net6.0-windows;net7.0-windows;net8.0-windows</TargetFrameworks>
 		<Title>EvilBaschdi.Core.Wpf.DummyApp</Title>
-		<UseWPF>true</UseWPF>
-		<Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</Version>
 	</PropertyGroup>
 
 	<ItemGroup>

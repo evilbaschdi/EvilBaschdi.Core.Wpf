@@ -1,8 +1,8 @@
 ﻿namespace EvilBaschdi.Core.Wpf.Mvvm.ViewModel.Command;
 
 /// <inheritdoc cref="IDefaultCommand" />
-/// <inheritdoc cref="ITaskValue" />
+/// <inheritdoc cref="ITaskFromMethod" />
 // ReSharper disable once UnusedType.Global
-public interface IDefaultCommandRunAsync : IDefaultCommand, ITaskValue
+public interface IDefaultCommandRunAsync : IDefaultCommand, ITaskFromMethod
 {
 }

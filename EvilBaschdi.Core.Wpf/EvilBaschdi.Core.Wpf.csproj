@@ -36,12 +36,4 @@
 		<PackageReference Include="Ookii.Dialogs.Wpf" />
 	</ItemGroup>
 
-	<!-- this project only -->
-	<ItemGroup>
-		<PackageReference Include="DotNet.ReproducibleBuilds">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-	</ItemGroup>
-
 </Project>

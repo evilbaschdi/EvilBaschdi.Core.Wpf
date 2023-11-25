@@ -1,5 +1,7 @@
 ﻿using System.Runtime.InteropServices;
+using System.Windows;
 using System.Windows.Interop;
+using System.Windows.Media;
 using EvilBaschdi.About.Wpf.Enums;
 using EvilBaschdi.Core.Wpf.Extensions;
 
@@ -14,8 +16,9 @@ public class ApplyMicaBrush : IApplyMicaBrush
     ///     Sets Windows Color an ApplyMicaBrush effect
     /// </summary>
     /// <param name="hwndSource"></param>
+    /// <param name="window"></param>
     // ReSharper disable once MemberCanBePrivate.Global
-    public void RunFor(HwndSource hwndSource)
+    public void RunFor(HwndSource hwndSource, Window window)
     {
         var darkThemeEnabled = Imports.ShouldSystemUseDarkMode();
         var build = Environment.OSVersion.Version.Build;
@@ -39,5 +42,9 @@ public class ApplyMicaBrush : IApplyMicaBrush
             var pvAttribute = (int)DwmWindowAttribute.DWMSBT_MAINWINDOW;
             _ = Imports.DwmSetWindowAttribute(hwndSource.Handle, DwmWindowAttribute.DWMWA_SYSTEMBACKDROP_TYPE, ref pvAttribute, Marshal.SizeOf(typeof(int)));
         }
+
+        window.Background = Brushes.Transparent;
+        window.FontFamily = new FontFamily("Segeo UI");
+        window.Foreground = darkThemeEnabled ? Brushes.White : Brushes.Black;
     }
 }

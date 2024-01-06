@@ -9,7 +9,9 @@ namespace EvilBaschdi.Core.Wpf.AppHelpers;
 /// <param name="appName"></param>
 /// <param name="location">Assembly.GetExecutingAssembly().Location</param>
 // ReSharper disable once UnusedType.Global
-public class AutoStart(string appName, string location) : IAutoStart
+public class AutoStart(
+    [NotNull] string appName,
+    [NotNull] string location) : IAutoStart
 {
     private const string SubKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
     private readonly string _appName = appName ?? throw new ArgumentNullException(nameof(appName));

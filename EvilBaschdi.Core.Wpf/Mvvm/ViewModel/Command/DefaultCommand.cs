@@ -97,7 +97,7 @@ public sealed class DefaultCommand : ICommandViewModel, INotifyPropertyChanged
     /// </summary>
     /// <param name="propertyName"></param>
     [NotifyPropertyChangedInvocator]
-    private void OnPropertyChanged(string propertyName = null)
+    private void OnPropertyChanged([CanBeNull] string propertyName = null)
     {
         PropertyChanged?.Invoke(this, new(propertyName));
     }

@@ -8,9 +8,6 @@
 		<Description>DummyApp for EvilBaschdi.Core.Wpf</Description>
 		<!-- ReSharper disable once UnknownProperty -->
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-		<EnableNETAnalyzers>true</EnableNETAnalyzers>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<LangVersion>preview</LangVersion>
 		<OutputType>WinExe</OutputType>
 		<PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Wpf</PackageProjectUrl>
 		<Product>EvilBaschdi.Core.Wpf DummyApp</Product>

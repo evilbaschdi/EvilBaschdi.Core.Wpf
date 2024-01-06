@@ -13,8 +13,10 @@ public static class RemoveChildExtension
     /// <param name="parent"></param>
     /// <param name="child"></param>
     // ReSharper disable once UnusedMember.Global
-    public static void RemoveChild(this DependencyObject parent, UIElement child)
+    public static void RemoveChild(this DependencyObject parent, [NotNull] UIElement child)
     {
+        ArgumentNullException.ThrowIfNull(child);
+
         switch (parent)
         {
             case Panel panel:

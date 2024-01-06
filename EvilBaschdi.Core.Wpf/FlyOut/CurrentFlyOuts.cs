@@ -12,8 +12,13 @@ public class CurrentFlyOuts : ICurrentFlyOuts
     /// <param name="flyOuts"></param>
     /// <param name="index"></param>
     /// <returns></returns>
-    public CurrentFlyOutsModel ValueFor(FlyoutsControl flyOuts, int index)
+    public CurrentFlyOutsModel ValueFor([CanBeNull] FlyoutsControl flyOuts, int index)
     {
+        if (index <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(index));
+        }
+
         // ReSharper disable once UseNullPropagation
         if (flyOuts == null)
         {

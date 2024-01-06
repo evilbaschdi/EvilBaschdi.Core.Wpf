@@ -18,8 +18,11 @@ public class ApplyMicaBrush : IApplyMicaBrush
     /// <param name="hwndSource"></param>
     /// <param name="window"></param>
     // ReSharper disable once MemberCanBePrivate.Global
-    public void RunFor(HwndSource hwndSource, Window window)
+    public void RunFor([NotNull] HwndSource hwndSource, [NotNull] Window window)
     {
+        ArgumentNullException.ThrowIfNull(hwndSource);
+        ArgumentNullException.ThrowIfNull(window);
+
         var darkThemeEnabled = Imports.ShouldSystemUseDarkMode();
         var build = Environment.OSVersion.Version.Build;
 

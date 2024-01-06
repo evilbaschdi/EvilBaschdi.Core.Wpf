@@ -29,9 +29,7 @@ public class ScreenShot : IScreenShot
                            [NotNull] string path = @"C:\Temp\Screenshot.png")
     {
         ArgumentNullException.ThrowIfNull(pngBitmapEncoder);
-
         ArgumentNullException.ThrowIfNull(path);
-
         ArgumentNullException.ThrowIfNull(pngBitmapEncoder);
 
         var fs = new FileStream(path, FileMode.Create);
@@ -40,7 +38,7 @@ public class ScreenShot : IScreenShot
     }
 
     /// <inheritdoc />
-    public void SaveToClipboard(PngBitmapEncoder pngBitmapEncoder)
+    public void SaveToClipboard([NotNull] PngBitmapEncoder pngBitmapEncoder)
     {
         ArgumentNullException.ThrowIfNull(pngBitmapEncoder);
 

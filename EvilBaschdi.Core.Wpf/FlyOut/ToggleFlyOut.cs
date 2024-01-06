@@ -5,7 +5,7 @@
 public class ToggleFlyOut : IToggleFlyOut
 {
     /// <inheritdoc />
-    public void RunFor(CurrentFlyOutsModel currentFlyOutsModel, bool stayOpen)
+    public void RunFor([CanBeNull] CurrentFlyOutsModel currentFlyOutsModel, bool stayOpen)
     {
         if (currentFlyOutsModel == null)
         {
@@ -24,7 +24,7 @@ public class ToggleFlyOut : IToggleFlyOut
     }
 
     /// <inheritdoc />
-    public void RunFor(CurrentFlyOutsModel currentFlyOutsModel)
+    public void RunFor([CanBeNull] CurrentFlyOutsModel currentFlyOutsModel)
     {
         RunFor(currentFlyOutsModel, false);
     }

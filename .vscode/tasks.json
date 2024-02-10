@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/EvilBaschdi.CoreExtended.TestUi/EvilBaschdi.CoreExtended.TestUi.csproj"
+                "${workspaceFolder}/EvilBaschdi.Core.Wpf.DummyApp/EvilBaschdi.Core.Wpf.DummyApp.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

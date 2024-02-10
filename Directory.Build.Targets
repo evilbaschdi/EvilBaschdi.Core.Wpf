@@ -1,0 +1,18 @@
+<Project>
+
+	<ItemGroup>
+		<Compile Remove="TestResults\**" />
+		<EmbeddedResource Remove="TestResults\**" />
+		<None Remove="TestResults\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="**\*.cs">
+			<DependentUpon>$([System.String]::Copy(I%(Filename).cs).Replace('Cached',''))</DependentUpon>
+		</Compile>
+		<Compile Update="**\*FolderBrowser.cs">
+			<DependentUpon>IFolderBrowser.cs</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+</Project>

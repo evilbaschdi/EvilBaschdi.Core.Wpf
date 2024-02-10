@@ -13,10 +13,7 @@ public partial class App : Application
     /// <inheritdoc />
     protected override void OnStartup(StartupEventArgs e)
     {
-        if (e == null)
-        {
-            throw new ArgumentNullException(nameof(e));
-        }
+        ArgumentNullException.ThrowIfNull(e);
 
         ThemeManager.Current.SyncTheme(ThemeSyncMode.SyncAll);
     }

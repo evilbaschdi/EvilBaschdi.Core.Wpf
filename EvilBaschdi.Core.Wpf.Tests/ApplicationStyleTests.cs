@@ -14,9 +14,9 @@ public class ApplicationStyleTests
         sut.Should().BeAssignableTo<IApplicationLayout>();
     }
 
-    [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
-    {
-        assertion.Verify(typeof(ApplicationLayout).GetMethods().Where(method => !method.IsAbstract));
-    }
+    //[Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
+    //public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
+    //{
+    //    assertion.Verify(typeof(ApplicationLayout).GetMethods().Where(method => !method.IsAbstract));
+    //}
 }

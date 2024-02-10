@@ -7,9 +7,8 @@ using EvilBaschdi.Core.Wpf.Extensions;
 
 namespace EvilBaschdi.Core.Wpf;
 
-/// <summary>
-/// </summary>
 // ReSharper disable once UnusedType.Global
+/// <inheritdoc />
 public class ApplyMicaBrush : IApplyMicaBrush
 {
     /// <summary>

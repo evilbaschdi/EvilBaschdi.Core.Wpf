@@ -11,7 +11,9 @@ namespace EvilBaschdi.Core.Wpf.Mvvm.ViewModel.Command;
 /// <param name="execute"></param>
 /// <param name="canExecute"></param>
 /// <exception cref="ArgumentNullException"></exception>
-public class RelayCommand(Action<object> execute, Predicate<object> canExecute) : ICommand
+public class RelayCommand(
+    Action<object> execute,
+    Predicate<object> canExecute) : ICommand
 {
     private Predicate<object> _canExecute = canExecute ?? throw new ArgumentNullException(nameof(canExecute));
     private Action<object> _execute = execute ?? throw new ArgumentNullException(nameof(execute));

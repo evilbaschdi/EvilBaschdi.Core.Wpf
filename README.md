@@ -1,8 +1,9 @@
-# EvilBaschdi.CoreExtended
+# EvilBaschdi.Core.Wpf
 
 source code of extended core assembly.\
 MyGet Feed for NuGet Package: <https://www.myget.org/F/evilbaschdi/api/v3/index.json>
 
-| main | develop | gitter chat |
-| ------------- |:-------------:| -----:|
-| ![evilbaschdi VSTS Build Status](https://dev.azure.com/evilbaschdi/Main/_apis/build/status/Core/EvilBaschdi.CoreExtended?branchName=main) | ![evilbaschdi VSTS Build Status](https://dev.azure.com/evilbaschdi/Main/_apis/build/status/Core/EvilBaschdi.CoreExtended?branchName=develop) | [![Gitter](https://badges.gitter.im/evilbaschdi/EvilBaschdi.CoreExtended.svg)](https://gitter.im/evilbaschdi/EvilBaschdi.CoreExtended?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) |
+| main | develop |
+| ------------- | ------------- |
+| ![evilbaschdi VSTS Build Status](https://dev.azure.com/evilbaschdi/Main/_apis/build/status/Core/EvilBaschdi.Core.Wpf?branchName=main) | ![evilbaschdi VSTS Build Status](https://dev.azure.com/evilbaschdi/Main/_apis/build/status/Core/EvilBaschdi.Core.Wpf?branchName=develop) |
+| [![CodeFactor](https://www.codefactor.io/repository/github/evilbaschdi/evilbaschdi.core.wpf/badge/main)](https://www.codefactor.io/repository/github/evilbaschdi/evilbaschdi.core.wpf/overview/main) | [![CodeFactor](https://www.codefactor.io/repository/github/evilbaschdi/evilbaschdi.core.wpf/badge/develop)](https://www.codefactor.io/repository/github/evilbaschdi/evilbaschdi.core.wpf/overview/develop) |

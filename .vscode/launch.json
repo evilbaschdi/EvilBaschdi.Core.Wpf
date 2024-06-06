@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/EvilBaschdi.CoreExtended.TestUi/bin/Debug/net5.0-windows/EvilBaschdi.CoreExtended.TestUi.dll",
+            "program": "${workspaceFolder}/EvilBaschdi.Core.Wpf.DummyApp/bin/Debug/net7.0-windows/EvilBaschdi.Core.Wpf.DummyApp.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/EvilBaschdi.CoreExtended.TestUi",
+            "cwd": "${workspaceFolder}/EvilBaschdi.Core.Wpf.DummyApp",
             // For more information about the 'console' field, see https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window
             "console": "internalConsole",
             "stopAtEntry": false,

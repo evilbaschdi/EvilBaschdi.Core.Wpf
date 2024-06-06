@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<ApplicationIcon>b.ico</ApplicationIcon>
+		<Authors>Sebastian Walter</Authors>
+		<Company>evilbaschdi (Sebastian Walter)</Company>
+		<Copyright>Copyright © 2015 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
+		<Description>DummyApp for EvilBaschdi.Core.Wpf</Description>
+		<!-- ReSharper disable once UnknownProperty -->
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(MSBuildProjectName).xml</DocumentationFile>
+		<OutputType>WinExe</OutputType>
+		<PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Wpf</PackageProjectUrl>
+		<Product>EvilBaschdi.Core.Wpf DummyApp</Product>
+		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Wpf</RepositoryUrl>
+		<Title>EvilBaschdi.Core.Wpf.DummyApp</Title>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Hardcodet.NotifyIcon.Wpf" />
+		<PackageReference Include="MahApps.Metro.IconPacks" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="b.ico" />
+		<ProjectReference Include="..\EvilBaschdi.Core.Wpf\EvilBaschdi.Core.Wpf.csproj" />
+	</ItemGroup>
+
+</Project>

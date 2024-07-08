@@ -53,7 +53,6 @@ public class ApplicationLayoutViewModel : INotifyPropertyChanged
     ///     Toggle Flyout.
     /// </summary>
     // ReSharper disable once MemberCanBePrivate.Global
-
     public ICommandViewModel ToggleFlyout
     {
         get => _toggleFlyout;

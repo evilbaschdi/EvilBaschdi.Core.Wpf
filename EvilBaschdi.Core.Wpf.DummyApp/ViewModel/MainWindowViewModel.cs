@@ -96,7 +96,6 @@ public class MainWindowViewModel : ApplicationLayoutViewModel
     ///     {Binding EncryptedText}
     /// </summary>
     // ReSharper disable once MemberCanBePrivate.Global
-
     public string EncryptedText
     {
         // ReSharper disable once UnusedMember.Global

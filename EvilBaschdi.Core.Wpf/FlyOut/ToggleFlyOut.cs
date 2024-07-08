@@ -20,7 +20,7 @@ public class ToggleFlyOut : IToggleFlyOut
             nonactiveFlyOut.IsOpen = false;
         }
 
-        activeFlyOut.IsOpen = activeFlyOut.IsOpen && stayOpen || !activeFlyOut.IsOpen;
+        activeFlyOut.IsOpen = (activeFlyOut.IsOpen && stayOpen) || !activeFlyOut.IsOpen;
     }
 
     /// <inheritdoc />

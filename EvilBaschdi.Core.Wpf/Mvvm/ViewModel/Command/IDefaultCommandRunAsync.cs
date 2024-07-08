@@ -3,6 +3,4 @@
 /// <inheritdoc cref="IDefaultCommand" />
 /// <inheritdoc cref="ITaskFromMethod" />
 // ReSharper disable once UnusedType.Global
-public interface IDefaultCommandRunAsync : IDefaultCommand, ITaskFromMethod
-{
-}
+public interface IDefaultCommandRunAsync : IDefaultCommand, ITaskFromMethod;

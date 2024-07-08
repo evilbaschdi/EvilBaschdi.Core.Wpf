@@ -5,7 +5,6 @@ using ControlzEx.Theming;
 using EvilBaschdi.Core.Security;
 using EvilBaschdi.Core.Wpf.Mvvm.ViewModel;
 using EvilBaschdi.Core.Wpf.Mvvm.ViewModel.Command;
-using JetBrains.Annotations;
 
 namespace EvilBaschdi.Core.Wpf.DummyApp.ViewModel;
 

@@ -2,6 +2,4 @@
 
 /// <summary>
 /// </summary>
-public interface IToggleFlyOut : IRunFor2<CurrentFlyOutsModel, bool>, IRunFor<CurrentFlyOutsModel>
-{
-}
+public interface IToggleFlyOut : IRunFor2<CurrentFlyOutsModel, bool>, IRunFor<CurrentFlyOutsModel>;

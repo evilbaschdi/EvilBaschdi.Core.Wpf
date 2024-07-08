@@ -1,6 +1,4 @@
 ﻿namespace EvilBaschdi.Core.Wpf;
 
 /// <inheritdoc />
-public interface IApplicationStyle : IRun
-{
-}
+public interface IApplicationStyle : IRun;

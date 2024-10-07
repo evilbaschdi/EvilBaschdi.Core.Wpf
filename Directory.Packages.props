@@ -1,28 +1,31 @@
 <Project>
-  <PropertyGroup>
-    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-    <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
-  </PropertyGroup>
-  <!-- #region Project Libs -->
-  <ItemGroup>
-    <PackageVersion Include="EvilBaschdi.Core" Version="2024.7.8.734" />
-    <PackageVersion Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
-    <PackageVersion Include="MahApps.Metro" Version="3.0.0-alpha0492" />
-    <PackageVersion Include="MahApps.Metro.IconPacks" Version="5.0.0" />
-    <PackageVersion Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
-    <PackageVersion Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
-  </ItemGroup>
-  <!-- #endregion Project Libs -->
-  <!-- #region Unit Test Libs -->
-  <ItemGroup>
-    <PackageVersion Include="EvilBaschdi.Testing" Version="2024.9.9.1606" />
-    <PackageVersion Include="coverlet.collector" Version="6.0.2" />
-    <PackageVersion Include="FluentAssertions.Analyzers" Version="0.33.0" />
-    <PackageVersion Include="Meziantou.FluentAssertionsAnalyzers" Version="1.0.21" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
-    <PackageVersion Include="NSubstitute.Analyzers.CSharp" Version="1.0.17" />
-    <PackageVersion Include="xunit.analyzers" Version="1.16.0" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
-  </ItemGroup>
-  <!-- #endregion Unit Test Libs -->
+	<PropertyGroup>
+		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+		<CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
+	</PropertyGroup>
+	<!-- #region Project Libs -->
+	<ItemGroup>
+		<PackageVersion Include="EvilBaschdi.Core" Version="2024.7.8.734" />
+		<PackageVersion Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.0" />
+		<PackageVersion Include="MahApps.Metro" Version="3.0.0-alpha0492" />
+		<PackageVersion Include="MahApps.Metro.IconPacks" Version="5.0.0" />
+		<PackageVersion Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+		<PackageVersion Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
+	</ItemGroup>
+	<!-- #endregion Project Libs -->
+	<!-- #region Unit Test Libs -->
+	<ItemGroup>
+		<PackageVersion Include="EvilBaschdi.Testing" Version="2024.9.27.1039" />
+		<PackageVersion Include="coverlet.collector" Version="6.0.2" />
+		<PackageVersion Include="FluentAssertions.Analyzers" Version="0.33.0" />
+		<PackageVersion Include="Meziantou.FluentAssertionsAnalyzers" Version="1.0.21" />
+		<PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+		<PackageVersion Include="NSubstitute.Analyzers.CSharp" Version="1.0.17" />
+		<PackageVersion Include="xunit.analyzers" Version="1.16.0" />
+		<PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
+	</ItemGroup>
+	<!-- #endregion Unit Test Libs -->
+	<ItemGroup>
+		<PackageVersion Include="System.Text.Json" Version="8.0.4" />
+	</ItemGroup>
 </Project>

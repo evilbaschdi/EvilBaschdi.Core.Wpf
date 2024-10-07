@@ -30,6 +30,10 @@
 		<Using Include="JetBrains.Annotations" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<PackageReference Include="System.Text.Json" />
+	</ItemGroup>
+
 	<Choose>
 		<When Condition="$(MSBuildProjectName.EndsWith('.Wpf'))">
 			<ItemGroup>

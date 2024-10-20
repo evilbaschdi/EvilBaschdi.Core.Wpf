@@ -20,7 +20,7 @@
 		<PackageTags>Microsoft.NET.Sdk.WindowsDesktop Core</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Wpf</RepositoryUrl>
-		<TargetFramework>net8.0-windows</TargetFramework>
+		<TargetFrameworks>net8.0-windows;net9.0-windows</TargetFrameworks>
 		<UseWPF>true</UseWPF>
 		<VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</VersionPrefix>
 	</PropertyGroup>

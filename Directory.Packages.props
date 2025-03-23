@@ -5,7 +5,7 @@
   </PropertyGroup>
   <!-- #region Project Libs -->
   <ItemGroup>
-    <PackageVersion Include="EvilBaschdi.Core" Version="2024.10.31.739" />
+    <PackageVersion Include="EvilBaschdi.Core" Version="2025.3.23.8" />
     <PackageVersion Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
     <PackageVersion Include="MahApps.Metro" Version="3.0.0-alpha0513" />
     <PackageVersion Include="MahApps.Metro.IconPacks" Version="5.1.0" />

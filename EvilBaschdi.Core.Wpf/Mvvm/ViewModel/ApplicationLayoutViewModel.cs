@@ -15,8 +15,6 @@ public class ApplicationLayoutViewModel : INotifyPropertyChanged
     private readonly IApplicationStyle _applicationStyle;
     private readonly bool _center;
     private readonly bool _resizeWithBorder400;
-    private bool _settingsFlyoutIsOpen;
-    private ICommandViewModel _toggleFlyout;
 
     /// <summary>
     ///     Constructor
@@ -41,10 +39,10 @@ public class ApplicationLayoutViewModel : INotifyPropertyChanged
     // ReSharper disable once MemberCanBePrivate.Global
     public bool SettingsFlyoutIsOpen
     {
-        get => _settingsFlyoutIsOpen;
+        get;
         set
         {
-            _settingsFlyoutIsOpen = value;
+            field = value;
             OnPropertyChanged();
         }
     }
@@ -55,8 +53,8 @@ public class ApplicationLayoutViewModel : INotifyPropertyChanged
     // ReSharper disable once MemberCanBePrivate.Global
     public ICommandViewModel ToggleFlyout
     {
-        get => _toggleFlyout;
-        set => _toggleFlyout = value ?? throw new ArgumentNullException(nameof(value));
+        get;
+        set => field = value ?? throw new ArgumentNullException(nameof(value));
     }
 
     /// <inheritdoc />

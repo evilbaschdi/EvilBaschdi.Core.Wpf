@@ -15,12 +15,8 @@ namespace EvilBaschdi.Core.Wpf.DummyApp.ViewModel;
 public class MainWindowViewModel : ApplicationLayoutViewModel
 {
     private readonly IEncryption _encryption;
-    private string _customColorText;
     private string _encryptedText;
-    private Brush _inputBackground;
     private string _inputText;
-    private Brush _outputBackground;
-    private string _outputText;
 
     /// <summary>
     ///     Constructor
@@ -65,12 +61,12 @@ public class MainWindowViewModel : ApplicationLayoutViewModel
     // ReSharper disable once MemberCanBePrivate.Global
     public string CustomColorText
     {
-        get => _customColorText;
+        get;
 
         // ReSharper disable once UnusedMember.Global
         set
         {
-            _customColorText = value;
+            field = value;
             ExecuteCustomColorOnLostFocus();
             OnPropertyChanged();
         }
@@ -114,10 +110,10 @@ public class MainWindowViewModel : ApplicationLayoutViewModel
     public Brush InputBackground
     {
         // ReSharper disable once UnusedMember.Global
-        get => _inputBackground;
+        get;
         set
         {
-            _inputBackground = value;
+            field = value;
             OnPropertyChanged();
         }
     }
@@ -144,10 +140,10 @@ public class MainWindowViewModel : ApplicationLayoutViewModel
     public Brush OutputBackground
     {
         // ReSharper disable once UnusedMember.Global
-        get => _outputBackground;
+        get;
         set
         {
-            _outputBackground = value;
+            field = value;
             OnPropertyChanged();
         }
     }
@@ -158,10 +154,10 @@ public class MainWindowViewModel : ApplicationLayoutViewModel
     // ReSharper disable once MemberCanBePrivate.Global
     public string OutputText
     {
-        get => _outputText;
+        get;
         set
         {
-            _outputText = value;
+            field = value;
             OnPropertyChanged();
         }
     }

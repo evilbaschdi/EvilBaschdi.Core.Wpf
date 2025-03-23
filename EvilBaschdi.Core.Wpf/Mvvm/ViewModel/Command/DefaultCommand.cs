@@ -8,20 +8,15 @@ namespace EvilBaschdi.Core.Wpf.Mvvm.ViewModel.Command;
 /// <inheritdoc cref="INotifyPropertyChanged" />
 public sealed class DefaultCommand : ICommandViewModel, INotifyPropertyChanged
 {
-    private ICommand _command;
-    private string _imagePath;
-    private string _text;
-    private Visibility _visibility;
-
     /// <inheritdoc />
     public string Text
     {
-        get => _text;
+        get;
         set
         {
             if (value != null)
             {
-                _text = value;
+                field = value;
             }
 
             OnPropertyChanged(nameof(Text));
@@ -31,12 +26,12 @@ public sealed class DefaultCommand : ICommandViewModel, INotifyPropertyChanged
     /// <inheritdoc />
     public string ImagePath
     {
-        get => _imagePath;
+        get;
         set
         {
             if (value != null)
             {
-                _imagePath = value;
+                field = value;
             }
 
             OnPropertyChanged(nameof(ImagePath));
@@ -46,12 +41,12 @@ public sealed class DefaultCommand : ICommandViewModel, INotifyPropertyChanged
     /// <inheritdoc />
     public ICommand Command
     {
-        get => _command;
+        get;
         set
         {
             if (value != null)
             {
-                _command = value;
+                field = value;
             }
 
             OnPropertyChanged(nameof(Command));
@@ -61,10 +56,10 @@ public sealed class DefaultCommand : ICommandViewModel, INotifyPropertyChanged
     /// <inheritdoc />
     public Visibility Visibility
     {
-        get => _visibility;
+        get;
         set
         {
-            _visibility = value;
+            field = value;
             OnPropertyChanged(nameof(Visibility));
         }
     }

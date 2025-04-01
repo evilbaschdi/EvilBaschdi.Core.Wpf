@@ -7,7 +7,7 @@
   <ItemGroup>
     <PackageVersion Include="EvilBaschdi.Core" Version="2025.3.23.8" />
     <PackageVersion Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
-    <PackageVersion Include="MahApps.Metro" Version="3.0.0-alpha0513" />
+    <PackageVersion Include="MahApps.Metro" Version="3.0.0-rc0516" />
     <PackageVersion Include="MahApps.Metro.IconPacks" Version="5.1.0" />
     <PackageVersion Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
     <PackageVersion Include="Ookii.Dialogs.Wpf" Version="5.0.1" />

@@ -33,7 +33,7 @@ public class CurrentFlyOuts : ICurrentFlyOuts
 
         var nonactiveFlyOuts = flyOuts.Items.Cast<Flyout>()
                                       .Where(nonactiveFlyOut =>
-                                                 nonactiveFlyOut.IsOpen && nonactiveFlyOut.Name != activeFlyOut.Name).ToList();
+                                                 nonactiveFlyOut.IsOpen && nonactiveFlyOut.Name != activeFlyOut.Name);
 
         return new()
                {

@@ -12,5 +12,5 @@ public class CurrentFlyOutsModel
 
     /// <summary>
     /// </summary>
-    public List<Flyout> NonActiveFlyOuts { get; init; }
+    public IEnumerable<Flyout> NonActiveFlyOuts { get; init; }
 }

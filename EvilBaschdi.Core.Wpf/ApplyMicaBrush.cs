@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
-using EvilBaschdi.About.Wpf.Enums;
+using EvilBaschdi.Core.Wpf.Enums;
 using EvilBaschdi.Core.Wpf.Extensions;
 
 namespace EvilBaschdi.Core.Wpf;

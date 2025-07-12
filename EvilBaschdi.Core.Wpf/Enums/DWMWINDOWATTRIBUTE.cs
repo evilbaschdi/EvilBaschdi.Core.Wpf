@@ -1,6 +1,6 @@
 ﻿// ReSharper disable All
 
-namespace EvilBaschdi.About.Wpf.Enums;
+namespace EvilBaschdi.Core.Wpf.Enums;
 
 /// <summary>
 /// </summary>

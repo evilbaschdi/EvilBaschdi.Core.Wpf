@@ -57,10 +57,7 @@ public class RelayCommand(
     /// </summary>
     /// <param name="parameter"></param>
     /// <returns></returns>
-    public bool CanExecute(object parameter)
-    {
-        return _canExecute == null || _canExecute(parameter);
-    }
+    public bool CanExecute(object parameter) => _canExecute == null || _canExecute(parameter);
 
     /// <summary>
     /// </summary>
@@ -89,8 +86,5 @@ public class RelayCommand(
         _execute = _ => { };
     }
 
-    private static bool DefaultCanExecute(object parameter)
-    {
-        return true;
-    }
+    private static bool DefaultCanExecute(object parameter) => true;
 }

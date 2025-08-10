@@ -12,10 +12,7 @@ public static class ObjectExtensions
     /// <returns></returns>
     [ContractAnnotation("obj:null => true")]
     // ReSharper disable once UnusedMember.Global
-    public static bool IsNull(this object obj)
-    {
-        return obj is null;
-    }
+    public static bool IsNull(this object obj) => obj is null;
 
     /// <summary>
     ///     obj:null => false
@@ -24,8 +21,5 @@ public static class ObjectExtensions
     /// <returns></returns>
     [ContractAnnotation("obj:null => false")]
     // ReSharper disable once UnusedMember.Global
-    public static bool IsNotNull(this object obj)
-    {
-        return obj is null == false;
-    }
+    public static bool IsNotNull(this object obj) => !(obj is null);
 }

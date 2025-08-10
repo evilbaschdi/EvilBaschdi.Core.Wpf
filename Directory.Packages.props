@@ -8,7 +8,7 @@
     <PackageVersion Include="EvilBaschdi.Core" Version="2025.7.22.17" />
     <PackageVersion Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
     <PackageVersion Include="MahApps.Metro" Version="3.0.0-rc0516" />
-    <PackageVersion Include="MahApps.Metro.IconPacks" Version="6.0.0" />
+    <PackageVersion Include="MahApps.Metro.IconPacks" Version="6.1.0" />
     <PackageVersion Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
     <PackageVersion Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
   </ItemGroup>
@@ -18,7 +18,7 @@
     <PackageVersion Include="EvilBaschdi.Testing" Version="2025.7.14.6" />
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
     <PackageVersion Include="FluentAssertions.Analyzers" Version="0.34.1" />
-    <PackageVersion Include="Meziantou.FluentAssertionsAnalyzers" Version="1.0.21" />
+    <PackageVersion Include="Meziantou.FluentAssertionsAnalyzers" Version="1.0.22" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageVersion Include="NSubstitute.Analyzers.CSharp" Version="1.0.17" />
     <PackageVersion Include="xunit.v3" Version="3.0.0" />
@@ -27,6 +27,6 @@
   </ItemGroup>
   <!-- #endregion Unit Test Libs -->
   <ItemGroup>
-    <PackageVersion Include="System.Text.Json" Version="9.0.7" />
+    <PackageVersion Include="System.Text.Json" Version="9.0.8" />
   </ItemGroup>
 </Project>

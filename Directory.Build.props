@@ -1,7 +1,6 @@
 <Project>
 
 	<PropertyGroup>
-		<AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
 		<Authors>Sebastian Walter</Authors>
 		<Company>evilbaschdi (Sebastian Walter)</Company>
 		<Copyright>Copyright © 2015 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
@@ -59,8 +58,6 @@
 				<IsTestProject>true</IsTestProject>
 				<NoWarn>1701;1702;CA1062</NoWarn>
 				<OutputType>Exe</OutputType>
-				<!--<IsTestingPlatformApplication>false</IsTestingPlatformApplication>
-				<TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>-->
 			</PropertyGroup>
 
 			<ItemGroup>

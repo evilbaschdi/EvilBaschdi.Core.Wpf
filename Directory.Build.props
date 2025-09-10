@@ -22,7 +22,7 @@
 		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Core.Wpf</RepositoryUrl>
 		<IncludeSymbols>True</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-		<TargetFrameworks>net8.0-windows;net9.0-windows</TargetFrameworks>
+		<TargetFrameworks>net8.0-windows;net9.0-windows;net10.0-windows</TargetFrameworks>
 		<UseWPF>true</UseWPF>
 		<VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.H))</VersionPrefix>
 	</PropertyGroup>

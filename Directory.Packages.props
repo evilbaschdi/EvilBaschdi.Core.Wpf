@@ -7,7 +7,7 @@
   <ItemGroup>
     <PackageVersion Include="EvilBaschdi.Core" Version="2025.9.16.16" />
     <PackageVersion Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
-    <PackageVersion Include="MahApps.Metro" Version="3.0.0-rc0525" />
+    <PackageVersion Include="MahApps.Metro" Version="3.0.0-rc0529" />
     <PackageVersion Include="MahApps.Metro.IconPacks" Version="6.1.0" />
     <PackageVersion Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
     <PackageVersion Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
@@ -15,26 +15,26 @@
   <!-- #endregion Project Libs -->
   <!-- #region Unit Test Libs -->
   <ItemGroup>
-    <PackageVersion Include="EvilBaschdi.Testing" Version="2025.9.16.16" />
+    <PackageVersion Include="EvilBaschdi.Testing" Version="2025.10.2.8" />
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
     <PackageVersion Include="FluentAssertions.Analyzers" Version="0.34.1" />
     <PackageVersion Include="Meziantou.FluentAssertionsAnalyzers" Version="1.0.22" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
     <PackageVersion Include="NSubstitute.Analyzers.CSharp" Version="1.0.17" />
-    <PackageVersion Include="xunit.v3" Version="3.0.1" />
+    <PackageVersion Include="xunit.v3" Version="3.1.0" />
     <PackageVersion Include="xunit.analyzers" Version="1.24.0" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.4" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
   </ItemGroup>
   <!-- #endregion Unit Test Libs -->
   <Choose>
     <When Condition="'$(TargetFramework)' == 'net10.0'">
       <ItemGroup>
-        <PackageVersion Include="System.Text.Json" Version="10.0.0-rc.1.25451.107" />
+        <PackageVersion Include="System.Text.Json" Version="10.0.0-rc.2.25502.107" />
       </ItemGroup>
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageVersion Include="System.Text.Json" Version="9.0.9" />
+        <PackageVersion Include="System.Text.Json" Version="9.0.10" />
       </ItemGroup>
     </Otherwise>
   </Choose>

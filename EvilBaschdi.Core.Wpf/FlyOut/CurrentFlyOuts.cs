@@ -14,7 +14,7 @@ public class CurrentFlyOuts : ICurrentFlyOuts
     /// <returns></returns>
     public CurrentFlyOutsModel ValueFor([CanBeNull] FlyoutsControl flyOuts, int index)
     {
-        if (index <= 0)
+        if (index < 0)
         {
             throw new ArgumentOutOfRangeException(nameof(index));
         }
@@ -32,13 +32,13 @@ public class CurrentFlyOuts : ICurrentFlyOuts
         }
 
         var nonactiveFlyOuts = flyOuts.Items.Cast<Flyout>()
-                                      .Where(nonactiveFlyOut =>
-                                                 nonactiveFlyOut.IsOpen && nonactiveFlyOut.Name != activeFlyOut.Name);
+            .Where(nonactiveFlyOut =>
+                nonactiveFlyOut.IsOpen && nonactiveFlyOut.Name != activeFlyOut.Name);
 
         return new()
-               {
-                   ActiveFlyOut = activeFlyOut,
-                   NonActiveFlyOuts = nonactiveFlyOuts,
-               };
+        {
+            ActiveFlyOut = activeFlyOut,
+            NonActiveFlyOuts = nonactiveFlyOuts,
+        };
     }
 }

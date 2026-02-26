@@ -1,5 +1,6 @@
-# EvilBaschdi.Core.Wpf
+# EvilBaschdi.Core.Wpf
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 source code of wpf core assembly.\
 MyGet Feed for NuGet Package: <https://www.myget.org/F/evilbaschdi/api/v3/index.json>
 

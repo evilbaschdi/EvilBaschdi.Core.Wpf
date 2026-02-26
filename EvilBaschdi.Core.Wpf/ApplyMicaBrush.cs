@@ -46,7 +46,7 @@ public class ApplyMicaBrush : IApplyMicaBrush
         }
 
         window.Background = Brushes.Transparent;
-        window.FontFamily = new FontFamily("Segeo UI");
+        window.FontFamily = new("Segeo UI");
         window.Foreground = darkThemeEnabled ? Brushes.White : Brushes.Black;
     }
 }

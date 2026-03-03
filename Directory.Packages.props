@@ -9,7 +9,7 @@
     <PackageVersion Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
     <PackageVersion Include="MahApps.Metro" Version="3.0.0-rc0529" />
     <PackageVersion Include="MahApps.Metro.IconPacks" Version="6.2.1" />
-    <PackageVersion Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.141" />
+    <PackageVersion Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.142" />
     <PackageVersion Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
   </ItemGroup>
   <!-- #endregion Project Libs -->

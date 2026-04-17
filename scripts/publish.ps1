@@ -1,7 +1,9 @@
-dotnet publish -c Release -o "C:\Apps\$((Get-Item .).Name)\x64" -r win-x64 -f net10.0-windows --no-self-contained
-dotnet publish -c Release -o "C:\Apps\$((Get-Item .).Name)\arm64" -r win-arm64 -f net10.0-windows --no-self-contained
+$appName = "EvilBaschdi.Core.Wpf.DummyApp"
+$projectPath = "../samples/$appName/$appName.csproj"
 
-$appName = (Get-Item .).Name
+dotnet publish $projectPath -c Release -o "C:\Apps\$appName\x64" -r win-x64 -f net10.0-windows --no-self-contained
+dotnet publish $projectPath -c Release -o "C:\Apps\$appName\arm64" -r win-arm64 -f net10.0-windows --no-self-contained
+
 $appsDirectory = "C:\Apps"
 $appLauncherSource = "$appsDirectory\AppLauncher\x64\AppLauncher.exe"
 $appLauncherTarget = "$appsDirectory\$appName\$appName.exe"

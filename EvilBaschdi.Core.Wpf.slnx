@@ -15,11 +15,13 @@
     <File Path="NuGet.config" />
     <File Path="README.md" />
   </Folder>
-  <Project Path="EvilBaschdi.Core.Wpf.DummyApp/EvilBaschdi.Core.Wpf.DummyApp.csproj">
-    <Platform Solution="*|ARM64" Project="ARM64" />
-    <Platform Solution="*|x64" Project="x64" />
-    <Build Solution="Release|x64" Project="false" />
-  </Project>
-  <Project Path="EvilBaschdi.Core.Wpf.Tests/EvilBaschdi.Core.Wpf.Tests.csproj" />
-  <Project Path="EvilBaschdi.Core.Wpf/EvilBaschdi.Core.Wpf.csproj" />
+  <Folder Name="/samples/">
+    <Project Path="samples/EvilBaschdi.Core.Wpf.DummyApp/EvilBaschdi.Core.Wpf.DummyApp.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/EvilBaschdi.Core.Wpf/EvilBaschdi.Core.Wpf.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/EvilBaschdi.Core.Wpf.Tests/EvilBaschdi.Core.Wpf.Tests.csproj" />
+  </Folder>
 </Solution>

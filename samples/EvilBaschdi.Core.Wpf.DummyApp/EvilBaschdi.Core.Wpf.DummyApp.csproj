@@ -8,7 +8,7 @@
 
 	<ItemGroup>
 		<Resource Include="b.ico" />
-		<ProjectReference Include="..\EvilBaschdi.Core.Wpf\EvilBaschdi.Core.Wpf.csproj" />
+		<ProjectReference Include="..\..\src\EvilBaschdi.Core.Wpf\EvilBaschdi.Core.Wpf.csproj" />
 	</ItemGroup>
 
 </Project>

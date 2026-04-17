@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\samples\EvilBaschdi.Core.Wpf.DummyApp\EvilBaschdi.Core.Wpf.DummyApp.csproj" />
+		<ProjectReference Include="..\..\src\EvilBaschdi.Core.Wpf\EvilBaschdi.Core.Wpf.csproj" />
+	</ItemGroup>
+
+</Project>

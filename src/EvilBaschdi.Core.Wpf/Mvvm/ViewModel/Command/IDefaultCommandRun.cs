@@ -1,4 +1,4 @@
-﻿namespace EvilBaschdi.Core.Wpf.Mvvm.ViewModel.Command;
+namespace EvilBaschdi.Core.Wpf.Mvvm.ViewModel.Command;
 
 /// <inheritdoc cref="IDefaultCommand" />
 /// <inheritdoc cref="IRun" />

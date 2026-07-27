@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Windows;
 using EvilBaschdi.Core.Security;
 using EvilBaschdi.Core.Wpf.DummyApp.ViewModel;

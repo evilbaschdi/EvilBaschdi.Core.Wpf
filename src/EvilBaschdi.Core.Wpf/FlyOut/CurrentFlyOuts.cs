@@ -1,4 +1,4 @@
-﻿using MahApps.Metro.Controls;
+using MahApps.Metro.Controls;
 
 namespace EvilBaschdi.Core.Wpf.FlyOut;
 
@@ -32,13 +32,13 @@ public class CurrentFlyOuts : ICurrentFlyOuts
         }
 
         var nonactiveFlyOuts = flyOuts.Items.Cast<Flyout>()
-            .Where(nonactiveFlyOut =>
-                nonactiveFlyOut.IsOpen && nonactiveFlyOut.Name != activeFlyOut.Name);
+                                      .Where(nonactiveFlyOut =>
+                                                 nonactiveFlyOut.IsOpen && nonactiveFlyOut.Name != activeFlyOut.Name);
 
         return new()
-        {
-            ActiveFlyOut = activeFlyOut,
-            NonActiveFlyOuts = nonactiveFlyOuts,
-        };
+               {
+                   ActiveFlyOut = activeFlyOut,
+                   NonActiveFlyOuts = nonactiveFlyOuts,
+               };
     }
 }

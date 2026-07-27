@@ -1,4 +1,4 @@
-﻿using Ookii.Dialogs.Wpf;
+using Ookii.Dialogs.Wpf;
 
 namespace EvilBaschdi.Core.Wpf.Browsers;
 

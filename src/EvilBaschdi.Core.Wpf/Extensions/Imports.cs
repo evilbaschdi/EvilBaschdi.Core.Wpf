@@ -1,4 +1,4 @@
-﻿using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 using EvilBaschdi.Core.Wpf.Enums;
 
 namespace EvilBaschdi.Core.Wpf.Extensions;

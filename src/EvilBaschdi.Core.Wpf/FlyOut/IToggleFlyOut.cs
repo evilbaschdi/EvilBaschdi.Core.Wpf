@@ -1,4 +1,4 @@
-﻿namespace EvilBaschdi.Core.Wpf.FlyOut;
+namespace EvilBaschdi.Core.Wpf.FlyOut;
 
 /// <summary>
 /// </summary>

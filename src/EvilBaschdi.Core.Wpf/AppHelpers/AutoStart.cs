@@ -1,4 +1,4 @@
-﻿using static Microsoft.Win32.Registry;
+using static Microsoft.Win32.Registry;
 
 namespace EvilBaschdi.Core.Wpf.AppHelpers;
 
